@@ -5,6 +5,8 @@ import openai
 from tmdbv3api import TMDb, Movie
 from dotenv import load_dotenv
 import re
+import requests
+import asyncio
 
 # Load environment variables from .env file
 load_dotenv()
@@ -12,6 +14,12 @@ load_dotenv()
 # Get the TMDb and OpenAI API keys from environment variables
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+# Radarr settings
+RADARR_URL = os.getenv("RADARR_URL")  # Replace with your Radarr URL
+# Replace with your Radarr API key
+RADARR_API_KEY = os.getenv("RADARR_API_KEY")
+
 
 # Configure TMDb with the API key
 tmdb = TMDb()
@@ -45,7 +53,7 @@ print(f"OpenAI API response: {sample_text}")
 
 
 def check_for_movie_title_in_string(text):
-    found_movies = []  # List to store found movie titles
+    found_movies = []  # List to store found movie titles and their tmdbIds
 
     # Use regular expressions to find all phrases enclosed in single quotes
     phrases_in_quotes = re.findall(r"'(.*?)'", text)
@@ -59,6 +67,7 @@ def check_for_movie_title_in_string(text):
         results = movie.search(phrase)
         for result in results:
             movie_title = result.title
+            tmdbId = result.id  # Added line to capture tmdbId
             popularity = result.popularity
             vote_average = result.vote_average
             vote_count = result.vote_count
@@ -70,12 +79,11 @@ def check_for_movie_title_in_string(text):
                 movie_title.lower() in text.lower()
                 and vote_average >= 5
                 and vote_count >= 500
-                and popularity > 18
+                and popularity > 8
             ):
-                found_movies.append(movie_title)
+                # Modified to store tmdbId as well
+                found_movies.append({'title': movie_title, 'tmdbId': tmdbId})
 
-    # Remove duplicates by converting the list to a set and back to a list
-    found_movies = list(set(found_movies))
     return found_movies
 
 
@@ -125,12 +133,46 @@ async def ask(ctx, *, question):
     # Print the OpenAI response to the Discord chat
     await ctx.send(f"OpenAI: {response}")
 
-    # Check if the OpenAI response contains movie titles
     found_movie_titles = check_for_movie_title_in_string(response)
 
-    # If movie titles are found, print them to the Discord chat
     if found_movie_titles:
-        await ctx.send(f"Movies mentioned: {', '.join(found_movie_titles)}")
+        emojis = ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬', '🇭', '🇮', '🇯']
+        emoji_movie_map = {emoji: movie for emoji,
+                           movie in zip(emojis, found_movie_titles)}
+
+        # Edit the OpenAI response to add emojis next to movie titles
+        for emoji, movie in emoji_movie_map.items():
+            response = response.replace(
+                f"'{movie['title']}'", f"'{movie['title']}' {emoji}")
+
+        msg = await ctx.send(response)
+
+        for emoji in emoji_movie_map.keys():
+            await msg.add_reaction(emoji)
+
+        def check(reaction, user):
+            return user == ctx.message.author and str(reaction.emoji) in emoji_movie_map and reaction.message.id == msg.id
+
+        while True:
+            reaction, user = await client.wait_for('reaction_add', check=check)
+
+            movie = emoji_movie_map[str(reaction.emoji)]
+
+            payload = {
+                'title': movie['title'],
+                'qualityProfileId': 7,  # Adjust according to your quality profile ID
+                'tmdbId': movie['tmdbId'],
+                'images': [],
+                'monitored': True
+            }
+            headers = {'X-Api-Key': RADARR_API_KEY}
+
+            response = requests.post(RADARR_URL, json=payload, headers=headers)
+
+            if response.status_code == 201:
+                await ctx.send(f"Added {movie['title']} to Radarr.")
+            else:
+                await ctx.send(f"Failed to add {movie['title']} to Radarr.")
     else:
         await ctx.send("No movies mentioned.")
 
