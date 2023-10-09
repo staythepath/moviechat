@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import re
 import requests
 import asyncio
+from arrapi import RadarrAPI
 
 # Load environment variables from .env file
 load_dotenv()
@@ -27,6 +28,9 @@ tmdb.api_key = TMDB_API_KEY
 
 # Create a Movie object to search for movies
 movie = Movie()
+
+# Setup RadarrAPI instance
+radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 
 # Configure OpenAI API key
 openai.api_key = OPENAI_API_KEY
@@ -130,9 +134,6 @@ async def ask(ctx, *, question):
     conversations[channel_id].append(
         {"role": "assistant", "content": response})
 
-    # Print the OpenAI response to the Discord chat
-    await ctx.send(f"OpenAI: {response}")
-
     found_movie_titles = check_for_movie_title_in_string(response)
 
     if found_movie_titles:
@@ -142,10 +143,13 @@ async def ask(ctx, *, question):
 
         # Edit the OpenAI response to add emojis next to movie titles
         for emoji, movie in emoji_movie_map.items():
-            response = response.replace(
-                f"'{movie['title']}'", f"'{movie['title']}' {emoji}")
+            # Using regex to replace movie titles with title + emoji
+            pattern = re.compile(
+                re.escape(f"'{movie['title']}'"), re.IGNORECASE)
+            response = pattern.sub(f"'{movie['title']}' {emoji}", response)
 
-        msg = await ctx.send(response)
+        # Print the OpenAI response with emojis to the Discord chat
+        msg = await ctx.send(f"OpenAI: {response}")
 
         for emoji in emoji_movie_map.keys():
             await msg.add_reaction(emoji)
@@ -155,26 +159,20 @@ async def ask(ctx, *, question):
 
         while True:
             reaction, user = await client.wait_for('reaction_add', check=check)
-
             movie = emoji_movie_map[str(reaction.emoji)]
 
-            payload = {
-                'title': movie['title'],
-                'qualityProfileId': 7,  # Adjust according to your quality profile ID
-                'tmdbId': movie['tmdbId'],
-                'images': [],
-                'monitored': True
-            }
-            headers = {'X-Api-Key': RADARR_API_KEY}
+            # Here, using arrapi to add movie to Radarr
+            try:
+                search = radarr.search_movies(movie['title'])
+                if search:
+                    # Modify path and quality as needed
+                    search[0].add("/data/media/movies", "this")
+                    await ctx.send(f"Added '{movie['title']}' to Radarr.")
+                else:
+                    await ctx.send(f"Failed to find '{movie['title']}' in Radarr database.")
+            except Exception as e:
+                await ctx.send(f"An error occurred while adding '{movie['title']}' to Radarr: {str(e)}")
 
-            response = requests.post(RADARR_URL, json=payload, headers=headers)
-
-            if response.status_code == 201:
-                await ctx.send(f"Added {movie['title']} to Radarr.")
-            else:
-                await ctx.send(f"Failed to add {movie['title']} to Radarr.")
-    else:
-        await ctx.send("No movies mentioned.")
 
 # Run the Discord client
 client.run(DISCORD_TOKEN)
