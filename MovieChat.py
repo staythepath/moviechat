@@ -167,5 +167,17 @@ async def ask(ctx, *, question):
                 reaction, user = await client.wait_for('reaction_add', check=check)
                 movie = emoji_movie_map[str(reaction.emoji)]
 
+                # Here, using arrapi to add movie to Radarr
+                try:
+                    search = radarr.search_movies(movie['title'])
+                    if search:
+                        # Modify path and quality as needed
+                        search[0].add("/data/media/movies", "this")
+                        await ctx.send(f"Added '{movie['title']}' to Radarr.")
+                    else:
+                        await ctx.send(f"Failed to find '{movie['title']}' in Radarr database.")
+                except Exception as e:
+                    await ctx.send(f"You already got '{movie['title']}'!!")
+
 # Run the Discord client
 client.run(DISCORD_TOKEN)
