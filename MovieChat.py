@@ -8,6 +8,7 @@ import re
 import requests
 import asyncio
 from arrapi import RadarrAPI
+import more_itertools
 
 # Load environment variables from .env file
 load_dotenv()
@@ -20,7 +21,6 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 RADARR_URL = os.getenv("RADARR_URL")  # Replace with your Radarr URL
 # Replace with your Radarr API key
 RADARR_API_KEY = os.getenv("RADARR_API_KEY")
-
 
 # Configure TMDb with the API key
 tmdb = TMDb()
@@ -36,28 +36,24 @@ radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 openai.api_key = OPENAI_API_KEY
 
 # Function to get response from OpenAI API
-
-
 def get_openai_response(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. Please place any movie titles in single quotes."},
+            {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. When you do lists movies count them 1-9 the A-K in that order. After you count up to 9 don't go to 10, go to A instead, then B then C and so on until L. Please place any movie titles in single quotes."},
             {"role": "user", "content": prompt},
         ],
         temperature=0,
     )
     return response.choices[0].message['content'].strip()
 
-
 # Use the OpenAI API to get a text response
-prompt = "Show me a short sentence that contains movie titles, but use the titles in the sentence as if they are not movie titles. Use one of the movie titles twice in two different ways in the sentence."
+prompt = "Hey there. Do you like movies?"
 sample_text = get_openai_response(prompt)
-print(f"OpenAI API response: {sample_text}")
-
+print(f"{sample_text}")
 
 def check_for_movie_title_in_string(text):
-    found_movies = []  # List to store found movie titles and their tmdbIds
+    found_movies_dict = {}  # Dictionary to store found movie titles and their tmdbIds
 
     # Use regular expressions to find all phrases enclosed in single quotes
     phrases_in_quotes = re.findall(r"'(.*?)'", text)
@@ -81,15 +77,19 @@ def check_for_movie_title_in_string(text):
 
             if (
                 movie_title.lower() in text.lower()
-                and vote_average >= 5
-                and vote_count >= 500
-                and popularity > 8
+                and vote_average >= 0
+                and vote_count >= 0
+                and popularity > 0
             ):
-                # Modified to store tmdbId as well
-                found_movies.append({'title': movie_title, 'tmdbId': tmdbId})
+                # Only add the movie if it's not already in the dictionary
+                if movie_title not in found_movies_dict:
+                    found_movies_dict[movie_title] = {'title': movie_title, 'tmdbId': tmdbId}
+                    print(f"Added: {movie_title}")
 
+    # Convert the dictionary back to a list of movies before returning it
+    found_movies = list(found_movies_dict.values())
+    print(found_movies)
     return found_movies
-
 
 # Create a new Discord client
 # Create a new Discord client with intents
@@ -98,17 +98,14 @@ intents.messages = True
 intents.message_content = True
 client = commands.Bot(command_prefix='!', intents=intents)
 
-
 conversations = {}
 
 # Get the Discord token from environment variables
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 
-
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user.name}')
-
 
 @client.command(name='!')
 async def ask(ctx, *, question):
@@ -127,7 +124,7 @@ async def ask(ctx, *, question):
         model="gpt-3.5-turbo",
         messages=conversations[channel_id],
         temperature=0.8,
-        max_tokens=150
+        max_tokens=750
     ).choices[0].message['content'].strip()
 
     # Add the OpenAI's response to the conversation history
@@ -137,42 +134,38 @@ async def ask(ctx, *, question):
     found_movie_titles = check_for_movie_title_in_string(response)
 
     if found_movie_titles:
-        emojis = ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬', '🇭', '🇮', '🇯']
-        emoji_movie_map = {emoji: movie for emoji,
-                           movie in zip(emojis, found_movie_titles)}
+        emojis = [
+    '\u0031\uFE0F\u20E3', '\u0032\uFE0F\u20E3', '\u0033\uFE0F\u20E3', '\u0034\uFE0F\u20E3',
+    '\u0035\uFE0F\u20E3', '\u0036\uFE0F\u20E3', '\u0037\uFE0F\u20E3', '\u0038\uFE0F\u20E3', '\u0039\uFE0F\u20E3',
+    '\U0001F1E6', '\U0001F1E7', '\U0001F1E8', '\U0001F1E9', '\U0001F1EA', '\U0001F1EB', '\U0001F1EC', '\U0001F1ED',
+    '\U0001F1EE', '\U0001F1EF', '\U0001F1F0'
+]
 
-        # Edit the OpenAI response to add emojis next to movie titles
+        emoji_movie_map = dict(zip(emojis, found_movie_titles))  # Create map for this chunk
+        response_chunk = response
         for emoji, movie in emoji_movie_map.items():
             # Using regex to replace movie titles with title + emoji
             pattern = re.compile(
                 re.escape(f"'{movie['title']}'"), re.IGNORECASE)
-            response = pattern.sub(f"'{movie['title']}' {emoji}", response)
+            response_chunk = pattern.sub(f"'{movie['title']}' {emoji}", response_chunk)
 
-        # Print the OpenAI response with emojis to the Discord chat
-        msg = await ctx.send(f"OpenAI: {response}")
+        # Split the response_chunk into smaller chunks if it's too long
+        max_length = 2000
+        response_segments = [response_chunk[i:i+max_length] for i in range(0, len(response_chunk), max_length)]
 
-        for emoji in emoji_movie_map.keys():
-            await msg.add_reaction(emoji)
+        for response_segment in response_segments:
+            # Print the OpenAI response with emojis to the Discord chat
+            msg = await ctx.send(f"OpenAI: {response_segment}")
 
-        def check(reaction, user):
-            return user == ctx.message.author and str(reaction.emoji) in emoji_movie_map and reaction.message.id == msg.id
+            for emoji in emoji_movie_map.keys():  # Updated line
+                await msg.add_reaction(emoji)
 
-        while True:
-            reaction, user = await client.wait_for('reaction_add', check=check)
-            movie = emoji_movie_map[str(reaction.emoji)]
+            def check(reaction, user):
+                return user == ctx.message.author and str(reaction.emoji) in emoji_movie_map and reaction.message.id == msg.id
 
-            # Here, using arrapi to add movie to Radarr
-            try:
-                search = radarr.search_movies(movie['title'])
-                if search:
-                    # Modify path and quality as needed
-                    search[0].add("/data/media/movies", "this")
-                    await ctx.send(f"Added '{movie['title']}' to Radarr.")
-                else:
-                    await ctx.send(f"Failed to find '{movie['title']}' in Radarr database.")
-            except Exception as e:
-                await ctx.send(f"An error occurred while adding '{movie['title']}' to Radarr: {str(e)}")
-
+            while True:
+                reaction, user = await client.wait_for('reaction_add', check=check)
+                movie = emoji_movie_map[str(reaction.emoji)]
 
 # Run the Discord client
 client.run(DISCORD_TOKEN)
