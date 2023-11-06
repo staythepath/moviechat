@@ -113,7 +113,7 @@ async def ask(ctx, *, question):
     channel_id = str(ctx.channel.id)
     if channel_id not in conversations:
         conversations[channel_id] = [
-            {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. Every time you name a movie put it in single quotes."}
+            {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K.  Please place any movie titles in single quotes."}
         ]
 
     # Add the user's message to the conversation history
@@ -177,7 +177,7 @@ async def ask(ctx, *, question):
                     else:
                         await ctx.send(f"Failed to find '{movie['title']}' in Radarr database.")
                 except Exception as e:
-                    await ctx.send(f"You already got '{movie['title']}'!!")
+                    await ctx.send(f"You already have '{movie['title']}'!!")
 
 # Run the Discord client
 client.run(DISCORD_TOKEN)
