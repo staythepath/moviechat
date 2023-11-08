@@ -1,0 +1,6 @@
+discord.py
+python-dotenv
+openai
+tmdbv3api
+arrapi
+regex
