@@ -161,14 +161,16 @@ async def ask(ctx, *, question):
                         search = radarr.search_movies(selected_movie)
                         if search:
                             search[0].add("/data/media/movies", "this")
-                            await ctx.send(f"Added '{selected_movie}' to Radarr.")
+                            pass
                         else:
-                            await ctx.send(f"Failed to find '{selected_movie}' in Radarr database.")
+                            pass
+                    except arrapi.exceptions.Exists:
+                        pass
                     except Exception as e:
-                        await ctx.send(f"You already have '{selected_movie}'!")
+                        await ctx.send(f"Error: {e}")
                 last_reaction_time = time.time()
             except asyncio.TimeoutError:
-                if time.time() - last_reaction_time > 60:  # If no reactions for 60 seconds
+                if time.time() - last_reaction_time > 86400:  # If no reactions for 60 seconds
                     break  # Exit the loop if no reactions for a while
 
 @client.event
@@ -185,16 +187,14 @@ async def on_reaction_add(reaction, user):
                 search = radarr.search_movies(selected_movie)
                 if search:
                     search[0].add("/data/media/movies", "this")
-                    # Movie added to Radarr, no message needed
+                    await reaction.message.channel.send(f"'{selected_movie}' has been added to Radarr.")
                 else:
-                    # Movie not found in Radarr, but no message needed
+                    # If movie not found in Radarr, no message needed
                     pass
             except arrapi.exceptions.Exists:
-                # Movie already in Radarr, no message needed
-                pass
-
-            except Exception:
-                # General error, but no message needed
+                await reaction.message.channel.send(f"You already have '{selected_movie}' in Radarr.")
+            except Exception as e:
+                # Handle other exceptions if needed
                 pass
 
 
