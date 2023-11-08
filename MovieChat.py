@@ -107,13 +107,13 @@ async def ask(ctx, *, question):
     channel_id = str(ctx.channel.id)
     if channel_id not in conversations:
         conversations[channel_id] = [
-            {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you say a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you name a movie. Never list or name more than 20 movies in a response even if I ask you to."}
+            {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. Never leave a line space( an empty line) between 9 and A. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you say a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you name a movie. Never list or name more than 20 movies in a response even if I ask you to."}
         ]
 
     conversations[channel_id].append({"role": "user", "content": question})
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4-1106-preview",
         messages=conversations[channel_id],
         temperature=0.8,
         max_tokens=750
