@@ -7,7 +7,11 @@ from dotenv import load_dotenv
 import re
 import asyncio
 from arrapi import RadarrAPI
+import arrapi.exceptions
+
 import time
+
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -32,6 +36,8 @@ radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 
 # Configure OpenAI API key
 openai.api_key = OPENAI_API_KEY
+
+message_movie_map = {}
 
 def get_openai_response(prompt):
     response = openai.ChatCompletion.create(
@@ -138,6 +144,8 @@ async def ask(ctx, *, question):
         for emoji in emojis[:number_of_movies_found]:
             await msg.add_reaction(emoji)
 
+        message_movie_map[msg.id] = movie_titles_map
+
         def check(reaction, user):
             return user == ctx.message.author and str(reaction.emoji) in emojis[:number_of_movies_found] and reaction.message.id == msg.id
 
@@ -162,5 +170,33 @@ async def ask(ctx, *, question):
             except asyncio.TimeoutError:
                 if time.time() - last_reaction_time > 60:  # If no reactions for 60 seconds
                     break  # Exit the loop if no reactions for a while
+
+@client.event
+async def on_reaction_add(reaction, user):
+    if user != client.user and reaction.message.id in message_movie_map:
+        selected_movie = None
+        for title, tmdb_title in message_movie_map[reaction.message.id].items():
+            if f"'{tmdb_title}' {reaction.emoji}" in reaction.message.content:
+                selected_movie = tmdb_title
+                break
+
+        if selected_movie:
+            try:
+                search = radarr.search_movies(selected_movie)
+                if search:
+                    search[0].add("/data/media/movies", "this")
+                    # Movie added to Radarr, no message needed
+                else:
+                    # Movie not found in Radarr, but no message needed
+                    pass
+            except arrapi.exceptions.Exists:
+                # Movie already in Radarr, no message needed
+                pass
+
+            except Exception:
+                # General error, but no message needed
+                pass
+
+
 
 client.run(DISCORD_TOKEN)
