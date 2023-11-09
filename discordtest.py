@@ -2,6 +2,9 @@ import os
 import discord
 from discord.ext import commands
 import openai
+from openai import OpenAI
+
+client = OpenAI()
 from tmdbv3api import TMDb, Movie
 from dotenv import load_dotenv
 import re
@@ -21,20 +24,18 @@ tmdb.api_key = TMDB_API_KEY
 movie = Movie()
 
 # Configure OpenAI API key
-openai.api_key = OPENAI_API_KEY
+raise Exception("The 'openai.api_key' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(api_key=OPENAI_API_KEY)'")
 
 # Function to get response from OpenAI API
 
 
 def get_openai_response(prompt):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. Please place any movie titles in single quotes."},
-            {"role": "user", "content": prompt},
-        ],
-        temperature=0,
-    )
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant with a ton of movie knowledge. Please place any movie titles in single quotes."},
+        {"role": "user", "content": prompt},
+    ],
+    temperature=0)
     return response.choices[0].message['content'].strip()
 
 
@@ -111,12 +112,10 @@ async def ask(ctx, *, question):
     conversations[channel_id].append({"role": "user", "content": question})
 
     # Get the response from OpenAI
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=conversations[channel_id],
-        temperature=0.8,
-        max_tokens=150
-    ).choices[0].message['content'].strip()
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
+    messages=conversations[channel_id],
+    temperature=0.8,
+    max_tokens=150).choices[0].message['content'].strip()
 
     # Add the OpenAI's response to the conversation history
     conversations[channel_id].append(

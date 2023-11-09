@@ -1,6 +1,9 @@
 import os
 from dotenv import load_dotenv
 import openai
+from openai import OpenAI
+
+client = OpenAI()
 from tmdbv3api import TMDb, Movie
 
 # Load environment variables from .env file
@@ -11,7 +14,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
 # Set up the OpenAI and TMDb API clients with the loaded API keys
-openai.api_key = OPENAI_API_KEY
+raise Exception("The 'openai.api_key' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(api_key=OPENAI_API_KEY)'")
 tmdb = TMDb()
 tmdb.api_key = TMDB_API_KEY
 movie = Movie()
@@ -36,16 +39,14 @@ def is_movie(title):
 def extract_movie_titles_from_openai_response(prompt):
     print("Making a request to the GPT-3 API...")  # Added this print statement
     # Make a request to the GPT-3 API
-    response = openai.Completion.create(
-        engine="davinci",
-        prompt=prompt,
-        temperature=0.7,
-        max_tokens=40,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=None
-    )
+    response = client.completions.create(engine="davinci",
+    prompt=prompt,
+    temperature=0.7,
+    max_tokens=40,
+    top_p=1.0,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    stop=None)
 
     # Extract the text from the API response
     text = response.choices[0].text.strip()

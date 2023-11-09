@@ -4,7 +4,7 @@ from discord.ext import commands
 import openai
 from openai import OpenAI
 
-
+client = OpenAI()
 from tmdbv3api import TMDb, Movie
 from dotenv import load_dotenv
 import re
@@ -16,16 +16,12 @@ import time
 
 
 
-
-
 # Load environment variables from .env file
 load_dotenv()
 
 # Get the TMDb and OpenAI API keys from environment variables
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-
-client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Radarr settings
 RADARR_URL = os.getenv("RADARR_URL")
@@ -42,7 +38,7 @@ movie = Movie()
 radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 
 # Configure OpenAI API key
-
+raise Exception("The 'openai.api_key' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(api_key=OPENAI_API_KEY)'")
 
 message_movie_map = {}
 
