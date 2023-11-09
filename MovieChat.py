@@ -2,6 +2,7 @@ import os
 import discord
 from discord.ext import commands
 import openai
+from openai import OpenAI
 from tmdbv3api import TMDb, Movie
 from dotenv import load_dotenv
 import re
@@ -18,7 +19,7 @@ load_dotenv()
 
 # Get the TMDb and OpenAI API keys from environment variables
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
 
 # Radarr settings
 RADARR_URL = os.getenv("RADARR_URL")
@@ -35,20 +36,31 @@ movie = Movie()
 radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 
 # Configure OpenAI API key
-openai.api_key = OPENAI_API_KEY
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 message_movie_map = {}
 
 def get_openai_response(prompt):
-    response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",
-        messages=[
-            {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you say a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you name a movie. Never list or name more than 20 movies in a response even if I ask you to."},
-            {"role": "user", "content": prompt},
-        ],
-        temperature=0,
-    )
-    return response.choices[0].message['content'].strip()
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4-1106-preview",
+            messages=[
+                {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you say a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you name a movie. Never list or name more than 20 movies in a response even if I ask you to."},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0,
+        )
+        # Extracting the message content from the response
+        if response.choices:
+            return response.choices[0].message.content.strip()
+        else:
+            return "No response received."
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return "No response received."
+
+
 
 def check_for_movie_title_in_string(text):
     movie_titles_map = {}
@@ -86,16 +98,16 @@ def check_for_movie_title_in_string(text):
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
-client = commands.Bot(command_prefix='!', intents=intents)
+client1 = commands.Bot(command_prefix='!', intents=intents)
 
 conversations = {}
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 
-@client.event
+@client1.event
 async def on_ready():
-    print(f'Logged in as {client.user.name}')
+    print(f'Logged in as {client1.user.name}')
 
-@client.command(name='!')
+@client1.command(name='!')
 async def ask(ctx, *, question):
     emojis = [
         '\u0031\uFE0F\u20E3', '\u0032\uFE0F\u20E3', '\u0033\uFE0F\u20E3', '\u0034\uFE0F\u20E3',
@@ -112,24 +124,19 @@ async def ask(ctx, *, question):
 
     conversations[channel_id].append({"role": "user", "content": question})
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",
-        messages=conversations[channel_id],
-        temperature=0.8,
-        max_tokens=750
-    ).choices[0].message['content'].strip()
+    # Get the response from the OpenAI API
+    openai_response = get_openai_response(question)
 
-    print(f"GPT Response: {response}")
+    print(f"GPT Response: {openai_response}")
 
-    conversations[channel_id].append({"role": "assistant", "content": response})
+    conversations[channel_id].append({"role": "assistant", "content": openai_response})
 
-    movie_titles_map = check_for_movie_title_in_string(response)
+    movie_titles_map = check_for_movie_title_in_string(openai_response)
 
     number_of_movies_found = len(movie_titles_map)
     print(f"Number of movies found in GPT response: {number_of_movies_found}")
-    
 
-    response_chunk = response.replace("*", "'")
+    response_chunk = openai_response.replace("*", "'")
     for index, (original_title, tmdb_title) in enumerate(movie_titles_map.items()):
         emoji = emojis[index % len(emojis)]  # Loop over emojis if more movies than emojis
         escaped_original_title = re.escape(original_title)
@@ -152,7 +159,7 @@ async def ask(ctx, *, question):
         last_reaction_time = time.time()
         while True:
             try:
-                reaction, user = await client.wait_for('reaction_add', timeout=30.0, check=check)  # Shorter timeout for each reaction
+                reaction, user = await client1.wait_for('reaction_add', timeout=30.0, check=check)
                 selected_emoji = str(reaction.emoji)
                 selected_movie = next((tmdb_title for original_title, tmdb_title in movie_titles_map.items() if f"'{tmdb_title}' {selected_emoji}" in response_segment), None)
 
@@ -161,7 +168,6 @@ async def ask(ctx, *, question):
                         search = radarr.search_movies(selected_movie)
                         if search:
                             search[0].add("/data/media/movies", "this")
-                            pass
                         else:
                             pass
                     except arrapi.exceptions.Exists:
@@ -173,9 +179,10 @@ async def ask(ctx, *, question):
                 if time.time() - last_reaction_time > 86400:  # If no reactions for 60 seconds
                     break  # Exit the loop if no reactions for a while
 
-@client.event
+
+@client1.event
 async def on_reaction_add(reaction, user):
-    if user != client.user and reaction.message.id in message_movie_map:
+    if user != client1.user and reaction.message.id in message_movie_map:
         selected_movie = None
         for title, tmdb_title in message_movie_map[reaction.message.id].items():
             if f"'{tmdb_title}' {reaction.emoji}" in reaction.message.content:
@@ -199,4 +206,4 @@ async def on_reaction_add(reaction, user):
 
 
 
-client.run(DISCORD_TOKEN)
+client1.run(DISCORD_TOKEN)
