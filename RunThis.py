@@ -42,17 +42,20 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 message_movie_map = {}
 segment_emoji_map = {}
 
-def get_openai_response(prompt):
+def get_openai_response(conversation_history, prompt):
     try:
+        messages = [
+        {"role": "system", "content": "You are a bot made to have conversations about movies, not only to list movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful conversational bot who loves movies and has a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. Never leave a line space( an empty line) between 9 and A. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing and always put it inside asteriks like this, *Movie Title Here*. Do the asteriks around the movie title every time you mention a moive, like so *Movie Title Here*. It is imperative that the movie titles you give me match the titles on TMBDB exactly. Whenever you say a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you list a movie title or mention a movie make sure you surround the titles with * like this *Movie Title*. Do it every single time you mention a movie. Never list or name more than 20 movies in a response even if I ask you to. You don't have to list 20 movies every time and you don't have to have lists in every message, in fact you should really only have lists if it makes a lot of sense or the user asks for it. If a more accurate response would be to name less movies do so. There is no need to try to list exactly 20 movies on all your responses. Only list as many movies that will answer the question accurately. You are not a list making bot, but instead a conversation bot, but you can absolutely make lists if asked to. You want to be conversational and sometimes ask questions in regards to the users preferences. Include interesting facts about movies you are talking about if they are particularly interesting facts or tidbits. If you mention a movie in the conversation in any waynd put that movie title in astericks (*Movie Title*) like you have been told to."},
+        ] + conversation_history + [{"role": "user", "content": prompt}]
+
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. Never leave a line space( an empty line) between 9 and A. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you list a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you put a movie in a list. Never list or name more than 20 movies in a response even if I ask you to. You don't have to list 20 movies every time. If a more accurate response would be to name less movies do so. There is no need to try to list exactly 20 movies on all your responses. Only list as many movies that will answer the question accurately."},
-                {"role": "user", "content": prompt},
-            ],
+            model="gpt-3.5-turbo-16k",
+            messages=messages,
             temperature=0,
         )
-        # Extracting the message content from the response
+
+        print(response.choices[0].message.content.strip())
+
         if response.choices:
             return response.choices[0].message.content.strip()
         else:
@@ -60,7 +63,6 @@ def get_openai_response(prompt):
     except Exception as e:
         print(f"An error occurred: {e}")
         return "No response received."
-
 
 
 def check_for_movie_title_in_string(text):
@@ -117,8 +119,18 @@ async def ask(ctx, *, question):
         '\U0001F1EE', '\U0001F1EF', '\U0001F1F0'
     ]
 
-    # Get the response from the OpenAI API
-    openai_response = get_openai_response(question)
+    channel_id = str(ctx.channel.id)
+
+    if channel_id not in conversations:
+        conversations[channel_id] = []
+
+    # Update conversation history with the user's question
+    conversations[channel_id].append({"role": "user", "content": question})
+
+    # Get the response from OpenAI API with conversation history
+    openai_response = get_openai_response(conversations[channel_id], question)
+
+    conversations[channel_id].append({"role": "system", "content": openai_response})
 
     # Process the movie list
     movie_titles_map = check_for_movie_title_in_string(openai_response)
@@ -133,15 +145,27 @@ async def ask(ctx, *, question):
 
     # Process each line
     for line in openai_response_lines:
-        match = re.search(r"\*([^*]+)\* \((\d{4})\)", line)
-        if match and global_emoji_index < len(emojis):
-            original_title = match.group(1)
-            year = match.group(2)
-            tmdb_title = movie_titles_map.get(original_title, original_title)
-            emoji = emojis[global_emoji_index]
-            new_line = f"{emoji} *{tmdb_title}* ({year})" + line[match.end():]
+        matches = re.findall(r"\*([^*]+)\* \((\d{4})\)", line)
+        if matches:
+            # Reset the line text to rebuild it with emojis
+            new_line = line
+
+            for match in matches:
+                original_title, year = match
+                tmdb_title = movie_titles_map.get(original_title, original_title)
+
+                # Ensure we don't run out of emojis
+                if global_emoji_index < len(emojis):
+                    emoji = emojis[global_emoji_index]
+                    global_emoji_index += 1
+                else:
+                    emoji = ""  # Default to no emoji if we run out
+
+                # Replace the movie title in the line with the title and emoji
+                movie_placeholder = f"*{original_title}* ({year})"
+                new_line = new_line.replace(movie_placeholder, f"{emoji} {movie_placeholder}", 1)
+            
             new_response_lines.append(new_line)
-            global_emoji_index += 1
         else:
             new_response_lines.append(line)
 
@@ -184,31 +208,52 @@ async def ask(ctx, *, question):
 
 @client1.event
 async def on_reaction_add(reaction, user):
-    if user != client1.user and reaction.message.id in message_movie_map:
+    # Ignore reactions added by the bot itself
+    if user == client1.user:
+        return
+
+    # Check if the reaction is on a message that contains movies
+    if reaction.message.id in message_movie_map:
+        # Check if the message has associated emojis in the map
         if reaction.message.id in segment_emoji_map:
+            # Retrieve the emojis associated with the message
             message_emojis = segment_emoji_map[reaction.message.id]
+            # Find the index of the emoji in the message's emojis
             emoji_index = message_emojis.index(str(reaction.emoji)) if str(reaction.emoji) in message_emojis else -1
 
-            if emoji_index != -1:
+            # Debugging log to check the emoji index and the list of movies
+            print(f"Emoji Index: {emoji_index}, Movies List: {message_movie_map[reaction.message.id]}")
+
+            # Validate the emoji index and check it's within the range of the movies list
+            if emoji_index != -1 and emoji_index < len(message_movie_map[reaction.message.id].values()):
+                # Retrieve the selected movie based on the emoji index
                 selected_movie = list(message_movie_map[reaction.message.id].values())[emoji_index]
 
+                # Additional debugging log to check the selected movie
+                print(f"Selected Movie: {selected_movie}")
+
+                # Proceed with adding the movie to Radarr if it's a valid selection
                 if selected_movie:
                     try:
                         # Search for the movie in Radarr
                         search = radarr.search_movies(selected_movie)
+                        # Add the movie to Radarr if found
                         if search:
-                            # Add the movie to Radarr if found
                             search[0].add("/data/media/movies", "OK")
                             await reaction.message.channel.send(f"'{selected_movie}' has been added to Radarr.")
                         else:
-                            # No message needed if the movie is not found in Radarr
-                            pass
+                            # Handle the case where the movie is not found in Radarr
+                            await reaction.message.channel.send(f"'{selected_movie}' not found in Radarr.")
                     except arrapi.exceptions.Exists:
-                        # If the movie already exists in Radarr
+                        # Handle if the movie already exists in Radarr
                         await reaction.message.channel.send(f"You already have '{selected_movie}' in Radarr.")
                     except Exception as e:
-                        # Handle other exceptions if necessary
+                        # Handle other exceptions
                         await reaction.message.channel.send(f"Error: {e}")
+            else:
+                # Log if the emoji index is out of range or invalid
+                print("Emoji index out of range or invalid.")
+
 
 
 
