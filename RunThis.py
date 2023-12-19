@@ -45,7 +45,7 @@ segment_emoji_map = {}
 def get_openai_response(prompt):
     try:
         response = client.chat.completions.create(
-            model="gpt-4-1106-preview",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "First off, never list more than 20 movies in your response. It's very important that you never name or list more than 20 movies in your response. You are a helpful assistant with a ton of movie knowledge. Whenever you count things or list them go 1 through 9 then go to A then B then C and so on until K. Whenever you send a new message with a new list, even if it's a continuation of another list, always start over at 1 then count up to 9 then start at A and go to K. Never leave a line space( an empty line) between 9 and A. That is always how you will count lists. Whenever you use a movie title, use the title the exact way it is used on the TMDB website including capitalization, spelling, punctuation and spacing. It is imperative that the movie titles you give me match the titles on TMBDB perfectly. Whenever you use a movie title, please signify it by surrounding it with asterisks like *Movie Title* (Year). Every single time you list a movie title make sure you surround the titles with * like this *Movie Title*. Do it every single time you put a movie in a list. Never list or name more than 20 movies in a response even if I ask you to. You don't have to list 20 movies every time. If a more accurate response would be to name less movies do so. There is no need to try to list exactly 20 movies on all your responses. Only list as many movies that will answer the question accurately."},
                 {"role": "user", "content": prompt},
@@ -148,29 +148,36 @@ async def ask(ctx, *, question):
     # Join the new lines to form the updated response
     response_chunk = "\n".join(new_response_lines)
 
-    # Splitting response into chunks
-    max_length = 1900
-    response_segments = [response_chunk[i:i+max_length] for i in range(0, len(response_chunk), max_length)]
+    # Custom function to split text at spaces
+    def split_text(text, max_length):
+        segments = []
+        while len(text) > max_length:
+            split_index = text.rfind(' ', 0, max_length)  # Find the last space within the limit
+            if split_index == -1:  # No space found, use the max_length
+                split_index = max_length
+            segments.append(text[:split_index])  # Split at the space
+            text = text[split_index:].lstrip()  # Remove leading spaces from the next part
+        segments.append(text)  # Add the remaining part of the text
+        return segments
 
-    # Variables to track the start and end of emojis for each segment
-    segment_start_index = 0
+    # Splitting response into chunks at spaces
+    response_segments = split_text(response_chunk, 1900)
+
+    last_msg = None
+    total_movie_count = 0
 
     for response_segment in response_segments:
         msg = await ctx.send(f"\n{response_segment}")
+        last_msg = msg  # Update the last message
+        total_movie_count += response_segment.count('*') // 2  # Count the pairs of asterisks
 
-        segment_end_index = segment_start_index + response_segment.count('*') // 2  # Count the pairs of asterisks
+    # Add reactions only to the last message
+    if last_msg:
+        for i in range(min(total_movie_count, len(emojis))):
+            await last_msg.add_reaction(emojis[i])
+        segment_emoji_map[last_msg.id] = emojis[:total_movie_count]  # Store only the used emojis for the last segment
 
-        # Add reactions for the current segment
-        for i in range(segment_start_index, min(segment_end_index, len(emojis))):
-            await msg.add_reaction(emojis[i])
-
-        # Update the emoji map for the segment
-        segment_emoji_map[msg.id] = emojis[segment_start_index:segment_end_index]
-
-        # Update the start index for the next segment
-        segment_start_index = segment_end_index
-
-        message_movie_map[msg.id] = movie_titles_map
+    message_movie_map[last_msg.id] = movie_titles_map
 
 
 
