@@ -5,6 +5,8 @@ You must setup a discord bot with the correct permissions and get it's token.
 
 The webui allows you to enter the necessary API keys for OpenAI, Radarr and TMDB as well as the URL for Radarr and the Discord token. You should just have to do this once. Google or ChatGPT can tell you how to get the API keys. The OpenAI api key does cost money, but the model we are using is pretty cheap. I'll add functionality to allow you to pick a model as soon as I can.
 
+### Once it is running, you can use talk to the bot in the server you added it to  like this "!! Here is my message" There must be a space after the second !
+
 
 ### How ChatGPT Recommends You Set Up Your Discord Bot for Use with Our Docker Container - 
 
