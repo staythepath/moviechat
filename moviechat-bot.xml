@@ -6,11 +6,11 @@
     <MyIP/>
     <Privileged>false</Privileged>
     <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
-    <Overview>MovieChat Bot - A conversational bot focused on movies.</Overview>
+    <Overview>MovieChat Bot - A OpenAI based Discord chatbot with radarr integraetion. You can talk to the bot and when it mentions a mvoie you can click the corresponding reaction to add it to radarr. </Overview>
     <Category>Media:Tools</Category>
     <WebUI>http://[IP]:[PORT:1138]/</WebUI>
     <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
-    <Icon>https://path-to-your-icon/icon.png</Icon>
+    <Icon>https://github.com/staythepath/moviechat/blob/0.2/icon128.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
