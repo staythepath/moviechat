@@ -1,5 +1,4 @@
-discord_token: MTE1ODk0OTUwNzE3ODk1ODk3MA.GOUq1T.jr7JKT7sDnjqRUHuPknhRtNRJjSIpIxK7rnLxs
-openai_api_key: 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
-radarr_api_key: 28c5b49b99a04dd686de7760b771d0c7
-radarr_url: http://192.168.2.101:7879
-tmdb_api_key: 104bafb794c05bdd11f1c3ea14cdba94
+openai_api_key: *********
+radarr_api_key: *********
+radarr_url: *******
+tmdb_api_key: *********
