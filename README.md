@@ -1,11 +1,12 @@
-# moviechat
+# moviechat-bot
 So this is a discord bot that you use to talk to GPT-3.5. Whenever the bot mentions a movie, it adds a reaction to the message that mentions that movie. You can click that reaction to add the movie to radarr.
 
 You must setup a discord bot with the correct permissions and get it's token.
 
-The webui allows you to enter the API keys for OpenAI, Radarr and TMDB as well as the URL for Radarr and the Discord token. You should just have to do this once.
+The webui allows you to enter the necessary API keys for OpenAI, Radarr and TMDB as well as the URL for Radarr and the Discord token. You should just have to do this once. Google or ChatGPT can tell you how to get the API keys. The OpenAI api key does cost money, but the model we are using is pretty cheap. I'll add functionality to allow you to pick a model as soon as I can.
 
-### How to Set Up Your Discord Bot for Use with Our Docker Container
+
+### How ChatGPT Recommends You Set Up Your Discord Bot for Use with Our Docker Container - 
 
 #### Step 1: Create Your Discord Bot
 1. **Create a Discord Account:** Sign up at [Discord's website](https://discord.com/).
