@@ -1,0 +1,44 @@
+<Container version="2">
+    <Name>moviechat-bot</Name>
+    <Repository>staythepath/moviechat-bot:latest</Repository>
+    <Registry>https://hub.docker.com/r/staythepath/moviechat-bot</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
+    <Overview>MovieChat Bot - A OpenAI based Discord chatbot with radarr integraetion. You can talk to the bot and when it mentions a mvoie you can click the corresponding reaction to add it to radarr. </Overview>
+    <Category>Media:Tools</Category>
+    <WebUI>http://[IP]:[PORT:1138]/</WebUI>
+    <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
+    <Icon>https://github.com/staythepath/moviechat/blob/0.2/icon128.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>0</DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <Description>A Docker container for the MovieChat Bot application.</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>1138</HostPort>
+                <ContainerPort>1138</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/moviechat-bot/config.yaml</HostDir>
+            <ContainerDir>/usr/src/app/config.yaml</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Environment/>
+    <Config Name="TMDB API Key" Target="tmdb_api_key" Default="" Mode="rw" Description="Enter your TMDB API key." Type="Variable" Display="always" Required="true"/>
+    <Config Name="Radarr URL" Target="radarr_url" Default="" Mode="rw" Description="Enter your Radarr URL." Type="Variable" Display="always" Required="true"/>
+    <Config Name="Radarr API Key" Target="radarr_api_key" Default="" Mode="rw" Description="Enter your Radarr API key." Type="Variable" Display="always" Required="true"/>
+    <Config Name="OpenAI API Key" Target="openai_api_key" Default="" Mode="rw" Description="Enter your OpenAI API key." Type="Variable" Display="always" Required="true"/>
+    <Config Name="Discord Token" Target="discord_token" Default="" Mode="rw" Description="Enter your Discord Bot token." Type="Variable" Display="always" Required="true"/>
+</Container>
