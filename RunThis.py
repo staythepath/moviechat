@@ -4,26 +4,39 @@ from discord.ext import commands
 import openai
 from openai import OpenAI
 from tmdbv3api import TMDb, Movie
-from dotenv import load_dotenv
 import re
 import asyncio
 from arrapi import RadarrAPI
 import arrapi.exceptions
+import yaml
 
 import time
+
+# Read the YAML config file
+import yaml
+
+# Read the YAML config file
+with open('config.yaml', 'r') as file:
+    config = yaml.safe_load(file)
+
+TMDB_API_KEY = config['tmdb_api_key']
+RADARR_API_KEY = config['radarr_api_key']
+RADARR_URL = config['radarr_url']
+OPENAI_API_KEY = config['openai_api_key']
+
 
 
 
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 
 # Get the TMDb and OpenAI API keys from environment variables
-TMDB_API_KEY = os.getenv('TMDB_API_KEY')
+#TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
 
 # Radarr settings
-RADARR_URL = os.getenv("RADARR_URL")
-RADARR_API_KEY = os.getenv("RADARR_API_KEY")
+#RADARR_URL = os.getenv("RADARR_URL")
+#RADARR_API_KEY = os.getenv("RADARR_API_KEY")
 
 # Configure TMDb with the API key
 tmdb = TMDb()
@@ -37,7 +50,7 @@ radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
 
 # Configure OpenAI API key
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 message_movie_map = {}
 segment_emoji_map = {}
@@ -104,7 +117,7 @@ intents.message_content = True
 client1 = commands.Bot(command_prefix='!', intents=intents)
 
 conversations = {}
-DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
+DISCORD_TOKEN = config.get('discord_token')
 
 @client1.event
 async def on_ready():
