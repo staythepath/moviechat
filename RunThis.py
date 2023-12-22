@@ -19,55 +19,57 @@ import yaml
 with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
+# Using variables from config
+DISCORD_TOKEN = config['discord_token']
 TMDB_API_KEY = config['tmdb_api_key']
 RADARR_API_KEY = config['radarr_api_key']
 RADARR_URL = config['radarr_url']
 OPENAI_API_KEY = config['openai_api_key']
+RADARR_QUALITY = config["radarr_quality"]
+MAX_CHARS = config['max_chars']
+SELECTED_MODEL = config['selected_model']
 
-
-
-
-# Load environment variables from .env file
-#load_dotenv()
-
-# Get the TMDb and OpenAI API keys from environment variables
-#TMDB_API_KEY = os.getenv('TMDB_API_KEY')
-
-
-# Radarr settings
-#RADARR_URL = os.getenv("RADARR_URL")
-#RADARR_API_KEY = os.getenv("RADARR_API_KEY")
-
-# Configure TMDb with the API key
+# Configure TMDb, Movie, RadarrAPI, and OpenAI with the settings from config
 tmdb = TMDb()
 tmdb.api_key = TMDB_API_KEY
-
-# Create a Movie object to search for movies
 movie = Movie()
-
-# Setup RadarrAPI instance
 radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
-
-# Configure OpenAI API key
-
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 message_movie_map = {}
 segment_emoji_map = {}
 
+
+
+
+def trim_conversation_history(conversation_history, new_message):
+    total_chars = sum(len(msg['content']) for msg in conversation_history) + len(new_message['content'])
+    while total_chars > MAX_CHARS and len(conversation_history) > 1:
+        total_chars -= len(conversation_history.pop(0)['content'])
+    return conversation_history
+
 def get_openai_response(conversation_history, prompt):
+    new_message = {"role": "user", "content": prompt}
+
+    conversation_history = trim_conversation_history(conversation_history, new_message)
+    
     try:
         messages = [
-        {"role": "system", "content": "You are a fun and informative conversational bot focused on movies. You never under any circumstances number any list. When you do list movies put each movie on it's own line. When mentioning movies in any capacity, always enclose the movies title in asterisks with the year in parentheses, like '*Movie Title* (Year)', e.g., '*Jurassic Park* (1994)'. Every single time you say a movie title it needs to be wrapped in asteriks like that. Ensure movie titles exactly match those on the TMDB website, including capitalization, spelling, punctuation, and spacing. For lists, use a dash (-) instead of numbering, and never list more than 20 movies. Be conversational and engage with the user's preferences, including interesting movie facts. Only create lists when it's relevant or requested by the user. Avoid creating a list in every message. You're here to discuss movies, not just list them."},
-        ] + conversation_history + [{"role": "user", "content": prompt}]
+        {"role": "system", "content": "You are a fun and informative conversational bot focused on movies. Never put quotes around movie titles. Always leave movie title unquoted. You never under any circumstances number any list. When you do list movies put each movie on it's own line. When mentioning movies in any capacity, always enclose the movies title in asterisks with the year in parentheses and always include the year after the title, like ' *Movie Title* (Year)', e.g., '*Jurassic Park* (1994)' . Every single time you say a movie title it needs to be wrapped in asteriks and it needs to have the year after the title. Ensure movie titles exactly match those on the TMDB website, including capitalization, spelling, punctuation, and spacing. For lists, use a dash (-) instead of numbering, and never list more than 20 movies. Be conversational and engage with the user's preferences, including interesting movie facts. Only create lists when it's relevant or requested by the user. Avoid creating a list in every message. You're here to discuss movies, not just list them."},
+        ] + conversation_history
 
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
+            model=SELECTED_MODEL,
             messages=messages,
             temperature=0,
         )
-
+        print(SELECTED_MODEL)
         print(response.choices[0].message.content.strip())
+        #print("***************************************************************")
+        #for msg in conversation_history:
+        #    print(f"Role: {msg['role']}, Content: {msg['content']}")
+        #print("OpenAI Response:", response.choices[0].message.content.strip())
+        #print("***************************************************************")
 
         if response.choices:
             return response.choices[0].message.content.strip()
@@ -80,7 +82,7 @@ def get_openai_response(conversation_history, prompt):
 
 def check_for_movie_title_in_string(text):
     movie_titles_map = {}
-    phrases_in_stars = re.findall(r"\*([^*]+)\* \(\d{4}\)", text)  # Adjusted regex
+    phrases_in_stars = re.findall(r"\*\"?([^*]+)\"?\*(?: \(\d{4}\))?", text)  # Adjusted regex
 
     for phrase in phrases_in_stars:
         search_phrase = phrase  # No need to escape apostrophes
@@ -117,7 +119,6 @@ intents.message_content = True
 client1 = commands.Bot(command_prefix='!', intents=intents)
 
 conversations = {}
-DISCORD_TOKEN = config.get('discord_token')
 
 @client1.event
 async def on_ready():
@@ -252,7 +253,7 @@ async def on_reaction_add(reaction, user):
                         search = radarr.search_movies(selected_movie)
                         # Add the movie to Radarr if found
                         if search:
-                            search[0].add("/data/media/movies", "OK")
+                            search[0].add("/data/media/movies", RADARR_QUALITY)
                             await reaction.message.channel.send(f"'{selected_movie}' has been added to Radarr.")
                         else:
                             # Handle the case where the movie is not found in Radarr
