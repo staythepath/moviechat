@@ -9,7 +9,6 @@ import asyncio
 from arrapi import RadarrAPI
 import arrapi.exceptions
 import yaml
-
 import time
 
 # Read the YAML config file
