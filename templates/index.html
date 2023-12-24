@@ -1,17 +1,335 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+
     <title>MovieChat Bot Configuration</title>
+    <script>
+
+        function handleRefresh(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Gather form data
+            const formData = new FormData();
+            formData.append('radarr_url', document.getElementById('radarr_url').value);
+            formData.append('radarr_api_key', document.getElementById('radarr_api_key').value);
+            // ... add other form elements ...
+
+            // Send data using fetch
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    checkServerStatusAndRefreshFolders();
+                } else {
+                    console.error('Form submission failed');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Display a loading message
+            displayLoadingMessage();
+
+            // Gather form data
+            const formData = new FormData(document.querySelector('form'));
+
+            // Send data using fetch
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    waitForServerReady();  // Wait for server to be ready then reload the page
+                } else {
+                    console.error('Form submission failed');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function displayLoadingMessage() {
+            // Add a loading message to the page
+            let loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loadingMessage';
+            loadingDiv.style.position = 'fixed';
+            loadingDiv.style.top = '50%';
+            loadingDiv.style.left = '50%';
+            loadingDiv.style.transform = 'translate(-50%, -50%)';
+            loadingDiv.style.fontSize = '1.5rem';
+            loadingDiv.innerText = 'Configuration is updating. Please wait...';
+            document.body.appendChild(loadingDiv);
+        }
+
+        function waitForServerReady() {
+            fetch('/server_status')
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();  // Reload the page
+                    } else {
+                        setTimeout(waitForServerReady, 1000); // Retry after 1 second
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    setTimeout(waitForServerReady, 1000);
+                });
+        }
+
+        function checkServerStatusAndRefreshFolders() {
+            fetch('/server_status')
+                .then(response => {
+                    if (response.ok) {
+                        // Server is ready, now refresh Radarr root folders
+                        fetchRadarrRootFolders();
+                    } else {
+                        setTimeout(checkServerStatusAndRefreshFolders, 1000); // Retry after 1 second
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking server status:', error);
+                    setTimeout(checkServerStatusAndRefreshFolders, 1000); // Retry after 1 second
+                });
+        }
+
+
+        function waitForServerReady() {
+    fetch('/server_status')
+        .then(response => {
+            if (response.ok) {
+                // Server is ready, reset UI
+                resetUI();
+            } else {
+                // Retry after a delay
+                setTimeout(waitForServerReady, 3000); // Retry after 3 seconds
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            setTimeout(waitForServerReady, 3000);
+        });
+}
+
+function resetUI() {
+    // Hide loading indicator
+    document.getElementById('loadingIndicator').style.display = 'none';
+    // Enable submit button
+    document.getElementById('submitBtn').disabled = false;
+}
+
+        function fetchRadarrRootFolders() {
+            let radarrUrl = document.getElementById('radarr_url').value;
+            let radarrApiKey = document.getElementById('radarr_api_key').value;
+
+            if (radarrUrl && radarrApiKey) {
+                fetch(`/fetch_root_folders?radarr_url=${encodeURIComponent(radarrUrl)}&radarr_api_key=${encodeURIComponent(radarrApiKey)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let rootFolderSelect = document.getElementById('radarrRootFolder');
+                        rootFolderSelect.innerHTML = ''; // Clear existing options
+
+                        data.forEach(folder => {
+                            let option = document.createElement('option');
+                            option.value = folder.path;
+                            option.textContent = folder.path;
+                            rootFolderSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+
+        async function loadChannels() {
+            let token = document.getElementById('discord_token').value;
+            if (token) {
+                let response = await fetch('/channels?token=' + encodeURIComponent(token));
+                if (response.ok) {
+                    let channels = await response.json();
+                    console.log("Here is the json object I think:", channels)
+                    let channelSelect = document.getElementById('discord_channel');
+                    channelSelect.innerHTML = '';
+                    
+                    channels.forEach(channel => {
+                        let option = document.createElement('option');
+                        option.value = channel.id;
+                        option.textContent = channel.name;
+                        console.log("Channel name: ", channel.name )
+                        console.log("Channel id: ", channel.id)
+                        channelSelect.appendChild(option);
+                    });
+                    channelSelect.disabled = false;
+                }
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) { // 13 is the Enter key
+                event.preventDefault(); // Prevent default to avoid form submit
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            let message = "You: " + document.getElementById('message-input').value;
+            updateChat('user', message);
+            fetch('/send_message', {
+                method: 'POST',
+                body: JSON.stringify({ message: message }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => {
+                updateChat('bot', "Bot: " + data.response);
+            });
+        }
+
+        function refreshDiscordChannels() {
+            let token = document.getElementById('discord_token').value || '{{ config["discord_token"] }}';
+            if (token) {
+                // Existing code to load channels
+                loadChannels();
+            } else {
+                alert("Please enter a Discord token.");
+            }
+        }
+
+        function checkAndFetchRootFolders() {
+            let radarrUrl = document.getElementById('radarr_url').value;
+            let radarrApiKey = document.getElementById('radarr_api_key').value;
+
+            if (radarrUrl && radarrApiKey) {
+                fetchRadarrRootFolders();
+            }
+        }
+
+        function updateChat(sender, message) {
+            let chatBox = document.getElementById('chat-box');
+            let messageDiv = document.createElement('div');
+            messageDiv.className = sender;
+            messageDiv.innerHTML = message; // Use innerHTML instead of textContent
+            chatBox.appendChild(messageDiv);
+        }
+
+        function addMovieToRadarr(tmdbId) {
+            fetch(`/add_movie_to_radarr/${tmdbId}`)
+            .then(response => response.json())
+            .then(data => {
+                // You can display a message or handle the response here
+                alert(data.message);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+    </script>
 </head>
 <body>
-    <h2>Enter API Keys and Discord Token</h2>
+     <div class="container my-4">
+        <div class="card">
+            <div class="card-header">Chat with MovieBot</div>
+            <div class="card-body" id="chat-box" style="height: 300px; overflow-y: scroll;">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="card-footer d-flex align-items-center">
+                <input type="text" id="message-input" class="form-control" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="btn btn-primary ml-2"><i class="fa fa-paper-plane"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+   <div class="container my-4">
+    <div class="card">
+        <!-- Existing chat card code... -->
+    </div>
+
+    <h2 class="mt-4">MovieChat Config</h2>
     <form method="POST">
-        TMDB API Key: <input type="text" name="tmdb_api_key"><br>
-        Radarr URL: <input type="text" name="radarr_url"><br>
-        Radarr API Key: <input type="text" name="radarr_api_key"><br>
-        OpenAI API Key: <input type="text" name="openai_api_key"><br>
-        Discord Token: <input type="text" name="discord_token"><br>  <!-- Add this line -->
-        <input type="submit" value="Submit">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="openai_api_key">OpenAI API Key:</label>
+                <input type="text" class="form-control" name="openai_api_key" id="openai_api_key" value="{{ config['openai_api_key'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_api_key">Radarr API Key:</label>
+                <input type="text" class="form-control" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_url">Radarr URL:</label>
+                <input type="text" class="form-control" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_quality">Radarr Quality:</label>
+                <input type="text" class="form-control" name="radarr_quality" value="{{ config['radarr_quality'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="tmdb_api_key">TMDB API Key:</label>
+                <input type="text" class="form-control" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="selected_model">Select model:</label>
+                <select class="form-control" name="selected_model">
+                    <!-- Options... -->
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarrRootFolder">Select Radarr Root Folder:</label>
+                <select class="form-control" name="radarr_root_folder" id="radarrRootFolder">
+                    <option disabled selected>Refresh to get paths...</option>
+                </select>
+                <button onclick="handleRefresh(event)" type='button' class="btn btn-primary mt-2">Refresh Root Folders</button>
+            </div>
+        </div>
+        <h2 class="mt-4">Discord Bot Config</h2>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="discord_token">Discord Token:</label>
+                <input type="text" class="form-control" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="discord_channel">Discord Channel:</label>
+                <select class="form-control" id="discord_channel" name="discord_channel" disabled>
+                    <!-- Options... -->
+                </select>
+                <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary mt-2">Refresh Channels</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="submit" class="btn btn-primary mt-2" value="Submit">
+            </div>
+        </div>
     </form>
+
+</div>
 </body>
 </html>
+                    
