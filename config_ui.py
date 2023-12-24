@@ -65,11 +65,17 @@ def load_or_create_config():
 
     return config
 
+def initialize_radarr(config):
+    try:
+        if config['radarr_url'] and config['radarr_api_key']:
+            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
+    except Exception as e:
+        print(f"Error initializing Radarr API: {e}")
+        return None
 
 def start_bot(config):
     # Function to start the bot
-    os.system('python RunThis.py')
-    
+    os.system('python RunThis.py') 
 
 def check_and_start_bot():
     config = load_or_create_config()
@@ -151,6 +157,7 @@ def fetch_root_folders():
         
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global radarr 
     config = load_or_create_config()
     root_folders = get_radarr_root_folders()
     
@@ -178,6 +185,9 @@ def index():
             config['max_chars'] = 65540
         elif selected_model == 'gpt-4-1106-preview':
             config['max_chars'] = 512000
+
+        global radarr
+        radarr = initialize_radarr(config)
 
         # Write updated configuration to file
         with open('config.yaml', 'w') as file:
@@ -236,6 +246,13 @@ def send_message():
 
 @app.route('/add_movie_to_radarr/<int:tmdb_id>', methods=['GET'])
 def add_movie_to_radarr(tmdb_id):
+    config = load_config()
+    global radarr
+    radarr = initialize_radarr(load_config())
+
+    if radarr is None:
+        return jsonify({"status": "error", "message": "Radarr is not configured."})
+
     try:
         # Search for the movie in Radarr using its TMDb ID
         search_results = radarr.search_movies(tmdb_id)

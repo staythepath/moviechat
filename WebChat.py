@@ -58,22 +58,20 @@ SELECTED_MODEL = config['selected_model']
 RADARR_ROOT_FOLDER = config['radarr_root_folder']
 
 
-# Conditional initialization of RadarrAPI
-if config['radarr_url'] and config['radarr_api_key']:
-    radarr = RadarrAPI(config['radarr_url'], config['radarr_api_key'])
-else:
-    radarr = None
 
-# Configure TMDb, Movie, RadarrAPI, and OpenAI with the settings from config
-tmdb = TMDb()
-tmdb.api_key = TMDB_API_KEY
-movie = Movie()
 
 
 message_movie_map = {}
 segment_emoji_map = {}
 
 
+def initialize_radarr(config):
+    try:
+        if config['radarr_url'] and config['radarr_api_key']:
+            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
+    except Exception as e:
+        print(f"Error initializing Radarr API: {e}")
+        return None
 
 
 def trim_conversation_history(conversation_history, new_message):
@@ -121,7 +119,7 @@ def get_openai_response(conversation_history, prompt):
 
 
 def check_for_movie_title_in_string(text):
-    
+    config = load_config()
     TMDB_API_KEY = config['tmdb_api_key']
 
     tmdb = TMDb()

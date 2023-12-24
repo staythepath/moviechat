@@ -252,17 +252,15 @@ function resetUI() {
         </div>
     </div>
 
-    <h2>Enter API Keys and Discord Token</h2>
+    <h2>MovieChat config</h2>
     <form method="POST">
-        Discord Token: <input type="text" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()"><br>
+        
         
         OpenAI API Key: <input type="text" name="openai_api_key" value="{{ config['openai_api_key'] }}"><br>
         Radarr API Key: <input type="text" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()"><br>
         Radarr URL: <input type="text" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()"><br>
         Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
         TMDB API Key: <input type="text" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}"><br>       
-        Discord Channel: <select id="discord_channel" name="discord_channel" disabled value="{{config[discord_channel]}}"></select>
-        <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary">Refresh Channels</button><br>
         Select model: 
         <select name="selected_model">
             <option value="gpt-3.5-turbo-1106" {% if config['selected_model'] == 'gpt-3.5-turbo-1106' %} selected {% endif %}>gpt-3.5-turbo-1106</option>
@@ -271,6 +269,11 @@ function resetUI() {
         <label for="radarrRootFolder">Select Radarr Root Folder:</label>
         <select name="radarr_root_folder" id="radarrRootFolder" value="{{config['radarr_root_folder'] }}"></select>
         <button onclick="handleRefresh(event)" type='button' class="btn btn-primary">Refresh Root Folders</button><br>
+
+        <h2>Discord config</h2>
+        Discord Token: <input type="text" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()"><br>
+        Discord Channel: <select id="discord_channel" name="discord_channel" disabled value="{{config[discord_channel]}}"></select>
+        <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary">Refresh Channels</button><br>
         <input type="submit" value="Submit">
     </form>
 </body>
