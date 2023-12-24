@@ -14,6 +14,10 @@ app.secret_key = os.urandom(24)  # Generate a random secret key
 
 channels_data = []
 
+def load_config():
+    with open('config.yaml', 'r') as file:
+        return yaml.safe_load(file)
+
 def get_radarr_root_folders():
     try:
         root_folders = radarr.get_root_folders()
@@ -65,6 +69,7 @@ def load_or_create_config():
 def start_bot(config):
     # Function to start the bot
     os.system('python RunThis.py')
+    
 
 def check_and_start_bot():
     config = load_or_create_config()
@@ -94,6 +99,11 @@ def start_discord_client(token):
     asyncio.set_event_loop(loop)
     loop.run_until_complete(get_channels(token))
 
+@app.route('/server_status')
+def server_status():
+    # Simple status check. You can add more complex logic if needed.
+    return jsonify({'status': 'ready'})
+
 @app.route('/channels', methods=['GET'])
 def channels_endpoint():
     token = request.args.get('token')
@@ -104,8 +114,20 @@ def channels_endpoint():
         print("Here is the channel data from the api call", channels_data)
     return jsonify(channels_data)
 
+@app.route('/load_config', methods=['GET'])
+def load_config_endpoint():
+    # Call the load_config() function here to reload the configuration
+    loaded_config = load_config()
+    
+    # You can return a response or log a message if needed
+    print('Configuration reloaded on the server')
+    
+    return jsonify({'message': 'Configuration reloaded on the server'})
+
+
 @app.route('/fetch_root_folders')
 def fetch_root_folders():
+    config = load_config()
     radarr_url = config.get('radarr_url')
     radarr_api_key = config.get('radarr_api_key')
 
@@ -160,6 +182,8 @@ def index():
         # Write updated configuration to file
         with open('config.yaml', 'w') as file:
             yaml.dump(config, file)
+
+        threading.Thread(target=start_bot, args=(config,)).start()
         
         # Restart the bot to apply new configuration
         threading.Thread(target=start_bot, args=(config,)).start()

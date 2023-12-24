@@ -12,6 +12,96 @@
 
     <title>MovieChat Bot Configuration</title>
     <script>
+
+        function handleRefresh(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Gather form data
+            const formData = new FormData();
+            formData.append('radarr_url', document.getElementById('radarr_url').value);
+            formData.append('radarr_api_key', document.getElementById('radarr_api_key').value);
+            // ... add other form elements ...
+
+            // Send data using fetch
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    checkServerStatusAndRefreshFolders();
+                } else {
+                    console.error('Form submission failed');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Gather form data
+            const formData = new FormData();
+            formData.append('radarr_url', document.getElementById('radarr_url').value);
+            formData.append('radarr_api_key', document.getElementById('radarr_api_key').value);
+            // ... add other form elements ...
+
+            // Send data using fetch
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();  // Reload the page after successful submission
+                } else {
+                    console.error('Form submission failed');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function checkServerStatusAndRefreshFolders() {
+            fetch('/server_status')
+                .then(response => {
+                    if (response.ok) {
+                        // Server is ready, now refresh Radarr root folders
+                        fetchRadarrRootFolders();
+                    } else {
+                        setTimeout(checkServerStatusAndRefreshFolders, 1000); // Retry after 1 second
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking server status:', error);
+                    setTimeout(checkServerStatusAndRefreshFolders, 1000); // Retry after 1 second
+                });
+        }
+
+
+        function waitForServerReady() {
+    fetch('/server_status')
+        .then(response => {
+            if (response.ok) {
+                // Server is ready, reset UI
+                resetUI();
+            } else {
+                // Retry after a delay
+                setTimeout(waitForServerReady, 3000); // Retry after 3 seconds
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            setTimeout(waitForServerReady, 3000);
+        });
+}
+
+function resetUI() {
+    // Hide loading indicator
+    document.getElementById('loadingIndicator').style.display = 'none';
+    // Enable submit button
+    document.getElementById('submitBtn').disabled = false;
+}
+
         function fetchRadarrRootFolders() {
             let radarrUrl = document.getElementById('radarr_url').value;
             let radarrApiKey = document.getElementById('radarr_api_key').value;
@@ -33,6 +123,7 @@
                     .catch(error => console.error('Error:', error));
             }
         }
+
         async function loadChannels() {
             let token = document.getElementById('discord_token').value;
             if (token) {
@@ -88,6 +179,14 @@
             }
         }
 
+        function checkAndFetchRootFolders() {
+            let radarrUrl = document.getElementById('radarr_url').value;
+            let radarrApiKey = document.getElementById('radarr_api_key').value;
+
+            if (radarrUrl && radarrApiKey) {
+                fetchRadarrRootFolders();
+            }
+        }
 
         function updateChat(sender, message) {
             let chatBox = document.getElementById('chat-box');
@@ -131,8 +230,8 @@
         
         OpenAI API Key: <input type="text" name="openai_api_key" value="{{ config['openai_api_key'] }}"><br>
         Radarr API Key: <input type="text" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()"><br>
-        Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
         Radarr URL: <input type="text" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()"><br>
+        Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
         TMDB API Key: <input type="text" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}"><br>       
         Discord Channel: <select id="discord_channel" name="discord_channel" disabled value="{{config[discord_channel]}}"></select>
         <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary">Refresh Channels</button><br>
@@ -143,7 +242,7 @@
         </select><br>
         <label for="radarrRootFolder">Select Radarr Root Folder:</label>
         <select name="radarr_root_folder" id="radarrRootFolder" value="{{config['radarr_root_folder'] }}"></select>
-        <button onclick="fetchRadarrRootFolders()" type='button' class="btn btn-primary">Refresh Root Folders</button><br>
+        <button onclick="handleRefresh(event)" type='button' class="btn btn-primary">Refresh Root Folders</button><br>
         <input type="submit" value="Submit">
     </form>
 </body>

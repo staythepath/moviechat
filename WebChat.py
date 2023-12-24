@@ -68,7 +68,7 @@ else:
 tmdb = TMDb()
 tmdb.api_key = TMDB_API_KEY
 movie = Movie()
-client = OpenAI(api_key=OPENAI_API_KEY)
+
 
 message_movie_map = {}
 segment_emoji_map = {}
@@ -86,6 +86,16 @@ def trim_conversation_history(conversation_history, new_message):
 
 
 def get_openai_response(conversation_history, prompt):
+    config = load_config()
+
+    # Update variables with new config values
+    OPENAI_API_KEY = config['openai_api_key']
+    SELECTED_MODEL = config['selected_model']
+
+    # Initialize OpenAI client with the new API key
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    
+
     new_message = {"role": "user", "content": prompt}
     conversation_history.append(new_message)
 
