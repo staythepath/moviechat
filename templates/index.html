@@ -252,30 +252,84 @@ function resetUI() {
         </div>
     </div>
 
-    <h2>MovieChat config</h2>
-    <form method="POST">
-        
-        
-        OpenAI API Key: <input type="text" name="openai_api_key" value="{{ config['openai_api_key'] }}"><br>
-        Radarr API Key: <input type="text" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()"><br>
-        Radarr URL: <input type="text" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()"><br>
-        Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
-        TMDB API Key: <input type="text" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}"><br>       
-        Select model: 
-        <select name="selected_model">
-            <option value="gpt-3.5-turbo-1106" {% if config['selected_model'] == 'gpt-3.5-turbo-1106' %} selected {% endif %}>gpt-3.5-turbo-1106</option>
-            <option value="gpt-4-1106-preview" {% if config['selected_model'] == 'gpt-4-1106-preview' %} selected {% endif %}>gpt-4-1106-preview</option>
-        </select><br>
-        <label for="radarrRootFolder">Select Radarr Root Folder:</label>
-        <select name="radarr_root_folder" id="radarrRootFolder" value="{{config['radarr_root_folder'] }}"></select>
-        <button onclick="handleRefresh(event)" type='button' class="btn btn-primary">Refresh Root Folders</button><br>
+   <div class="container my-4">
+    <div class="card">
+        <!-- Existing chat card code... -->
+    </div>
 
-        <h2>Discord config</h2>
-        Discord Token: <input type="text" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()"><br>
-        Discord Channel: <select id="discord_channel" name="discord_channel" disabled value="{{config[discord_channel]}}"></select>
-        <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary">Refresh Channels</button><br>
-        <input type="submit" value="Submit">
+    <h2 class="mt-4">MovieChat Config</h2>
+    <form method="POST">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="openai_api_key">OpenAI API Key:</label>
+                <input type="text" class="form-control" name="openai_api_key" id="openai_api_key" value="{{ config['openai_api_key'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_api_key">Radarr API Key:</label>
+                <input type="text" class="form-control" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_url">Radarr URL:</label>
+                <input type="text" class="form-control" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarr_quality">Radarr Quality:</label>
+                <input type="text" class="form-control" name="radarr_quality" value="{{ config['radarr_quality'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="tmdb_api_key">TMDB API Key:</label>
+                <input type="text" class="form-control" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="selected_model">Select model:</label>
+                <select class="form-control" name="selected_model">
+                    <!-- Options... -->
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="radarrRootFolder">Select Radarr Root Folder:</label>
+                <select class="form-control" name="radarr_root_folder" id="radarrRootFolder">
+                    <option disabled selected>Refresh to get paths...</option>
+                </select>
+                <button onclick="handleRefresh(event)" type='button' class="btn btn-primary mt-2">Refresh Root Folders</button>
+            </div>
+        </div>
+        <h2 class="mt-4">Discord Bot Config</h2>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="discord_token">Discord Token:</label>
+                <input type="text" class="form-control" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="discord_channel">Discord Channel:</label>
+                <select class="form-control" id="discord_channel" name="discord_channel" disabled>
+                    <!-- Options... -->
+                </select>
+                <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary mt-2">Refresh Channels</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="submit" class="btn btn-primary mt-2" value="Submit">
+            </div>
+        </div>
     </form>
+
+</div>
 </body>
 </html>
                     
