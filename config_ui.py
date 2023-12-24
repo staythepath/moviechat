@@ -144,6 +144,11 @@ def index():
         if discord_channel_id:
             print("Received discord_channel_id:", discord_channel_id) # Logging statement
             config['discord_channel_id'] = discord_channel_id
+
+        # Handling the Radarr root folder
+        radarr_root_folder = request.form.get('radarr_root_folder')
+        if radarr_root_folder:
+            config['radarr_root_folder'] = radarr_root_folder
         
         # Set MAX_CHARS based on the selected model
         selected_model = config.get('selected_model')
@@ -182,17 +187,29 @@ def index():
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
-    if 'conversation_history' not in session:
-        session['conversation_history'] = []
-
     message = request.json['message']
     print(f"Received message from UI: {message}")
 
-    # Pass and update the conversation history from the session
-    session['conversation_history'] = WebChat.trim_conversation_history(session['conversation_history'], {"role": "user", "content": message})
-    response = WebChat.get_openai_response(session['conversation_history'], message)
+    # Ensure conversation_history is initialized in session
+    if 'conversation_history' not in session:
+        session['conversation_history'] = []
+
+    # Copy conversation_history from session to a local variable
+    conversation_history = session['conversation_history']
+
+    # Add new message to conversation history
+    conversation_history.append({"role": "user", "content": message})
+    conversation_history = WebChat.trim_conversation_history(conversation_history, {"role": "user", "content": message})
+
+    # Get response from WebChat
+    response = WebChat.get_openai_response(conversation_history, message)
+
+    # Update session's conversation_history
+    session['conversation_history'] = conversation_history
 
     return jsonify({'response': response})
+
+
 
 @app.route('/add_movie_to_radarr/<int:tmdb_id>', methods=['GET'])
 def add_movie_to_radarr(tmdb_id):
