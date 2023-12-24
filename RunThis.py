@@ -27,6 +27,8 @@ OPENAI_API_KEY = config['openai_api_key']
 RADARR_QUALITY = config["radarr_quality"]
 MAX_CHARS = config['max_chars']
 SELECTED_MODEL = config['selected_model']
+RADARR_ROOT_FOLDER = config['radarr_root_folder']
+
 
 # Configure TMDb, Movie, RadarrAPI, and OpenAI with the settings from config
 tmdb = TMDb()
@@ -122,6 +124,19 @@ conversations = {}
 @client1.event
 async def on_ready():
     print(f'Logged in as {client1.user.name}')
+    discord_channel_id = config.get('discord_channel_id')
+    print("Retrieved discord_channel_id from config:", discord_channel_id) # Logging statement
+
+    if discord_channel_id:
+        channel = client1.get_channel(int(discord_channel_id))
+        if channel:
+            await channel.send("I'm up and running!")
+        else:
+            print(f"Channel with ID {discord_channel_id} not found.")
+    else:
+        print("Discord channel ID not set in config.")
+
+
 
 @client1.command(name='!')
 async def ask(ctx, *, question):
@@ -267,8 +282,5 @@ async def on_reaction_add(reaction, user):
                 # Log if the emoji index is out of range or invalid
                 print("Emoji index out of range or invalid.")
 
-
-
-
-
-client1.run(DISCORD_TOKEN)
+if __name__ == "__main__":
+    client1.run(DISCORD_TOKEN)

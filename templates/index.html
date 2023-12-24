@@ -1,25 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+
     <title>MovieChat Bot Configuration</title>
+    <script>
+        function fetchRadarrRootFolders() {
+            let radarrUrl = document.getElementById('radarr_url').value;
+            let radarrApiKey = document.getElementById('radarr_api_key').value;
+
+            if (radarrUrl && radarrApiKey) {
+                fetch(`/fetch_root_folders?radarr_url=${encodeURIComponent(radarrUrl)}&radarr_api_key=${encodeURIComponent(radarrApiKey)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let rootFolderSelect = document.getElementById('radarrRootFolder');
+                        rootFolderSelect.innerHTML = ''; // Clear existing options
+
+                        data.forEach(folder => {
+                            let option = document.createElement('option');
+                            option.value = folder.path;
+                            option.textContent = folder.path;
+                            rootFolderSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+        async function loadChannels() {
+            let token = document.getElementById('discord_token').value;
+            if (token) {
+                let response = await fetch('/channels?token=' + encodeURIComponent(token));
+                if (response.ok) {
+                    let channels = await response.json();
+                    console.log("Here is the json object I think:", channels)
+                    let channelSelect = document.getElementById('discord_channel');
+                    channelSelect.innerHTML = '';
+                    
+                    channels.forEach(channel => {
+                        let option = document.createElement('option');
+                        option.value = channel.id;
+                        option.textContent = channel.name;
+                        console.log("Channel name: ", channel.name )
+                        console.log("Channel id: ", channel.id)
+                        channelSelect.appendChild(option);
+                    });
+                    channelSelect.disabled = false;
+                }
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) { // 13 is the Enter key
+                event.preventDefault(); // Prevent default to avoid form submit
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            let message = "You: " + document.getElementById('message-input').value;
+            updateChat('user', message);
+            fetch('/send_message', {
+                method: 'POST',
+                body: JSON.stringify({ message: message }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => {
+                updateChat('bot', "Bot: " + data.response);
+            });
+        }
+
+        function refreshDiscordChannels() {
+            let token = document.getElementById('discord_token').value || '{{ config["discord_token"] }}';
+            if (token) {
+                // Existing code to load channels
+                loadChannels();
+            } else {
+                alert("Please enter a Discord token.");
+            }
+        }
+
+
+        function updateChat(sender, message) {
+            let chatBox = document.getElementById('chat-box');
+            let messageDiv = document.createElement('div');
+            messageDiv.className = sender;
+            messageDiv.innerHTML = message; // Use innerHTML instead of textContent
+            chatBox.appendChild(messageDiv);
+        }
+
+        function addMovieToRadarr(tmdbId) {
+            fetch(`/add_movie_to_radarr/${tmdbId}`)
+            .then(response => response.json())
+            .then(data => {
+                // You can display a message or handle the response here
+                alert(data.message);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+    </script>
 </head>
 <body>
+     <div class="container my-4">
+        <div class="card">
+            <div class="card-header">Chat with MovieBot</div>
+            <div class="card-body" id="chat-box" style="height: 300px; overflow-y: scroll;">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="card-footer d-flex align-items-center">
+                <input type="text" id="message-input" class="form-control" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="btn btn-primary ml-2"><i class="fa fa-paper-plane"></i></button>
+            </div>
+
+        </div>
+    </div>
+
     <h2>Enter API Keys and Discord Token</h2>
     <form method="POST">
-    Discord Token: <input type="text" name="discord_token" value="{{ config['discord_token'] }}"><br>
-    OpenAI API Key: <input type="text" name="openai_api_key" value="{{ config['openai_api_key'] }}"><br>
-    Radarr API Key: <input type="text" name="radarr_api_key" value="{{ config['radarr_api_key'] }}"><br>
-    Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
-    Radarr URL: <input type="text" name="radarr_url" value="{{ config['radarr_url'] }}"><br>
-    TMDB API Key: <input type="text" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}"><br>
-    Select model: 
-    <select name="selected_model">
-        <option value="gpt-3.5-turbo-1106" {% if config['selected_model'] == 'gpt-3.5-turbo-1106' %} selected {% endif %}>gpt-3.5-turbo-1106</option>
-        <option value="gpt-4-1106-preview" {% if config['selected_model'] == 'gpt-4-1106-preview' %} selected {% endif %}>gpt-4-1106-preview</option>
-    </select><br>
-    <input type="submit" value="Submit">
-</form>
+        Discord Token: <input type="text" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()"><br>
+        
+        OpenAI API Key: <input type="text" name="openai_api_key" value="{{ config['openai_api_key'] }}"><br>
+        Radarr API Key: <input type="text" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()"><br>
+        Radarr Quality: <input type="text" name="radarr_quality" value="{{ config['radarr_quality'] }}"><br>
+        Radarr URL: <input type="text" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()"><br>
+        TMDB API Key: <input type="text" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}"><br>
+        Discord Token: <input type="text" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}"> <br>
+        
+        Discord Channel: <select id="discord_channel" name="discord_channel" disabled></select>
+        <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary">Refresh Channels</button><br>
 
+        Select model: 
+        <select name="selected_model">
+            <option value="gpt-3.5-turbo-1106" {% if config['selected_model'] == 'gpt-3.5-turbo-1106' %} selected {% endif %}>gpt-3.5-turbo-1106</option>
+            <option value="gpt-4-1106-preview" {% if config['selected_model'] == 'gpt-4-1106-preview' %} selected {% endif %}>gpt-4-1106-preview</option>
+        </select><br>
+        <label for="radarrRootFolder">Select Radarr Root Folder:</label>
+        <select name="radarr_root_folder" id="radarrRootFolder"></select>
+        <button onclick="fetchRadarrRootFolders()" type='button' class="btn btn-primary">Refresh Folders</button><br>
+        
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
                     

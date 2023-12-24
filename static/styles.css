@@ -1,0 +1,33 @@
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #f8f8f8; /* Light text */
+}
+
+.card {
+    background-color: #2a2a2a; /* Darker card background */
+}
+
+.card-header {
+    background-color: #27496d; /* Dark royal blue header */
+    color: #f8f8f8;
+}
+
+/* Custom scrollbar for chat box */
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.movie-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
