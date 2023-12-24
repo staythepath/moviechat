@@ -121,6 +121,13 @@ def get_openai_response(conversation_history, prompt):
 
 
 def check_for_movie_title_in_string(text):
+    
+    TMDB_API_KEY = config['tmdb_api_key']
+
+    tmdb = TMDb()
+    tmdb.api_key = TMDB_API_KEY
+    movie = Movie()
+
     movie_titles_map = {}
     phrases_in_stars = re.findall(r"\*\"?([^*]+)\"?\*(?: \(\d{4}\))?", text)  # Adjusted regex
 
