@@ -183,11 +183,10 @@ def index():
         with open('config.yaml', 'w') as file:
             yaml.dump(config, file)
 
-        threading.Thread(target=start_bot, args=(config,)).start()
         
         # Restart the bot to apply new configuration
         threading.Thread(target=start_bot, args=(config,)).start()
-        return "Bot is restarting with new configuration..."
+
     
     radarr = None
     if config.get('radarr_url') and config.get('radarr_api_key'):

@@ -40,11 +40,11 @@
         function handleSubmit(event) {
             event.preventDefault();  // Prevent default form submission
 
+            // Display a loading message
+            displayLoadingMessage();
+
             // Gather form data
-            const formData = new FormData();
-            formData.append('radarr_url', document.getElementById('radarr_url').value);
-            formData.append('radarr_api_key', document.getElementById('radarr_api_key').value);
-            // ... add other form elements ...
+            const formData = new FormData(document.querySelector('form'));
 
             // Send data using fetch
             fetch('/', {
@@ -53,12 +53,40 @@
             })
             .then(response => {
                 if (response.ok) {
-                    window.location.reload();  // Reload the page after successful submission
+                    waitForServerReady();  // Wait for server to be ready then reload the page
                 } else {
                     console.error('Form submission failed');
                 }
             })
             .catch(error => console.error('Error:', error));
+        }
+
+        function displayLoadingMessage() {
+            // Add a loading message to the page
+            let loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loadingMessage';
+            loadingDiv.style.position = 'fixed';
+            loadingDiv.style.top = '50%';
+            loadingDiv.style.left = '50%';
+            loadingDiv.style.transform = 'translate(-50%, -50%)';
+            loadingDiv.style.fontSize = '1.5rem';
+            loadingDiv.innerText = 'Configuration is updating. Please wait...';
+            document.body.appendChild(loadingDiv);
+        }
+
+        function waitForServerReady() {
+            fetch('/server_status')
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();  // Reload the page
+                    } else {
+                        setTimeout(waitForServerReady, 1000); // Retry after 1 second
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    setTimeout(waitForServerReady, 1000);
+                });
         }
 
         function checkServerStatusAndRefreshFolders() {
