@@ -249,19 +249,26 @@ function resetUI() {
                 senderDiv.textContent = 'You: ';
             } else if (sender === 'bot') {
                 senderDiv.classList.add('sender-bot');
-                senderDiv.textContent = 'Bot: ';
+                senderDiv.innerHTML = 'Bot: '; // Use innerHTML for bot to parse HTML tags
             }
 
-            let messageText = document.createTextNode(text);
-
-            // Append the sender name and message text to the message div
             messageDiv.appendChild(senderDiv);
-            messageDiv.appendChild(messageText);
 
-            // Append the complete message div to the chat box
+            if (sender === 'bot') {
+                // Parse HTML for bot messages
+                let messageContent = document.createElement('span');
+                messageContent.innerHTML = text;
+                messageDiv.appendChild(messageContent);
+            } else {
+                // For user messages, use textNode to prevent HTML injection
+                let messageText = document.createTextNode(text);
+                messageDiv.appendChild(messageText);
+            }
+
             chatBox.appendChild(messageDiv);
-            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat box
-        }
+            chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
 
 
         function addMovieToRadarr(tmdbId) {
