@@ -31,3 +31,51 @@ body {
     text-decoration: underline;
 }
 
+.config-toggle {
+    /* No need for positioning rules here if using Bootstrap's flex utilities */
+    font-size: 24px; /* Adjust size as necessary */
+    cursor: pointer;
+}
+
+
+#config-panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    width: 250px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: #333333; /* Updated background color */
+    padding: 10px;
+    z-index: 2;
+    color: #f8f8f8; /* Ensure text color is light for readability */
+}
+
+
+/* Additional styles for the main content when config panel is visible */
+#main-content {
+    transition: margin-left 0.5s; /* Smooth transition for the margin */
+}
+
+#main-content.margin-apply {
+    margin-left: 250px; /* Push content to the right when panel is visible */
+}
+
+
+.message-sender {
+    font-weight: bold;
+}
+
+.sender-user {
+    color: #4CAF50; /* Green color for 'You' */
+}
+
+.sender-bot {
+    color: #FF9800; /* Orange color for 'Bot' */
+}
+
+
+
+
+
