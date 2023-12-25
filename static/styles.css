@@ -141,3 +141,48 @@ body {
     color: #ffffff; /* White color for message content */
     margin-left: 10px; /* Adjust the indentation for subsequent lines */
 }
+
+.btn-primary {
+    background-color: #27496d; /* Dark royal blue, matching your header */
+    border-color: #27496d; /* Border color to match the background */
+    color: #ffffff; /* White text for better readability */
+}
+
+.btn-primary:hover {
+    background-color: #1d3c5a; /* Slightly darker shade for hover effect */
+    border-color: #1d3c5a;
+}
+
+/* Input boxes, textareas, and select (dropdown) styling */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    background-color: #333333; /* Darker background */
+    border: 1px solid #596a7c; /* Slightly lighter border for visibility */
+    color: #f8f8f8; /* Light text color for readability */
+    padding: 5px; /* Adjust padding as needed */
+}
+
+/* Remove the focus state styling to keep the color consistent */
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    background-color: #333333; /* Keep the same background color */
+    border-color: #596a7c; /* Maintain the same border color */
+    outline: none; /* Optional: removes the default focus outline */
+    color: #f8f8f8;
+}
+
+/* Adjust the placeholder text color for visibility */
+::placeholder {
+    color: #888888; /* Lighter placeholder text */
+    opacity: 1; /* Required to ensure consistent placeholder visibility */
+}
+
+/* Style the options inside the dropdown */
+select option {
+    background-color: #2a2a2a; /* Dark background for dropdown options */
+    color: #f8f8f8; /* Light text for options */
+}
