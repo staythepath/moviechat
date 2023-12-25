@@ -223,24 +223,18 @@ def send_message():
     message = request.json['message']
     print(f"Received message from UI: {message}")
 
-    # Ensure conversation_history is initialized in session
     if 'conversation_history' not in session:
         session['conversation_history'] = []
 
-    # Copy conversation_history from session to a local variable
     conversation_history = session['conversation_history']
 
-    # Add new message to conversation history
-    conversation_history.append({"role": "user", "content": message})
-    conversation_history = WebChat.trim_conversation_history(conversation_history, {"role": "user", "content": message})
-
-    # Get response from WebChat
+    # Removed the line that adds the new message to conversation_history
     response = WebChat.get_openai_response(conversation_history, message)
 
-    # Update session's conversation_history
     session['conversation_history'] = conversation_history
-
     return jsonify({'response': response})
+
+
 
 
 
