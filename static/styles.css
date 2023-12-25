@@ -1,20 +1,41 @@
 body {
-    background-color: #1a1a1a; /* Dark background */
-    color: #f8f8f8; /* Light text */
+    background-color: #1a1a1a;
+    color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the main content container takes up all available space */
+#main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
 }
 
 .card {
-    background-color: #2a2a2a; /* Darker card background */
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Full height of its container */
 }
 
 .card-header {
-    background-color: #27496d; /* Dark royal blue header */
+    background-color: #27496d;
     color: #f8f8f8;
 }
 
+.card-body, .card-footer {
+    padding: 10px; /* Adjust padding as needed */
+}
+
 #chat-box {
-    height: 80vh;
-    overflow-y: scroll;
+    height: calc(100% - 20px); /* Adjust height considering padding */
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 #chat-box::-webkit-scrollbar {
@@ -32,15 +53,15 @@ body {
 #config-panel {
     position: fixed;
     top: 0;
-    bottom: 0;
     left: -250px;
     width: 250px;
+    height: 100vh; /* Full viewport height */
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: #333333; /* Dark background for config panel */
-    padding: 10px;
+    background-color: #333333;
+    padding: 20px;
     z-index: 2;
-    color: #f8f8f8; /* Light text for config panel */
+    color: #f8f8f8;
 }
 
 #main-content {
@@ -49,6 +70,7 @@ body {
 
 #main-content.margin-apply {
     margin-left: 250px; /* Move content to the right when config panel is visible */
+    margin-bottom: 20px;
 }
 
 .config-toggle {
