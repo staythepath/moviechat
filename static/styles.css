@@ -12,7 +12,11 @@ body {
     color: #f8f8f8;
 }
 
-/* Custom scrollbar for chat box */
+#chat-box {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
 #chat-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -25,19 +29,6 @@ body {
     background: #555;
 }
 
-.movie-link {
-    color: #596a7c;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.config-toggle {
-    /* No need for positioning rules here if using Bootstrap's flex utilities */
-    font-size: 24px; /* Adjust size as necessary */
-    cursor: pointer;
-}
-
-
 #config-panel {
     position: fixed;
     top: 0;
@@ -46,36 +37,85 @@ body {
     width: 250px;
     overflow-x: hidden;
     transition: 0.5s;
-    background-color: #333333; /* Updated background color */
+    background-color: #333333; /* Dark background for config panel */
     padding: 10px;
     z-index: 2;
-    color: #f8f8f8; /* Ensure text color is light for readability */
+    color: #f8f8f8; /* Light text for config panel */
 }
 
-
-/* Additional styles for the main content when config panel is visible */
 #main-content {
-    transition: margin-left 0.5s; /* Smooth transition for the margin */
+    transition: margin-left 0.5s;
 }
 
 #main-content.margin-apply {
-    margin-left: 250px; /* Push content to the right when panel is visible */
+    margin-left: 250px; /* Move content to the right when config panel is visible */
 }
 
+.config-toggle {
+    font-size: 24px;
+    cursor: pointer;
+}
 
-.message-sender {
+.movie-link {
+    color: #596a7c;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sender-user, .sender-bot {
     font-weight: bold;
+    margin-right: 0.25em; /* Adjust space between sender name and message */
+    white-space: nowrap; /* Keep sender's name on the same line */
+    display: inline;
+    padding: 0;
 }
 
 .sender-user {
-    color: #4CAF50; /* Green color for 'You' */
+    color: #3a6ea5; /* Green color for 'You' */
 }
 
 .sender-bot {
-    color: #FF9800; /* Orange color for 'Bot' */
+    color: #a89f91; /* Orange color for 'Bot' */
 }
 
+.message {
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the container */
+    margin-bottom: 5px; /* Space between messages */
+    padding-left: 5px;
+}
 
+.message-content {
+    display: inline;
+    flex: 1; /* Allows the content to take up the remaining space */
+    text-align: left;
+    word-wrap: break-word; /* Ensures long text wraps within the container */
+    margin: 0;
+    padding: 0;
+    color: white; /* White color for message text */
+}
 
+.message-content ul {
+    padding-left: 20px; /* Adjust the padding for bullet points */
+    margin: 0; /* Remove default margin from lists */
+}
 
+.message-content li {
+    margin: 0; /* Remove default margin from list items */
+}
 
+.text-content {
+    display: inline; /* Inline display for text content */
+    word-break: break-word; /* Breaks the words at the end of the line */
+}
+
+/* If additional padding or margin on elements within .message, set them to 0 */
+.message * {
+    margin: 0;
+    padding: 0;
+}
+
+.message div {
+    color: #ffffff; /* White color for message content */
+    margin-left: 10px; /* Adjust the indentation for subsequent lines */
+}

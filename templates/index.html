@@ -89,6 +89,19 @@
                 });
         }
 
+        function markdownToHTML(text) {
+            // Convert italics
+            let htmlText = text.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
+
+            // Convert bullet points with indentation
+            htmlText = htmlText.replace(/^- (.+)$/gm, "<li style='margin-left: 20px;'>$1</li>");
+            htmlText = "<ul>" + htmlText + "</ul>"; // Wrap with <ul> tag
+
+            return htmlText;
+        }
+
+
+
         function checkServerStatusAndRefreshFolders() {
             fetch('/server_status')
                 .then(response => {
@@ -238,36 +251,42 @@ function resetUI() {
             }
         }
 
-        function updateChat(sender, text) {
+       function updateChat(sender, text) {
             let chatBox = document.getElementById('chat-box');
             let messageDiv = document.createElement('div');
-            let senderDiv = document.createElement('span');
-            senderDiv.classList.add('message-sender');
+            messageDiv.classList.add('message');
 
-            if (sender === 'user') {
-                senderDiv.classList.add('sender-user');
-                senderDiv.textContent = 'You: ';
-            } else if (sender === 'bot') {
-                senderDiv.classList.add('sender-bot');
-                senderDiv.innerHTML = 'Bot: '; // Use innerHTML for bot to parse HTML tags
-            }
+            let senderSpan = document.createElement('span');
+            senderSpan.classList.add(sender === 'user' ? 'sender-user' : 'sender-bot');
+            senderSpan.textContent = sender === 'user' ? 'You: ' : 'Bot: ';
 
-            messageDiv.appendChild(senderDiv);
+            let textDiv = document.createElement('div');
+            textDiv.classList.add('text-content');
 
-            if (sender === 'bot') {
-                // Parse HTML for bot messages
-                let messageContent = document.createElement('span');
-                messageContent.innerHTML = text;
-                messageDiv.appendChild(messageContent);
-            } else {
-                // For user messages, use textNode to prevent HTML injection
-                let messageText = document.createTextNode(text);
-                messageDiv.appendChild(messageText);
-            }
+            // Convert markdown to HTML
+            let htmlContent = markdownToHTML(text);
+
+            // Set the innerHTML of textDiv to the processed HTML content
+            textDiv.innerHTML = htmlContent;
+
+            messageDiv.appendChild(senderSpan);
+            messageDiv.appendChild(textDiv);
 
             chatBox.appendChild(messageDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
-            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
