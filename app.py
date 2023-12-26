@@ -11,7 +11,7 @@ import requests
 from tmdbv3api import TMDb, Movie
 import subprocess
 import multiprocessing
-import RunThis
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Generate a random secret key
@@ -19,12 +19,30 @@ app.secret_key = os.urandom(24)  # Generate a random secret key
 channels_data = []
 
 def start_discord_bot_process():
-    # Start the Discord bot script in a new process
     subprocess.Popen(['python', 'RunThis.py'])
 
 def load_config():
-    with open('config.yaml', 'r') as file:
+    config_path = 'config.yaml'
+    if not os.path.exists(config_path):
+        create_default_config(config_path)
+    with open(config_path, 'r') as file:
         return yaml.safe_load(file)
+    
+def create_default_config(config_path):
+    default_config = {
+        'tmdb_api_key': '',
+        'radarr_url': '',
+        'radarr_api_key': '',
+        'openai_api_key': '',
+        'discord_token': '',
+        'radarr_quality': '',
+        'selected_model': '',
+        'max_chars': 65540,
+        'discord_channel': '',
+        'radarr_root_folder': ''
+    }
+    with open(config_path, 'w') as file:
+        yaml.dump(default_config, file)
     
 def initialize_radarr(config):
     try:
@@ -34,13 +52,33 @@ def initialize_radarr(config):
         print(f"Error initializing Radarr API: {e}")
         return None
 
-
-
 config = load_config()
 # Set the root folder during initialization
-RADARR_ROOT_FOLDER = RADARR_ROOT_FOLDER = config['radarr_root_folder']
-if not RADARR_ROOT_FOLDER:
-    print("Warning: Radarr root folder not set. Please configure manually.")
+
+DISCORD_TOKEN = config['discord_token']
+TMDB_API_KEY = config['tmdb_api_key']
+RADARR_API_KEY = config['radarr_api_key']
+RADARR_URL = config['radarr_url']
+OPENAI_API_KEY = config['openai_api_key']
+RADARR_QUALITY = config["radarr_quality"]
+MAX_CHARS = config['max_chars']
+SELECTED_MODEL = config['selected_model']
+RADARR_ROOT_FOLDER = config['radarr_root_folder']
+
+
+
+
+if RADARR_URL and RADARR_API_KEY:
+    try:
+        radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
+        # ... [rest of your RadarrAPI related code]
+    except Exception as e:
+        print(f"Error initializing Radarr API: {e}")
+        radarr = None  # Handle the error gracefully
+else:
+    print("Radarr URL or API Key is not configured.")
+    radarr = None  # Skip RadarrAPI initialization
+
 
 # Function to load or create configuration
 def load_or_create_config():
