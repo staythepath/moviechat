@@ -44,6 +44,35 @@ def load_config():
     with open('config.yaml', 'r') as file:
         return yaml.safe_load(file)
 
+def load_or_create_config():
+    config_path = 'config.yaml'
+    default_config = {
+        'tmdb_api_key': '',
+        'radarr_url': '',
+        'radarr_api_key': '',
+        'openai_api_key': '',
+        'discord_token': '',
+        'radarr_quality': '',
+        'selected_model': '',
+        'max_chars': 65540,  # Default value for gpt-3.5-turbo-1106
+        'discord_channel': '',
+        'radarr_root_folder': ''
+    }
+
+    if os.path.exists(config_path):
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file) or default_config
+    else:
+        config = default_config
+        with open(config_path, 'w') as file:
+            yaml.dump(config, file)
+
+    # Update MAX_CHARS based on the selected model
+    model = config.get('selected_model')
+    if model == 'gpt-4-1106-preview':
+        config['max_chars'] = 512000
+
+    return config
 
 def trim_conversation_history(conversation_history, new_message):
     total_chars = sum(len(msg['content']) for msg in conversation_history) + len(new_message['content'])
@@ -284,13 +313,22 @@ async def on_reaction_add(reaction, user):
                 # Log if the emoji index is out of range or invalid
                 print("Emoji index out of range or invalid.")
 
+def start_discord_bot_up():
+    client1.run(DISCORD_TOKEN)
+
 if __name__ == "__main__":
+    print("Running that t hing in")    
     # Load configuration
     config = load_config()
 
     # Check if the Discord bot should be started
-    if config.get('start_discord_bot_on_launch', False):
-        # Start the Discord bot
-        client1.run(DISCORD_TOKEN)
+    config = load_or_create_config()
+    # Check if the start_discord_bot_on_launch key is true
+    if config.get('start_discord_bot_on_launch', True):
+        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
+        if all(key in config and config[key] for key in required_keys): 
+            client1.run(DISCORD_TOKEN)
     else:
         print("Discord bot startup is disabled in the configuration.")
+    
+

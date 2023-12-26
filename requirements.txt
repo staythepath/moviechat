@@ -5,3 +5,4 @@ arrapi
 regex
 pyyaml
 flask
+gunicorn
