@@ -6,7 +6,7 @@
     <MyIP/>
     <Privileged>false</Privileged>
     <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
-    <Overview>MovieChat Bot - A OpenAI based Discord chatbot with radarr integraetion. You can talk to the bot and when it mentions a mvoie you can click the corresponding reaction to add it to radarr. You must setup a discord bot and connect it. </Overview>
+    <Overview>MovieChat Bot - A OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the corresponding reaction to add it to radarr.</Overview>
     <Category>Media:Tools</Category>
     <WebUI>http://[IP]:[PORT:1138]/</WebUI>
     <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
@@ -35,4 +35,6 @@
             <Mode>rw</Mode>
         </Volume>
     </Data>
+    <Config Name="WebUI" Target="1138" Default="1138" Mode="tcp" Description="WebUI port." Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/mnt/user/appdata/moviechat-bot" Default="/mnt/user/appdata/moviechat-bot" Mode="rw" Description="Path to config file." Type="Path" Display="always" Required="true" Mask="false"/>
 </Container>
