@@ -40,7 +40,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 message_movie_map = {}
 segment_emoji_map = {}
 
-
+def load_config():
+    with open('config.yaml', 'r') as file:
+        return yaml.safe_load(file)
 
 
 def trim_conversation_history(conversation_history, new_message):
@@ -283,4 +285,12 @@ async def on_reaction_add(reaction, user):
                 print("Emoji index out of range or invalid.")
 
 if __name__ == "__main__":
-    client1.run(DISCORD_TOKEN)
+    # Load configuration
+    config = load_config()
+
+    # Check if the Discord bot should be started
+    if config.get('start_discord_bot_on_launch', False):
+        # Start the Discord bot
+        client1.run(DISCORD_TOKEN)
+    else:
+        print("Discord bot startup is disabled in the configuration.")

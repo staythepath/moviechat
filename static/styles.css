@@ -1,3 +1,47 @@
+@media (max-width: 768px) {
+    /* Adjust config panel for smaller screens */
+    #config-panel {
+        width: 100%; /* Full width on smaller screens */
+        left: 0;
+    }
+
+    /* Adjust main content margin */
+    #main-content.margin-apply {
+        margin-left: 0;
+    }
+
+    /* Increase font size for readability */
+    body {
+        font-size: 1.1em;
+        max-height: 670px;
+    }
+
+    /* Larger buttons for easier interaction */
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    /* Adjust form input sizes */
+    input[type="text"], input[type="password"], textarea, select {
+        font-size: 1em;
+    }
+
+    #main-content {
+        height: calc(100vh - 56px); /* Adjust for mobile header */
+        max-height: 670px;
+    }
+
+    #chat-box {
+        height: calc(100% - 20px); /* Adjust for mobile header and footer */
+
+
+    }
+
+
+}
+
+
 body {
     background-color: #1a1a1a;
     color: #f8f8f8;
@@ -11,6 +55,7 @@ body {
 /* Ensure the main content container takes up all available space */
 #main-content {
     flex-grow: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distribute space evenly */
@@ -33,7 +78,7 @@ body {
 }
 
 #chat-box {
-    height: calc(100% - 20px); /* Adjust height considering padding */
+    height: calc(100% - 60px);
     overflow-y: auto;
     flex-grow: 1;
 }
@@ -153,6 +198,69 @@ body {
     border-color: #1d3c5a;
 }
 
+.custom-checkbox {
+    vertical-align: middle;
+    margin-left: 5px;
+    width: auto; /* Resets width to default */
+    color: #27496d
+}
+
+.form-group label {
+    display: inline-block; /* Align label and checkbox inline */
+    margin-right: 10px;
+}
+
+.checkbox-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #333;  /* Default background */
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: background 0.3s;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #27496d;
+    border-color: #27496d;
+}
+
+
+.custom-checkbox:checked + .checkbox-label {
+    background: #27496d; /* Color when checked */
+}
+
+.custom-control-label {
+    color: #f8f8f8;
+}
+
+/* Style the scrollbar track */
+#config-panel::-webkit-scrollbar-track {
+    background: #2a2a2a; /* Darker shade for the track */
+    border-radius: 4px;
+}
+
+/* Style the scrollbar thumb */
+#config-panel::-webkit-scrollbar-thumb {
+    background: #27496d; /* Dark royal blue for the thumb */
+    border-radius: 4px;
+}
+
+/* Style the scrollbar thumb on hover */
+#config-panel::-webkit-scrollbar-thumb:hover {
+    background: #1d3c5a; /* Slightly darker shade when hovered */
+}
+
+/* Set the width of the scrollbar */
+#config-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+
+
 /* Input boxes, textareas, and select (dropdown) styling */
 input[type="text"],
 input[type="password"],
@@ -183,6 +291,6 @@ select:focus {
 
 /* Style the options inside the dropdown */
 select option {
-    background-color: #2a2a2a; /* Dark background for dropdown options */
-    color: #f8f8f8; /* Light text for options */
+    background-color: #f8f8f8 ; /* Dark background for dropdown options */
+    color:#2a2a2a ; /* Light text for options */
 }

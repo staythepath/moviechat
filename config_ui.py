@@ -8,6 +8,7 @@ import WebChat
 from arrapi import RadarrAPI
 import arrapi.exceptions
 import requests
+from tmdbv3api import TMDb, Movie
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Generate a random secret key
@@ -189,13 +190,18 @@ def index():
         global radarr
         radarr = initialize_radarr(config)
 
-        # Write updated configuration to file
-        with open('config.yaml', 'w') as file:
-            yaml.dump(config, file)
+        
 
         
         # Restart the bot to apply new configuration
         threading.Thread(target=start_bot, args=(config,)).start()
+
+        start_discord_bot = request.form.get('start_discord_bot_on_launch') == 'on'
+        config['start_discord_bot_on_launch'] = start_discord_bot
+
+        # Write updated configuration to file
+        with open('config.yaml', 'w') as file:
+            yaml.dump(config, file)
 
     
     radarr = None
@@ -247,21 +253,30 @@ def add_movie_to_radarr(tmdb_id):
     if radarr is None:
         return jsonify({"status": "error", "message": "Radarr is not configured."})
 
+    tmdb = TMDb()
+    tmdb.api_key = config['tmdb_api_key']
+    movie = Movie()
+
     try:
         # Search for the movie in Radarr using its TMDb ID
         search_results = radarr.search_movies(tmdb_id)
         if search_results:
-            # Movie already exists in Radarr, return an info message
-            return jsonify({"status": "info", "message": "Movie already exists in Radarr."})
+            # Movie already exists in Radarr
+            movie_title = search_results[0]['title']
+            message = f"*{movie_title}* already exists in Radarr."
+            return jsonify({"status": "info", "message": message})
         
-        # If the movie is not found, attempt to add it
-        # (You might need additional logic here to fetch movie details from TMDb)
-        
-        # Adding the movie to Radarr (adjust parameters as necessary)
+        # Fetch movie details from TMDB
+        movie_details = movie.details(tmdb_id)
+        movie_title = movie_details.title
+
+        # Add the movie to Radarr
         radarr.add_movie(root_folder=RADARR_ROOT_FOLDER, quality_profile=RADARR_QUALITY, tmdb_id=tmdb_id, search=True)
-        return jsonify({"status": "success", "message": f"Movie with TMDB ID {tmdb_id} added to Radarr."})
+        message = f"*{movie_title}* added to Radarr."
+        return jsonify({"status": "success", "message": message})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        message = str(e)
+        return jsonify({"status": "error", "message": message})
 
 
 
