@@ -40,9 +40,6 @@ def load_config():
     with open(config_path, 'r') as file:
         return yaml.safe_load(file) or default_config
 
-# Rest of the WebChat.py code...
-
-
 # Load configuration
 config = load_config()
 
@@ -56,10 +53,6 @@ RADARR_QUALITY = config["radarr_quality"]
 MAX_CHARS = config['max_chars']
 SELECTED_MODEL = config['selected_model']
 RADARR_ROOT_FOLDER = config['radarr_root_folder']
-
-
-
-
 
 message_movie_map = {}
 segment_emoji_map = {}
