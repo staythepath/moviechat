@@ -8,29 +8,37 @@ import WebChat
 from arrapi import RadarrAPI
 import arrapi.exceptions
 import requests
+from tmdbv3api import TMDb, Movie
+import subprocess
+import multiprocessing
+import RunThis
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Generate a random secret key
 
 channels_data = []
 
+def start_discord_bot_process():
+    # Start the Discord bot script in a new process
+    subprocess.Popen(['python', 'RunThis.py'])
+
 def load_config():
     with open('config.yaml', 'r') as file:
         return yaml.safe_load(file)
-
-def get_radarr_root_folders():
+    
+def initialize_radarr(config):
     try:
-        root_folders = radarr.get_root_folders()
-        if not root_folders:
-            raise ValueError("No root folders configured in Radarr.")
-        return root_folders  # Return all root folders
+        if config['radarr_url'] and config['radarr_api_key']:
+            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
     except Exception as e:
-        print(f"Error fetching Radarr root folders: {e}")
-        return []
+        print(f"Error initializing Radarr API: {e}")
+        return None
 
 
+
+config = load_config()
 # Set the root folder during initialization
-RADARR_ROOT_FOLDER = get_radarr_root_folders()
+RADARR_ROOT_FOLDER = RADARR_ROOT_FOLDER = config['radarr_root_folder']
 if not RADARR_ROOT_FOLDER:
     print("Warning: Radarr root folder not set. Please configure manually.")
 
@@ -65,23 +73,20 @@ def load_or_create_config():
 
     return config
 
-def initialize_radarr(config):
-    try:
-        if config['radarr_url'] and config['radarr_api_key']:
-            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
-    except Exception as e:
-        print(f"Error initializing Radarr API: {e}")
-        return None
-
 def start_bot(config):
     # Function to start the bot
     os.system('python RunThis.py') 
 
 def check_and_start_bot():
     config = load_or_create_config()
-    required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
-    if all(key in config and config[key] for key in required_keys): 
-        threading.Thread(target=start_bot, args=(config,)).start()
+    # Check if the start_discord_bot_on_launch key is true
+    if config.get('start_discord_bot_on_launch', True):
+        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
+        if all(key in config and config[key] for key in required_keys): 
+            threading.Thread(target=start_bot, args=(config,)).start()
+    else:
+        print("Discord bot startup is disabled in the configuration.")
+
 
 async def get_channels(token):
     global channels_data
@@ -159,7 +164,7 @@ def fetch_root_folders():
 def index():
     global radarr 
     config = load_or_create_config()
-    root_folders = get_radarr_root_folders()
+
     
     if request.method == 'POST':
         # Update config from form data only if the input is not empty
@@ -189,13 +194,20 @@ def index():
         global radarr
         radarr = initialize_radarr(config)
 
-        # Write updated configuration to file
-        with open('config.yaml', 'w') as file:
-            yaml.dump(config, file)
+        
 
         
         # Restart the bot to apply new configuration
         threading.Thread(target=start_bot, args=(config,)).start()
+
+        start_discord_bot = request.form.get('start_discord_bot_on_launch') == 'on'
+        config['start_discord_bot_on_launch'] = start_discord_bot
+
+        # Write updated configuration to file
+        with open('config.yaml', 'w') as file:
+            yaml.dump(config, file)
+          # Start the Discord bot in a separate process
+            
 
     
     radarr = None
@@ -207,15 +219,16 @@ def index():
 
     # Fetch root folders if RadarrAPI is initialized
     root_folders = []
-    if radarr:
-        try:
-            root_folders = radarr.get_root_folders()
-        except Exception as e:
-            print(f"Error fetching Radarr root folders: {e}")
+
         
     
     print("Root folders:", root_folders)
     return render_template('index.html', config=config, root_folders=root_folders)
+
+if config.get('start_discord_bot_on_launch', True):
+        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
+        if all(key in config and config[key] for key in required_keys):
+            start_discord_bot_process()
 
 
 @app.route('/send_message', methods=['POST'])
@@ -223,24 +236,18 @@ def send_message():
     message = request.json['message']
     print(f"Received message from UI: {message}")
 
-    # Ensure conversation_history is initialized in session
     if 'conversation_history' not in session:
         session['conversation_history'] = []
 
-    # Copy conversation_history from session to a local variable
     conversation_history = session['conversation_history']
 
-    # Add new message to conversation history
-    conversation_history.append({"role": "user", "content": message})
-    conversation_history = WebChat.trim_conversation_history(conversation_history, {"role": "user", "content": message})
-
-    # Get response from WebChat
+    # Removed the line that adds the new message to conversation_history
     response = WebChat.get_openai_response(conversation_history, message)
 
-    # Update session's conversation_history
     session['conversation_history'] = conversation_history
-
     return jsonify({'response': response})
+
+
 
 
 
@@ -253,26 +260,38 @@ def add_movie_to_radarr(tmdb_id):
     if radarr is None:
         return jsonify({"status": "error", "message": "Radarr is not configured."})
 
+    tmdb = TMDb()
+    tmdb.api_key = config['tmdb_api_key']
+    movie = Movie()
+
     try:
         # Search for the movie in Radarr using its TMDb ID
         search_results = radarr.search_movies(tmdb_id)
         if search_results:
-            # Movie already exists in Radarr, return an info message
-            return jsonify({"status": "info", "message": "Movie already exists in Radarr."})
+            # Movie already exists in Radarr
+            movie_title = search_results[0]['title']
+            message = f"*{movie_title}* already exists in Radarr."
+            return jsonify({"status": "info", "message": message})
         
-        # If the movie is not found, attempt to add it
-        # (You might need additional logic here to fetch movie details from TMDb)
-        
-        # Adding the movie to Radarr (adjust parameters as necessary)
+        # Fetch movie details from TMDB
+        movie_details = movie.details(tmdb_id)
+        movie_title = movie_details.title
+        RADARR_QUALITY = config["radarr_quality"]
+        # Add the movie to Radarr
         radarr.add_movie(root_folder=RADARR_ROOT_FOLDER, quality_profile=RADARR_QUALITY, tmdb_id=tmdb_id, search=True)
-        return jsonify({"status": "success", "message": f"Movie with TMDB ID {tmdb_id} added to Radarr."})
+        message = f"*{movie_title}* added to Radarr"
+        return jsonify({"status": "success", "message": message})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        message = str(e)
+        return jsonify({"status": "error", "message": message})
+
+
 
 
 
 
 if __name__ == '__main__':
+    print("RRRRRRRRRRRRRRRRUNNING")
     config = load_or_create_config()
 
     DISCORD_TOKEN = config['discord_token']
@@ -291,5 +310,18 @@ if __name__ == '__main__':
     else:
         radarr = None
 
-    check_and_start_bot()  # Ensure this function can handle the configuration
+    
+    # Start the Discord bot in a separate process
+    if config.get('start_discord_bot_on_launch', True):
+        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
+        if all(key in config and config[key] for key in required_keys):
+            discord_process = multiprocessing.Process(target=start_discord_bot_process)
+            start_discord_bot_process()
+ 
+    else:
+        print("Discord bot startup is disabled in the configuration.")
+
     app.run(host='0.0.0.0', port=1138)
+
+
+    

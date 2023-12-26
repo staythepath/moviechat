@@ -64,14 +64,19 @@ RADARR_ROOT_FOLDER = config['radarr_root_folder']
 message_movie_map = {}
 segment_emoji_map = {}
 
+global radarr
 
 def initialize_radarr(config):
+    global radarr  # Declare radarr as global inside the function
     try:
         if config['radarr_url'] and config['radarr_api_key']:
-            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
+            radarr = RadarrAPI(config['radarr_url'], config['radarr_api_key'])
     except Exception as e:
         print(f"Error initializing Radarr API: {e}")
-        return None
+        radarr = None
+
+config = load_config()
+initialize_radarr(config)  # Initialize radarr with the loaded config
 
 
 def trim_conversation_history(conversation_history, new_message):

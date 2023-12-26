@@ -7,12 +7,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-    <title>MovieChat Bot Configuration</title>
+
+    <title>MovieChat</title>
     <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const configPanel = document.getElementById('config-panel');
+            const configToggle = document.getElementById('config-toggle');
 
+            configToggle.addEventListener('click', toggleConfigPanel);
+
+            document.addEventListener('click', function(event) {
+                var isClickInsideConfigPanel = configPanel.contains(event.target);
+                var isClickInsideConfigToggle = configToggle.contains(event.target);
+
+                if (!isClickInsideConfigPanel && !isClickInsideConfigToggle && configPanel.style.left === '0px') {
+                    toggleConfigPanel(); // Close the panel
+                }
+            });
+        });
         function handleRefresh(event) {
             event.preventDefault();  // Prevent default form submission
 
@@ -88,6 +104,19 @@
                     setTimeout(waitForServerReady, 1000);
                 });
         }
+
+        function markdownToHTML(text) {
+            // Convert italics
+            let htmlText = text.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
+
+            // Convert bullet points with indentation
+            htmlText = htmlText.replace(/^- (.+)$/gm, "<li style='margin-left: 20px;'>$1</li>");
+            htmlText = "<ul>" + htmlText + "</ul>"; // Wrap with <ul> tag
+
+            return htmlText;
+        }
+
+
 
         function checkServerStatusAndRefreshFolders() {
             fetch('/server_status')
@@ -182,20 +211,42 @@ function resetUI() {
             }
         }
 
+        function toggleConfigPanel() {
+            var configPanel = document.getElementById('config-panel');
+            if (configPanel.style.left === '0px') {
+                configPanel.style.left = '-250px'; // Hide the panel
+            } else {
+                configPanel.style.left = '0px'; // Show the panel
+            }
+        }
+
+
+
         function sendMessage() {
-            let message = "You: " + document.getElementById('message-input').value;
+            let messageInput = document.getElementById('message-input');
+            let message = messageInput.value;
             updateChat('user', message);
+
+            // Clear the input box right after sending the message
+            messageInput.value = '';
+
             fetch('/send_message', {
                 method: 'POST',
                 body: JSON.stringify({ message: message }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(response => response.json())
+            })
+            .then(response => response.json())
             .then(data => {
-                updateChat('bot', "Bot: " + data.response);
+                updateChat('bot', data.response);
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
         }
+
+
 
         function refreshDiscordChannels() {
             let token = document.getElementById('discord_token').value || '{{ config["discord_token"] }}';
@@ -216,32 +267,157 @@ function resetUI() {
             }
         }
 
-        function updateChat(sender, message) {
+       function updateChat(sender, text) {
             let chatBox = document.getElementById('chat-box');
             let messageDiv = document.createElement('div');
-            messageDiv.className = sender;
-            messageDiv.innerHTML = message; // Use innerHTML instead of textContent
+            messageDiv.classList.add('message');
+
+            let senderSpan = document.createElement('span');
+            senderSpan.classList.add(sender === 'user' ? 'sender-user' : 'sender-bot');
+            senderSpan.textContent = sender === 'user' ? 'You: ' : 'Bot: ';
+
+            let textDiv = document.createElement('div');
+            textDiv.classList.add('text-content');
+
+            // Convert markdown to HTML
+            let htmlContent = markdownToHTML(text);
+
+            // Set the innerHTML of textDiv to the processed HTML content
+            textDiv.innerHTML = htmlContent;
+
+            messageDiv.appendChild(senderSpan);
+            messageDiv.appendChild(textDiv);
+
             chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
         }
 
-        function addMovieToRadarr(tmdbId) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         function addMovieToRadarr(tmdbId) {
             fetch(`/add_movie_to_radarr/${tmdbId}`)
             .then(response => response.json())
             .then(data => {
-                // You can display a message or handle the response here
-                alert(data.message);
+                // Instead of alert, display the message in chat
+                updateChat('bot', data.message);
             })
             .catch(error => console.error('Error:', error));
         }
 
 
+
+
+
     </script>
 </head>
 <body>
-     <div class="container my-4">
+    <div id="config-panel" >
+        <div >
+
+        <h2 class="mt-4">Config</h2>
+        <form method="POST">
+        <form method="POST">
+        <div class="form-group">
+            <label for="openai_api_key">OpenAI API Key:</label>
+            <input type="text" class="form-control" name="openai_api_key" id="openai_api_key" value="{{ config['openai_api_key'] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="radarr_api_key">Radarr API Key:</label>
+            <input type="text" class="form-control" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()">
+        </div>
+
+        <div class="form-group">
+            <label for="radarr_url">Radarr URL:</label>
+            <input type="text" class="form-control" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()">
+        </div>
+
+        <div class="form-group">
+            <label for="radarr_quality">Radarr Quality:</label>
+            <input type="text" class="form-control" name="radarr_quality" value="{{ config['radarr_quality'] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="tmdb_api_key">TMDB API Key:</label>
+            <input type="text" class="form-control" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="selected_model">Model:</label>
+            <select class="form-control" name="selected_model">
+                <option value="gpt-3.5-turbo-1106">gpt-3.5-turbo-1106</option>
+                <option value="gpt-4-1106-preview">gpt-4-1106-preview</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="radarrRootFolder">Radarr Root Folder:</label>
+            <select class="form-control" name="radarr_root_folder" id="radarrRootFolder">
+                <option disabled selected>Refresh to get paths...</option>
+            </select>
+            <button onclick="handleRefresh(event)" type='button' class="btn btn-primary mt-2">Refresh Root Folders</button>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Save and Reload">
+        </div>
+
+        <h2 class="mt-4">Discord Config</h2>
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="start_discord_bot_on_launch" name="start_discord_bot_on_launch" {{ 'checked' if config['start_discord_bot_on_launch'] else '' }}>
+            <label class="custom-control-label" for="start_discord_bot_on_launch">Start Discord Bot</label>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="discord_token">Discord Token:</label>
+            <input type="text" class="form-control" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()">
+        </div>
+
+        <div class="form-group">
+            <label for="discord_channel">Discord Channel:</label>
+            <select class="form-control" id="discord_channel" name="discord_channel" disabled>
+                <!-- Options... -->
+            </select>
+
+            <div class="form-group">
+            </div>
+            <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary mt-2">Refresh Channels</button>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Save and Reload">
+        </div>
+    </form>
+
+
+    </div>
+   </div>
+
+     <div class="container my-4" id="main-content">
         <div class="card">
-            <div class="card-header">Chat with MovieBot</div>
-            <div class="card-body" id="chat-box" style="height: 300px; overflow-y: scroll;">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Chat with MovieBot</span>
+                <div id="config-toggle" class="config-toggle">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            
+            <div class="card-body" id="chat-box" style="height: 80vh; overflow-y: scroll;">
                 <!-- Chat messages will appear here -->
             </div>
             <div class="card-footer d-flex align-items-center">
@@ -252,82 +428,9 @@ function resetUI() {
         </div>
     </div>
 
-   <div class="container my-4">
-    <div class="card">
-        <!-- Existing chat card code... -->
-    </div>
+   
 
-    <h2 class="mt-4">MovieChat Config</h2>
-    <form method="POST">
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="openai_api_key">OpenAI API Key:</label>
-                <input type="text" class="form-control" name="openai_api_key" id="openai_api_key" value="{{ config['openai_api_key'] }}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="radarr_api_key">Radarr API Key:</label>
-                <input type="text" class="form-control" name="radarr_api_key" id="radarr_api_key" value="{{ config['radarr_api_key'] }}" onblur="fetchRadarrRootFolders()">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="radarr_url">Radarr URL:</label>
-                <input type="text" class="form-control" name="radarr_url" id="radarr_url" value="{{ config['radarr_url'] }}" onblur="fetchRadarrRootFolders()">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="radarr_quality">Radarr Quality:</label>
-                <input type="text" class="form-control" name="radarr_quality" value="{{ config['radarr_quality'] }}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="tmdb_api_key">TMDB API Key:</label>
-                <input type="text" class="form-control" name="tmdb_api_key" value="{{ config['tmdb_api_key'] }}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="selected_model">Select model:</label>
-                <select class="form-control" name="selected_model">
-                    <!-- Options... -->
-                </select>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="radarrRootFolder">Select Radarr Root Folder:</label>
-                <select class="form-control" name="radarr_root_folder" id="radarrRootFolder">
-                    <option disabled selected>Refresh to get paths...</option>
-                </select>
-                <button onclick="handleRefresh(event)" type='button' class="btn btn-primary mt-2">Refresh Root Folders</button>
-            </div>
-        </div>
-        <h2 class="mt-4">Discord Bot Config</h2>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="discord_token">Discord Token:</label>
-                <input type="text" class="form-control" name="discord_token" id="discord_token" value="{{ config['discord_token'] }}" onchange="loadChannels()">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label for="discord_channel">Discord Channel:</label>
-                <select class="form-control" id="discord_channel" name="discord_channel" disabled>
-                    <!-- Options... -->
-                </select>
-                <button onclick="refreshDiscordChannels()" type="button" class="btn btn-primary mt-2">Refresh Channels</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <input type="submit" class="btn btn-primary mt-2" value="Submit">
-            </div>
-        </div>
-    </form>
+    
 
 </div>
 </body>
