@@ -11,20 +11,38 @@ import requests
 from tmdbv3api import TMDb, Movie
 import subprocess
 import multiprocessing
-import RunThis
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Generate a random secret key
-
+global radarr 
 channels_data = []
 
 def start_discord_bot_process():
-    # Start the Discord bot script in a new process
     subprocess.Popen(['python', 'RunThis.py'])
 
 def load_config():
-    with open('config.yaml', 'r') as file:
+    config_path = 'config.yaml'
+    if not os.path.exists(config_path):
+        create_default_config(config_path)
+    with open(config_path, 'r') as file:
         return yaml.safe_load(file)
+    
+def create_default_config(config_path):
+    default_config = {
+        'tmdb_api_key': '',
+        'radarr_url': '',
+        'radarr_api_key': '',
+        'openai_api_key': '',
+        'discord_token': '',
+        'radarr_quality': '',
+        'selected_model': '',
+        'max_chars': 65540,
+        'discord_channel': '',
+        'radarr_root_folder': ''
+    }
+    with open(config_path, 'w') as file:
+        yaml.dump(default_config, file)
     
 def initialize_radarr(config):
     try:
@@ -34,13 +52,19 @@ def initialize_radarr(config):
         print(f"Error initializing Radarr API: {e}")
         return None
 
-
-
 config = load_config()
 # Set the root folder during initialization
-RADARR_ROOT_FOLDER = RADARR_ROOT_FOLDER = config['radarr_root_folder']
-if not RADARR_ROOT_FOLDER:
-    print("Warning: Radarr root folder not set. Please configure manually.")
+
+DISCORD_TOKEN = config['discord_token']
+TMDB_API_KEY = config['tmdb_api_key']
+RADARR_API_KEY = config['radarr_api_key']
+RADARR_URL = config['radarr_url']
+OPENAI_API_KEY = config['openai_api_key']
+RADARR_QUALITY = config["radarr_quality"]
+MAX_CHARS = config['max_chars']
+SELECTED_MODEL = config['selected_model']
+RADARR_ROOT_FOLDER = config['radarr_root_folder']
+
 
 # Function to load or create configuration
 def load_or_create_config():
@@ -72,6 +96,15 @@ def load_or_create_config():
         config['max_chars'] = 512000
 
     return config
+
+
+
+
+config = load_or_create_config()
+radarr = initialize_radarr(config)
+
+
+
 
 def start_bot(config):
     # Function to start the bot
@@ -162,8 +195,7 @@ def fetch_root_folders():
         
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global radarr 
-    config = load_or_create_config()
+    
 
     
     if request.method == 'POST':
@@ -191,8 +223,8 @@ def index():
         elif selected_model == 'gpt-4-1106-preview':
             config['max_chars'] = 512000
 
-        global radarr
-        radarr = initialize_radarr(config)
+        
+        
 
         
 
@@ -254,74 +286,47 @@ def send_message():
 @app.route('/add_movie_to_radarr/<int:tmdb_id>', methods=['GET'])
 def add_movie_to_radarr(tmdb_id):
     config = load_config()
-    global radarr
-    radarr = initialize_radarr(load_config())
+    radarr = initialize_radarr(config)
 
     if radarr is None:
         return jsonify({"status": "error", "message": "Radarr is not configured."})
 
     tmdb = TMDb()
     tmdb.api_key = config['tmdb_api_key']
-    movie = Movie()
+    movie_api = Movie()
 
     try:
-        # Search for the movie in Radarr using its TMDb ID
-        search_results = radarr.search_movies(tmdb_id)
-        if search_results:
-            # Movie already exists in Radarr
-            movie_title = search_results[0]['title']
-            message = f"*{movie_title}* already exists in Radarr."
-            return jsonify({"status": "info", "message": message})
-        
-        # Fetch movie details from TMDB
-        movie_details = movie.details(tmdb_id)
+        movie_details = movie_api.details(tmdb_id)
         movie_title = movie_details.title
-        RADARR_QUALITY = config["radarr_quality"]
+        quality_profile_id = config["radarr_quality"]  # Ensure this returns the correct integer ID
+
         # Add the movie to Radarr
-        radarr.add_movie(root_folder=RADARR_ROOT_FOLDER, quality_profile=RADARR_QUALITY, tmdb_id=tmdb_id, search=True)
-        message = f"*{movie_title}* added to Radarr"
-        return jsonify({"status": "success", "message": message})
+        response = radarr.add_movie(
+            tmdb_id=tmdb_id,
+            quality_profile=quality_profile_id,
+            root_folder=config["radarr_root_folder"]
+        )
+
+        # Handle the response
+        if response:  # Check if the response is successful
+            return jsonify({"status": "success", "message": f"*{movie_title}* added to Radarr"})
+        else:
+            return jsonify({"status": "error", "message": "Failed to add movie to Radarr"})
+
     except Exception as e:
-        message = str(e)
-        return jsonify({"status": "error", "message": message})
+        return jsonify({"status": "error", "message": str(e)})
+
+
+# Rest of the code...
 
 
 
 
 
 
-if __name__ == '__main__':
-    print("RRRRRRRRRRRRRRRRUNNING")
-    config = load_or_create_config()
 
-    DISCORD_TOKEN = config['discord_token']
-    TMDB_API_KEY = config['tmdb_api_key']
-    RADARR_API_KEY = config['radarr_api_key']
-    RADARR_URL = config['radarr_url']
-    OPENAI_API_KEY = config['openai_api_key']
-    RADARR_QUALITY = config["radarr_quality"]
-    MAX_CHARS = config['max_chars']
-    SELECTED_MODEL = config['selected_model']
-    RADARR_ROOT_FOLDER = config['radarr_root_folder']
 
-    # Conditional initialization of RadarrAPI
-    if RADARR_URL and RADARR_API_KEY:
-        radarr = RadarrAPI(RADARR_URL, RADARR_API_KEY)
-    else:
-        radarr = None
 
-    
-    # Start the Discord bot in a separate process
-    if config.get('start_discord_bot_on_launch', True):
-        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
-        if all(key in config and config[key] for key in required_keys):
-            discord_process = multiprocessing.Process(target=start_discord_bot_process)
-            start_discord_bot_process()
- 
-    else:
-        print("Discord bot startup is disabled in the configuration.")
-
-    app.run(host='0.0.0.0', port=1138)
 
 
     

@@ -6,11 +6,11 @@
     <MyIP/>
     <Privileged>false</Privileged>
     <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
-    <Overview>MovieChat Bot - A OpenAI based Discord chatbot with radarr integraetion. You can talk to the bot and when it mentions a mvoie you can click the corresponding reaction to add it to radarr. You must setup a discord bot and connect it. </Overview>
+    <Overview>MovieChat Bot - A OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the corresponding reaction to add it to radarr.</Overview>
     <Category>Media:Tools</Category>
     <WebUI>http://[IP]:[PORT:1138]/</WebUI>
     <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
-    <Icon>https://github.com/staythepath/moviechat/blob/0.2/icon128.png</Icon>
+    <Icon>https://github.com/staythepath/moviechat/blob/main/icon128.png?raw=true</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>
@@ -35,10 +35,6 @@
             <Mode>rw</Mode>
         </Volume>
     </Data>
-    <Environment/>
-    <Config Name="TMDB API Key" Target="tmdb_api_key" Default="" Mode="rw" Description="Enter your TMDB API key." Type="Variable" Display="always" Required="true"/>
-    <Config Name="Radarr URL" Target="radarr_url" Default="" Mode="rw" Description="Enter your Radarr URL." Type="Variable" Display="always" Required="true"/>
-    <Config Name="Radarr API Key" Target="radarr_api_key" Default="" Mode="rw" Description="Enter your Radarr API key." Type="Variable" Display="always" Required="true"/>
-    <Config Name="OpenAI API Key" Target="openai_api_key" Default="" Mode="rw" Description="Enter your OpenAI API key." Type="Variable" Display="always" Required="true"/>
-    <Config Name="Discord Token" Target="discord_token" Default="" Mode="rw" Description="Enter your Discord Bot token." Type="Variable" Display="always" Required="true"/>
+    <Config Name="WebUI" Target="1138" Default="1138" Mode="tcp" Description="WebUI port." Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/mnt/user/appdata/moviechat-bot" Default="/mnt/user/appdata/moviechat-bot" Mode="rw" Description="Path to config file." Type="Path" Display="always" Required="true" Mask="false"/>
 </Container>
