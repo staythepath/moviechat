@@ -8,6 +8,9 @@ class TMDbManager:
         self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
         self.movie_api = Movie()
 
+    def update_tmdb_api_key(self):
+        self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
+
     def search_movie(self, title):
         return self.movie_api.search(title)
 

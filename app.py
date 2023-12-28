@@ -7,11 +7,11 @@ from tmdbv3api import TMDb, Movie
 import requests
 import os
 import yaml
-import WebChat
 
 from config_manager import ConfigManager
 from tmdb_manager import TMDbManager
 from radarr_manager import RadarrManager
+from openai_chat_manager import OpenAIChatManager
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -19,12 +19,19 @@ app.secret_key = os.urandom(24)
 config_manager = ConfigManager()
 tmdb_manager = TMDbManager(config_manager)
 radarr_manager = RadarrManager(config_manager, tmdb_manager)
+openai_chat_manager = OpenAIChatManager(config_manager, tmdb_manager)
 
 channels_data = []
 
 
 def start_discord_bot_process():
     subprocess.Popen(["python", "RunThis.py"])
+
+
+def start_discord_client(token):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(get_channels(token))
 
 
 async def get_channels(token):
@@ -42,12 +49,6 @@ async def get_channels(token):
 
     await client.login(token)
     await client.start(token)
-
-
-def start_discord_client(token):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(get_channels(token))
 
 
 @app.route("/server_status")
@@ -128,8 +129,9 @@ def index():
         with open(config_manager.config_path, "w") as file:
             yaml.dump(config_manager.config, file)
 
-        # Update the Radarr instance in RadarrManager
+        tmdb_manager.update_tmdb_api_key()
         radarr_manager.radarr = radarr_manager.initialize_radarr()
+        openai_chat_manager.initialize_openai_client()
 
     root_folders = []
     return render_template(
@@ -145,7 +147,7 @@ def send_message():
         session["conversation_history"] = []
 
     conversation_history = session["conversation_history"]
-    response = WebChat.get_openai_response(conversation_history, message)
+    response = openai_chat_manager.get_openai_response(conversation_history, message)
     session["conversation_history"] = conversation_history
     return jsonify({"response": response})
 
