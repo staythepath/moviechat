@@ -8,10 +8,14 @@ import requests
 import os
 import yaml
 
+import DiscordBot
+
 from config_manager import ConfigManager
 from tmdb_manager import TMDbManager
 from radarr_manager import RadarrManager
 from openai_chat_manager import OpenAIChatManager
+
+# from discord_bot import DiscordBot
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -20,12 +24,13 @@ config_manager = ConfigManager()
 tmdb_manager = TMDbManager(config_manager)
 radarr_manager = RadarrManager(config_manager, tmdb_manager)
 openai_chat_manager = OpenAIChatManager(config_manager, tmdb_manager)
+# discord_bot = DiscordBot(config_manager, tmdb_manager, radarr_manager)
 
 channels_data = []
 
 
 def start_discord_bot_process():
-    subprocess.Popen(["python", "RunThis.py"])
+    subprocess.Popen(["python", "DiscordBot.py"])
 
 
 def start_discord_client(token):
@@ -132,6 +137,11 @@ def index():
         tmdb_manager.update_tmdb_api_key()
         radarr_manager.radarr = radarr_manager.initialize_radarr()
         openai_chat_manager.initialize_openai_client()
+
+        if config_manager.get_config_value("start_discord_bot_on_launch"):
+            start_discord_bot_process()
+        #    bot = DiscordBot()
+        #    bot.start_bot()
 
     root_folders = []
     return render_template(

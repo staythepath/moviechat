@@ -48,6 +48,8 @@ class OpenAIChatManager:
             else "No response received."
         )
 
+        print("OpenAI response: ", response_content)
+
         # Process movie titles
         movie_titles_map = self.check_for_movie_title_in_string(response_content)
         for title, tmdb_id in movie_titles_map.items():
