@@ -149,6 +149,21 @@ def index():
     )
 
 
+@app.route("/movie_details/<int:tmdb_id>")
+def movie_details(tmdb_id):
+    movie = tmdb_manager.get_movie_details(tmdb_id)
+    # Convert the response to a JSON serializable format if necessary
+    movie_details = {
+        "title": movie.title,
+        "overview": movie.overview,
+        "poster_path": movie.poster_path,
+        "release_date": movie.release_date,
+        "vote_average": movie.vote_average,
+        # Add more details as needed
+    }
+    return jsonify(movie_details)
+
+
 @app.route("/send_message", methods=["POST"])
 def send_message():
     message = request.json["message"]
@@ -169,3 +184,9 @@ def add_movie_to_radarr(tmdb_id):
 
     response_dict = radarr_manager.add_movie(tmdb_id, quality_profile_id, root_folder)
     return jsonify(response_dict)
+
+
+@app.route("/movie_card_details/<int:tmdb_id>")
+def movie_card_details(tmdb_id):
+    details = tmdb_manager.get_movie_card_details(tmdb_id)
+    return jsonify(details)

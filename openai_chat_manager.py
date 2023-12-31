@@ -55,9 +55,8 @@ class OpenAIChatManager:
         for title, tmdb_id in movie_titles_map.items():
             response_content = response_content.replace(
                 f"*{title}*",
-                f"<span onclick='addMovieToRadarr({tmdb_id})' class='movie-link'>{title}</span>",
+                f"<span class='movie-link' data-toggle='popover' data-tmdb-id='{tmdb_id}' data-title='{title}' onclick='addMovieToRadarr({tmdb_id})'>{title}</span>",
             )
-
         return response_content
 
     def check_for_movie_title_in_string(self, text):

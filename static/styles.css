@@ -1,296 +1,329 @@
 @media (max-width: 768px) {
-    /* Adjust config panel for smaller screens */
-    #config-panel {
-        width: 100%; /* Full width on smaller screens */
-        left: 0;
-    }
+  #config-panel {
+    width: 100%;
+    left: 0;
+  }
 
-    /* Adjust main content margin */
-    #main-content.margin-apply {
-        margin-left: 0;
-    }
+  #main-content.margin-apply {
+    margin-left: 0;
+  }
 
-    /* Increase font size for readability */
-    body {
-        font-size: 1.1em;
-        max-height: 670px;
-    }
+  body {
+    font-size: 1.1em;
+    max-height: 670px;
+  }
 
-    /* Larger buttons for easier interaction */
-    .btn {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 
-    /* Adjust form input sizes */
-    input[type="text"], input[type="password"], textarea, select {
-        font-size: 1em;
-    }
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 1em;
+  }
 
-    #main-content {
-        height: calc(100vh - 56px); /* Adjust for mobile header */
-        max-height: 670px;
-    }
+  #main-content {
+    height: calc(100vh - 56px);
+    max-height: 670px;
+  }
 
-    #chat-box {
-        height: calc(100% - 20px); /* Adjust for mobile header and footer */
-
-
-    }
-
-
+  #chat-box {
+    height: calc(100% - 20px);
+  }
 }
-
 
 body {
-    background-color: #1a1a1a;
-    color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
+  background-color: #1a1a1a;
+  color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Ensure the main content container takes up all available space */
 #main-content {
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute space evenly */
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card {
-    background-color: #2a2a2a;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Full height of its container */
+  background-color: #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-header {
-    background-color: #27496d;
-    color: #f8f8f8;
+  background-color: #27496d;
+  color: #f8f8f8;
 }
 
-.card-body, .card-footer {
-    padding: 10px; /* Adjust padding as needed */
+.card-body,
+.card-footer {
+  padding: 10px;
 }
 
 #chat-box {
-    height: calc(100% - 60px);
-    overflow-y: auto;
-    flex-grow: 1;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
 #chat-box::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 #chat-box::-webkit-scrollbar-thumb {
-    background: #888;
+  background: #888;
 }
 
 #chat-box::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 #config-panel {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100vh; /* Full viewport height */
-    overflow-x: hidden;
-    transition: 0.5s;
-    background-color: #333333;
-    padding: 20px;
-    z-index: 2;
-    color: #f8f8f8;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background-color: #333333;
+  padding: 20px;
+  z-index: 2;
+  color: #f8f8f8;
 }
 
 #main-content {
-    transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
 }
 
 #main-content.margin-apply {
-    margin-left: 250px; /* Move content to the right when config panel is visible */
-    margin-bottom: 20px;
+  margin-left: 250px;
+  margin-bottom: 20px;
 }
 
 .config-toggle {
-    font-size: 24px;
-    cursor: pointer;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .movie-link {
-    color: #596a7c;
-    cursor: pointer;
-    text-decoration: underline;
+  color: #596a7c;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.sender-user, .sender-bot {
-    font-weight: bold;
-    margin-right: 0.25em; /* Adjust space between sender name and message */
-    white-space: nowrap; /* Keep sender's name on the same line */
-    display: inline;
-    padding: 0;
+.sender-user,
+.sender-bot {
+  font-weight: bold;
+  margin-right: 0.25em;
+  white-space: nowrap;
+  display: inline;
+  padding: 0;
 }
 
 .sender-user {
-    color: #3a6ea5; /* Green color for 'You' */
+  color: #3a6ea5;
 }
 
 .sender-bot {
-    color: #a89f91; /* Orange color for 'Bot' */
+  color: #a89f91;
 }
 
 .message {
-    display: flex;
-    align-items: flex-start; /* Align items to the start of the container */
-    margin-bottom: 5px; /* Space between messages */
-    padding-left: 5px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+  padding-left: 5px;
 }
 
 .message-content {
-    display: inline;
-    flex: 1; /* Allows the content to take up the remaining space */
-    text-align: left;
-    word-wrap: break-word; /* Ensures long text wraps within the container */
-    margin: 0;
-    padding: 0;
-    color: white; /* White color for message text */
+  display: inline;
+  flex: 1;
+  text-align: left;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
 .message-content ul {
-    padding-left: 20px; /* Adjust the padding for bullet points */
-    margin: 0; /* Remove default margin from lists */
+  padding-left: 20px;
+  margin: 0;
 }
 
 .message-content li {
-    margin: 0; /* Remove default margin from list items */
+  margin: 0;
 }
 
 .text-content {
-    display: inline; /* Inline display for text content */
-    word-break: break-word; /* Breaks the words at the end of the line */
+  display: inline;
+  word-break: break-word;
 }
 
-/* If additional padding or margin on elements within .message, set them to 0 */
 .message * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .message div {
-    color: #ffffff; /* White color for message content */
-    margin-left: 10px; /* Adjust the indentation for subsequent lines */
+  color: #ffffff;
+  margin-left: 10px;
 }
 
 .btn-primary {
-    background-color: #27496d; /* Dark royal blue, matching your header */
-    border-color: #27496d; /* Border color to match the background */
-    color: #ffffff; /* White text for better readability */
+  background-color: #27496d;
+  border-color: #27496d;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #1d3c5a; /* Slightly darker shade for hover effect */
-    border-color: #1d3c5a;
+  background-color: #1d3c5a;
+  border-color: #1d3c5a;
 }
 
 .custom-checkbox {
-    vertical-align: middle;
-    margin-left: 5px;
-    width: auto; /* Resets width to default */
-    color: #27496d
+  vertical-align: middle;
+  margin-left: 5px;
+  width: auto;
+  color: #27496d;
 }
 
 .form-group label {
-    display: inline-block; /* Align label and checkbox inline */
-    margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .checkbox-label {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: #333;  /* Default background */
-    border-radius: 3px;
-    cursor: pointer;
-    margin-left: 10px;
-    vertical-align: middle;
-    transition: background 0.3s;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: background 0.3s;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: #27496d;
-    border-color: #27496d;
+  background-color: #27496d;
+  border-color: #27496d;
 }
 
-
 .custom-checkbox:checked + .checkbox-label {
-    background: #27496d; /* Color when checked */
+  background: #27496d;
 }
 
 .custom-control-label {
-    color: #f8f8f8;
+  color: #f8f8f8;
 }
 
-/* Style the scrollbar track */
 #config-panel::-webkit-scrollbar-track {
-    background: #2a2a2a; /* Darker shade for the track */
-    border-radius: 4px;
+  background: #2a2a2a;
+  border-radius: 4px;
 }
 
-/* Style the scrollbar thumb */
 #config-panel::-webkit-scrollbar-thumb {
-    background: #27496d; /* Dark royal blue for the thumb */
-    border-radius: 4px;
+  background: #27496d;
+  border-radius: 4px;
 }
 
-/* Style the scrollbar thumb on hover */
 #config-panel::-webkit-scrollbar-thumb:hover {
-    background: #1d3c5a; /* Slightly darker shade when hovered */
+  background: #1d3c5a;
 }
 
-/* Set the width of the scrollbar */
 #config-panel::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
-
-
-
-/* Input boxes, textareas, and select (dropdown) styling */
 input[type="text"],
 input[type="password"],
 textarea,
 select {
-    background-color: #333333; /* Darker background */
-    border: 1px solid #596a7c; /* Slightly lighter border for visibility */
-    color: #f8f8f8; /* Light text color for readability */
-    padding: 5px; /* Adjust padding as needed */
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+  padding: 5px;
 }
 
-/* Remove the focus state styling to keep the color consistent */
 input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-    background-color: #333333; /* Keep the same background color */
-    border-color: #596a7c; /* Maintain the same border color */
-    outline: none; /* Optional: removes the default focus outline */
-    color: #f8f8f8;
+  background-color: #333333;
+  border-color: #596a7c;
+  outline: none;
+  color: #f8f8f8;
 }
 
-/* Adjust the placeholder text color for visibility */
 ::placeholder {
-    color: #888888; /* Lighter placeholder text */
-    opacity: 1; /* Required to ensure consistent placeholder visibility */
+  color: #888888;
+  opacity: 1;
 }
 
-/* Style the options inside the dropdown */
 select option {
-    background-color: #f8f8f8 ; /* Dark background for dropdown options */
-    color:#2a2a2a ; /* Light text for options */
+  background-color: #f8f8f8;
+  color: #2a2a2a;
+}
+
+/* New styles for movie hover cards */
+.movie-card {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.movie-card.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.movie-card-content {
+  font-size: 14px;
+}
+
+.movie-title:hover + .movie-card,
+.movie-card:hover {
+  display: block;
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+.movie-title {
+  position: relative;
+  cursor: pointer;
+}
+
+.movie-title:hover .movie-card {
+  display: block;
+  bottom: 100%;
+  right: 0;
+}
+
+.popover-content h5 {
+  font-size: 16px; /* Title font size */
+  margin-bottom: 5px;
+}
+
+.popover-content p {
+  font-size: 14px; /* Description font size */
 }

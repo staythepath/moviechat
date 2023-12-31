@@ -262,6 +262,7 @@ function checkAndFetchRootFolders() {
   }
 }
 
+// Function to update the chat with new messages and initialize popovers
 function updateChat(sender, text) {
   let chatBox = document.getElementById("chat-box");
   let messageDiv = document.createElement("div");
@@ -273,26 +274,100 @@ function updateChat(sender, text) {
 
   let textDiv = document.createElement("div");
   textDiv.classList.add("text-content");
-
-  // Convert markdown to HTML
   let htmlContent = markdownToHTML(text);
-
-  // Set the innerHTML of textDiv to the processed HTML content
   textDiv.innerHTML = htmlContent;
 
   messageDiv.appendChild(senderSpan);
   messageDiv.appendChild(textDiv);
-
   chatBox.appendChild(messageDiv);
   chatBox.scrollTop = chatBox.scrollHeight;
+
+  $(messageDiv)
+    .find('[data-toggle="popover"]')
+    .each(function () {
+      setupPopoverHideWithDelay(this);
+    });
 }
 
+// Function to add a movie to Radarr and update the chat
 function addMovieToRadarr(tmdbId) {
   fetch(`/add_movie_to_radarr/${tmdbId}`)
     .then((response) => response.json())
     .then((data) => {
-      // Instead of alert, display the message in chat
       updateChat("bot", data.message);
     })
     .catch((error) => console.error("Error:", error));
 }
+
+// Function to setup popover with delay hide functionality
+function setupPopoverHideWithDelay(element) {
+  var hideDelay = 200; // Delay in milliseconds
+  var hideDelayTimer = null;
+  var popoverVisible = false;
+
+  var showPopover = function () {
+    if (!popoverVisible) {
+      clearTimeout(hideDelayTimer);
+      $(element).popover("show");
+      popoverVisible = true;
+    }
+  };
+
+  var hidePopover = function () {
+    if (popoverVisible) {
+      clearTimeout(hideDelayTimer);
+      hideDelayTimer = setTimeout(function () {
+        $(element).popover("hide");
+        popoverVisible = false;
+      }, hideDelay);
+    }
+  };
+
+  $(element)
+    .popover({
+      trigger: "manual",
+      html: true,
+      placement: "auto",
+      container: "body",
+      content: "Loading details...",
+      delay: { show: 100, hide: hideDelay },
+    })
+    .on("mouseenter", showPopover)
+    .on("mouseleave", hidePopover);
+
+  $("body")
+    .on("mouseenter", ".popover", function () {
+      clearTimeout(hideDelayTimer);
+    })
+    .on("mouseleave", ".popover", function () {
+      hidePopover();
+    });
+
+  $(element).on("shown.bs.popover", function () {
+    var _this = this;
+    var tmdbId = $(this).data("tmdb-id");
+    $.get(`/movie_details/${tmdbId}`, function (data) {
+      var contentHtml = `
+        <div class="movie-details">
+          <h5>${data.title}</h5>
+          <img src="https://image.tmdb.org/t/p/w200${data.poster_path}" alt="${data.title}">
+          <p>${data.overview}</p>
+          <p>Release Date: ${data.release_date}</p>
+          <p>Rating: ${data.vote_average}</p>
+        </div>`;
+      $(_this).data("bs.popover").config.content = contentHtml;
+      // Important: Manually handle showing the popover
+      showPopover();
+    }).fail(function () {
+      $(_this).data("bs.popover").config.content = "Failed to load details.";
+      showPopover();
+    });
+  });
+}
+
+// Initialize popovers for each movie link
+$(document).ready(function () {
+  $('[data-toggle="popover"]').each(function () {
+    setupPopoverHideWithDelay(this);
+  });
+});
