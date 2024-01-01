@@ -19,28 +19,52 @@ class TMDbManager:
 
     def get_movie_card_details(self, tmdb_id):
         movie = self.movie_api.details(tmdb_id)
-        # Format the details as needed for the movie card
+        credits = self.movie_api.credits(tmdb_id)
+
+        # Debugging: Print the structure of the 'credits' object
+        print("Credits Object:", credits)
+
+        director = self.get_crew_member(credits, "Director")
+        dop = self.get_crew_member(credits, "Director of Photography")
+        writers = self.get_top_writers(credits, 5)  # Get top 5 writers
+        stars = self.get_main_actors(credits, 5)  # Get top 5 actors
+
         return {
             "title": movie.title,
-            "director": self.get_director(movie.credits),
-            "main_actors": self.get_main_actors(movie.credits, 3),  # Get top 3 actors
+            "director": director,
+            "dop": dop,
+            "writers": writers,
+            "stars": stars,
             "description": movie.overview,
             "poster_path": f"https://image.tmdb.org/t/p/original{movie.poster_path}"
             if movie.poster_path
             else None,
             "release_date": movie.release_date,
-            "vote_average": movie.vote_average
-            # Add any other details needed for the card
+            "vote_average": movie.vote_average,
         }
 
-    def get_director(self, credits):
-        for crew_member in credits.crew:
-            if crew_member.job.lower() == "director":
-                return crew_member.name
+    def get_crew_member(self, credits, job_title):
+        for crew_member in credits["crew"]:
+            if crew_member["job"] == job_title:
+                return crew_member["name"]
         return "Not Available"
+
+    def get_crew_members(self, credits, job_title):
+        writers = [
+            member["name"] for member in credits["crew"] if member["job"] == job_title
+        ]
+        return ", ".join(writers) if writers else "Not Available"
 
     def get_main_actors(self, credits, count=3):
         actors = [
-            member.name for member in credits.cast[:count]
-        ]  # Get top 'count' actors
-        return actors if actors else ["Not Available"]
+            member["name"] for member in credits["cast"] if "name" in member
+        ]  # Filter out crew members without a "name" attribute
+        return ", ".join(actors[:count]) if actors else "Not Available"
+
+    def get_top_writers(self, credits, count=5):
+        writers = [
+            member["name"]
+            for member in credits["crew"]
+            if member["department"] == "Writing"
+        ][:count]
+        return ", ".join(writers) if writers else "Not Available"

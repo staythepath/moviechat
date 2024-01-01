@@ -304,6 +304,29 @@ function setupPopoverHideWithDelay(element) {
   var hideDelay = 200; // Delay in milliseconds
   var hideDelayTimer = null;
 
+  // Function to update the popover content once details are loaded
+  function updatePopoverContent(data) {
+    var contentHtml = `
+      <div class="movie-title">${data.title}</div>
+      <div class="movie-details-card">
+        <div class="movie-poster">
+          <img src="https://image.tmdb.org/t/p/original${data.poster_path}" alt="${data.title} Poster" class="img-fluid">
+        </div>
+        <div class="movie-info">
+          
+          <p class="movie-director"><strong>Director:</strong> ${data.director}</p>
+          <p class="movie-dop"><strong>DoP:</strong> ${data.dop}</p>
+          <p class="movie-writers"><strong>Writers:</strong> ${data.writers}</p>
+          <p class="movie-stars"><strong>Stars:</strong> ${data.stars}</p>
+          <p class="movie-rating"><strong>Rating:</strong> ${data.vote_average}</p>
+          <p class="movie-release-date"><strong>Release Date:</strong> ${data.release_date}</p>
+          <p class="movie-description">${data.description}</p>
+        </div>
+      </div>`;
+    $(element).data("bs.popover").config.content = contentHtml;
+    $(element).popover("show");
+  }
+
   var showPopover = function () {
     clearTimeout(hideDelayTimer);
     closeAllPopovers(); // Close all other open popovers
@@ -316,38 +339,6 @@ function setupPopoverHideWithDelay(element) {
     var loadingContent =
       '<div class="loading-content">Loading details...</div>';
     $element.data("bs.popover").config.content = loadingContent;
-
-    // Function to update the popover content once details are loaded
-    // Function to update the popover content once details are loaded
-    var updatePopoverContent = function (data) {
-      var contentHtml = `
-    <div class="movie-details-card">
-      <div class="movie-poster">
-        <img src="https://image.tmdb.org/t/p/original${
-          data.poster_path
-        }" alt="${data.title} Poster" class="img-fluid">
-      </div>
-      <div class="movie-info">
-        <h5 class="movie-title">${data.title}</h5>
-        <p class="movie-director"><strong>Director:</strong> ${
-          data.director || "N/A"
-        }</p>
-        <p class="movie-actors"><strong>Main Actors:</strong> ${
-          data.actors ? data.actors.join(", ") : "N/A"
-        }</p>
-        
-        <p class="movie-release-date"><strong>Release Date:</strong> ${
-          data.release_date
-        }</p>
-        <p class="movie-rating"><strong>Rating:</strong> ${
-          data.vote_average
-        }</p>
-        <p class="movie-description">${data.overview}</p>
-      </div>
-    </div>`;
-      $(element).data("bs.popover").config.content = contentHtml;
-      $(element).popover("show");
-    };
 
     // Load movie details
     $.get(`/movie_details/${tmdbId}`, function (data) {

@@ -124,10 +124,18 @@ body {
   border-right-color: #27496d; /* Change to match the popover background */
 }
 
-/* Movie Details for Popover */
+.movie-title {
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold;
+  text-align: center;
+  background-color: #27496d; /* Match the background color */
+  color: #fff; /* Match the text color */
+  padding: 4px 0; /* Add padding as needed */
+}
+
 .movie-details-card {
-  display: flex;
-  align-items: flex-start;
+  display: flex; /* Add this */
+  align-items: center; /* Center vertically */
   background-color: #333;
   color: #fff;
   padding: 15px;
@@ -140,6 +148,9 @@ body {
   flex-shrink: 0;
   margin-right: 10px;
   width: 35%;
+  display: flex; /* Add this */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .movie-poster img {
