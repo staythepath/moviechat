@@ -299,35 +299,58 @@ function addMovieToRadarr(tmdbId) {
     .catch((error) => console.error("Error:", error));
 }
 
-// Function to setup popover with delay hide functionality
+// Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
   var hideDelay = 200; // Delay in milliseconds
   var hideDelayTimer = null;
-  var popoverVisible = false;
 
   var showPopover = function () {
-    if (!popoverVisible) {
-      clearTimeout(hideDelayTimer);
-      $(element).popover("show");
-      popoverVisible = true;
-    }
+    clearTimeout(hideDelayTimer);
+    closeAllPopovers(); // Close all other open popovers
+
+    var $element = $(element);
+    var tmdbId = $element.data("tmdb-id");
+
+    // Display "Loading details" message
+    $element.popover("show");
+    var loadingContent =
+      '<div class="loading-content">Loading details...</div>';
+    $element.data("bs.popover").config.content = loadingContent;
+
+    // Function to update the popover content once details are loaded
+    var updatePopoverContent = function (data) {
+      var contentHtml = `
+        <div class="movie-details">
+          <img src="https://image.tmdb.org/t/p/w200${data.poster_path}" alt="${data.title}">
+          <p>${data.overview}</p>
+          <p>Release Date: ${data.release_date}</p>
+          <p>Rating: ${data.vote_average}</p>
+        </div>`;
+      $element.data("bs.popover").config.content = contentHtml;
+      $element.popover("show"); // Show the updated popover
+    };
+
+    // Load movie details
+    $.get(`/movie_details/${tmdbId}`, function (data) {
+      updatePopoverContent(data); // Update the popover content
+    }).fail(function () {
+      $element.data("bs.popover").config.content = "Failed to load details.";
+      $element.popover("show"); // Show the failed message
+    });
   };
 
   var hidePopover = function () {
-    if (popoverVisible) {
-      clearTimeout(hideDelayTimer);
-      hideDelayTimer = setTimeout(function () {
-        $(element).popover("hide");
-        popoverVisible = false;
-      }, hideDelay);
-    }
+    clearTimeout(hideDelayTimer);
+    hideDelayTimer = setTimeout(function () {
+      $(element).popover("hide");
+    }, hideDelay);
   };
 
   $(element)
     .popover({
       trigger: "manual",
       html: true,
-      placement: "auto",
+      placement: "right",
       container: "body",
       content: "Loading details...",
       delay: { show: 100, hide: hideDelay },
@@ -342,26 +365,12 @@ function setupPopoverHideWithDelay(element) {
     .on("mouseleave", ".popover", function () {
       hidePopover();
     });
+}
 
-  $(element).on("shown.bs.popover", function () {
-    var _this = this;
-    var tmdbId = $(this).data("tmdb-id");
-    $.get(`/movie_details/${tmdbId}`, function (data) {
-      var contentHtml = `
-        <div class="movie-details">
-          <h5>${data.title}</h5>
-          <img src="https://image.tmdb.org/t/p/w200${data.poster_path}" alt="${data.title}">
-          <p>${data.overview}</p>
-          <p>Release Date: ${data.release_date}</p>
-          <p>Rating: ${data.vote_average}</p>
-        </div>`;
-      $(_this).data("bs.popover").config.content = contentHtml;
-      // Important: Manually handle showing the popover
-      showPopover();
-    }).fail(function () {
-      $(_this).data("bs.popover").config.content = "Failed to load details.";
-      showPopover();
-    });
+// Function to close all open popovers
+function closeAllPopovers() {
+  $('[data-toggle="popover"]').each(function () {
+    $(this).popover("hide");
   });
 }
 

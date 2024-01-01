@@ -276,29 +276,18 @@ select option {
   color: #2a2a2a;
 }
 
-/* New styles for movie hover cards */
-.movie-card {
-  display: none;
-  position: absolute;
-  z-index: 100;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  color: #333;
-  padding: 10px;
-  border-radius: 4px;
-  transition: visibility 0.5s, opacity 0.5s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-}
-
 .movie-card.visible {
   visibility: visible;
   opacity: 1;
 }
 
-.movie-card-content {
+.movie-details {
+  /* Styles for the content within the movie card */
   font-size: 14px;
+  color: #f8f8f8; /* Text color */
+  background-color: #2a2a2a; /* Background color */
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .movie-title:hover + .movie-card,
@@ -319,11 +308,45 @@ select option {
   right: 0;
 }
 
+.popover-title {
+  display: none;
+  background-color: #2a2a2a;
+}
+
+.popover {
+  /* Add your styles for the popover container here */
+  background-color: #2a2a2a; /* Set your desired background color */
+  border: 1px solid #27496d; /* Set your desired border color */
+  border-radius: 4px; /* Set your desired border radius */
+  padding: 4px;
+  /* Add other styles as needed */
+}
+
+/* Updated styles for popover content */
+.popover-content {
+  text-align: left; /* Left-align the content */
+}
+
 .popover-content h5 {
   font-size: 16px; /* Title font size */
   margin-bottom: 5px;
+  color: #f8f8f8; /* Updated text color */
+  background-color: #2a2a2a;
+  padding: 5px; /* Add padding to center content vertically */
 }
 
 .popover-content p {
   font-size: 14px; /* Description font size */
+  color: #f8f8f8; /* Updated text color */
+  background-color: #2a2a2a;
+  padding: 5px; /* Add padding to center content vertically */
+}
+
+/* Customize the popover header */
+.popover-header {
+  background-color: #2a2a2a; /* Change to your desired background color */
+  color: #f8f8f8; /* Change to your desired text color */
+  font-weight: bold; /* Add additional styling as needed */
+  display: none;
+  padding: 0;
 }
