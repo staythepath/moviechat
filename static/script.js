@@ -318,16 +318,35 @@ function setupPopoverHideWithDelay(element) {
     $element.data("bs.popover").config.content = loadingContent;
 
     // Function to update the popover content once details are loaded
+    // Function to update the popover content once details are loaded
     var updatePopoverContent = function (data) {
       var contentHtml = `
-        <div class="movie-details">
-          <img src="https://image.tmdb.org/t/p/w200${data.poster_path}" alt="${data.title}">
-          <p>${data.overview}</p>
-          <p>Release Date: ${data.release_date}</p>
-          <p>Rating: ${data.vote_average}</p>
-        </div>`;
-      $element.data("bs.popover").config.content = contentHtml;
-      $element.popover("show"); // Show the updated popover
+    <div class="movie-details-card">
+      <div class="movie-poster">
+        <img src="https://image.tmdb.org/t/p/original${
+          data.poster_path
+        }" alt="${data.title} Poster" class="img-fluid">
+      </div>
+      <div class="movie-info">
+        <h5 class="movie-title">${data.title}</h5>
+        <p class="movie-director"><strong>Director:</strong> ${
+          data.director || "N/A"
+        }</p>
+        <p class="movie-actors"><strong>Main Actors:</strong> ${
+          data.actors ? data.actors.join(", ") : "N/A"
+        }</p>
+        
+        <p class="movie-release-date"><strong>Release Date:</strong> ${
+          data.release_date
+        }</p>
+        <p class="movie-rating"><strong>Rating:</strong> ${
+          data.vote_average
+        }</p>
+        <p class="movie-description">${data.overview}</p>
+      </div>
+    </div>`;
+      $(element).data("bs.popover").config.content = contentHtml;
+      $(element).popover("show");
     };
 
     // Load movie details

@@ -1,58 +1,71 @@
-@media (max-width: 768px) {
-  #config-panel {
-    width: 100%;
-    left: 0;
-  }
-
-  #main-content.margin-apply {
-    margin-left: 0;
-  }
-
-  body {
-    font-size: 1.1em;
-    max-height: 670px;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  textarea,
-  select {
-    font-size: 1em;
-  }
-
-  #main-content {
-    height: calc(100vh - 56px);
-    max-height: 670px;
-  }
-
-  #chat-box {
-    height: calc(100% - 20px);
-  }
-}
-
+/* General Settings */
 body {
   background-color: #1a1a1a;
   color: #f8f8f8;
   margin: 0;
   padding: 0;
+  font-family: "Arial", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Utility and Responsive Classes */
+@media (max-width: 768px) {
+  #config-panel {
+    width: 100%;
+    left: 0;
+  }
+  #main-content.margin-apply {
+    margin-left: 0;
+  }
+  body {
+    font-size: 1.1em;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 1em;
+  }
+  #main-content {
+    height: calc(100vh - 56px);
+  }
+  #chat-box {
+    height: calc(100% - 20px);
+  }
+}
+
+/* Layout and Components */
+#config-panel,
+#main-content {
+  transition: margin-left 0.5s;
+}
+
+#config-panel {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #333333;
+  padding: 20px;
+  z-index: 2;
+  color: #f8f8f8;
+}
+
 #main-content {
   flex-grow: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* Chat UI */
 .card {
   background-color: #2a2a2a;
   display: flex;
@@ -76,176 +89,102 @@ body {
   flex-grow: 1;
 }
 
-#chat-box::-webkit-scrollbar {
-  width: 8px;
+/* Popover */
+.popover {
+  left: 55px !important;
+  top: 3px !important;
+  max-width: 600px;
+  width: auto;
+  background-color: #2a2a2a;
+  border-color: #27496d;
+  border-radius: 8px;
 }
 
-#chat-box::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-#chat-box::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-#config-panel {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100vh;
-  overflow-x: hidden;
-  transition: 0.5s;
-  background-color: #333333;
-  padding: 20px;
-  z-index: 2;
+.popover-body {
+  padding: 0;
   color: #f8f8f8;
 }
 
-#main-content {
-  transition: margin-left 0.5s;
-}
-
-#main-content.margin-apply {
-  margin-left: 250px;
-  margin-bottom: 20px;
-}
-
-.config-toggle {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.movie-link {
-  color: #596a7c;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.sender-user,
-.sender-bot {
-  font-weight: bold;
-  margin-right: 0.25em;
-  white-space: nowrap;
-  display: inline;
+/* Customize the popover header */
+.popover-header {
+  background-color: #2a2a2a; /* Change to your desired background color */
+  color: #f8f8f8; /* Change to your desired text color */
+  font-weight: bold; /* Add additional styling as needed */
+  display: none;
   padding: 0;
 }
 
-.sender-user {
-  color: #3a6ea5;
+/* For the main part of the arrow */
+.popover.bs-popover-right .arrow::before {
+  border-right-color: #27496d; /* Change to your desired arrow color */
 }
 
-.sender-bot {
-  color: #a89f91;
+/* For the inner part of the arrow (to match the popover background color) */
+.popover.bs-popover-right .arrow::after {
+  border-right-color: #27496d; /* Change to match the popover background */
 }
 
-.message {
+/* Movie Details for Popover */
+.movie-details-card {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 5px;
-  padding-left: 5px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 600px;
 }
 
-.message-content {
-  display: inline;
-  flex: 1;
-  text-align: left;
-  word-wrap: break-word;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
-.message-content ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.message-content li {
-  margin: 0;
-}
-
-.text-content {
-  display: inline;
-  word-break: break-word;
-}
-
-.message * {
-  margin: 0;
-  padding: 0;
-}
-
-.message div {
-  color: #ffffff;
-  margin-left: 10px;
-}
-
-.btn-primary {
-  background-color: #27496d;
-  border-color: #27496d;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: #1d3c5a;
-  border-color: #1d3c5a;
-}
-
-.custom-checkbox {
-  vertical-align: middle;
-  margin-left: 5px;
-  width: auto;
-  color: #27496d;
-}
-
-.form-group label {
-  display: inline-block;
+.movie-poster {
+  flex-shrink: 0;
   margin-right: 10px;
+  width: 35%;
 }
 
-.checkbox-label {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: #333;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-left: 10px;
-  vertical-align: middle;
-  transition: background 0.3s;
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #fff;
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #27496d;
-  border-color: #27496d;
+.movie-info {
+  flex-grow: 1;
+  width: 65%;
 }
 
-.custom-checkbox:checked + .checkbox-label {
-  background: #27496d;
+.movie-info h5 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
 }
 
-.custom-control-label {
-  color: #f8f8f8;
+.movie-info p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
-#config-panel::-webkit-scrollbar-track {
-  background: #2a2a2a;
-  border-radius: 4px;
-}
-
-#config-panel::-webkit-scrollbar-thumb {
-  background: #27496d;
-  border-radius: 4px;
-}
-
-#config-panel::-webkit-scrollbar-thumb:hover {
-  background: #1d3c5a;
-}
-
+/* Scrollbar Customization */
+#chat-box::-webkit-scrollbar,
 #config-panel::-webkit-scrollbar {
   width: 8px;
 }
 
+#chat-box::-webkit-scrollbar-thumb,
+#config-panel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover,
+#config-panel::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#config-panel::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+/* Form and Button Styles */
 input[type="text"],
 input[type="password"],
 textarea,
@@ -261,14 +200,13 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   background-color: #333333;
-  border-color: #596a7c;
-  outline: none;
+  border: 1px solid #596a7c;
   color: #f8f8f8;
+  padding: 5px;
 }
 
 ::placeholder {
   color: #888888;
-  opacity: 1;
 }
 
 select option {
@@ -276,77 +214,59 @@ select option {
   color: #2a2a2a;
 }
 
-.movie-card.visible {
-  visibility: visible;
-  opacity: 1;
+.btn-primary {
+  background-color: #27496d;
+  border-color: #27496d;
+  color: #ffffff;
 }
 
-.movie-details {
-  /* Styles for the content within the movie card */
-  font-size: 14px;
-  color: #f8f8f8; /* Text color */
-  background-color: #2a2a2a; /* Background color */
-  padding: 10px;
-  border-radius: 4px;
+.btn-primary:hover {
+  background-color: #1d3c5a;
+  border-color: #1d3c5a;
 }
 
-.movie-title:hover + .movie-card,
-.movie-card:hover {
-  display: block;
-  transition-delay: 0s;
-  visibility: visible;
-}
-
-.movie-title {
-  position: relative;
+/* Misc */
+.config-toggle {
+  font-size: 24px;
   cursor: pointer;
 }
 
-.movie-title:hover .movie-card {
-  display: block;
-  bottom: 100%;
-  right: 0;
+.movie-link {
+  color: #596a7c;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.popover-title {
-  display: none;
-  background-color: #2a2a2a;
+.sender-user {
+  color: #3a6ea5;
 }
 
-.popover {
-  /* Add your styles for the popover container here */
-  background-color: #2a2a2a; /* Set your desired background color */
-  border: 1px solid #27496d; /* Set your desired border color */
-  border-radius: 4px; /* Set your desired border radius */
-  padding: 4px;
-  /* Add other styles as needed */
+.sender-bot {
+  color: #a89f91;
 }
 
-/* Updated styles for popover content */
-.popover-content {
-  text-align: left; /* Left-align the content */
-}
-
-.popover-content h5 {
-  font-size: 16px; /* Title font size */
+.message {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 5px;
-  color: #f8f8f8; /* Updated text color */
-  background-color: #2a2a2a;
-  padding: 5px; /* Add padding to center content vertically */
 }
 
-.popover-content p {
-  font-size: 14px; /* Description font size */
-  color: #f8f8f8; /* Updated text color */
-  background-color: #2a2a2a;
-  padding: 5px; /* Add padding to center content vertically */
-}
-
-/* Customize the popover header */
-.popover-header {
-  background-color: #2a2a2a; /* Change to your desired background color */
-  color: #f8f8f8; /* Change to your desired text color */
-  font-weight: bold; /* Add additional styling as needed */
-  display: none;
+.message * {
+  margin: 0;
   padding: 0;
+}
+
+.custom-checkbox {
+  vertical-align: middle;
+  margin-left: 5px;
+  color: #27496d;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #27496d;
+  border-color: #27496d;
+}
+
+.custom-control-label {
+  color: #f8f8f8;
 }
