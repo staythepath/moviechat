@@ -301,7 +301,7 @@ function addMovieToRadarr(tmdbId) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 200; // Delay in milliseconds
+  var hideDelay = 100; // Delay in milliseconds
   var hideDelayTimer = null;
 
   // Function to update the popover content once details are loaded
@@ -360,7 +360,46 @@ function setupPopoverHideWithDelay(element) {
     .popover({
       trigger: "manual",
       html: true,
-      placement: "right",
+      placement: function (context, source) {
+        var position = $(source).position();
+        var popoverWidth = $(context).outerWidth();
+        var popoverHeight = $(context).outerHeight();
+        var triggerWidth = $(source).outerWidth();
+        var triggerHeight = $(source).outerHeight();
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+
+        // Calculate the available space on each side
+        var availableSpaceTop = position.top - popoverHeight / 2;
+        var availableSpaceBottom =
+          windowHeight - (position.top + triggerHeight / 2 + popoverHeight / 2);
+        var availableSpaceLeft = position.left - popoverWidth / 2;
+        var availableSpaceRight =
+          windowWidth - (position.left + triggerWidth / 2 + popoverWidth / 2);
+
+        // Choose the side with the most available space
+        if (
+          availableSpaceTop > availableSpaceBottom &&
+          availableSpaceTop > availableSpaceLeft &&
+          availableSpaceTop > availableSpaceRight
+        ) {
+          return "top";
+        } else if (
+          availableSpaceBottom > availableSpaceTop &&
+          availableSpaceBottom > availableSpaceLeft &&
+          availableSpaceBottom > availableSpaceRight
+        ) {
+          return "bottom";
+        } else if (
+          availableSpaceLeft > availableSpaceTop &&
+          availableSpaceLeft > availableSpaceBottom &&
+          availableSpaceLeft > availableSpaceRight
+        ) {
+          return "left";
+        } else {
+          return "right";
+        }
+      },
       container: "body",
       content: "Loading details...",
       delay: { show: 100, hide: hideDelay },
