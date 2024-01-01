@@ -8,7 +8,7 @@ import requests
 import os
 import yaml
 
-import DiscordBot
+# import DiscordBot
 
 from config_manager import ConfigManager
 from tmdb_manager import TMDbManager
