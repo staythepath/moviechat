@@ -299,6 +299,101 @@ function addMovieToRadarr(tmdbId) {
     .catch((error) => console.error("Error:", error));
 }
 
+// Track the last mouse position
+let lastMousePosition = { x: 0, y: 0 };
+
+$(document).on("mousemove", ".movie-title", function (event) {
+  lastMousePosition = { x: event.pageX, y: event.pageY };
+});
+
+function getMouseRelativePosition(event, element) {
+  const rect = element.getBoundingClientRect();
+  const relativeX = event.clientX - rect.left;
+  const relativeY = event.clientY - rect.top;
+  return { relativeX, relativeY, rect };
+}
+
+// Function to split the text of each .movie-title element into individual spans for each word
+function splitTextIntoSpans() {
+  $(".movie-title").each(function () {
+    const words = $(this).text().split(" ");
+    $(this).empty();
+    words.forEach((word) => {
+      $(this).append($("<span>").text(word + " "));
+    });
+  });
+}
+
+// Track the last mouse event
+let lastMouseEvent = null;
+
+$(document).on("mouseenter", ".movie-title", function (event) {
+  // Get the text of the movie title
+  const text = $(this).text();
+
+  // Split the text into words
+  const words = text.split(" ");
+
+  // Create a temporary span for each word and measure its position and size
+  const wordPositions = words.map((word, index) => {
+    const $span = $("<span>").text(word).appendTo(this);
+    const position = $span.position();
+    const width = $span.width();
+    $span.remove();
+    return { index, left: position.left, right: position.left + width };
+  });
+
+  // Determine which word the mouse is over
+  const mouseX = event.pageX - $(this).offset().left;
+  const word = wordPositions.find(
+    (pos) => mouseX >= pos.left && mouseX <= pos.right
+  );
+
+  // Store the word index and position in data attributes
+  $(this).data("word-index", word.index);
+  $(this).data("word-position", word.left);
+});
+
+function customPopoverPlacement(context, source) {
+  const wordPosition = $(source).data("word-position");
+  const triggerRect = source.getBoundingClientRect();
+  const popoverHeight = $(context).outerHeight();
+  const windowHeight = window.innerHeight;
+
+  const spaceTop = triggerRect.top;
+  const spaceBottom = windowHeight - triggerRect.bottom;
+
+  // Check if the popover fits on top or bottom, is not off the viewport, and doesn't cover the source
+  const fitsTop = spaceTop >= popoverHeight;
+  const fitsBottom = spaceBottom >= popoverHeight;
+
+  // Determine the placement based on the word position
+  const placement = wordPosition < triggerRect.width / 2 ? "bottom" : "top";
+
+  // Create an array of placements that can fit the popover
+  const placements = [
+    { side: placement, space: fitsBottom ? spaceBottom : 0 },
+    {
+      side: placement === "bottom" ? "top" : "bottom",
+      space: fitsTop ? spaceTop : 0,
+    },
+  ];
+
+  // Filter out placements that would cover the source
+  const validPlacements = placements.filter((placement) => placement.space > 0);
+
+  // If there are no valid placements, default to the calculated placement
+  if (validPlacements.length === 0) {
+    return placement;
+  }
+
+  // Sort the placements by the available space
+  validPlacements.sort((a, b) => b.space - a.space);
+
+  // Return the placement with the most space
+  return validPlacements[0].side;
+}
+
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
   var hideDelay = 100; // Delay in milliseconds
@@ -361,7 +456,9 @@ function setupPopoverHideWithDelay(element) {
     .popover({
       trigger: "manual",
       html: true,
-      placement: "auto",
+      placement: function (context, source) {
+        return customPopoverPlacement(context, source);
+      },
       container: "body",
       content: "Loading details...",
       offset: 10,
@@ -392,3 +489,6 @@ $(document).ready(function () {
     setupPopoverHideWithDelay(this);
   });
 });
+
+$(document).ready(splitTextIntoSpans);
+$(window).resize(splitTextIntoSpans);

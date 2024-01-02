@@ -52,6 +52,12 @@ class OpenAIChatManager:
 
         print("OpenAI response: ", response_content)
 
+        # Add bot's response to conversation history
+        bot_response = {"role": "assistant", "content": response_content}
+        conversation_history = self.trim_conversation_history(
+            conversation_history, bot_response
+        )
+
         # Process movie titles
         movie_titles_map = self.check_for_movie_title_in_string(response_content)
         for title, tmdb_id in movie_titles_map.items():
