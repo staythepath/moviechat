@@ -325,6 +325,7 @@ function setupPopoverHideWithDelay(element) {
       </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
     $(element).popover("show");
+    $(element).popover("update");
   }
 
   var showPopover = function () {
@@ -345,7 +346,7 @@ function setupPopoverHideWithDelay(element) {
       updatePopoverContent(data); // Update the popover content
     }).fail(function () {
       $element.data("bs.popover").config.content = "Failed to load details.";
-      $element.popover("show"); // Show the failed message
+      $element.popover("show");
     });
   };
 
@@ -360,48 +361,10 @@ function setupPopoverHideWithDelay(element) {
     .popover({
       trigger: "manual",
       html: true,
-      placement: function (context, source) {
-        var position = $(source).position();
-        var popoverWidth = $(context).outerWidth();
-        var popoverHeight = $(context).outerHeight();
-        var triggerWidth = $(source).outerWidth();
-        var triggerHeight = $(source).outerHeight();
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-
-        // Calculate the available space on each side
-        var availableSpaceTop = position.top - popoverHeight / 2;
-        var availableSpaceBottom =
-          windowHeight - (position.top + triggerHeight / 2 + popoverHeight / 2);
-        var availableSpaceLeft = position.left - popoverWidth / 2;
-        var availableSpaceRight =
-          windowWidth - (position.left + triggerWidth / 2 + popoverWidth / 2);
-
-        // Choose the side with the most available space
-        if (
-          availableSpaceTop > availableSpaceBottom &&
-          availableSpaceTop > availableSpaceLeft &&
-          availableSpaceTop > availableSpaceRight
-        ) {
-          return "top";
-        } else if (
-          availableSpaceBottom > availableSpaceTop &&
-          availableSpaceBottom > availableSpaceLeft &&
-          availableSpaceBottom > availableSpaceRight
-        ) {
-          return "bottom";
-        } else if (
-          availableSpaceLeft > availableSpaceTop &&
-          availableSpaceLeft > availableSpaceBottom &&
-          availableSpaceLeft > availableSpaceRight
-        ) {
-          return "left";
-        } else {
-          return "right";
-        }
-      },
+      placement: "auto",
       container: "body",
       content: "Loading details...",
+      offset: 10,
       delay: { show: 100, hide: hideDelay },
     })
     .on("mouseenter", showPopover)

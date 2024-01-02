@@ -22,7 +22,7 @@ class TMDbManager:
         credits = self.movie_api.credits(tmdb_id)
 
         # Debugging: Print the structure of the 'credits' object
-        print("Credits Object:", credits)
+        # print("Credits Object:", credits)
 
         director = self.get_crew_member(credits, "Director")
         dop = self.get_crew_member(credits, "Director of Photography")

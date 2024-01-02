@@ -38,6 +38,8 @@ class OpenAIChatManager:
             }
         ] + conversation_history
 
+        print("Here is the message: ", messages)
+
         # Generate response from OpenAI
         response = self.client.chat.completions.create(
             model=self.selected_model, messages=messages, temperature=0

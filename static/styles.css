@@ -91,8 +91,8 @@ body {
 
 /* Popover */
 .popover {
-  left: 55px !important;
-  top: 3px !important;
+  /*left: 55px !important;
+  top: 3px !important; */
   max-width: 600px;
   width: auto;
   background-color: #2a2a2a;
@@ -102,7 +102,7 @@ body {
 
 .popover-body {
   padding: 0;
-  color: #f8f8f8;
+  color: #27496d;
 }
 
 /* Customize the popover header */
@@ -115,89 +115,28 @@ body {
 }
 
 /* For the main part of the arrow */
-.popover.bs-popover-right .arrow::before {
-  border-right-color: #27496d; /* Change to your desired arrow color */
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-}
-
-/* For the inner part of the arrow (to match the popover background color) */
-.popover.bs-popover-right .arrow::after {
-  border-right-color: #27496d; /* Change to match the popover background */
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-}
-
-/* For the main part of the arrow */
+.popover.bs-popover-top .arrow::before,
+.popover.bs-popover-right .arrow::before,
+.popover.bs-popover-bottom .arrow::before,
 .popover.bs-popover-left .arrow::before {
-  border-left-color: #27496d; /* Change to your desired arrow color */
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
+  border-color: transparent; /* Reset the default border color */
 }
 
-/* For the inner part of the arrow (to match the popover background color) */
-.popover.bs-popover-left .arrow::after {
-  border-left-color: #27496d; /* Change to match the popover background */
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-}
-
-/* For the main part of the arrow */
-.popover.bs-popover-top .arrow::before {
-  border-top-color: #27496d; /* Change to your desired arrow color */
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-}
-
-/* For the inner part of the arrow (to match the popover background color) */
+/* For the inner part of the arrow (to match your desired popover background color) */
 .popover.bs-popover-top .arrow::after {
-  border-top-color: #27496d; /* Change to match the popover background */
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
+  border-top-color: #27496d; /* Replace '#yourColor' with your desired color */
 }
 
-/* For the main part of the arrow */
-.popover.bs-popover-bottom .arrow::before {
-  border-bottom-color: #27496d; /* Change to your desired arrow color */
-  border-right-color: transparent;
-  border-top-color: transparent;
-  border-left-color: transparent;
+.popover.bs-popover-right .arrow::after {
+  border-right-color: #27496d;
 }
 
-/* For the inner part of the arrow (to match the popover background color) */
 .popover.bs-popover-bottom .arrow::after {
-  border-bottom-color: #27496d; /* Change to match the popover background */
-  border-right-color: transparent;
-  border-top-color: transparent;
-  border-left-color: transparent;
+  border-bottom-color: #27496d;
 }
 
-.popover.bs-popover-left {
-  margin-left: 40px; /* Adjust this value to move the popover more or less */
-}
-
-.popover.bs-popover-below {
-  margin-left: 40px; /* Adjust this value to move the popover more or less */
-}
-
-.popover.bs-popover-bottom {
-  margin-left: 40px; /* Adjust this value to move the popover more or less */
-}
-
-.popover.bs-popover-top {
-  margin-left: 40px; /* Adjust this value to move the popover more or less */
-}
-
-.popover.bs-popover-top .arrow,
-.popover.bs-popover-bottom .arrow {
-  left: calc(50% - 30px); /* Move the arrow to the left by 30 pixels */
-  transform: translateX(-50%); /* Adjust the position to point at the title */
+.popover.bs-popover-left .arrow::after {
+  border-left-color: #27496d;
 }
 
 .movie-title {
