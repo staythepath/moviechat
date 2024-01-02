@@ -71,11 +71,14 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  border-radius: 10px !important;
 }
 
 .card-header {
   background-color: #27496d;
   color: #f8f8f8;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
 
 .card-body,
@@ -87,6 +90,7 @@ body {
   height: calc(100% - 60px);
   overflow-y: auto;
   flex-grow: 1;
+  border-radius: 20px !important;
 }
 
 /* Popover */
@@ -146,6 +150,7 @@ body {
   background-color: #27496d; /* Match the background color */
   color: #fff; /* Match the text color */
   padding: 4px 0; /* Add padding as needed */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .movie-details-card {
@@ -154,7 +159,6 @@ body {
   background-color: #333;
   color: #fff;
   padding: 15px;
-  border-radius: 8px;
   font-size: 14px;
   max-width: 600px;
 }
@@ -236,14 +240,32 @@ select:focus {
 }
 
 select option {
-  background-color: #f8f8f8;
-  color: #2a2a2a;
+  background-color: #333333;
+  color: #f8f8f8;
 }
 
 .btn-primary {
   background-color: #27496d;
   border-color: #27496d;
   color: #ffffff;
+}
+
+select.form-control {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+}
+
+select.form-control option {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+}
+
+select.form-control:focus {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
 }
 
 .btn-primary:hover {
@@ -261,6 +283,7 @@ select option {
   color: #596a7c;
   cursor: pointer;
   text-decoration: underline;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .sender-user {
@@ -280,6 +303,7 @@ select option {
 .message * {
   margin: 0;
   padding: 0;
+  padding-left: 5px;
 }
 
 .custom-checkbox {

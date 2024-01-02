@@ -282,6 +282,10 @@ function updateChat(sender, text) {
   chatBox.appendChild(messageDiv);
   chatBox.scrollTop = chatBox.scrollHeight;
 
+  let movieTitleElement = document.createElement("span");
+  movieTitleElement.className = "movie-title";
+  movieTitleElement.textContent = "Your Movie Title Here";
+
   $(messageDiv)
     .find('[data-toggle="popover"]')
     .each(function () {
@@ -300,58 +304,9 @@ function addMovieToRadarr(tmdbId) {
 }
 
 // Track the last mouse position
-let lastMousePosition = { x: 0, y: 0 };
 
 $(document).on("mousemove", ".movie-title", function (event) {
   lastMousePosition = { x: event.pageX, y: event.pageY };
-});
-
-function getMouseRelativePosition(event, element) {
-  const rect = element.getBoundingClientRect();
-  const relativeX = event.clientX - rect.left;
-  const relativeY = event.clientY - rect.top;
-  return { relativeX, relativeY, rect };
-}
-
-// Function to split the text of each .movie-title element into individual spans for each word
-function splitTextIntoSpans() {
-  $(".movie-title").each(function () {
-    const words = $(this).text().split(" ");
-    $(this).empty();
-    words.forEach((word) => {
-      $(this).append($("<span>").text(word + " "));
-    });
-  });
-}
-
-// Track the last mouse event
-let lastMouseEvent = null;
-
-$(document).on("mouseenter", ".movie-title", function (event) {
-  // Get the text of the movie title
-  const text = $(this).text();
-
-  // Split the text into words
-  const words = text.split(" ");
-
-  // Create a temporary span for each word and measure its position and size
-  const wordPositions = words.map((word, index) => {
-    const $span = $("<span>").text(word).appendTo(this);
-    const position = $span.position();
-    const width = $span.width();
-    $span.remove();
-    return { index, left: position.left, right: position.left + width };
-  });
-
-  // Determine which word the mouse is over
-  const mouseX = event.pageX - $(this).offset().left;
-  const word = wordPositions.find(
-    (pos) => mouseX >= pos.left && mouseX <= pos.right
-  );
-
-  // Store the word index and position in data attributes
-  $(this).data("word-index", word.index);
-  $(this).data("word-position", word.left);
 });
 
 function customPopoverPlacement(context, source) {
@@ -489,6 +444,3 @@ $(document).ready(function () {
     setupPopoverHideWithDelay(this);
   });
 });
-
-$(document).ready(splitTextIntoSpans);
-$(window).resize(splitTextIntoSpans);
