@@ -1,124 +1,42 @@
 from flask import Flask, request, render_template, jsonify, session
-import yaml
-import os
-import threading
-import discord
-import asyncio
-import WebChat
-from arrapi import RadarrAPI
-import arrapi.exceptions
-import requests
-from tmdbv3api import TMDb, Movie
 import subprocess
-import multiprocessing
+import threading
+import asyncio
+import discord
+from tmdbv3api import TMDb, Movie
+import requests
+import os
+import yaml
 
+# import DiscordBot
+
+from config_manager import ConfigManager
+from tmdb_manager import TMDbManager
+from radarr_manager import RadarrManager
+from openai_chat_manager import OpenAIChatManager
+
+# from discord_bot import DiscordBot
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Generate a random secret key
-global radarr 
+app.secret_key = os.urandom(24)
+
+config_manager = ConfigManager()
+tmdb_manager = TMDbManager(config_manager)
+radarr_manager = RadarrManager(config_manager, tmdb_manager)
+openai_chat_manager = OpenAIChatManager(config_manager, tmdb_manager)
+# discord_bot = DiscordBot(config_manager, tmdb_manager, radarr_manager)
+
 channels_data = []
 
+
 def start_discord_bot_process():
-    subprocess.Popen(['python', 'RunThis.py'])
-
-def load_config():
-    config_path = 'config.yaml'
-    if not os.path.exists(config_path):
-        create_default_config(config_path)
-    with open(config_path, 'r') as file:
-        return yaml.safe_load(file)
-    
-def create_default_config(config_path):
-    default_config = {
-        'tmdb_api_key': '',
-        'radarr_url': '',
-        'radarr_api_key': '',
-        'openai_api_key': '',
-        'discord_token': '',
-        'radarr_quality': '',
-        'selected_model': '',
-        'max_chars': 65540,
-        'discord_channel': '',
-        'radarr_root_folder': ''
-    }
-    with open(config_path, 'w') as file:
-        yaml.dump(default_config, file)
-    
-def initialize_radarr(config):
-    try:
-        if config['radarr_url'] and config['radarr_api_key']:
-            return RadarrAPI(config['radarr_url'], config['radarr_api_key'])
-    except Exception as e:
-        print(f"Error initializing Radarr API: {e}")
-        return None
-
-config = load_config()
-# Set the root folder during initialization
-
-DISCORD_TOKEN = config['discord_token']
-TMDB_API_KEY = config['tmdb_api_key']
-RADARR_API_KEY = config['radarr_api_key']
-RADARR_URL = config['radarr_url']
-OPENAI_API_KEY = config['openai_api_key']
-RADARR_QUALITY = config["radarr_quality"]
-MAX_CHARS = config['max_chars']
-SELECTED_MODEL = config['selected_model']
-RADARR_ROOT_FOLDER = config['radarr_root_folder']
+    subprocess.Popen(["python", "DiscordBot.py"])
 
 
-# Function to load or create configuration
-def load_or_create_config():
-    config_path = 'config.yaml'
-    default_config = {
-        'tmdb_api_key': '',
-        'radarr_url': '',
-        'radarr_api_key': '',
-        'openai_api_key': '',
-        'discord_token': '',
-        'radarr_quality': '',
-        'selected_model': '',
-        'max_chars': 65540,  # Default value for gpt-3.5-turbo-1106
-        'discord_channel': '',
-        'radarr_root_folder': ''
-    }
-
-    if os.path.exists(config_path):
-        with open(config_path, 'r') as file:
-            config = yaml.safe_load(file) or default_config
-    else:
-        config = default_config
-        with open(config_path, 'w') as file:
-            yaml.dump(config, file)
-
-    # Update MAX_CHARS based on the selected model
-    model = config.get('selected_model')
-    if model == 'gpt-4-1106-preview':
-        config['max_chars'] = 512000
-
-    return config
-
-
-
-
-config = load_or_create_config()
-radarr = initialize_radarr(config)
-
-
-
-
-def start_bot(config):
-    # Function to start the bot
-    os.system('python RunThis.py') 
-
-def check_and_start_bot():
-    config = load_or_create_config()
-    # Check if the start_discord_bot_on_launch key is true
-    if config.get('start_discord_bot_on_launch', True):
-        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
-        if all(key in config and config[key] for key in required_keys): 
-            threading.Thread(target=start_bot, args=(config,)).start()
-    else:
-        print("Discord bot startup is disabled in the configuration.")
+def start_discord_client(token):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(get_channels(token))
 
 
 async def get_channels(token):
@@ -131,202 +49,135 @@ async def get_channels(token):
         channels_data.clear()
         for guild in client.guilds:
             for channel in guild.text_channels:
-                channels_data.append({'id': str(channel.id), 'name': channel.name})
-
+                channels_data.append({"id": str(channel.id), "name": channel.name})
         await client.close()
 
     await client.login(token)
     await client.start(token)
 
-def start_discord_client(token):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(get_channels(token))
 
-@app.route('/server_status')
+@app.route("/server_status")
 def server_status():
-    # Simple status check. You can add more complex logic if needed.
-    return jsonify({'status': 'ready'})
+    return jsonify({"status": "ready"})
 
-@app.route('/channels', methods=['GET'])
+
+@app.route("/channels", methods=["GET"])
 def channels_endpoint():
-    token = request.args.get('token')
+    token = request.args.get("token")
     if token:
         thread = threading.Thread(target=start_discord_client, args=(token,))
         thread.start()
         thread.join()
-        print("Here is the channel data from the api call", channels_data)
-    return jsonify(channels_data)
+        return jsonify(channels_data)
+    return jsonify({"error": "No token provided"})
 
-@app.route('/load_config', methods=['GET'])
+
+@app.route("/load_config", methods=["GET"])
 def load_config_endpoint():
-    # Call the load_config() function here to reload the configuration
-    loaded_config = load_config()
-    
-    # You can return a response or log a message if needed
-    print('Configuration reloaded on the server')
-    
-    return jsonify({'message': 'Configuration reloaded on the server'})
+    config_manager.load_config()
+    return jsonify({"message": "Configuration reloaded on the server"})
 
 
-@app.route('/fetch_root_folders')
+@app.route("/fetch_root_folders")
 def fetch_root_folders():
-    config = load_config()
-    radarr_url = config.get('radarr_url')
-    radarr_api_key = config.get('radarr_api_key')
+    radarr_url = config_manager.get_config_value("radarr_url")
+    radarr_api_key = config_manager.get_config_value("radarr_api_key")
 
     if radarr_url and radarr_api_key:
         try:
             url = f"{radarr_url}/api/v3/rootfolder"
-            headers = {'X-Api-Key': radarr_api_key}
+            headers = {"X-Api-Key": radarr_api_key}
             response = requests.get(url, headers=headers)
             if response.status_code == 200:
-                root_folders = response.json()
-                return jsonify(root_folders)
+                return jsonify(response.json())
             else:
-                print(f"Error fetching Radarr root folders: HTTP {response.status_code}")
-                return jsonify([])
+                return jsonify({"error": f"HTTP {response.status_code}"})
         except Exception as e:
-            print(f"Error fetching Radarr root folders: {e}")
-            return jsonify([])
+            return jsonify({"error": str(e)})
+    return jsonify({"error": "Radarr not configured"})
 
-    return jsonify([])
 
-        
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
 def index():
-    
-
-    
-    if request.method == 'POST':
-        # Update config from form data only if the input is not empty
-        for key in ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'discord_channel']:
+    if request.method == "POST":
+        for key in [
+            "tmdb_api_key",
+            "radarr_url",
+            "radarr_api_key",
+            "openai_api_key",
+            "discord_token",
+            "radarr_quality",
+            "selected_model",
+            "discord_channel",
+        ]:
             form_value = request.form.get(key)
-            if form_value:  # Only update if the form input is not empty
-                config[key] = form_value
-        
-         # Update the discord_channel_id separately
-        discord_channel_id = request.form.get('discord_channel')
+            if form_value:
+                config_manager.config[key] = form_value
+
+        discord_channel_id = request.form.get("discord_channel")
         if discord_channel_id:
-            print("Received discord_channel_id:", discord_channel_id) # Logging statement
-            config['discord_channel_id'] = discord_channel_id
+            config_manager.config["discord_channel_id"] = discord_channel_id
 
-        # Handling the Radarr root folder
-        radarr_root_folder = request.form.get('radarr_root_folder')
+        radarr_root_folder = request.form.get("radarr_root_folder")
         if radarr_root_folder:
-            config['radarr_root_folder'] = radarr_root_folder
-        
-        # Set MAX_CHARS based on the selected model
-        selected_model = config.get('selected_model')
-        if selected_model == 'gpt-3.5-turbo-1106':
-            config['max_chars'] = 65540
-        elif selected_model == 'gpt-4-1106-preview':
-            config['max_chars'] = 512000
+            config_manager.config["radarr_root_folder"] = radarr_root_folder
 
-        
-        
+        selected_model = config_manager.get_config_value("selected_model")
+        if selected_model == "gpt-3.5-turbo-1106":
+            config_manager.config["max_chars"] = 65540
+        elif selected_model == "gpt-4-1106-preview":
+            config_manager.config["max_chars"] = 512000
 
-        
+        start_discord_bot = request.form.get("start_discord_bot_on_launch") == "on"
+        config_manager.config["start_discord_bot_on_launch"] = start_discord_bot
 
-        
-        # Restart the bot to apply new configuration
-        threading.Thread(target=start_bot, args=(config,)).start()
+        with open(config_manager.config_path, "w") as file:
+            yaml.dump(config_manager.config, file)
 
-        start_discord_bot = request.form.get('start_discord_bot_on_launch') == 'on'
-        config['start_discord_bot_on_launch'] = start_discord_bot
+        tmdb_manager.update_tmdb_api_key()
+        radarr_manager.radarr = radarr_manager.initialize_radarr()
+        openai_chat_manager.initialize_openai_client()
 
-        # Write updated configuration to file
-        with open('config.yaml', 'w') as file:
-            yaml.dump(config, file)
-          # Start the Discord bot in a separate process
-            
-
-    
-    radarr = None
-    if config.get('radarr_url') and config.get('radarr_api_key'):
-        try:
-            radarr = RadarrAPI(config['radarr_url'], config['radarr_api_key'])
-        except Exception as e:
-            print(f"Error initializing Radarr API: {e}")
-
-    # Fetch root folders if RadarrAPI is initialized
-    root_folders = []
-
-        
-    
-    print("Root folders:", root_folders)
-    return render_template('index.html', config=config, root_folders=root_folders)
-
-if config.get('start_discord_bot_on_launch', True):
-        required_keys = ['tmdb_api_key', 'radarr_url', 'radarr_api_key', 'openai_api_key', 'discord_token', 'radarr_quality', 'selected_model', 'max_chars', 'discord_channel']
-        if all(key in config and config[key] for key in required_keys):
+        if config_manager.get_config_value("start_discord_bot_on_launch"):
             start_discord_bot_process()
+        #    bot = DiscordBot()
+        #    bot.start_bot()
+
+    root_folders = []
+    return render_template(
+        "index.html", config=config_manager.config, root_folders=root_folders
+    )
 
 
-@app.route('/send_message', methods=['POST'])
+@app.route("/movie_details/<int:tmdb_id>")
+def movie_details(tmdb_id):
+    movie_details = tmdb_manager.get_movie_card_details(tmdb_id)
+    return jsonify(movie_details)
+
+
+@app.route("/send_message", methods=["POST"])
 def send_message():
-    message = request.json['message']
-    print(f"Received message from UI: {message}")
+    message = request.json["message"]
 
-    if 'conversation_history' not in session:
-        session['conversation_history'] = []
+    if "conversation_history" not in session:
+        session["conversation_history"] = []
 
-    conversation_history = session['conversation_history']
-
-    # Removed the line that adds the new message to conversation_history
-    response = WebChat.get_openai_response(conversation_history, message)
-
-    session['conversation_history'] = conversation_history
-    return jsonify({'response': response})
+    conversation_history = session["conversation_history"]
+    response = openai_chat_manager.get_openai_response(conversation_history, message)
+    session["conversation_history"] = conversation_history
+    return jsonify({"response": response})
 
 
-
-
-
-@app.route('/add_movie_to_radarr/<int:tmdb_id>', methods=['GET'])
+@app.route("/add_movie_to_radarr/<int:tmdb_id>", methods=["GET"])
 def add_movie_to_radarr(tmdb_id):
-    config = load_config()
-    radarr = initialize_radarr(config)
+    quality_profile_id = config_manager.get_config_value("radarr_quality")
+    root_folder = config_manager.get_config_value("radarr_root_folder")
 
-    if radarr is None:
-        return jsonify({"status": "error", "message": "Radarr is not configured."})
-
-    tmdb = TMDb()
-    tmdb.api_key = config['tmdb_api_key']
-    movie_api = Movie()
-
-    try:
-        movie_details = movie_api.details(tmdb_id)
-        movie_title = movie_details.title
-        quality_profile_id = config["radarr_quality"]  # Ensure this returns the correct integer ID
-
-        # Add the movie to Radarr
-        response = radarr.add_movie(
-            tmdb_id=tmdb_id,
-            quality_profile=quality_profile_id,
-            root_folder=config["radarr_root_folder"]
-        )
-
-        # Handle the response
-        if response:  # Check if the response is successful
-            return jsonify({"status": "success", "message": f"*{movie_title}* added to Radarr"})
-        else:
-            return jsonify({"status": "error", "message": "Failed to add movie to Radarr"})
-
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+    response_dict = radarr_manager.add_movie(tmdb_id, quality_profile_id, root_folder)
+    return jsonify(response_dict)
 
 
-# Rest of the code...
-
-
-
-
-
-
-
-
-
-
-
-    
+@app.route("/movie_card_details/<int:tmdb_id>")
+def movie_card_details(tmdb_id):
+    details = tmdb_manager.get_movie_card_details(tmdb_id)
+    return jsonify(details)

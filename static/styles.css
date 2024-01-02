@@ -1,296 +1,322 @@
-@media (max-width: 768px) {
-    /* Adjust config panel for smaller screens */
-    #config-panel {
-        width: 100%; /* Full width on smaller screens */
-        left: 0;
-    }
-
-    /* Adjust main content margin */
-    #main-content.margin-apply {
-        margin-left: 0;
-    }
-
-    /* Increase font size for readability */
-    body {
-        font-size: 1.1em;
-        max-height: 670px;
-    }
-
-    /* Larger buttons for easier interaction */
-    .btn {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    /* Adjust form input sizes */
-    input[type="text"], input[type="password"], textarea, select {
-        font-size: 1em;
-    }
-
-    #main-content {
-        height: calc(100vh - 56px); /* Adjust for mobile header */
-        max-height: 670px;
-    }
-
-    #chat-box {
-        height: calc(100% - 20px); /* Adjust for mobile header and footer */
-
-
-    }
-
-
-}
-
-
+/* General Settings */
 body {
-    background-color: #1a1a1a;
-    color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
+  background-color: #1a1a1a;
+  color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Ensure the main content container takes up all available space */
+/* Utility and Responsive Classes */
+@media (max-width: 768px) {
+  #config-panel {
+    width: 100%;
+    left: 0;
+  }
+  #main-content.margin-apply {
+    margin-left: 0;
+  }
+  body {
+    font-size: 1.1em;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 1em;
+  }
+  #main-content {
+    height: calc(100vh - 56px);
+  }
+  #chat-box {
+    height: calc(100% - 20px);
+  }
+}
+
+/* Layout and Components */
+#config-panel,
 #main-content {
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute space evenly */
-}
-
-.card {
-    background-color: #2a2a2a;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Full height of its container */
-}
-
-.card-header {
-    background-color: #27496d;
-    color: #f8f8f8;
-}
-
-.card-body, .card-footer {
-    padding: 10px; /* Adjust padding as needed */
-}
-
-#chat-box {
-    height: calc(100% - 60px);
-    overflow-y: auto;
-    flex-grow: 1;
-}
-
-#chat-box::-webkit-scrollbar {
-    width: 8px;
-}
-
-#chat-box::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-#chat-box::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  transition: margin-left 0.5s;
 }
 
 #config-panel {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100vh; /* Full viewport height */
-    overflow-x: hidden;
-    transition: 0.5s;
-    background-color: #333333;
-    padding: 20px;
-    z-index: 2;
-    color: #f8f8f8;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #333333;
+  padding: 20px;
+  z-index: 2;
+  color: #f8f8f8;
 }
 
 #main-content {
-    transition: margin-left 0.5s;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#main-content.margin-apply {
-    margin-left: 250px; /* Move content to the right when config panel is visible */
-    margin-bottom: 20px;
+/* Chat UI */
+.card {
+  background-color: #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px !important;
 }
 
-.config-toggle {
-    font-size: 24px;
-    cursor: pointer;
+.card-header {
+  background-color: #27496d;
+  color: #f8f8f8;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
 
-.movie-link {
-    color: #596a7c;
-    cursor: pointer;
-    text-decoration: underline;
+.card-body,
+.card-footer {
+  padding: 10px;
 }
 
-.sender-user, .sender-bot {
-    font-weight: bold;
-    margin-right: 0.25em; /* Adjust space between sender name and message */
-    white-space: nowrap; /* Keep sender's name on the same line */
-    display: inline;
-    padding: 0;
+#chat-box {
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  flex-grow: 1;
+  border-radius: 20px !important;
 }
 
-.sender-user {
-    color: #3a6ea5; /* Green color for 'You' */
+/* Popover */
+.popover {
+  /*left: 55px !important;
+  top: 3px !important; */
+  max-width: 600px;
+  width: auto;
+  background-color: #2a2a2a;
+  border-color: #27496d;
+  border-radius: 8px;
 }
 
-.sender-bot {
-    color: #a89f91; /* Orange color for 'Bot' */
+.popover-body {
+  padding: 0;
+  color: #27496d;
 }
 
-.message {
-    display: flex;
-    align-items: flex-start; /* Align items to the start of the container */
-    margin-bottom: 5px; /* Space between messages */
-    padding-left: 5px;
+/* Customize the popover header */
+.popover-header {
+  background-color: #2a2a2a; /* Change to your desired background color */
+  color: #f8f8f8; /* Change to your desired text color */
+  font-weight: bold; /* Add additional styling as needed */
+  display: none;
+  padding: 0;
 }
 
-.message-content {
-    display: inline;
-    flex: 1; /* Allows the content to take up the remaining space */
-    text-align: left;
-    word-wrap: break-word; /* Ensures long text wraps within the container */
-    margin: 0;
-    padding: 0;
-    color: white; /* White color for message text */
+/* For the main part of the arrow */
+.popover.bs-popover-top .arrow::before,
+.popover.bs-popover-right .arrow::before,
+.popover.bs-popover-bottom .arrow::before,
+.popover.bs-popover-left .arrow::before {
+  border-color: transparent; /* Reset the default border color */
 }
 
-.message-content ul {
-    padding-left: 20px; /* Adjust the padding for bullet points */
-    margin: 0; /* Remove default margin from lists */
+/* For the inner part of the arrow (to match your desired popover background color) */
+.popover.bs-popover-top .arrow::after {
+  border-top-color: #27496d; /* Replace '#yourColor' with your desired color */
 }
 
-.message-content li {
-    margin: 0; /* Remove default margin from list items */
+.popover.bs-popover-right .arrow::after {
+  border-right-color: #27496d;
 }
 
-.text-content {
-    display: inline; /* Inline display for text content */
-    word-break: break-word; /* Breaks the words at the end of the line */
+.popover.bs-popover-bottom .arrow::after {
+  border-bottom-color: #27496d;
 }
 
-/* If additional padding or margin on elements within .message, set them to 0 */
-.message * {
-    margin: 0;
-    padding: 0;
+.popover.bs-popover-left .arrow::after {
+  border-left-color: #27496d;
 }
 
-.message div {
-    color: #ffffff; /* White color for message content */
-    margin-left: 10px; /* Adjust the indentation for subsequent lines */
+.movie-title {
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold;
+  text-align: center;
+  background-color: #27496d; /* Match the background color */
+  color: #fff; /* Match the text color */
+  padding: 4px 0; /* Add padding as needed */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.btn-primary {
-    background-color: #27496d; /* Dark royal blue, matching your header */
-    border-color: #27496d; /* Border color to match the background */
-    color: #ffffff; /* White text for better readability */
+.movie-details-card {
+  display: flex; /* Add this */
+  align-items: center; /* Center vertically */
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  font-size: 14px;
+  max-width: 600px;
 }
 
-.btn-primary:hover {
-    background-color: #1d3c5a; /* Slightly darker shade for hover effect */
-    border-color: #1d3c5a;
+.movie-poster {
+  flex-shrink: 0;
+  margin-right: 10px;
+  width: 35%;
+  display: flex; /* Add this */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
-.custom-checkbox {
-    vertical-align: middle;
-    margin-left: 5px;
-    width: auto; /* Resets width to default */
-    color: #27496d
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #6783a0;
 }
 
-.form-group label {
-    display: inline-block; /* Align label and checkbox inline */
-    margin-right: 10px;
+.movie-info {
+  flex-grow: 1;
+  width: 65%;
 }
 
-.checkbox-label {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: #333;  /* Default background */
-    border-radius: 3px;
-    cursor: pointer;
-    margin-left: 10px;
-    vertical-align: middle;
-    transition: background 0.3s;
+.movie-info h5 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: #27496d;
-    border-color: #27496d;
+.movie-info p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
-
-.custom-checkbox:checked + .checkbox-label {
-    background: #27496d; /* Color when checked */
-}
-
-.custom-control-label {
-    color: #f8f8f8;
-}
-
-/* Style the scrollbar track */
-#config-panel::-webkit-scrollbar-track {
-    background: #2a2a2a; /* Darker shade for the track */
-    border-radius: 4px;
-}
-
-/* Style the scrollbar thumb */
-#config-panel::-webkit-scrollbar-thumb {
-    background: #27496d; /* Dark royal blue for the thumb */
-    border-radius: 4px;
-}
-
-/* Style the scrollbar thumb on hover */
-#config-panel::-webkit-scrollbar-thumb:hover {
-    background: #1d3c5a; /* Slightly darker shade when hovered */
-}
-
-/* Set the width of the scrollbar */
+/* Scrollbar Customization */
+#chat-box::-webkit-scrollbar,
 #config-panel::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
+#chat-box::-webkit-scrollbar-thumb,
+#config-panel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
 
+#chat-box::-webkit-scrollbar-thumb:hover,
+#config-panel::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
+#config-panel::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
 
-/* Input boxes, textareas, and select (dropdown) styling */
+/* Form and Button Styles */
 input[type="text"],
 input[type="password"],
 textarea,
 select {
-    background-color: #333333; /* Darker background */
-    border: 1px solid #596a7c; /* Slightly lighter border for visibility */
-    color: #f8f8f8; /* Light text color for readability */
-    padding: 5px; /* Adjust padding as needed */
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+  padding: 5px;
 }
 
-/* Remove the focus state styling to keep the color consistent */
 input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-    background-color: #333333; /* Keep the same background color */
-    border-color: #596a7c; /* Maintain the same border color */
-    outline: none; /* Optional: removes the default focus outline */
-    color: #f8f8f8;
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+  padding: 5px;
 }
 
-/* Adjust the placeholder text color for visibility */
 ::placeholder {
-    color: #888888; /* Lighter placeholder text */
-    opacity: 1; /* Required to ensure consistent placeholder visibility */
+  color: #888888;
 }
 
-/* Style the options inside the dropdown */
 select option {
-    background-color: #f8f8f8 ; /* Dark background for dropdown options */
-    color:#2a2a2a ; /* Light text for options */
+  background-color: #333333;
+  color: #f8f8f8;
+}
+
+.btn-primary {
+  background-color: #27496d;
+  border-color: #27496d;
+  color: #ffffff;
+}
+
+select.form-control {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+}
+
+select.form-control option {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+}
+
+select.form-control:focus {
+  background-color: #333333;
+  border: 1px solid #596a7c;
+  color: #f8f8f8;
+}
+
+.btn-primary:hover {
+  background-color: #1d3c5a;
+  border-color: #1d3c5a;
+}
+
+/* Misc */
+.config-toggle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.movie-link {
+  color: #596a7c;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sender-user {
+  color: #3a6ea5;
+}
+
+.sender-bot {
+  color: #a89f91;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.message * {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+}
+
+.custom-checkbox {
+  vertical-align: middle;
+  margin-left: 5px;
+  color: #27496d;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #27496d;
+  border-color: #27496d;
+}
+
+.custom-control-label {
+  color: #f8f8f8;
 }
