@@ -488,11 +488,17 @@ function showPersonPopover(element) {
 
       console.log("Credits:", data.movie_credits);
 
+      var imagePath = data.profile_path
+        ? `https://image.tmdb.org/t/p/original${data.profile_path}`
+        : "https://via.placeholder.com/185x278";
+
+      var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
+
       var contentHtml = `
       <div class="movie-title">${data.name}</div>
       <div class="movie-details-card">
         <div class="movie-poster">
-          <img src="${profilePath}" alt="${data.name} Photo" class="img-fluid">
+          ${imageTag}
         </div>
         <div class="movie-info">
           <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
