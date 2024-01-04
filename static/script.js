@@ -392,19 +392,28 @@ function setupPopoverHideWithDelay(element) {
       </div>
 
       <div class="movie-info">
-        <p class="movie-director"><strong>Director:</strong> ${createPersonSpans(
+        <p class="movie-director"><strong>Director: </strong> ${createPersonSpans(
           data.director
         )}</p>
-        <p class="movie-dop"><strong>DoP:</strong> ${createPersonSpans(
+        <p class="movie-dop"><strong>DoP: </strong> ${createPersonSpans(
           data.dop
         )}</p>
-        <p class="movie-writers"><strong>Writers:</strong> ${createPersonSpans(
+        <p class="movie-writers"><strong>Writers: </strong> ${createPersonSpans(
           data.writers
         )}</p>
-        <p class="movie-stars"><strong>Stars:</strong> ${createPersonSpans(
+        <p class="movie-stars"><strong>Stars: </strong> ${createPersonSpans(
           data.stars
         )}</p>
-        <!-- ... other details ... -->
+        <p class="movie-rating"><strong>TMDb Rating: </strong> ${
+          data.vote_average
+        }</p>
+          <p class="movie-release-date"><strong>Release Date: </strong> ${
+            data.release_date
+          }
+          </p>
+          <p class="movie-description"><strong>Description: </strong>${
+            data.description
+          }</p>
       </div>
     </div>`;
     $(element).data("bs.popover").config.content = contentHtml;

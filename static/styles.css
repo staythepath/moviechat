@@ -4,7 +4,7 @@ body {
   color: #f8f8f8;
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ body {
   input,
   select,
   textarea {
-    font-size: 1em;
+    font-size: 0.5em;
   }
   #main-content {
     height: calc(100vh - 56px);
@@ -77,6 +77,8 @@ body {
 .card-header {
   background-color: #27496d;
   color: #f8f8f8;
+  font-size: 18px;
+  font-weight: bolder;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
 }
@@ -161,6 +163,7 @@ body {
   color: #fff;
   padding: 15px;
   font-size: 14px;
+  font-family: "Roboto", sans-serif;
   max-width: 600px;
 }
 
@@ -289,10 +292,12 @@ select.form-control:focus {
 
 .sender-user {
   color: #3a6ea5;
+  font-weight: bold;
 }
 
 .sender-bot {
   color: #a89f91;
+  font-weight: bold;
 }
 
 .message {
