@@ -471,6 +471,7 @@ function showPersonPopover(element) {
   fetch(`/person_details/${encodeURIComponent(personName)}`)
     .then((response) => response.json())
     .then((data) => {
+      console.log("Here is the dataaaaaaaaa: ", data);
       var biography = data.biography || "No biography available";
       var profilePath = data.profile_path
         ? `https://image.tmdb.org/t/p/original${data.profile_path}`
@@ -479,27 +480,32 @@ function showPersonPopover(element) {
         biography.length > 100
           ? biography.substring(0, 100) + "..."
           : biography;
+      var creditsHtml = data.movie_credits
+        .map(
+          (credit) => `<p>${credit.title} (${credit.release_year})</p>` // Adjust this line to match the format of your credits
+        )
+        .join("");
+
+      console.log("Credits:", data.movie_credits);
 
       var contentHtml = `
-        <div class="movie-title">${
-          data.name
-        }</div> <!-- Here we use the person's name -->
-        <div class="movie-details-card">
-          <div class="movie-poster">
-            <img src="${profilePath}" alt="${
-        data.name
-      } Photo" class="img-fluid">
-          </div>
-          <div class="movie-info">
-            <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
-            <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
-            ${
-              biography.length > 100
-                ? `<span id="more-bio" class="more-link">More</span>`
-                : ""
-            }</p>
-          </div>
-        </div>`;
+      <div class="movie-title">${data.name}</div>
+      <div class="movie-details-card">
+        <div class="movie-poster">
+          <img src="${profilePath}" alt="${data.name} Photo" class="img-fluid">
+        </div>
+        <div class="movie-info">
+          <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
+          <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
+          ${
+            biography.length > 100
+              ? `<span id="more-bio" class="more-link">More</span>`
+              : ""
+          }
+          </p><em>Movie Credits:</em>
+          ${creditsHtml} <!-- Add this line to include movie credits -->
+        </div>
+      </div>`;
 
       $(element).data("bs.popover").config.content = contentHtml;
       $(element).popover("show");

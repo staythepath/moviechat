@@ -149,8 +149,10 @@ body {
   text-align: center;
   background-color: #27496d; /* Match the background color */
   color: #fff; /* Match the text color */
-  padding: 4px 0; /* Add padding as needed */
+  padding: 8px 15px; /* Add padding as needed */
   white-space: nowrap; /* Prevent text wrapping */
+  border-top-left-radius: 8px; /* Rounded corners to match the card */
+  border-top-right-radius: 8px;
 }
 
 .movie-details-card {

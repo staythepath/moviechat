@@ -1,4 +1,5 @@
 from tmdbv3api import TMDb, Movie, Person
+import random
 
 
 class TMDbManager:
@@ -47,8 +48,18 @@ class TMDbManager:
         person_api = Person()
         search_results = person_api.search(name)
         if search_results:
-            person_id = search_results[0].id  # Directly access the id
+            # Fetch the person details
+            person_id = search_results[0].id
             person_details = person_api.details(person_id)
+
+            # Fetch the movie credits for the person
+            movie_credits = person_api.movie_credits(person_id)
+            # print("Here are the movie credits: ", movie_credits)
+
+            # Process the movie credits to extract the required information
+            credits_info = self.process_movie_credits(movie_credits)
+
+            # Combine the details and credits to return a single response
             return {
                 "name": person_details.name,
                 "biography": person_details.biography,
@@ -56,8 +67,52 @@ class TMDbManager:
                 "deathday": person_details.deathday,
                 "place_of_birth": person_details.place_of_birth,
                 "profile_path": person_details.profile_path,
+                "movie_credits": credits_info,
+                # Include movie credits in the response
             }
         return {}
+
+    def process_movie_credits(self, movie_credits, number_of_credits=7):
+        cast_credits = movie_credits.get("cast", [])
+
+        if not cast_credits:
+            return []
+
+        # Convert AsObj to list of dictionaries if needed
+        if not isinstance(cast_credits, list):
+            cast_credits = [credit.__dict__ for credit in cast_credits]
+
+        # Filter out non-feature films (e.g., documentaries, TV movies)
+        # This is just an example and might need adjustments based on actual data
+        feature_film_credits = [
+            credit for credit in cast_credits if 99 not in credit.get("genre_ids", [])
+        ]
+
+        # Sort credits by popularity and vote average
+        sorted_credits = sorted(
+            feature_film_credits,
+            key=lambda x: (x.get("popularity", 0), x.get("vote_average", 0)),
+            reverse=True,
+        )
+
+        # Select the top movies
+        selected_credits = sorted_credits[:number_of_credits]
+
+        # Format the selected credits
+        formatted_credits = []
+        for credit in selected_credits:
+            release_year = (
+                credit.get("release_date", "N/A").split("-")[0]
+                if credit.get("release_date")
+                else "N/A"
+            )
+            credit_info = {
+                "title": credit.get("title", "N/A"),
+                "release_year": release_year,
+            }
+            formatted_credits.append(credit_info)
+
+        return formatted_credits
 
     def get_crew_member(self, credits, job_title):
         for crew_member in credits["crew"]:

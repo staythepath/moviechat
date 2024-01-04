@@ -97,6 +97,15 @@ def fetch_root_folders():
     return jsonify({"error": "Radarr not configured"})
 
 
+@app.route("/person/<int:person_id>/movie_credits")
+def person_movie_credits(person_id):
+    try:
+        credits = tmdb_manager.get_person_movie_credits(person_id)
+        return jsonify(credits), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
