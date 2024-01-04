@@ -1,4 +1,4 @@
-from tmdbv3api import TMDb, Movie
+from tmdbv3api import TMDb, Movie, Person
 
 
 class TMDbManager:
@@ -42,6 +42,22 @@ class TMDbManager:
             "release_date": movie.release_date,
             "vote_average": movie.vote_average,
         }
+
+    def get_person_details(self, name):
+        person_api = Person()
+        search_results = person_api.search(name)
+        if search_results:
+            person_id = search_results[0].id  # Directly access the id
+            person_details = person_api.details(person_id)
+            return {
+                "name": person_details.name,
+                "biography": person_details.biography,
+                "birthday": person_details.birthday,
+                "deathday": person_details.deathday,
+                "place_of_birth": person_details.place_of_birth,
+                "profile_path": person_details.profile_path,
+            }
+        return {}
 
     def get_crew_member(self, credits, job_title):
         for crew_member in credits["crew"]:

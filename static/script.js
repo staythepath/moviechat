@@ -351,31 +351,50 @@ function customPopoverPlacement(context, source) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 100; // Delay in milliseconds
+  var hideDelay = 500; // Delay in milliseconds
   var hideDelayTimer = null;
 
   // Function to update the popover content once details are loaded
   function updatePopoverContent(data) {
+    function createPersonSpans(names) {
+      return names
+        .split(",")
+        .map((name) => `<span class="person-link">${name.trim()}</span>`)
+        .join(", ");
+    }
+
     var contentHtml = `
-      <div class="movie-title">${data.title}</div>
-      <div class="movie-details-card">
-        <div class="movie-poster">
-          <img src="https://image.tmdb.org/t/p/original${data.poster_path}" alt="${data.title} Poster" class="img-fluid">
-        </div>
-        <div class="movie-info">
-          
-          <p class="movie-director"><strong>Director:</strong> ${data.director}</p>
-          <p class="movie-dop"><strong>DoP:</strong> ${data.dop}</p>
-          <p class="movie-writers"><strong>Writers:</strong> ${data.writers}</p>
-          <p class="movie-stars"><strong>Stars:</strong> ${data.stars}</p>
-          <p class="movie-rating"><strong>Rating:</strong> ${data.vote_average}</p>
-          <p class="movie-release-date"><strong>Release Date:</strong> ${data.release_date}</p>
-          <p class="movie-description">${data.description}</p>
-        </div>
-      </div>`;
+    <div class="movie-title">${data.title}</div>
+    <div class="movie-details-card">
+      <div class="movie-poster">
+        <img src="https://image.tmdb.org/t/p/original${
+          data.poster_path
+        }" alt="${data.title} Poster" class="img-fluid">
+      </div>
+      <div class="movie-info">
+        <p class="movie-director"><strong>Director:</strong> ${createPersonSpans(
+          data.director
+        )}</p>
+        <p class="movie-dop"><strong>DoP:</strong> ${createPersonSpans(
+          data.dop
+        )}</p>
+        <p class="movie-writers"><strong>Writers:</strong> ${createPersonSpans(
+          data.writers
+        )}</p>
+        <p class="movie-stars"><strong>Stars:</strong> ${createPersonSpans(
+          data.stars
+        )}</p>
+        <!-- ... other details ... -->
+      </div>
+    </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
     $(element).popover("show");
     $(element).popover("update");
+
+    // Setup mouseover event for each person link
+    $(".person-link").on("mouseover", function () {
+      showPersonPopover(this);
+    });
   }
 
   var showPopover = function () {
@@ -429,6 +448,107 @@ function setupPopoverHideWithDelay(element) {
     .on("mouseleave", ".popover", function () {
       hidePopover();
     });
+}
+
+var popoverTimeout;
+
+function showPersonPopover(element) {
+  var popoverTimeout;
+
+  // Initialize the popover
+  $(element)
+    .popover({
+      trigger: "manual",
+      placement: "auto",
+      title: "Person Details",
+      content: "Loading details...",
+      html: true,
+    })
+    .popover("show");
+
+  // Fetch the content for the popover
+  var personName = $(element).text().trim();
+  fetch(`/person_details/${encodeURIComponent(personName)}`)
+    .then((response) => response.json())
+    .then((data) => {
+      var biography = data.biography || "No biography available";
+      var profilePath = data.profile_path
+        ? `https://image.tmdb.org/t/p/original${data.profile_path}`
+        : "path_to_placeholder_image.png";
+      var shortBio =
+        biography.length > 100
+          ? biography.substring(0, 100) + "..."
+          : biography;
+
+      var contentHtml = `
+        <div class="movie-title">${
+          data.name
+        }</div> <!-- Here we use the person's name -->
+        <div class="movie-details-card">
+          <div class="movie-poster">
+            <img src="${profilePath}" alt="${
+        data.name
+      } Photo" class="img-fluid">
+          </div>
+          <div class="movie-info">
+            <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
+            <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
+            ${
+              biography.length > 100
+                ? `<span id="more-bio" class="more-link">More</span>`
+                : ""
+            }</p>
+          </div>
+        </div>`;
+
+      $(element).data("bs.popover").config.content = contentHtml;
+      $(element).popover("show");
+
+      // Store the full biography for later use
+      $(element).data("fullBiography", biography);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      $(element).data("bs.popover").config.content = "Details not available";
+      $(element).popover("show");
+    });
+
+  // Function to hide popover
+  function hidePopover() {
+    clearTimeout(popoverTimeout);
+    $(element).popover("hide");
+  }
+
+  // Set mouse events for the triggering element
+  $(element)
+    .on("mouseenter", function () {
+      clearTimeout(popoverTimeout);
+    })
+    .on("mouseleave", function () {
+      popoverTimeout = setTimeout(hidePopover, 500);
+    });
+
+  // Event binding for 'More' button when popover is shown
+  $(element).on("shown.bs.popover", function () {
+    var popoverId = $(element).attr("aria-describedby");
+    $("#" + popoverId)
+      .find("#more-bio")
+      .on("click", function () {
+        var fullBiography = $(element).data("fullBiography");
+        $("#" + popoverId)
+          .find("#short-bio")
+          .text(fullBiography);
+        $(this).remove();
+      });
+
+    $("#" + popoverId)
+      .on("mouseenter", function () {
+        clearTimeout(popoverTimeout);
+      })
+      .on("mouseleave", function () {
+        popoverTimeout = setTimeout(hidePopover, 500);
+      });
+  });
 }
 
 // Function to close all open popovers

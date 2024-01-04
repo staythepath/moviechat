@@ -168,6 +168,12 @@ def send_message():
     return jsonify({"response": response})
 
 
+@app.route("/person_details/<name>")
+def person_details(name):
+    details = tmdb_manager.get_person_details(name)
+    return jsonify(details)
+
+
 @app.route("/add_movie_to_radarr/<int:tmdb_id>", methods=["GET"])
 def add_movie_to_radarr(tmdb_id):
     quality_profile_id = config_manager.get_config_value("radarr_quality")

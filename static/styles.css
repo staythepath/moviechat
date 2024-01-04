@@ -320,3 +320,39 @@ select.form-control:focus {
 .custom-control-label {
   color: #f8f8f8;
 }
+
+/* Add this to your CSS file */
+.person-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #596a7c; /* or any other color that indicates interactivity */
+}
+
+.more-link {
+  color: #3a6ea5; /* Bootstrap primary blue color */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
+
+.person-details-card {
+  display: flex;
+  align-items: start;
+}
+
+.person-poster {
+  flex: 0 0 auto; /* do not grow, do not shrink, auto basis */
+  margin-right: 10px; /* space between image and text */
+}
+
+.person-poster img {
+  width: 100px; /* example width, adjust as needed */
+  height: auto;
+}
+
+.person-info {
+  flex: 1; /* grow to fill space */
+}
