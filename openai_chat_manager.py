@@ -78,7 +78,7 @@ class OpenAIChatManager:
             print("Results:")
 
             # Introduce a delay to prevent hitting API rate limits
-            time.sleep(0.3)
+            # time.sleep(0.1)
 
             for idx, result in enumerate(results):
                 if isinstance(result, dict) and "title" in result and "id" in result:

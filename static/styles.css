@@ -144,6 +144,28 @@ body {
   border-left-color: #27496d; /* This should match the popover header color */
 }
 
+.loading-animation {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-left: 10px;
+  color: #fff;
+}
+
 .movie-title {
   font-size: 18px; /* Adjust the font size as needed */
   font-weight: bold;
@@ -298,6 +320,11 @@ select.form-control:focus {
 .sender-bot {
   color: #a89f91;
   font-weight: bold;
+  padding-right: 5px;
+}
+
+.sender-bot-spacing {
+  margin-right: 5px; /* Adjust the value as needed */
 }
 
 .message {

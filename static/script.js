@@ -220,10 +220,12 @@ function toggleConfigPanel() {
 function sendMessage() {
   let messageInput = document.getElementById("message-input");
   let message = messageInput.value;
+
+  // Update chat with user's message
   updateChat("user", message);
 
-  // Clear the input box right after sending the message
-  messageInput.value = "";
+  // Show loading message in chat
+  displayChatLoadingMessage();
 
   fetch("/send_message", {
     method: "POST",
@@ -234,15 +236,22 @@ function sendMessage() {
   })
     .then((response) => response.json())
     .then((data) => {
+      // Hide loading message and update chat with bot's response
+      hideChatLoadingMessage();
       updateChat("bot", data.response);
     })
     .catch((error) => {
       console.error("Error:", error);
+      hideChatLoadingMessage();
     });
+
+  // Clear the input box right after sending the message
+  messageInput.value = "";
 }
 
 function sendPredefinedMessage(message) {
   updateChat("user", message);
+  displayChatLoadingMessage();
 
   fetch("/send_message", {
     method: "POST",
@@ -253,9 +262,11 @@ function sendPredefinedMessage(message) {
   })
     .then((response) => response.json())
     .then((data) => {
+      hideChatLoadingMessage();
       updateChat("bot", data.response);
     })
     .catch((error) => {
+      hideChatLoadingMessage();
       console.error("Error:", error);
     });
 }
@@ -310,6 +321,34 @@ function updateChat(sender, text) {
     .each(function () {
       setupPopoverHideWithDelay(this);
     });
+}
+
+function displayChatLoadingMessage() {
+  let chatBox = document.getElementById("chat-box");
+  let loadingDiv = document.createElement("div");
+  loadingDiv.id = "chatLoadingMessage";
+  loadingDiv.classList.add("message");
+
+  let botLabelSpan = document.createElement("span");
+  botLabelSpan.classList.add("sender-bot");
+  botLabelSpan.textContent = "Bot:";
+  botLabelSpan.style.marginRight = "12px"; // Set right margin for spacing
+
+  let loadingAnimationSpan = document.createElement("span");
+  loadingAnimationSpan.classList.add("loading-animation");
+
+  loadingDiv.appendChild(botLabelSpan);
+  loadingDiv.appendChild(loadingAnimationSpan);
+
+  chatBox.appendChild(loadingDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function hideChatLoadingMessage() {
+  let loadingDiv = document.getElementById("chatLoadingMessage");
+  if (loadingDiv) {
+    loadingDiv.remove();
+  }
 }
 
 // Function to add a movie to Radarr and update the chat
