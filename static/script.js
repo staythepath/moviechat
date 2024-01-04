@@ -241,6 +241,25 @@ function sendMessage() {
     });
 }
 
+function sendPredefinedMessage(message) {
+  updateChat("user", message);
+
+  fetch("/send_message", {
+    method: "POST",
+    body: JSON.stringify({ message: message }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      updateChat("bot", data.response);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 function refreshDiscordChannels() {
   let token =
     document.getElementById("discord_token").value ||
@@ -351,7 +370,7 @@ function customPopoverPlacement(context, source) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 500; // Delay in milliseconds
+  var hideDelay = 250; // Delay in milliseconds
   var hideDelayTimer = null;
 
   // Function to update the popover content once details are loaded
@@ -371,6 +390,7 @@ function setupPopoverHideWithDelay(element) {
           data.poster_path
         }" alt="${data.title} Poster" class="img-fluid">
       </div>
+
       <div class="movie-info">
         <p class="movie-director"><strong>Director:</strong> ${createPersonSpans(
           data.director
@@ -454,13 +474,15 @@ var popoverTimeout;
 
 function showPersonPopover(element) {
   // Initialize the popover
-  $(element).popover({
-    trigger: "manual",
-    placement: "auto",
-    title: "Person Details",
-    content: "Loading details...",
-    html: true,
-  });
+  if (!$(element).data("bs.popover")) {
+    $(element).popover({
+      trigger: "manual",
+      placement: "auto",
+      title: "Person Details",
+      content: "Loading details...",
+      html: true,
+    });
+  }
 
   // Click event to show popover
   $(element)
@@ -487,23 +509,24 @@ function showPersonPopover(element) {
           var contentHtml = `
           <div class="movie-title">${data.name}</div>
           <div class="movie-details-card">
-            <div class="movie-poster">
-              ${imageTag}
-            </div>
+            <div class="movie-poster">${imageTag}</div>
+            <button class="btn btn-primary" data-title="${
+              data.name
+            }">Tell me more about ${data.name}</button>
             <div class="movie-info">
               <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
-              
-              </p><em>Movie Credits:</em>
-              ${creditsHtml}
+              <p><em>Movie Credits:</em> ${creditsHtml}</p>
               <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
               ${
                 biography.length > 100
                   ? `<span id="more-bio" class="more-link">More</span>`
                   : ""
               }
+              
             </div>
           </div>`;
 
+          $(element).data("fullBiography", data.biography);
           $(element).data("bs.popover").config.content = contentHtml;
           $(element).popover("show");
         })
@@ -524,7 +547,7 @@ function showPersonPopover(element) {
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 500);
+      popoverTimeout = setTimeout(hidePopover, 250);
     });
 
   // Event binding for popover shown event
@@ -532,13 +555,37 @@ function showPersonPopover(element) {
     .off("shown.bs.popover")
     .on("shown.bs.popover", function () {
       var popoverId = $(element).attr("aria-describedby");
-      $("#" + popoverId)
+      var $popover = $("#" + popoverId);
+
+      $popover
         .off("mouseenter mouseleave")
         .on("mouseenter", function () {
           clearTimeout(popoverTimeout);
         })
         .on("mouseleave", function () {
-          popoverTimeout = setTimeout(hidePopover, 500);
+          popoverTimeout = setTimeout(hidePopover, 250);
+        });
+
+      $("#" + popoverId)
+        .find(".chat-btn")
+        .on("click", function () {
+          var title = $(this).data("title");
+          sendPredefinedMessage(`Tell me more about ${title}.`);
+        });
+
+      $popover.find(".chat-btn").on("click", function () {
+        var title = $(this).data("title");
+        sendPredefinedMessage(`Tell me more about ${title}.`);
+      });
+
+      // Here's the binding for the 'More' button
+      $popover
+        .find("#more-bio")
+        .off("click")
+        .on("click", function () {
+          var fullBiography = $(element).data("fullBiography");
+          $popover.find("#short-bio").text(fullBiography);
+          $(this).remove(); // Remove the 'More' button after it's clicked
         });
     });
 }
