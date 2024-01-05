@@ -524,6 +524,14 @@ function setupPopoverHideWithDelay(element) {
     }
   });
 
+  var lastMousePosition = { x: 0, y: 0 };
+
+  // Track mouse position
+  $(document).on("mousemove", function (event) {
+    lastMousePosition.x = event.pageX;
+    lastMousePosition.y = event.pageY;
+  });
+
   var showPopover = function () {
     clearTimeout(hideDelayTimer);
     closeAllPopovers(); // Close all other open popovers
@@ -542,14 +550,6 @@ function setupPopoverHideWithDelay(element) {
       $element.popover("show");
     });
   };
-
-  var lastMousePosition = { x: 0, y: 0 };
-
-  // Track mouse position
-  $(document).on("mousemove", function (event) {
-    lastMousePosition.x = event.pageX;
-    lastMousePosition.y = event.pageY;
-  });
 
   // Updated hidePopover function
   var hidePopover = function () {
