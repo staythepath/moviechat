@@ -277,18 +277,29 @@ select option {
 .btn-primary {
   background-color: #27496d;
   border-color: #27496d;
-  color: #ffffff;
+  color: #f8f8f8;
   margin: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #1d3c5a;
+  border-color: #1d3c5a;
 }
 
 .popover-button {
   background-color: #27496d;
   border-color: #27496d;
-  color: #ffffff;
+  color: #f8f8f8;
   margin: 3px;
   padding: 7px 6px; /* Smaller padding */
   font-size: 1em; /* Smaller font size */
   border-radius: 4px; /* Smaller border radius */
+}
+
+.popover-button:hover {
+  background-color: #1d3c5a;
+  border-color: #1d3c5a;
+  color: #f8f8f8;
 }
 
 select.form-control {
@@ -307,11 +318,6 @@ select.form-control:focus {
   background-color: #333333;
   border: 1px solid #596a7c;
   color: #f8f8f8;
-}
-
-.btn-primary:hover {
-  background-color: #1d3c5a;
-  border-color: #1d3c5a;
 }
 
 /* Misc */

@@ -415,6 +415,7 @@ function customPopoverPlacement(context, source) {
 function setupPopoverHideWithDelay(element) {
   var hideDelay = 350; // Delay in milliseconds
   var hideDelayTimer = null;
+  var isMouseOverPopover = false; // New variable to track if the mouse is over the popover
 
   // Function to update the popover content once details are loaded
   function updatePopoverContent(data) {
@@ -531,11 +532,22 @@ function setupPopoverHideWithDelay(element) {
   };
 
   var hidePopover = function () {
-    clearTimeout(hideDelayTimer);
-    hideDelayTimer = setTimeout(function () {
+    if (!isMouseOverPopover) {
+      // Only hide if the mouse is not over the popover
       $(element).popover("hide");
-    }, hideDelay);
+    }
   };
+
+  // When mouse enters the popover, set isMouseOverPopover to true
+  $("body").on("mouseenter", ".popover", function () {
+    isMouseOverPopover = true;
+  });
+
+  // When mouse leaves the popover, set isMouseOverPopover to false and start the hide delay
+  $("body").on("mouseleave", ".popover", function () {
+    isMouseOverPopover = false;
+    hideDelayTimer = setTimeout(hidePopover, hideDelay);
+  });
 
   $(element)
     .popover({
@@ -550,15 +562,13 @@ function setupPopoverHideWithDelay(element) {
       delay: { show: 100, hide: hideDelay },
     })
     .on("mouseenter", showPopover)
-    .on("mouseleave", hidePopover);
-
-  $("body")
-    .on("mouseenter", ".popover", function () {
-      clearTimeout(hideDelayTimer);
-    })
-    .on("mouseleave", ".popover", function () {
-      hidePopover();
+    .on("mouseleave", function () {
+      hideDelayTimer = setTimeout(hidePopover, hideDelay);
     });
+
+  $("body").on("mouseenter", ".popover", function () {
+    isMouseOverPopover = true;
+  });
 
   $(document).on("click", ".more-toggle", function () {
     let group = this.id.split("-")[1];
@@ -580,6 +590,9 @@ function setupPopoverHideWithDelay(element) {
 var popoverTimeout;
 
 function showPersonPopover(element) {
+  var popoverTimeout;
+  var isMouseOverPopover = false;
+
   // Initialize the popover
   if (!$(element).data("bs.popover")) {
     $(element).popover({
@@ -647,10 +660,19 @@ function showPersonPopover(element) {
 
   // Function to hide popover on mouseleave
   function hidePopover() {
-    $(element).popover("hide");
+    if (!isMouseOverPopover) {
+      $(element).popover("hide");
+    }
   }
 
   // Event binding for mouseleave on the triggering element
+  $(element)
+    .off("mouseleave")
+    .on("mouseleave", function () {
+      popoverTimeout = setTimeout(hidePopover, 350);
+    });
+
+  // Event binding for popover shown event
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
@@ -665,11 +687,12 @@ function showPersonPopover(element) {
       var $popover = $("#" + popoverId);
 
       $popover
-        .off("mouseenter mouseleave")
         .on("mouseenter", function () {
+          isMouseOverPopover = true;
           clearTimeout(popoverTimeout);
         })
         .on("mouseleave", function () {
+          isMouseOverPopover = false;
           popoverTimeout = setTimeout(hidePopover, 350);
         });
 
