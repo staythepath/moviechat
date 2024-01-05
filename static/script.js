@@ -450,6 +450,7 @@ function setupPopoverHideWithDelay(element) {
       <button type="button" class="btn popover-button">Ask MovieBot</button>
       <button type="button" class="btn popover-button" style="margin-left: 5px;">Add to Radarr</button>
       <button type="button" class="btn popover-button" style="margin-left: 5px;">IMDb</button>
+      <button type="button" class="btn popover-button" style="margin-left: 5px;">Wiki</button>
     </div>`;
 
     var contentHtml = `
@@ -531,10 +532,32 @@ function setupPopoverHideWithDelay(element) {
     });
   };
 
+  var lastMousePosition = { x: 0, y: 0 };
+
+  // Track mouse position
+  $(document).on("mousemove", function (event) {
+    lastMousePosition.x = event.pageX;
+    lastMousePosition.y = event.pageY;
+  });
+
+  // Updated hidePopover function
   var hidePopover = function () {
     if (!isMouseOverPopover) {
-      // Only hide if the mouse is not over the popover
-      $(element).popover("hide");
+      var popover = $(element).data("bs.popover").getTipElement();
+      var popoverRect = popover.getBoundingClientRect();
+      var buffer = 10; // 10 pixels buffer
+
+      // Check if the mouse is within the buffer area around the popover
+      if (
+        lastMousePosition.x < popoverRect.left - buffer ||
+        lastMousePosition.x > popoverRect.right + buffer ||
+        lastMousePosition.y < popoverRect.top - buffer ||
+        lastMousePosition.y > popoverRect.bottom + buffer
+      ) {
+        $(element).popover("hide");
+      } else {
+        setTimeout(hidePopover, 100); // Check again after a short delay
+      }
     }
   };
 
@@ -626,13 +649,18 @@ function showPersonPopover(element) {
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
 
+          var buttonsHtml = `
+              <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+                <button type="button" class="btn popover-button">Ask MovieBot</button>
+                <button type="button" class="btn popover-button" style="margin-left: 5px;">IMDb</button>
+                <button type="button" class="btn popover-button" style="margin-left: 5px;">Wiki</button>
+                
+              </div>`;
+
           var contentHtml = `
           <div class="movie-title">${data.name}</div>
           <div class="movie-details-card">
             <div class="movie-poster">${imageTag}</div>
-            <button class="btn btn-primary" data-title="${
-              data.name
-            }">Tell me more about ${data.name}</button>
             <div class="movie-info">
               <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
               <p><em>Movie Credits:</em> ${creditsHtml}</p>
@@ -642,8 +670,12 @@ function showPersonPopover(element) {
                   ? `<span id="more-bio" class="more-link">More</span>`
                   : ""
               }
-              
+              <div style="display: flex;">
+                ${buttonsHtml}
+
+              </div>
             </div>
+            
           </div>`;
 
           $(element).data("fullBiography", data.biography);

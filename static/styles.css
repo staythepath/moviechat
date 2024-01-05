@@ -157,6 +157,8 @@ body {
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
+
+  margin-top: 5px !important;
 }
 
 @keyframes spin {
@@ -358,6 +360,7 @@ select.form-control:focus {
   display: flex;
   align-items: flex-start;
   margin-bottom: 5px;
+  line-height: 27px;
 }
 
 .message * {
