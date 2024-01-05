@@ -444,14 +444,15 @@ function setupPopoverHideWithDelay(element) {
 
       return `<span id="displayed-${group}">${displayedNamesHtml}</span><span id="more-${group}" style="display: none;">${hiddenNamesHtml}</span>${moreButtonHtml}`;
     }
-
+    console.log("Here is the data:", data);
+    console.log("Here is the imdb_id: ", data.imdb_id);
+    console.log("Here is the wiki_url: ", data.wiki_url);
     var buttonsHtml = `
-    <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
-      <button type="button" class="btn popover-button">Ask MovieBot</button>
-      <button type="button" class="btn popover-button" style="margin-left: 5px;">Add to Radarr</button>
-      <button type="button" class="btn popover-button" style="margin-left: 5px;">IMDb</button>
-      <button type="button" class="btn popover-button" style="margin-left: 5px;">Wiki</button>
-    </div>`;
+      <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+        <button type="button" class="btn popover-button">Ask MovieBot</button>
+        <button type="button" class="btn popover-button btn-imdb" data-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
+        <button type="button" class="btn popover-button btn-wiki" data-wiki-url="${data.wiki_url}" style="margin-left: 5px;">Wiki</button>
+      </div>`;
 
     var contentHtml = `
       <div class="movie-title">${data.title}</div>
@@ -498,6 +499,9 @@ function setupPopoverHideWithDelay(element) {
     $(element).popover("show");
     $(element).popover("update");
 
+    $(".btn-wiki").attr("data-wiki-url", data.wiki_url);
+    $(".btn-imdb").attr("data-imdb-id", data.imdb_id);
+
     // Setup mouseover event for each person link
     $(".person-link").on("mouseover", function () {
       showPersonPopover(this);
@@ -508,6 +512,15 @@ function setupPopoverHideWithDelay(element) {
     // Handle the button click event
     console.log("Popover button clicked");
     // Add your custom logic here
+  });
+
+  $(document).on("click", ".btn-wiki", function () {
+    var wikiUrl = $(this).data("wiki-url");
+    if (wikiUrl) {
+      window.open(wikiUrl, "_blank");
+    } else {
+      console.log("Wikipedia URL not found");
+    }
   });
 
   var showPopover = function () {
@@ -570,6 +583,15 @@ function setupPopoverHideWithDelay(element) {
   $("body").on("mouseleave", ".popover", function () {
     isMouseOverPopover = false;
     hideDelayTimer = setTimeout(hidePopover, hideDelay);
+  });
+
+  $(document).on("click", ".btn-imdb", function () {
+    var imdbId = $(this).data("imdb-id");
+    if (imdbId) {
+      window.open(`https://www.imdb.com/title/tt${imdbId}`, "_blank");
+    } else {
+      console.log("IMDb ID not found");
+    }
   });
 
   $(element)

@@ -1,8 +1,10 @@
 from tmdbv3api import TMDb, Movie, Person
+import requests
+import imdb  # pip install imdbpy
 import random
 
 
-class TMDbManager:
+class DataManager:
     def __init__(self, config_manager):
         self.config_manager = config_manager
         self.tmdb = TMDb()
@@ -18,18 +20,53 @@ class TMDbManager:
     def get_movie_details(self, tmdb_id):
         return self.movie_api.details(tmdb_id)
 
+    def get_imdb_id(self, title):
+        ia = imdb.IMDb()
+        search_results = ia.search_movie(title)
+        if search_results:
+            # Assuming the first search result is the desired one
+            return search_results[0].movieID
+        return "Not Available"
+
+    def get_wiki_url(self, title):
+        """
+        Retrieve the Wikipedia URL for a given movie title using Wikimedia API.
+        """
+        language_code = "en"  # Language code for English Wikipedia
+        search_query = title.replace(" ", "%20")
+
+        # Wikipedia API endpoint for search
+        search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={search_query}&format=json"
+
+        try:
+            response = requests.get(search_url)
+            if response.status_code == 200:
+                search_results = response.json().get("query", {}).get("search", [])
+                if search_results:
+                    page_title = search_results[0]["title"]
+                    wiki_url = f"https://{language_code}.wikipedia.org/wiki/{page_title.replace(' ', '_')}"
+                    return wiki_url
+                else:
+                    return "Wikipedia page not found"
+            else:
+                return "Error in fetching data from Wikipedia"
+        except Exception as e:
+            return f"Error: {e}"
+
     def get_movie_card_details(self, tmdb_id):
         movie = self.movie_api.details(tmdb_id)
         credits = self.movie_api.credits(tmdb_id)
 
         # Debugging: Print the structure of the 'credits' object
         # print("Credits Object:", credits)
-
+        imdb_id = self.get_imdb_id(movie.title)
         director = self.get_crew_member(credits, "Director")
         dop = self.get_crew_member(credits, "Director of Photography")
         writers = self.get_top_writers(credits)  # Get top 5 writers
         stars = self.get_main_actors(credits)  # Get top 5 actors
+        wiki_url = self.get_wiki_url(movie.title)
 
+        print("THIS IS THE IMDB ID::::::::::::::::: ", imdb_id)
         return {
             "title": movie.title,
             "director": director,
@@ -42,6 +79,8 @@ class TMDbManager:
             else None,
             "release_date": movie.release_date,
             "vote_average": movie.vote_average,
+            "imdb_id": imdb_id,
+            "wiki_url": wiki_url,
         }
 
     def get_person_details(self, name):
