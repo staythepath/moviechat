@@ -253,28 +253,6 @@ function sendMessage() {
   messageInput.value = "";
 }
 
-function sendPredefinedMessage(message) {
-  updateChat("user", message);
-  displayChatLoadingMessage();
-
-  fetch("/send_message", {
-    method: "POST",
-    body: JSON.stringify({ message: message }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      hideChatLoadingMessage();
-      updateChat("bot", data.response);
-    })
-    .catch((error) => {
-      hideChatLoadingMessage();
-      console.error("Error:", error);
-    });
-}
-
 function refreshDiscordChannels() {
   let token =
     document.getElementById("discord_token").value ||
@@ -370,6 +348,28 @@ function addMovieToRadarr(tmdbId) {
 $(document).on("mousemove", ".movie-title", function (event) {
   lastMousePosition = { x: event.pageX, y: event.pageY };
 });
+
+function sendPredefinedMessage(message) {
+  updateChat("user", message);
+  displayChatLoadingMessage();
+
+  fetch("/send_message", {
+    method: "POST",
+    body: JSON.stringify({ message: message }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      hideChatLoadingMessage();
+      updateChat("bot", data.response);
+    })
+    .catch((error) => {
+      hideChatLoadingMessage();
+      console.error("Error:", error);
+    });
+}
 
 function customPopoverPlacement(context, source) {
   const wordPosition = $(source).data("word-position");
@@ -665,17 +665,31 @@ function showPersonPopover(element) {
       fetch(`/person_details/${encodeURIComponent(personName)}`)
         .then((response) => response.json())
         .then((data) => {
-          var biography = data.biography || "No biography available";
           var imagePath = data.profile_path
             ? `https://image.tmdb.org/t/p/original${data.profile_path}`
             : "static/no_photo_image.jpg";
+          var biography = data.biography || "No biography available";
           var shortBio =
             biography.length > 100
               ? biography.substring(0, 100) + "..."
               : biography;
-          var creditsHtml = data.movie_credits
+          const fullCredits = data.movie_credits
             .map((credit) => `${credit.title} (${credit.release_year})`)
             .join(", ");
+          $(element).data("fullCredits", fullCredits);
+
+          // Display initial subset of credits
+          const maxDisplayCredits = 5; // Number of movie credits to show initially
+          let displayedCredits = data.movie_credits
+            .slice(0, maxDisplayCredits)
+            .map((credit) => `${credit.title} (${credit.release_year})`)
+            .join(", ");
+
+          // Add "More" link if there are more credits
+          let creditsHtml = displayedCredits;
+          if (data.movie_credits.length > maxDisplayCredits) {
+            creditsHtml += `<span id="more-credits" class="more-link">... More</span>`;
+          }
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
 
@@ -758,12 +772,16 @@ function showPersonPopover(element) {
           popoverTimeout = setTimeout(hidePopover, 350);
         });
 
-      $("#" + popoverId)
-        .find(".chat-btn")
-        .on("click", function () {
-          var title = $(this).data("title");
-          sendPredefinedMessage(`Tell me more about ${title}.`);
-        });
+      $popover.find("#more-bio").on("click", function () {
+        var fullBiography = $(element).data("fullBiography");
+        $popover.find("#short-bio").text(fullBiography);
+        $(this).remove(); // Remove the 'More' button
+      });
+
+      $popover.find("#more-credits").on("click", function () {
+        var fullCredits = $(element).data("fullCredits");
+        $(this).parent().html(fullCredits); // Replace content with full credits
+      });
 
       $popover.find(".chat-btn").on("click", function () {
         var title = $(this).data("title");

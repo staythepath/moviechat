@@ -24,6 +24,9 @@ class DataManager:
         else:
             self.cache = {"movie_details": {}, "person_details": {}}
 
+    def get_movie_details(self, tmdb_id):
+        return self.movie_api.details(tmdb_id)
+
     def save_cache_to_file(self):
         """Save the current state of the cache to a JSON file with pretty-printing."""
         with open(self.cache_file, "w") as file:
@@ -45,6 +48,89 @@ class DataManager:
 
     def search_movie(self, title):
         return self.movie_api.search(title)
+
+    def get_combined_credits(self, person_id):
+        """Fetch combined movie and TV credits for a person."""
+        url = f"https://api.themoviedb.org/3/person/{person_id}/combined_credits?api_key={self.tmdb.api_key}"
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return {}
+
+    def process_combined_credits(self, combined_credits):
+        """Format the combined credits data and filter for feature films."""
+        feature_film_genre_ids = {
+            12,
+            14,
+            16,
+            18,
+            27,
+            28,
+            35,
+            36,
+            37,
+            53,
+            80,
+            # 99,
+            878,
+            9648,
+            10402,
+            10749,
+            10751,
+            10752,
+            # 10770,
+        }  # IDs of typical feature film genres
+        min_vote_count = 50  # Minimum vote count threshold
+        seen_titles = set()  # To track titles and avoid duplicates
+
+        formatted_credits = []
+
+        # Process cast credits
+        for credit in combined_credits.get("cast", []):
+            if (
+                "release_date" in credit
+                and "genre_ids" in credit
+                and credit.get("vote_count", 0) >= min_vote_count
+            ):
+                if not feature_film_genre_ids.isdisjoint(set(credit["genre_ids"])):
+                    title = self.add_formatted_credit(
+                        credit, formatted_credits, seen_titles
+                    )
+
+        # Process crew credits, particularly for directing
+        for credit in combined_credits.get("crew", []):
+            if (
+                credit.get("job") == "Director"
+                and "release_date" in credit
+                and credit.get("vote_count", 0) >= min_vote_count
+            ):
+                title = self.add_formatted_credit(
+                    credit, formatted_credits, seen_titles
+                )
+
+        # Sort by release year in descending order
+        return sorted(
+            formatted_credits,
+            key=lambda x: (x["release_year"], -x.get("popularity", 0)),
+            reverse=True,
+        )
+
+    def add_formatted_credit(self, credit, formatted_credits, seen_titles):
+        """Helper function to format and add a credit to the list, avoiding duplicates."""
+        title = credit.get("title") if "title" in credit else credit.get("name")
+        # Check for duplicates
+        if title not in seen_titles:
+            date = credit.get("release_date")
+            release_year = date.split("-")[0] if date else "N/A"
+            credit_info = {
+                "title": title,
+                "release_year": release_year,
+                "popularity": credit.get("popularity"),
+                "vote_average": credit.get("vote_average"),
+            }
+            formatted_credits.append(credit_info)
+            seen_titles.add(title)  # Mark this title as seen
 
     def get_imdb_id(self, title):
         ia = imdb.IMDb()
@@ -128,15 +214,19 @@ class DataManager:
         search_results = person_api.search(name)
 
         if search_results:
-            # Fetch the person details
             person_id = search_results[0].id
+
+            # Fetch the person details
             person_details = person_api.details(person_id)
 
-            # Fetch the movie credits for the person
-            movie_credits = person_api.movie_credits(person_id)
-
-            # Process the movie credits to extract the required information
-            credits_info = self.process_movie_credits(movie_credits)
+            # Fetch the combined credits for the person using the TMDb API
+            combined_credits_url = f"https://api.themoviedb.org/3/person/{person_id}/combined_credits?api_key={self.tmdb.api_key}&language=en-US"
+            response = requests.get(combined_credits_url)
+            if response.status_code == 200:
+                combined_credits = response.json()
+                credits_info = self.process_combined_credits(combined_credits)
+            else:
+                credits_info = []
 
             # Combine the details and credits to return a single response
             person_data = {
@@ -155,7 +245,7 @@ class DataManager:
 
         return {}
 
-    def process_movie_credits(self, movie_credits, number_of_credits=7):
+    def process_movie_credits(self, movie_credits):
         cast_credits = movie_credits.get("cast", [])
 
         if not cast_credits:
@@ -165,25 +255,16 @@ class DataManager:
         if not isinstance(cast_credits, list):
             cast_credits = [credit.__dict__ for credit in cast_credits]
 
-        # Filter out non-feature films (e.g., documentaries, TV movies)
-        # This is just an example and might need adjustments based on actual data
-        feature_film_credits = [
-            credit for credit in cast_credits if 99 not in credit.get("genre_ids", [])
-        ]
-
-        # Sort credits by popularity and vote average
+        # Sort credits by release date in descending order
         sorted_credits = sorted(
-            feature_film_credits,
-            key=lambda x: (x.get("popularity", 0), x.get("vote_average", 0)),
-            reverse=True,
+            cast_credits,
+            key=lambda x: x.get("release_date", "0"),  # Sorting by release_date
+            reverse=True,  # Most recent first
         )
 
-        # Select the top movies
-        selected_credits = sorted_credits[:number_of_credits]
-
-        # Format the selected credits
+        # Format the sorted credits
         formatted_credits = []
-        for credit in selected_credits:
+        for credit in sorted_credits:
             release_year = (
                 credit.get("release_date", "N/A").split("-")[0]
                 if credit.get("release_date")
