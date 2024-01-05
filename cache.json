@@ -13,6 +13,19 @@
             "wiki_url": "https://en.wikipedia.org/wiki/A_Nightmare_on_Elm_Street",
             "writers": "Wes Craven"
         },
+        "movie_card_419430": {
+            "description": "Chris and his girlfriend Rose go upstate to visit her parents for the weekend. At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.",
+            "director": "Jordan Peele",
+            "dop": "Denson Baker",
+            "imdb_id": "5052448",
+            "poster_path": "https://image.tmdb.org/t/p/original/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
+            "release_date": "2017-02-24",
+            "stars": "Daniel Kaluuya, Allison Williams, Bradley Whitford, Caleb Landry Jones, Stephen Root, Catherine Keener, Marcus Henderson, Betty Gabriel, LaKeith Stanfield, Lil Rel Howery, Ashley LeConte Campbell, John Wilmot, Caren L. Larkey, Julie Ann Doan, Rutherford Cravens, Geraldine Singer, Yasuhiko Oyama, Richard Herd, Erika Alexander, Jeronimo Spinx, Ian Casselberry, Trey Burvant, John Donohue, Sean Paul Braud, Zailand Adams, Keegan-Michael Key, Jordan Peele, Evan Shafran, Tahj Vaughans",
+            "title": "Get Out",
+            "vote_average": 7.6,
+            "wiki_url": "https://en.wikipedia.org/wiki/Get_Out",
+            "writers": "Jordan Peele"
+        },
         "movie_card_493922": {
             "description": "When Ellen, the matriarch of the Graham family, passes away, her daughter's family begins to unravel cryptic and increasingly terrifying secrets about their ancestry.",
             "director": "Ari Aster",
@@ -38,9 +51,107 @@
             "vote_average": 8.218,
             "wiki_url": "https://en.wikipedia.org/wiki/Shining",
             "writers": "Stanley Kubrick, Stephen King, Diane Johnson"
+        },
+        "movie_card_9552": {
+            "description": "Twelve year old Regan MacNeil begins to adapt an explicit new personality as strange events befall the local area of Georgetown. Her mother becomes torn between science and superstition in a desperate bid to save her daughter, and ultimately turns to her last hope: Father Damien Karras, a troubled priest struggling with his own faith.",
+            "director": "William Friedkin",
+            "dop": "Owen Roizman",
+            "imdb_id": "0070047",
+            "poster_path": "https://image.tmdb.org/t/p/original/4ucLGcXVVSVnsfkGtbLY4XAius8.jpg",
+            "release_date": "1973-12-26",
+            "stars": "Ellen Burstyn, Linda Blair, Jason Miller, Max von Sydow, Lee J. Cobb, Kitty Winn, Jack MacGowran, William O'Malley, Barton Heyman, Peter Masterson, Rudolf Sch\u00fcndler, Gina Petrushka, Robert Symonds, Arthur Storch, Thomas Bermingham, Vasiliki Maliaros, Titos Vandis, John Mahon, Wallace Rooney, Ron Faber, Donna Mitchell, Roy Cooper, Robert Gerringer, Mercedes McCambridge, Paul Bateson, Elinore Blair, William Peter Blatty, Mary Boylan, Dick Callinan, Mason Curry, Toni Darnay, Eileen Dietz, Joanne Dusseau, Bernard Eismann, Beatrice Hunter, Yvonne Jones, Don LaBonte, Barton Lane, Ann Miles, John Nicola, Vincent Russell, Gerard F. Yates, Rita Sakellariou",
+            "title": "The Exorcist",
+            "vote_average": 7.722,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Exorcist",
+            "writers": "William Peter Blatty, William Peter Blatty"
         }
     },
     "person_details": {
+        "person_Gabriel Byrne": {
+            "biography": "Gabriel James Byrne (born 12 May 1950) is an Irish actor, film director, film producer, screenwriter, cultural ambassador and audiobook narrator. His acting career began in the Focus Theatre before he joined London\u2019s Royal Court Theatre in 1979. Byrne's screen d\u00e9but came in the Irish soap opera The Riordans and the spin-off show Bracken. The actor has now starred in over 35 feature films, such as The Usual Suspects, Miller's Crossing and Stigmata, in addition to writing two. Byrne's producing credits include the Academy Award-nominated In the Name of the Father. Currently, he is receiving much critical acclaim for his role as Dr. Paul Weston in the HBO drama In Treatment.",
+            "birthday": "1950-05-12",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "release_year": "2022",
+                    "title": "Lamborghini: The Man Behind the Legend"
+                },
+                {
+                    "release_year": "2018",
+                    "title": "Hereditary"
+                },
+                {
+                    "release_year": "1995",
+                    "title": "The Usual Suspects"
+                },
+                {
+                    "release_year": "1998",
+                    "title": "Enemy of the State"
+                },
+                {
+                    "release_year": "1998",
+                    "title": "The Man in the Iron Mask"
+                },
+                {
+                    "release_year": "2022",
+                    "title": "The Boy, the Mole, the Fox and the Horse"
+                },
+                {
+                    "release_year": "2002",
+                    "title": "Ghost Ship"
+                }
+            ],
+            "name": "Gabriel Byrne",
+            "place_of_birth": "Dublin, Ireland",
+            "profile_path": "/9r9oDGENg92VYYFMkV4C09IUlrb.jpg"
+        },
+        "person_John Alcott": {
+            "biography": "John Alcott, BSC (27 November 1930 \u2013 28 July 1986) was an English cinematographer known for his four collaborations with director Stanley Kubrick: 2001: A Space Odyssey (1968), for which he took over as lighting cameraman from Geoffrey Unsworth in mid-shoot, A Clockwork Orange (1971), Barry Lyndon (1975), the film for which he won his Oscar, and The Shining (1980). Alcott died from a heart attack in Cannes, France, in July 1986; he was 55. He received a tribute at the end of his last film No Way Out starring Kevin Costner.",
+            "birthday": "1930-11-27",
+            "deathday": "1986-07-28",
+            "movie_credits": [],
+            "name": "John Alcott",
+            "place_of_birth": "London, United Kingdom",
+            "profile_path": "/vpWpMQirRnTpNwhVwgcXYWmFE54.jpg"
+        },
+        "person_Jordan Peele": {
+            "biography": "Jordan Haworth Peele (born February 21, 1979) is an American actor, comedian, and filmmaker. He is known for his film and television work in the comedy and horror genres. Peele started his career in sketch comedy before transitioning his career as a writer and director of psychological horror and satirical films. In 2017, Peele was included on the annual Time 100 list of the most influential people in the world.\n\nPeele's breakout role came in 2003, when he was hired as a cast member on the Fox sketch comedy series Mad TV, where he spent five seasons, leaving the show in 2008. In the following years, he and his frequent Mad TV collaborator, Keegan-Michael Key, created and starred in their own Comedy Central sketch comedy series Key & Peele (2012\u20132015). The series was critically acclaimed, winning two Primetime Emmy Awards and a Peabody Award. The two wrote, produced, and starred in the comedy film Keanu (2016) and appeared in various projects since.\n\nHis 2017 directorial debut, the horror film Get Out, was a critical and box office success, for which he received numerous accolades, including the Academy Award for Best Original Screenplay, along with nominations for Best Picture and Best Director. Critics have frequently named Get Out as one of the best films of the 21st century. He received another Academy Award nomination for Best Picture for producing Spike Lee's drama BlacKkKlansman (2018). He directed, wrote, and produced the acclaimed films Us (2019) and Nope (2022). He founded the film and television production company Monkeypaw Productions in 2012. He wrote and produced Candyman (2021), and Wendell and Wild (2022).\n\nPeele has also voice acted in the animated films Storks (2016), Captain Underpants: The First Epic Movie (2017) and Toy Story 4 (2019), as well as in the adult animated sitcom Big Mouth (2017\u2013present). He co-created the TBS comedy series The Last O.G. (2018\u20132022) and the YouTube Premium comedy series Weird City (2019). He also served as the host and producer of the CBS All Access revival of the anthology series The Twilight Zone (2019\u20132020).",
+            "birthday": "1979-02-21",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "release_year": "2019",
+                    "title": "Toy Story 4"
+                },
+                {
+                    "release_year": "2017",
+                    "title": "Get Out"
+                },
+                {
+                    "release_year": "2016",
+                    "title": "Storks"
+                },
+                {
+                    "release_year": "2019",
+                    "title": "Us"
+                },
+                {
+                    "release_year": "2010",
+                    "title": "Little Fockers"
+                },
+                {
+                    "release_year": "2022",
+                    "title": "Wendell & Wild"
+                },
+                {
+                    "release_year": "2017",
+                    "title": "Captain Underpants: The First Epic Movie"
+                }
+            ],
+            "name": "Jordan Peele",
+            "place_of_birth": "New York City, New York, USA",
+            "profile_path": "/kFUKn5g3ebpyZ3CSZZZo2HFWRNQ.jpg"
+        },
         "person_Stanley Kubrick": {
             "biography": "Stanley Kubrick (July 26, 1928 \u2013 March 7, 1999) was an American film director, writer, producer, and photographer who lived in England during most of the last four decades of his career. Kubrick was noted for the scrupulous care with which he chose his subjects, his slow method of working, the variety of genres he worked in, his technical perfectionism, and his reclusiveness about his films and personal life. He maintained almost complete artistic control, making movies according to his own whims and time constraints, but with the rare advantage of big-studio financial support for all his endeavors. Kubrick's films are characterized by a formal visual style and meticulous attention to detail\u2014his later films often have elements of surrealism and expressionism that eschews structured linear narrative. His films are repeatedly described as slow and methodical, and are often perceived as a reflection of his obsessive and perfectionist nature. A recurring theme in his films is man's inhumanity to man. While often viewed as expressing an ironic pessimism, a few critics feel his films contain a cautious optimism when viewed more carefully.\n\nThe film that first brought him attention to many critics was Paths of Glory (1957), the first of three films of his about the dehumanizing effects of war. Many of his films at first got a lukewarm reception, only to be years later acclaimed as masterpieces that had a seminal influence on many later generations of film-makers. Considered especially groundbreaking was 2001: A Space Odyssey (1968) noted for being both one of the most scientifically realistic and visually innovative science-fiction films ever made while maintaining an enigmatic non-linear storyline. He voluntarily withdrew his film A Clockwork Orange (1971) from England, after it was accused of inspiring copycat crimes which in turn resulted in threats against Kubrick's family. His films were largely successful at the box-office, although Barry Lyndon (1975) performed poorly in the United States. Living authors Anthony Burgess and Stephen King were both unhappy with Kubrick's adaptations of their novels A Clockwork Orange and The Shining (1980) respectively, and both authors were engaged with subsequent adaptations. All of Kubrick's films from the mid-1950s to his death except for The Shining were nominated for Oscars, Golden Globes, or BAFTAs. Although he was nominated for an Academy Award as a screenwriter and director on several occasions, his only personal win was for the special effects in 2001: A Space Odyssey.\n\nEven though all of his films, apart from the first two, were adapted from novels or short stories, his works have been described by Jason Ankeny and others as \"original and visionary\". Although some critics, notably Andrew Sarris and Pauline Kael, frequently disparaged Kubrick's work, Ankeny describes Kubrick as one of the most \"universally acclaimed and influential directors of the postwar era\" with a \"standing unique among the filmmakers of his day.\"",
             "birthday": "1928-07-26",
@@ -66,6 +177,44 @@
             "name": "Stanley Kubrick",
             "place_of_birth": "New York City, New York",
             "profile_path": "/exfQ6vXXq7rMS5YWb3B88PK39a1.jpg"
+        },
+        "person_Stephen King": {
+            "biography": "Stephen King is an American author of contemporary horror, suspense, science fiction, and fantasy fiction. His books have sold more than 350 million copies, which have been adapted into a number of feature films, television movies, and comic books. As of 2011, King has written and published 49 novels, including seven under the pen name Richard Bachman, five non-fiction books, and nine collections of short stories. Many of his stories are set in his home state of Maine. King has received Bram Stoker Awards, World Fantasy Awards, British Fantasy Society Awards, his novella The Way Station was a Nebula Award novelette nominee, and in 2003, the National Book Foundation awarded him the Medal for Distinguished Contribution to American Letters.",
+            "birthday": "1947-09-21",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "release_year": "2019",
+                    "title": "It Chapter Two"
+                },
+                {
+                    "release_year": "1989",
+                    "title": "Pet Sematary"
+                },
+                {
+                    "release_year": "2013",
+                    "title": "Stuck in Love"
+                },
+                {
+                    "release_year": "1992",
+                    "title": "Sleepwalkers"
+                },
+                {
+                    "release_year": "1987",
+                    "title": "Creepshow 2"
+                },
+                {
+                    "release_year": "1996",
+                    "title": "Thinner"
+                },
+                {
+                    "release_year": "2005",
+                    "title": "Fever Pitch"
+                }
+            ],
+            "name": "Stephen King",
+            "place_of_birth": "Portland, Maine, USA",
+            "profile_path": "/7r5nEzNanuEhmxtpsKE1uCBU5Jd.jpg"
         },
         "person_Wes Craven": {
             "biography": "Wesley Earl\u00a0\"Wes\"\u00a0Craven\u00a0(August 2, 1939\u00a0\u2013 August 30, 2015) was a prolific and influential\u00a0American film director, writer, producer, and occasional actor known for his pioneering work\u00a0in the horror genre, and particularly in the teen\u00a0slasher subgenre. Among his best-known works are such landmark films as \"The Last House on the Left\" (1972), \"The Hills Have Eyes\" (1977), \"A Nightmare on Elm Street\" (1984) and the \"Scream\" series (1996\u20132011).",

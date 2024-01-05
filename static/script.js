@@ -139,12 +139,12 @@ function waitForServerReady() {
         resetUI();
       } else {
         // Retry after a delay
-        setTimeout(waitForServerReady, 3000); // Retry after 3 seconds
+        setTimeout(waitForServerReady, 350); // Retry after 3 seconds
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      setTimeout(waitForServerReady, 3000);
+      setTimeout(waitForServerReady, 350);
     });
 }
 
@@ -631,16 +631,11 @@ function setupPopoverHideWithDelay(element) {
   $(document).on("click", ".more-toggle", function () {
     let group = this.id.split("-")[1];
     let moreSpan = $(`#more-${group}`);
-    moreSpan.toggle(); // This toggles the visibility
 
-    // Check if moreSpan is visible and change display property
-    if (moreSpan.is(":visible")) {
-      moreSpan.css("display", "inline"); // or 'inline-block'
-    } else {
-      moreSpan.css("display", "none");
-    }
+    // Toggle the visibility
+    moreSpan.toggle();
 
-    // Update button text
+    // Update button text based on the visibility of moreSpan
     $(this).text(moreSpan.is(":visible") ? "Less" : "More");
   });
 }
@@ -736,14 +731,14 @@ function showPersonPopover(element) {
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 3000);
+      popoverTimeout = setTimeout(hidePopover, 350);
     });
 
   // Event binding for popover shown event
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 3000);
+      popoverTimeout = setTimeout(hidePopover, 350);
     });
 
   // Event binding for popover shown event
@@ -760,7 +755,7 @@ function showPersonPopover(element) {
         })
         .on("mouseleave", function () {
           isMouseOverPopover = false;
-          popoverTimeout = setTimeout(hidePopover, 3000);
+          popoverTimeout = setTimeout(hidePopover, 350);
         });
 
       $("#" + popoverId)
