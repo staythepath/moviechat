@@ -39,6 +39,45 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Eyes_Wide_Shut",
             "writers": "Stanley Kubrick, Arthur Schnitzler, Frederic Raphael"
         },
+        "movie_card_377": {
+            "description": "Teenagers in a small town are dropping like flies, apparently in the grip of mass hysteria causing their suicides. A cop's daughter, Nancy Thompson, traces the cause to child molester Fred Krueger, who was burned alive by angry parents many years before. Krueger has now come back in the dreams of his killers' children, claiming their lives as his revenge. Nancy and her boyfriend, Glen, must devise a plan to lure the monster out of the realm of nightmares and into the real world...",
+            "director": "Wes Craven",
+            "dop": "Jacques Haitkin",
+            "imdb_id": "0087800",
+            "poster_path": "https://image.tmdb.org/t/p/original/wGTpGGRMZmyFCcrY2YoxVTIBlli.jpg",
+            "release_date": "1984-11-09",
+            "stars": "Heather Langenkamp, John Saxon, Ronee Blakley, Amanda Wyss, Jsu Garcia, Johnny Depp, Robert Englund, Charles Fleischer, Joseph Whipp, Lin Shaye, Joe Unger, Mimi Craven, Jack Shea, Ed Call, Sandy Lipton, David Andrews, Jeff Levine, Donna Woodrum, Shashawnee Hall, Carol Pritikin, Brian Reise, Ash Adams, Don Hannah, Leslie Hoffman, Paul Grenier, Kathi Gibbs, Chris Tashima, Antonia Yannouli, John Richard Petersen, Robert Shaye",
+            "title": "A Nightmare on Elm Street",
+            "vote_average": 7.328,
+            "wiki_url": "https://en.wikipedia.org/wiki/A_Nightmare_on_Elm_Street",
+            "writers": "Wes Craven"
+        },
+        "movie_card_419430": {
+            "description": "Chris and his girlfriend Rose go upstate to visit her parents for the weekend. At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.",
+            "director": "Jordan Peele",
+            "dop": "Denson Baker",
+            "imdb_id": "5052448",
+            "poster_path": "https://image.tmdb.org/t/p/original/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
+            "release_date": "2017-02-24",
+            "stars": "Daniel Kaluuya, Allison Williams, Bradley Whitford, Caleb Landry Jones, Stephen Root, Catherine Keener, Marcus Henderson, Betty Gabriel, LaKeith Stanfield, Lil Rel Howery, Ashley LeConte Campbell, John Wilmot, Caren L. Larkey, Julie Ann Doan, Rutherford Cravens, Geraldine Singer, Yasuhiko Oyama, Richard Herd, Erika Alexander, Jeronimo Spinx, Ian Casselberry, Trey Burvant, John Donohue, Sean Paul Braud, Zailand Adams, Keegan-Michael Key, Jordan Peele, Evan Shafran, Tahj Vaughans",
+            "title": "Get Out",
+            "vote_average": 7.6,
+            "wiki_url": "https://en.wikipedia.org/wiki/Get_Out",
+            "writers": "Jordan Peele"
+        },
+        "movie_card_493922": {
+            "description": "When Ellen, the matriarch of the Graham family, passes away, her daughter's family begins to unravel cryptic and increasingly terrifying secrets about their ancestry.",
+            "director": "Ari Aster",
+            "dop": "Pawel Pogorzelski",
+            "imdb_id": "7784604",
+            "poster_path": "https://image.tmdb.org/t/p/original/p9fmuz2Oj3HtEJEqbIwkFGUhVXD.jpg",
+            "release_date": "2018-06-07",
+            "stars": "Toni Collette, Gabriel Byrne, Alex Wolff, Milly Shapiro, Ann Dowd, Mallory Bechtel, Brock McKinney, Jake Brown, Morgan Lund, Christy Summerhays, Bus Riley, Jarrod Phillips, Heidi Mendez, Zachary Arthur, David Stanley, Moises L. Tovar, Austin R. Grant, Gabriel Monroe Eckert, Harrison Nell, BriAnn Rachele, Ari Aster, Marilyn Miller, Mark Blockovich, Rachelle Hardy, Jason Miyagi, Lorenzo Silva, Alexis Long",
+            "title": "Hereditary",
+            "vote_average": 7.3,
+            "wiki_url": "https://en.wikipedia.org/wiki/Hereditary_(film)",
+            "writers": "Ari Aster"
+        },
         "movie_card_600": {
             "description": "A pragmatic U.S. Marine observes the dehumanizing effects the U.S.-Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue.",
             "director": "Stanley Kubrick",
@@ -64,9 +103,175 @@
             "vote_average": 8.077,
             "wiki_url": "https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey",
             "writers": "Stanley Kubrick, Arthur C. Clarke, Arthur C. Clarke"
+        },
+        "movie_card_694": {
+            "description": "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the madness that lurks within.",
+            "director": "Stanley Kubrick",
+            "dop": "John Alcott",
+            "imdb_id": "0081505",
+            "poster_path": "https://image.tmdb.org/t/p/original/9PtPnOJSH6pewElRlJPGqC5Gd3W.jpg",
+            "release_date": "1980-05-23",
+            "stars": "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers, Philip Stone, Joe Turkel, Barry Nelson, Barry Dennen, Tony Burton, Lia Beldam, Billie Gibson, Lisa Burns, Louise Burns, David Baxt, Manning Redwood, Robin Pappas, Anne Jackson, Alison Coleridge, Burnell Tucker, Jana Shelden, Paul Desbois, Vivian Kubrick, Derek Lyons, Alan Harris, Peter McNamara, Guy Standeven, Reg Thomason",
+            "title": "The Shining",
+            "vote_average": 8.218,
+            "wiki_url": "https://en.wikipedia.org/wiki/Shining",
+            "writers": "Stanley Kubrick, Stephen King, Diane Johnson"
+        },
+        "movie_card_9552": {
+            "description": "Twelve year old Regan MacNeil begins to adapt an explicit new personality as strange events befall the local area of Georgetown. Her mother becomes torn between science and superstition in a desperate bid to save her daughter, and ultimately turns to her last hope: Father Damien Karras, a troubled priest struggling with his own faith.",
+            "director": "William Friedkin",
+            "dop": "Owen Roizman",
+            "imdb_id": "0070047",
+            "poster_path": "https://image.tmdb.org/t/p/original/4ucLGcXVVSVnsfkGtbLY4XAius8.jpg",
+            "release_date": "1973-12-26",
+            "stars": "Ellen Burstyn, Linda Blair, Jason Miller, Max von Sydow, Lee J. Cobb, Kitty Winn, Jack MacGowran, William O'Malley, Barton Heyman, Peter Masterson, Rudolf Sch\u00fcndler, Gina Petrushka, Robert Symonds, Arthur Storch, Thomas Bermingham, Vasiliki Maliaros, Titos Vandis, John Mahon, Wallace Rooney, Ron Faber, Donna Mitchell, Roy Cooper, Robert Gerringer, Mercedes McCambridge, Paul Bateson, Elinore Blair, William Peter Blatty, Mary Boylan, Dick Callinan, Mason Curry, Toni Darnay, Eileen Dietz, Joanne Dusseau, Bernard Eismann, Beatrice Hunter, Yvonne Jones, Don LaBonte, Barton Lane, Ann Miles, John Nicola, Vincent Russell, Gerard F. Yates, Rita Sakellariou",
+            "title": "The Exorcist",
+            "vote_average": 7.722,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Exorcist",
+            "writers": "William Peter Blatty, William Peter Blatty"
         }
     },
     "person_details": {
+        "person_Ari Aster": {
+            "biography": "Ari Aster (born July 15, 1986) is an American writer-director, best known for the acclaimed horror films \"Hereditary\" (2018) and \"Midsommar\" (2019).  He has also written and directed several short films, including \"The Strange Thing About the Johnsons\" (2011), \"Beau\" (2011), \"Munchausen\" (2013), and \"Basically\" (2014).",
+            "birthday": "1986-07-15",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 48.246,
+                    "release_year": "2023",
+                    "title": "Beau Is Afraid",
+                    "vote_average": 6.798
+                },
+                {
+                    "popularity": 51.158,
+                    "release_year": "2019",
+                    "title": "Midsommar",
+                    "vote_average": 7.169
+                },
+                {
+                    "popularity": 61.808,
+                    "release_year": "2018",
+                    "title": "Hereditary",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 6.309,
+                    "release_year": "2013",
+                    "title": "Munchausen",
+                    "vote_average": 6.775
+                },
+                {
+                    "popularity": 3.16,
+                    "release_year": "2011",
+                    "title": "Beau",
+                    "vote_average": 5.798
+                },
+                {
+                    "popularity": 17.493,
+                    "release_year": "2011",
+                    "title": "The Strange Thing About the Johnsons",
+                    "vote_average": 6.961
+                }
+            ],
+            "name": "Ari Aster",
+            "place_of_birth": "New York, New York, USA",
+            "profile_path": "/7ycICw9yVpk6bzTKLRiPd9eSfHA.jpg"
+        },
+        "person_Daniel Kaluuya": {
+            "biography": "Daniel Kaluuya (born February 24, 1989) is a British actor. Prominent both on screen and stage, he has received numerous accolades, including an Academy Award, two BAFTA Awards, and a Golden Globe Award.  Following supporting roles in the films Johnny English Reborn (2011), Kick-Ass 2 (2013), and Sicario (2015), as well as the Black Mirror episode \"Fifteen Million Merits\" (2011), Kaluuya had his breakout role in Jordan Peele's horror film Get Out, which garnered him a nomination for the Academy Award for Best Actor. This was followed by starring roles in Black Panther (2018), Widows (2018), Queen & Slim (2019), Nope (2022), and Spider-Man: Across the Spider-Verse (2023). For his portrayal of Black Panther Party leader Fred Hampton in Judas and the Black Messiah (2021), he won the BAFTA and Academy Award for Best Supporting Actor.",
+            "birthday": "1989-02-24",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 394.57,
+                    "release_year": "2023",
+                    "title": "Spider-Man: Across the Spider-Verse",
+                    "vote_average": 8.38
+                },
+                {
+                    "popularity": 66.606,
+                    "release_year": "2022",
+                    "title": "Nope",
+                    "vote_average": 6.891
+                },
+                {
+                    "popularity": 23.673,
+                    "release_year": "2021",
+                    "title": "Judas and the Black Messiah",
+                    "vote_average": 7.347
+                },
+                {
+                    "popularity": 14.933,
+                    "release_year": "2019",
+                    "title": "Queen & Slim",
+                    "vote_average": 7.165
+                },
+                {
+                    "popularity": 14.932,
+                    "release_year": "2018",
+                    "title": "Widows",
+                    "vote_average": 6.491
+                },
+                {
+                    "popularity": 54.932,
+                    "release_year": "2018",
+                    "title": "Black Panther",
+                    "vote_average": 7.387
+                },
+                {
+                    "popularity": 53.529,
+                    "release_year": "2017",
+                    "title": "Get Out",
+                    "vote_average": 7.618
+                },
+                {
+                    "popularity": 51.731,
+                    "release_year": "2015",
+                    "title": "Sicario",
+                    "vote_average": 7.391
+                },
+                {
+                    "popularity": 11.828,
+                    "release_year": "2013",
+                    "title": "Welcome to the Punch",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 25.907,
+                    "release_year": "2013",
+                    "title": "Kick-Ass 2",
+                    "vote_average": 6.395
+                },
+                {
+                    "popularity": 24.641,
+                    "release_year": "2011",
+                    "title": "Johnny English Reborn",
+                    "vote_average": 6.226
+                },
+                {
+                    "popularity": 7.657,
+                    "release_year": "2010",
+                    "title": "Chatroom",
+                    "vote_average": 5.901
+                },
+                {
+                    "popularity": 10.449,
+                    "release_year": "2009",
+                    "title": "Doctor Who: Planet of the Dead",
+                    "vote_average": 7.4
+                },
+                {
+                    "popularity": 7.19,
+                    "release_year": "2008",
+                    "title": "Cass",
+                    "vote_average": 6.0
+                }
+            ],
+            "name": "Daniel Kaluuya",
+            "place_of_birth": "London, England, UK",
+            "profile_path": "/a07Tqzgp0IrW9YkcOQiuKavP4tm.jpg"
+        },
         "person_Gustav Hasford": {
             "biography": "From Wikipedia, the free encyclopedia.\n\nGustav Hasford (November 28, 1947 - January 29, 1993) was an American writer. His semi-autobiographical novel The Short-Timers was the basis of the film Full Metal Jacket.\n\nBorn in Russellville, Alabama, Hasford joined the United States Marine Corps in 1967 and served as a combat correspondent during the Vietnam War.\n\nHasford associated with various science fiction writers of the 1970s (including Arthur Byron Cover and David J. Skal), had works published in magazines and anthologies such as Space and Time and Damon Knight's Orbit series, and briefly shared an apartment with author Harlan Ellison.\n\nIn 1978, Hasford attended the Milford Writer's Workshop and met veteran science fiction author Frederik Pohl, who was then an editor at Bantam Books. At Pohl's suggestion, Hasford submitted The Short-Timers, and Pohl promptly bought it for Bantam. The Short-Timers became a best-seller, and was adapted into the 1987 feature film Full Metal Jacket, directed by Stanley Kubrick. The screenplay was written by Hasford, Kubrick, and screenwriter Michael Herr, and was nominated for an Academy Award. Hasford's actual contributions were a subject of dispute among the three and ultimately Hasford chose to skip the Oscar ceremonies.\n\nIn 1988, shortly before the Oscar ceremony, Hasford was charged for theft after campus police from California Polytechnic State University in San Luis Obispo, California, found nearly 10,000 library books in his rented storage locker. At that time, he had 87 overdue books checked out from the Cal Poly-SBO library; also five years of the magazine Civil War Times. The materials were valued at over $2,000.\n\nHasford's book collection included books borrowed (and never returned) from dozens of libraries across the United States, and from libraries in the United Kingdom and Australia. Others were allegedly taken from the homes of acquaintances. Among them were 19th-century books on Edgar Allan Poe and the American Civil War.  He had obtained borrowing privileges at Cal Poly-SBO as a California resident, but submitted a false address and Social Security number. In 1985, he had borrowed 98 books from the Sacramento, California public library, and was wanted for grand theft there.[2]\n\nHasford initially denied the charges, but eventually admitted possession of several hundred stolen books, and pled Nolo contendere (\"no contest\") to possession of stolen property. He was sentenced to six months imprisonment (of which he served three months), and promised to pay restitution from the royalties for his future works.  Hasford claimed that he wanted the books to research a never-published book on the Civil War. He described his difficulties as \"a vicious attack launched against me by moral majority fanatics backed up by the full power of the Fascist State.\"  In 1990 he published a second novel, The Phantom Blooper, a sequel to The Short-Timers.\n\nHasford's final novel was A Gypsy Good Time, a detective story set in Los Angeles. It was published in 1992, and received little notice. Hasford, suffering from diabetes, moved to the Greek island of Aegina and died there of heart failure on 29 January 1993.\n\nDescription above from the Wikipedia article Gustav Hasford, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
             "birthday": "1947-11-28",
@@ -75,6 +280,456 @@
             "name": "Gustav Hasford",
             "place_of_birth": "Haleyville, Alabama, USA",
             "profile_path": null
+        },
+        "person_Heather Langenkamp": {
+            "biography": "Heather Langenkamp (born July 17, 1964) is an American film and television actress. She is best known for her role as Nancy Thompson from the A Nightmare on Elm Street films. She also played Marie Lubbock on the sitcom Just the Ten of Us.",
+            "birthday": "1964-07-17",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 29.996,
+                    "release_year": "2021",
+                    "title": "My Little Pony: A New Generation",
+                    "vote_average": 7.744
+                },
+                {
+                    "popularity": 13.124,
+                    "release_year": "2018",
+                    "title": "Hellraiser: Judgment",
+                    "vote_average": 5.0
+                },
+                {
+                    "popularity": 11.213,
+                    "release_year": "2017",
+                    "title": "Truth or Dare",
+                    "vote_average": 5.358
+                },
+                {
+                    "popularity": 39.334,
+                    "release_year": "2013",
+                    "title": "Star Trek Into Darkness",
+                    "vote_average": 7.33
+                },
+                {
+                    "popularity": 8.344,
+                    "release_year": "2012",
+                    "title": "The Butterfly Room",
+                    "vote_average": 5.996
+                },
+                {
+                    "popularity": 10.355,
+                    "release_year": "2010",
+                    "title": "Never Sleep Again: The Elm Street Legacy",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 20.991,
+                    "release_year": "1994",
+                    "title": "New Nightmare",
+                    "vote_average": 6.428
+                },
+                {
+                    "popularity": 10.705,
+                    "release_year": "1989",
+                    "title": "Shocker",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 13.535,
+                    "release_year": "1987",
+                    "title": "A Nightmare on Elm Street 3: Dream Warriors",
+                    "vote_average": 6.671
+                },
+                {
+                    "popularity": 34.769,
+                    "release_year": "1984",
+                    "title": "A Nightmare on Elm Street",
+                    "vote_average": 7.328
+                }
+            ],
+            "name": "Heather Langenkamp",
+            "place_of_birth": "Tulsa, Oklahoma, USA",
+            "profile_path": "/eqsaCuWAKbWJORS84dqpXzmg8b0.jpg"
+        },
+        "person_Jack Nicholson": {
+            "biography": "John Joseph \"Jack\" Nicholson (born April 22, 1937) is an American actor, film director, producer and writer. He is renowned for his often dark-themed portrayals of neurotic characters. Nicholson has been nominated for Academy Awards 12 times. He has won the Academy Award for Best Actor twice, for One Flew Over the Cuckoo's Nest and for As Good as It Gets. He won the Academy Award for Best Supporting Actor for the 1983 film Terms of Endearment. He is tied with Walter Brennan for most acting wins by a male actor (three), and second to Katharine Hepburn for most acting wins overall (four).\n\nHe is also one of only two actors nominated for an Academy Award for acting (either lead or supporting) in every decade from the 1960s to 2000s (the other one being Michael Caine). He has won seven Golden Globe Awards, and received a Kennedy Center Honor in 2001. In 1994, he became one of the youngest actors to be awarded the American Film Institute's Life Achievement Award. Notable films in which he has starred include, in chronological order, Easy Rider, Five Easy Pieces, Chinatown, One Flew Over the Cuckoo's Nest, The Shining, The Postman Always Rings Twice, Reds, Terms of Endearment, Batman, A Few Good Men, As Good as It Gets, About Schmidt, Something's Gotta Give and The Departed.\n\nDescription above from the Wikipedia article Jack Nicholson, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1937-04-22",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 6.636,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 11.507,
+                    "release_year": "2010",
+                    "title": "I'm Still Here",
+                    "vote_average": 6.006
+                },
+                {
+                    "popularity": 15.376,
+                    "release_year": "2010",
+                    "title": "How Do You Know",
+                    "vote_average": 5.305
+                },
+                {
+                    "popularity": 23.654,
+                    "release_year": "2007",
+                    "title": "The Bucket List",
+                    "vote_average": 7.184
+                },
+                {
+                    "popularity": 52.197,
+                    "release_year": "2006",
+                    "title": "The Departed",
+                    "vote_average": 8.2
+                },
+                {
+                    "popularity": 19.664,
+                    "release_year": "2003",
+                    "title": "Something's Gotta Give",
+                    "vote_average": 6.627
+                },
+                {
+                    "popularity": 24.361,
+                    "release_year": "2003",
+                    "title": "Anger Management",
+                    "vote_average": 6.144
+                },
+                {
+                    "popularity": 13.18,
+                    "release_year": "2002",
+                    "title": "About Schmidt",
+                    "vote_average": 6.832
+                },
+                {
+                    "popularity": 14.169,
+                    "release_year": "2001",
+                    "title": "The Pledge",
+                    "vote_average": 6.522
+                },
+                {
+                    "popularity": 22.439,
+                    "release_year": "1997",
+                    "title": "As Good as It Gets",
+                    "vote_average": 7.393
+                },
+                {
+                    "popularity": 7.485,
+                    "release_year": "1996",
+                    "title": "The Evening Star",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 9.714,
+                    "release_year": "1996",
+                    "title": "Blood and Wine",
+                    "vote_average": 5.708
+                },
+                {
+                    "popularity": 23.236,
+                    "release_year": "1996",
+                    "title": "Mars Attacks!",
+                    "vote_average": 6.399
+                },
+                {
+                    "popularity": 10.833,
+                    "release_year": "1995",
+                    "title": "The Crossing Guard",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 13.381,
+                    "release_year": "1994",
+                    "title": "Wolf",
+                    "vote_average": 6.103
+                },
+                {
+                    "popularity": 6.287,
+                    "release_year": "1992",
+                    "title": "Man Trouble",
+                    "vote_average": 4.9
+                },
+                {
+                    "popularity": 13.933,
+                    "release_year": "1992",
+                    "title": "Hoffa",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 28.64,
+                    "release_year": "1992",
+                    "title": "A Few Good Men",
+                    "vote_average": 7.527
+                },
+                {
+                    "popularity": 12.727,
+                    "release_year": "1990",
+                    "title": "The Two Jakes",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 42.431,
+                    "release_year": "1989",
+                    "title": "Batman",
+                    "vote_average": 7.221
+                },
+                {
+                    "popularity": 8.503,
+                    "release_year": "1987",
+                    "title": "Ironweed",
+                    "vote_average": 6.355
+                },
+                {
+                    "popularity": 20.138,
+                    "release_year": "1987",
+                    "title": "Broadcast News",
+                    "vote_average": 6.716
+                },
+                {
+                    "popularity": 21.796,
+                    "release_year": "1987",
+                    "title": "The Witches of Eastwick",
+                    "vote_average": 6.535
+                },
+                {
+                    "popularity": 11.172,
+                    "release_year": "1986",
+                    "title": "Heartburn",
+                    "vote_average": 6.003
+                },
+                {
+                    "popularity": 8.873,
+                    "release_year": "1985",
+                    "title": "Prizzi's Honor",
+                    "vote_average": 6.346
+                },
+                {
+                    "popularity": 18.942,
+                    "release_year": "1983",
+                    "title": "Terms of Endearment",
+                    "vote_average": 7.101
+                },
+                {
+                    "popularity": 7.724,
+                    "release_year": "1982",
+                    "title": "The Border",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 8.545,
+                    "release_year": "1981",
+                    "title": "Reds",
+                    "vote_average": 6.898
+                },
+                {
+                    "popularity": 15.22,
+                    "release_year": "1981",
+                    "title": "The Postman Always Rings Twice",
+                    "vote_average": 6.543
+                },
+                {
+                    "popularity": 47.29,
+                    "release_year": "1980",
+                    "title": "The Shining",
+                    "vote_average": 8.218
+                },
+                {
+                    "popularity": 9.935,
+                    "release_year": "1978",
+                    "title": "Goin' South",
+                    "vote_average": 5.775
+                },
+                {
+                    "popularity": 9.672,
+                    "release_year": "1976",
+                    "title": "The Missouri Breaks",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 11.144,
+                    "release_year": "1976",
+                    "title": "The Last Tycoon",
+                    "vote_average": 6.425
+                },
+                {
+                    "popularity": 8.487,
+                    "release_year": "1975",
+                    "title": "The Passenger",
+                    "vote_average": 7.315
+                },
+                {
+                    "popularity": 10.567,
+                    "release_year": "1975",
+                    "title": "Tommy",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 38.481,
+                    "release_year": "1975",
+                    "title": "One Flew Over the Cuckoo's Nest",
+                    "vote_average": 8.42
+                },
+                {
+                    "popularity": 31.062,
+                    "release_year": "1974",
+                    "title": "Chinatown",
+                    "vote_average": 7.914
+                },
+                {
+                    "popularity": 11.113,
+                    "release_year": "1973",
+                    "title": "The Last Detail",
+                    "vote_average": 7.014
+                },
+                {
+                    "popularity": 8.478,
+                    "release_year": "1972",
+                    "title": "The King of Marvin Gardens",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 11.928,
+                    "release_year": "1971",
+                    "title": "Carnal Knowledge",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 9.432,
+                    "release_year": "1970",
+                    "title": "Five Easy Pieces",
+                    "vote_average": 7.153
+                },
+                {
+                    "popularity": 17.303,
+                    "release_year": "1969",
+                    "title": "Easy Rider",
+                    "vote_average": 7.068
+                },
+                {
+                    "popularity": 6.324,
+                    "release_year": "1968",
+                    "title": "Head",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 9.74,
+                    "release_year": "1967",
+                    "title": "The St. Valentine's Day Massacre",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 6.451,
+                    "release_year": "1966",
+                    "title": "The Shooting",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 9.044,
+                    "release_year": "1966",
+                    "title": "Ride in the Whirlwind",
+                    "vote_average": 6.21
+                },
+                {
+                    "popularity": 7.548,
+                    "release_year": "1963",
+                    "title": "The Raven",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 14.635,
+                    "release_year": "1963",
+                    "title": "The Terror",
+                    "vote_average": 5.112
+                },
+                {
+                    "popularity": 12.266,
+                    "release_year": "1960",
+                    "title": "The Little Shop of Horrors",
+                    "vote_average": 6.196
+                }
+            ],
+            "name": "Jack Nicholson",
+            "place_of_birth": "Manhattan, New York, USA",
+            "profile_path": "/6h12pZsgj3WWjMtykUgfLkLEBWz.jpg"
+        },
+        "person_Jordan Peele": {
+            "biography": "Jordan Haworth Peele (born February 21, 1979) is an American actor, comedian, and filmmaker. He is known for his film and television work in the comedy and horror genres. Peele started his career in sketch comedy before transitioning his career as a writer and director of psychological horror and satirical films. In 2017, Peele was included on the annual Time 100 list of the most influential people in the world.\n\nPeele's breakout role came in 2003, when he was hired as a cast member on the Fox sketch comedy series Mad TV, where he spent five seasons, leaving the show in 2008. In the following years, he and his frequent Mad TV collaborator, Keegan-Michael Key, created and starred in their own Comedy Central sketch comedy series Key & Peele (2012\u20132015). The series was critically acclaimed, winning two Primetime Emmy Awards and a Peabody Award. The two wrote, produced, and starred in the comedy film Keanu (2016) and appeared in various projects since.\n\nHis 2017 directorial debut, the horror film Get Out, was a critical and box office success, for which he received numerous accolades, including the Academy Award for Best Original Screenplay, along with nominations for Best Picture and Best Director. Critics have frequently named Get Out as one of the best films of the 21st century. He received another Academy Award nomination for Best Picture for producing Spike Lee's drama BlacKkKlansman (2018). He directed, wrote, and produced the acclaimed films Us (2019) and Nope (2022). He founded the film and television production company Monkeypaw Productions in 2012. He wrote and produced Candyman (2021), and Wendell and Wild (2022).\n\nPeele has also voice acted in the animated films Storks (2016), Captain Underpants: The First Epic Movie (2017) and Toy Story 4 (2019), as well as in the adult animated sitcom Big Mouth (2017\u2013present). He co-created the TBS comedy series The Last O.G. (2018\u20132022) and the YouTube Premium comedy series Weird City (2019). He also served as the host and producer of the CBS All Access revival of the anthology series The Twilight Zone (2019\u20132020).",
+            "birthday": "1979-02-21",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 17.372,
+                    "release_year": "2022",
+                    "title": "The Bob's Burgers Movie",
+                    "vote_average": 6.979
+                },
+                {
+                    "popularity": 22.965,
+                    "release_year": "2022",
+                    "title": "Wendell & Wild",
+                    "vote_average": 6.773
+                },
+                {
+                    "popularity": 66.606,
+                    "release_year": "2022",
+                    "title": "Nope",
+                    "vote_average": 6.891
+                },
+                {
+                    "popularity": 34.976,
+                    "release_year": "2019",
+                    "title": "Us",
+                    "vote_average": 6.973
+                },
+                {
+                    "popularity": 79.427,
+                    "release_year": "2019",
+                    "title": "Toy Story 4",
+                    "vote_average": 7.51
+                },
+                {
+                    "popularity": 21.299,
+                    "release_year": "2017",
+                    "title": "Captain Underpants: The First Epic Movie",
+                    "vote_average": 6.23
+                },
+                {
+                    "popularity": 53.529,
+                    "release_year": "2017",
+                    "title": "Get Out",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 13.872,
+                    "release_year": "2016",
+                    "title": "Keanu",
+                    "vote_average": 6.068
+                },
+                {
+                    "popularity": 35.273,
+                    "release_year": "2016",
+                    "title": "Storks",
+                    "vote_average": 6.636
+                },
+                {
+                    "popularity": 18.422,
+                    "release_year": "2012",
+                    "title": "Wanderlust",
+                    "vote_average": 5.52
+                },
+                {
+                    "popularity": 23.612,
+                    "release_year": "2010",
+                    "title": "Little Fockers",
+                    "vote_average": 5.647
+                }
+            ],
+            "name": "Jordan Peele",
+            "place_of_birth": "New York City, New York, USA",
+            "profile_path": "/kFUKn5g3ebpyZ3CSZZZo2HFWRNQ.jpg"
         },
         "person_Malcolm McDowell": {
             "biography": "Malcolm McDowell is an English actor with a career spanning over forty years. McDowell is principally known for his roles in the controversial films Caligula, If...., O Lucky Man! and A Clockwork Orange. His versatility as an actor has led to his presence in many films and television series of different genres, including Tank Girl, Star Trek Generations, the TV serial Our Friends in the North, Entourage, Heroes, Metalocalypse, animated film Bolt and the 2007 remake of Halloween and the 2009 sequel Halloween II. He is also well known for his narration of the seminal 1982 documentary, The Compleat Beatles.",
@@ -1006,6 +1661,266 @@
             "place_of_birth": "New York City, New York",
             "profile_path": "/exfQ6vXXq7rMS5YWb3B88PK39a1.jpg"
         },
+        "person_Stephen King": {
+            "biography": "Stephen King is an American author of contemporary horror, suspense, science fiction, and fantasy fiction. His books have sold more than 350 million copies, which have been adapted into a number of feature films, television movies, and comic books. As of 2011, King has written and published 49 novels, including seven under the pen name Richard Bachman, five non-fiction books, and nine collections of short stories. Many of his stories are set in his home state of Maine. King has received Bram Stoker Awards, World Fantasy Awards, British Fantasy Society Awards, his novella The Way Station was a Nebula Award novelette nominee, and in 2003, the National Book Foundation awarded him the Medal for Distinguished Contribution to American Letters.",
+            "birthday": "1947-09-21",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 76.649,
+                    "release_year": "2019",
+                    "title": "It Chapter Two",
+                    "vote_average": 6.849
+                },
+                {
+                    "popularity": 22.443,
+                    "release_year": "2013",
+                    "title": "Stuck in Love",
+                    "vote_average": 7.395
+                },
+                {
+                    "popularity": 12.22,
+                    "release_year": "2007",
+                    "title": "Diary of the Dead",
+                    "vote_average": 5.559
+                },
+                {
+                    "popularity": 14.878,
+                    "release_year": "2005",
+                    "title": "Fever Pitch",
+                    "vote_average": 6.203
+                },
+                {
+                    "popularity": 14.88,
+                    "release_year": "1996",
+                    "title": "Thinner",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 17.575,
+                    "release_year": "1992",
+                    "title": "Sleepwalkers",
+                    "vote_average": 6.1
+                },
+                {
+                    "popularity": 24.135,
+                    "release_year": "1989",
+                    "title": "Pet Sematary",
+                    "vote_average": 6.6
+                },
+                {
+                    "popularity": 16.742,
+                    "release_year": "1987",
+                    "title": "Creepshow 2",
+                    "vote_average": 6.225
+                },
+                {
+                    "popularity": 18.198,
+                    "release_year": "1986",
+                    "title": "Maximum Overdrive",
+                    "vote_average": 5.851
+                },
+                {
+                    "popularity": 14.322,
+                    "release_year": "1982",
+                    "title": "Creepshow",
+                    "vote_average": 6.921
+                },
+                {
+                    "popularity": 6.376,
+                    "release_year": "1981",
+                    "title": "Knightriders",
+                    "vote_average": 6.129
+                }
+            ],
+            "name": "Stephen King",
+            "place_of_birth": "Portland, Maine, USA",
+            "profile_path": "/7r5nEzNanuEhmxtpsKE1uCBU5Jd.jpg"
+        },
+        "person_Sydney Pollack": {
+            "biography": "Sydney Irwin Pollack (July 1, 1934 \u2013 May 26, 2008) was an American film director, producer and actor. For his film Out of Africa (1985), Pollack won the Academy Award for Best Director and Best Picture. He was also nominated for Best Director Oscars for They Shoot Horses, Don't They? (1969) and Tootsie (1982).\n\nSome of his other best-known works include Jeremiah Johnson (1972), The Way We Were (1973), Three Days of the Condor (1975) and Absence of Malice (1981). His subsequent films included Havana (1990), The Firm (1993), The Interpreter (2005), and he produced and acted in Michael Clayton (2007). Pollack also made appearances in Robert Altman's Hollywood mystery The Player (1992), Woody Allen's relationship drama Husbands and Wives (1993), and Stanley Kubrick's erotic psychological drama Eyes Wide Shut (1999).\n\nDescription above from the Wikipedia article Sydney Pollack, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1934-07-01",
+            "deathday": "2008-05-26",
+            "movie_credits": [
+                {
+                    "popularity": 10.705,
+                    "release_year": "2018",
+                    "title": "Amazing Grace",
+                    "vote_average": 7.157
+                },
+                {
+                    "popularity": 16.909,
+                    "release_year": "2008",
+                    "title": "Made of Honor",
+                    "vote_average": 6.444
+                },
+                {
+                    "popularity": 15.397,
+                    "release_year": "2007",
+                    "title": "Michael Clayton",
+                    "vote_average": 6.771
+                },
+                {
+                    "popularity": 6.694,
+                    "release_year": "2006",
+                    "title": "Avenue Montaigne",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 16.159,
+                    "release_year": "2005",
+                    "title": "The Interpreter",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 14.963,
+                    "release_year": "2002",
+                    "title": "Changing Lanes",
+                    "vote_average": 6.267
+                },
+                {
+                    "popularity": 12.712,
+                    "release_year": "2001",
+                    "title": "The Majestic",
+                    "vote_average": 6.765
+                },
+                {
+                    "popularity": 14.717,
+                    "release_year": "1999",
+                    "title": "Random Hearts",
+                    "vote_average": 5.487
+                },
+                {
+                    "popularity": 43.623,
+                    "release_year": "1999",
+                    "title": "Eyes Wide Shut",
+                    "vote_average": 7.477
+                },
+                {
+                    "popularity": 13.276,
+                    "release_year": "1998",
+                    "title": "A Civil Action",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 16.47,
+                    "release_year": "1995",
+                    "title": "Sabrina",
+                    "vote_average": 6.164
+                },
+                {
+                    "popularity": 24.172,
+                    "release_year": "1993",
+                    "title": "The Firm",
+                    "vote_average": 6.737
+                },
+                {
+                    "popularity": 11.497,
+                    "release_year": "1992",
+                    "title": "Husbands and Wives",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 16.372,
+                    "release_year": "1992",
+                    "title": "The Player",
+                    "vote_average": 7.193
+                },
+                {
+                    "popularity": 21.963,
+                    "release_year": "1992",
+                    "title": "Death Becomes Her",
+                    "vote_average": 6.752
+                },
+                {
+                    "popularity": 8.648,
+                    "release_year": "1990",
+                    "title": "Havana",
+                    "vote_average": 5.765
+                },
+                {
+                    "popularity": 20.019,
+                    "release_year": "1985",
+                    "title": "Out of Africa",
+                    "vote_average": 7.165
+                },
+                {
+                    "popularity": 16.979,
+                    "release_year": "1982",
+                    "title": "Tootsie",
+                    "vote_average": 7.214
+                },
+                {
+                    "popularity": 13.969,
+                    "release_year": "1981",
+                    "title": "Absence of Malice",
+                    "vote_average": 6.6
+                },
+                {
+                    "popularity": 6.459,
+                    "release_year": "1979",
+                    "title": "The Electric Horseman",
+                    "vote_average": 6.043
+                },
+                {
+                    "popularity": 7.526,
+                    "release_year": "1977",
+                    "title": "Bobby Deerfield",
+                    "vote_average": 6.046
+                },
+                {
+                    "popularity": 13.353,
+                    "release_year": "1975",
+                    "title": "Three Days of the Condor",
+                    "vote_average": 7.303
+                },
+                {
+                    "popularity": 9.094,
+                    "release_year": "1974",
+                    "title": "The Yakuza",
+                    "vote_average": 7.113
+                },
+                {
+                    "popularity": 10.88,
+                    "release_year": "1973",
+                    "title": "The Way We Were",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 17.04,
+                    "release_year": "1972",
+                    "title": "Jeremiah Johnson",
+                    "vote_average": 7.293
+                },
+                {
+                    "popularity": 6.698,
+                    "release_year": "1969",
+                    "title": "Castle Keep",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 11.214,
+                    "release_year": "1969",
+                    "title": "They Shoot Horses, Don't They?",
+                    "vote_average": 7.641
+                },
+                {
+                    "popularity": 13.671,
+                    "release_year": "1968",
+                    "title": "The Scalphunters",
+                    "vote_average": 6.429
+                },
+                {
+                    "popularity": 8.812,
+                    "release_year": "1966",
+                    "title": "This Property Is Condemned",
+                    "vote_average": 6.3
+                }
+            ],
+            "name": "Sydney Pollack",
+            "place_of_birth": "Lafayette, Indiana, USA",
+            "profile_path": "/j3iXrQDiceGrAzEF6HE49zA7Wwj.jpg"
+        },
         "person_Tom Cruise": {
             "biography": "Thomas Cruise Mapother IV (born July 3, 1962), known professionally as Tom Cruise, is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for three Academy Awards. His films have grossed over $4 billion in North America and over $11.1 billion worldwide, making him one of the highest-grossing box office stars of all time.\n\nCruise began acting in the early 1980s and made his breakthrough with leading roles in the comedy film Risky Business (1983) and action film Top Gun (1986). Critical acclaim came with his roles in the dramas The Color of Money (1986), Rain Man (1988), and Born on the Fourth of July (1989). For his portrayal of Ron Kovic in the latter, he won a Golden Globe Award and received a nomination for the Academy Award for Best Actor. As a leading Hollywood star in the 1990s, he starred in several commercially successful films, including the drama A Few Good Men (1992), the thriller The Firm (1993), the horror film Interview with the Vampire (1994), and the romance Jerry Maguire (1996). For the latter, he won a Golden Globe Award for Best Actor and received his second Academy Award nomination. Cruise's performance as a motivational speaker in the drama Magnolia (1999) earned him another Golden Globe Award and a nomination for the Academy Award for Best Supporting Actor.\n\nSince then, Cruise has largely starred in science fiction and action films, establishing himself as an action star, often performing his own risky stunts. He has played Ethan Hunt in all six of the Mission: Impossible films from 1996 to 2018. His other notable roles in the genre include Vanilla Sky (2001), Minority Report (2002), The Last Samurai (2003), Collateral (2004), War of the Worlds (2005), Knight and Day (2010), Jack Reacher (2012), Oblivion (2013), Edge of Tomorrow (2014), and Top Gun: Maverick (2022), with Maverick being his highest-grossing film.\n\nDescription above from the Wikipedia article Tom Cruise, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
             "birthday": "1962-07-03",
@@ -1309,6 +2224,548 @@
             "name": "Tom Cruise",
             "place_of_birth": "Syracuse, New York, USA",
             "profile_path": "/eOh4ubpOm2Igdg0QH2ghj0mFtC.jpg"
+        },
+        "person_Toni Collette": {
+            "biography": "Toni Collette Galafassi (November 1, 1972) is an Australian actress, producer, singer, and songwriter. Known for her work in television and independent films, she has received various accolades throughout her career, including a Golden Globe Award and a Primetime Emmy Award, in addition to nominations for an Academy Award, a Tony Award, and two British Academy Film Awards.\n\nAfter making her film debut in Spotswood (1992) and being nominated for the AACTA Award for Best Actress in a Supporting Role, her breakthrough role came in the comedy-drama Muriel's Wedding (1994), which earned her a Golden Globe Award nomination and won her the AACTA Award for Best Actress in a Leading Role. Collette achieved greater international recognition for her role in the psychological thriller film The Sixth Sense (1999), and was nominated for the Academy Award for Best Supporting Actress. She received BAFTA Award nominations for her performances in the romantic comedy About a Boy (2002) and the comedy-drama Little Miss Sunshine (2006).\n\nCollette's films include diverse genres, such as the period comedy Emma (1996), the action thriller Shaft (2000), the period drama The Hours (2002), the romantic drama Japanese Story (2003), the comedies In Her Shoes (2005) and The Way, Way Back (2013), the horror films Krampus (2015) and Hereditary (2018), and the mystery film Knives Out (2019). Her Broadway performances include the lead role in The Wild Party (2000), which earned her a Tony Award nomination. In television, she starred in the Showtime comedy-drama series United States of Tara (2008\u20132011) and the Netflix drama miniseries Unbelievable (2019). For the former, she won a Primetime Emmy Award and a Golden Globe Award. She has won five AACTA Awards, from eight nominations.\n\nCollette married Dave Galafassi, drummer of the band Gelbison, in January 2003. The couple have two children together. As the lead singer of Toni Collette & the Finish, she wrote all 11 tracks of their sole album, Beautiful Awkward Pictures (2006). The band toured Australia, but have not performed nor released any new material after 2007. In 2017, Collette and Jen Turner co-founded the film production company Vocab Films.",
+            "birthday": "1972-11-01",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 25.987,
+                    "release_year": "2023",
+                    "title": "Mafia Mamma",
+                    "vote_average": 6.211
+                },
+                {
+                    "popularity": 167.519,
+                    "release_year": "2023",
+                    "title": "Ruby Gillman, Teenage Kraken",
+                    "vote_average": 7.377
+                },
+                {
+                    "popularity": 15.854,
+                    "release_year": "2022",
+                    "title": "The Estate",
+                    "vote_average": 5.482
+                },
+                {
+                    "popularity": 12.705,
+                    "release_year": "2021",
+                    "title": "Dream Horse",
+                    "vote_average": 7.103
+                },
+                {
+                    "popularity": 17.35,
+                    "release_year": "2021",
+                    "title": "Stowaway",
+                    "vote_average": 6.005
+                },
+                {
+                    "popularity": 44.261,
+                    "release_year": "2021",
+                    "title": "Nightmare Alley",
+                    "vote_average": 6.999
+                },
+                {
+                    "popularity": 21.129,
+                    "release_year": "2020",
+                    "title": "I'm Thinking of Ending Things",
+                    "vote_average": 6.596
+                },
+                {
+                    "popularity": 19.707,
+                    "release_year": "2019",
+                    "title": "Velvet Buzzsaw",
+                    "vote_average": 5.358
+                },
+                {
+                    "popularity": 56.199,
+                    "release_year": "2019",
+                    "title": "Knives Out",
+                    "vote_average": 7.845
+                },
+                {
+                    "popularity": 6.431,
+                    "release_year": "2018",
+                    "title": "Birthmarked",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 13.0,
+                    "release_year": "2018",
+                    "title": "Hearts Beat Loud",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 17.707,
+                    "release_year": "2018",
+                    "title": "Please Stand By",
+                    "vote_average": 6.835
+                },
+                {
+                    "popularity": 61.808,
+                    "release_year": "2018",
+                    "title": "Hereditary",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 8.387,
+                    "release_year": "2017",
+                    "title": "The Yellow Birds",
+                    "vote_average": 5.871
+                },
+                {
+                    "popularity": 10.508,
+                    "release_year": "2017",
+                    "title": "Jasper Jones",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 12.089,
+                    "release_year": "2017",
+                    "title": "Fun Mom Dinner",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 14.829,
+                    "release_year": "2017",
+                    "title": "Madame",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 20.125,
+                    "release_year": "2017",
+                    "title": "Unlocked",
+                    "vote_average": 6.242
+                },
+                {
+                    "popularity": 97.445,
+                    "release_year": "2017",
+                    "title": "xXx: Return of Xander Cage",
+                    "vote_average": 6.138
+                },
+                {
+                    "popularity": 16.556,
+                    "release_year": "2016",
+                    "title": "Imperium",
+                    "vote_average": 6.449
+                },
+                {
+                    "popularity": 3.552,
+                    "release_year": "2015",
+                    "title": "Glassland",
+                    "vote_average": 5.0
+                },
+                {
+                    "popularity": 11.703,
+                    "release_year": "2015",
+                    "title": "Miss You Already",
+                    "vote_average": 7.4
+                },
+                {
+                    "popularity": 109.52,
+                    "release_year": "2015",
+                    "title": "Krampus",
+                    "vote_average": 6.197
+                },
+                {
+                    "popularity": 11.633,
+                    "release_year": "2014",
+                    "title": "A Long Way Down",
+                    "vote_average": 6.245
+                },
+                {
+                    "popularity": 12.669,
+                    "release_year": "2014",
+                    "title": "Tammy",
+                    "vote_average": 5.336
+                },
+                {
+                    "popularity": 13.927,
+                    "release_year": "2014",
+                    "title": "Hector and the Search for Happiness",
+                    "vote_average": 6.732
+                },
+                {
+                    "popularity": 18.871,
+                    "release_year": "2014",
+                    "title": "The Boxtrolls",
+                    "vote_average": 6.665
+                },
+                {
+                    "popularity": 3.415,
+                    "release_year": "2013",
+                    "title": "Lucky Them",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 14.014,
+                    "release_year": "2013",
+                    "title": "Enough Said",
+                    "vote_average": 6.721
+                },
+                {
+                    "popularity": 16.1,
+                    "release_year": "2013",
+                    "title": "The Way Way Back",
+                    "vote_average": 7.152
+                },
+                {
+                    "popularity": 7.273,
+                    "release_year": "2012",
+                    "title": "Mental",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 7.605,
+                    "release_year": "2012",
+                    "title": "Jesus Henry Christ",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 13.067,
+                    "release_year": "2012",
+                    "title": "Hitchcock",
+                    "vote_average": 6.545
+                },
+                {
+                    "popularity": 7.863,
+                    "release_year": "2011",
+                    "title": "Foster",
+                    "vote_average": 6.864
+                },
+                {
+                    "popularity": 21.39,
+                    "release_year": "2011",
+                    "title": "Fright Night",
+                    "vote_average": 6.22
+                },
+                {
+                    "popularity": 13.708,
+                    "release_year": "2009",
+                    "title": "Mary and Max",
+                    "vote_average": 7.87
+                },
+                {
+                    "popularity": 6.996,
+                    "release_year": "2008",
+                    "title": "The Black Balloon",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 9.746,
+                    "release_year": "2008",
+                    "title": "Towelhead",
+                    "vote_average": 6.194
+                },
+                {
+                    "popularity": 13.655,
+                    "release_year": "2008",
+                    "title": "How to Lose Friends & Alienate People",
+                    "vote_average": 5.989
+                },
+                {
+                    "popularity": 14.696,
+                    "release_year": "2007",
+                    "title": "Evening",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 8.329,
+                    "release_year": "2006",
+                    "title": "Like Minds",
+                    "vote_average": 6.371
+                },
+                {
+                    "popularity": 8.932,
+                    "release_year": "2006",
+                    "title": "The Night Listener",
+                    "vote_average": 5.537
+                },
+                {
+                    "popularity": 10.967,
+                    "release_year": "2006",
+                    "title": "The Dead Girl",
+                    "vote_average": 6.005
+                },
+                {
+                    "popularity": 20.324,
+                    "release_year": "2006",
+                    "title": "Little Miss Sunshine",
+                    "vote_average": 7.68
+                },
+                {
+                    "popularity": 9.774,
+                    "release_year": "2005",
+                    "title": "In Her Shoes",
+                    "vote_average": 6.162
+                },
+                {
+                    "popularity": 6.811,
+                    "release_year": "2004",
+                    "title": "The Last Shot",
+                    "vote_average": 5.712
+                },
+                {
+                    "popularity": 7.913,
+                    "release_year": "2004",
+                    "title": "Connie and Carla",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 5.158,
+                    "release_year": "2003",
+                    "title": "Japanese Story",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 14.963,
+                    "release_year": "2002",
+                    "title": "Changing Lanes",
+                    "vote_average": 6.264
+                },
+                {
+                    "popularity": 17.291,
+                    "release_year": "2002",
+                    "title": "About a Boy",
+                    "vote_average": 6.66
+                },
+                {
+                    "popularity": 17.317,
+                    "release_year": "2002",
+                    "title": "The Hours",
+                    "vote_average": 7.289
+                },
+                {
+                    "popularity": 19.24,
+                    "release_year": "2000",
+                    "title": "Shaft",
+                    "vote_average": 5.99
+                },
+                {
+                    "popularity": 5.812,
+                    "release_year": "1999",
+                    "title": "8 \u00bd Women",
+                    "vote_average": 5.6
+                },
+                {
+                    "popularity": 43.333,
+                    "release_year": "1999",
+                    "title": "The Sixth Sense",
+                    "vote_average": 7.947
+                },
+                {
+                    "popularity": 11.296,
+                    "release_year": "1998",
+                    "title": "Velvet Goldmine",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 5.652,
+                    "release_year": "1997",
+                    "title": "Clockwatchers",
+                    "vote_average": 6.209
+                },
+                {
+                    "popularity": 7.589,
+                    "release_year": "1996",
+                    "title": "The Pallbearer",
+                    "vote_average": 4.9
+                },
+                {
+                    "popularity": 17.871,
+                    "release_year": "1996",
+                    "title": "Emma",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 14.93,
+                    "release_year": "1994",
+                    "title": "Muriel's Wedding",
+                    "vote_average": 6.865
+                },
+                {
+                    "popularity": 11.452,
+                    "release_year": "1993",
+                    "title": "The Thief and the Cobbler",
+                    "vote_average": 7.1
+                }
+            ],
+            "name": "Toni Collette",
+            "place_of_birth": "Sydney, New South Wales, Australia",
+            "profile_path": "/6QllXhefzi294BcqrV8RUR4xhsy.jpg"
+        },
+        "person_Wes Craven": {
+            "biography": "Wesley Earl\u00a0\"Wes\"\u00a0Craven\u00a0(August 2, 1939\u00a0\u2013 August 30, 2015) was a prolific and influential\u00a0American film director, writer, producer, and occasional actor known for his pioneering work\u00a0in the horror genre, and particularly in the teen\u00a0slasher subgenre. Among his best-known works are such landmark films as \"The Last House on the Left\" (1972), \"The Hills Have Eyes\" (1977), \"A Nightmare on Elm Street\" (1984) and the \"Scream\" series (1996\u20132011).",
+            "birthday": "1939-08-02",
+            "deathday": "2015-08-30",
+            "movie_credits": [
+                {
+                    "popularity": 37.925,
+                    "release_year": "2011",
+                    "title": "Scream 4",
+                    "vote_average": 6.457
+                },
+                {
+                    "popularity": 10.355,
+                    "release_year": "2010",
+                    "title": "Never Sleep Again: The Elm Street Legacy",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 10.758,
+                    "release_year": "2010",
+                    "title": "My Soul to Take",
+                    "vote_average": 5.514
+                },
+                {
+                    "popularity": 12.22,
+                    "release_year": "2007",
+                    "title": "Diary of the Dead",
+                    "vote_average": 5.559
+                },
+                {
+                    "popularity": 6.748,
+                    "release_year": "2006",
+                    "title": "The Tripper",
+                    "vote_average": 4.9
+                },
+                {
+                    "popularity": 22.165,
+                    "release_year": "2006",
+                    "title": "Paris Je T'aime",
+                    "vote_average": 6.79
+                },
+                {
+                    "popularity": 20.0,
+                    "release_year": "2005",
+                    "title": "Red Eye",
+                    "vote_average": 6.376
+                },
+                {
+                    "popularity": 20.394,
+                    "release_year": "2005",
+                    "title": "Cursed",
+                    "vote_average": 5.43
+                },
+                {
+                    "popularity": 12.714,
+                    "release_year": "2001",
+                    "title": "Jay and Silent Bob Strike Back",
+                    "vote_average": 6.431
+                },
+                {
+                    "popularity": 33.722,
+                    "release_year": "2000",
+                    "title": "Scream 3",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 8.47,
+                    "release_year": "1999",
+                    "title": "Music of the Heart",
+                    "vote_average": 6.704
+                },
+                {
+                    "popularity": 37.992,
+                    "release_year": "1997",
+                    "title": "Scream 2",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 54.923,
+                    "release_year": "1996",
+                    "title": "Scream",
+                    "vote_average": 7.42
+                },
+                {
+                    "popularity": 12.965,
+                    "release_year": "1995",
+                    "title": "Vampire in Brooklyn",
+                    "vote_average": 5.037
+                },
+                {
+                    "popularity": 20.991,
+                    "release_year": "1994",
+                    "title": "New Nightmare",
+                    "vote_average": 6.428
+                },
+                {
+                    "popularity": 10.113,
+                    "release_year": "1993",
+                    "title": "Body Bags",
+                    "vote_average": 6.146
+                },
+                {
+                    "popularity": 14.173,
+                    "release_year": "1991",
+                    "title": "The People Under the Stairs",
+                    "vote_average": 6.556
+                },
+                {
+                    "popularity": 10.705,
+                    "release_year": "1989",
+                    "title": "Shocker",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 16.837,
+                    "release_year": "1988",
+                    "title": "The Serpent and the Rainbow",
+                    "vote_average": 6.393
+                },
+                {
+                    "popularity": 10.466,
+                    "release_year": "1986",
+                    "title": "Deadly Friend",
+                    "vote_average": 6.192
+                },
+                {
+                    "popularity": 9.972,
+                    "release_year": "1985",
+                    "title": "The Hills Have Eyes Part II",
+                    "vote_average": 4.4
+                },
+                {
+                    "popularity": 34.769,
+                    "release_year": "1984",
+                    "title": "A Nightmare on Elm Street",
+                    "vote_average": 7.328
+                },
+                {
+                    "popularity": 12.911,
+                    "release_year": "1982",
+                    "title": "Swamp Thing",
+                    "vote_average": 5.383
+                },
+                {
+                    "popularity": 8.908,
+                    "release_year": "1981",
+                    "title": "Deadly Blessing",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 5.068,
+                    "release_year": "1979",
+                    "title": "Stranger in Our House",
+                    "vote_average": 5.438
+                },
+                {
+                    "popularity": 16.061,
+                    "release_year": "1977",
+                    "title": "The Hills Have Eyes",
+                    "vote_average": 6.165
+                },
+                {
+                    "popularity": 20.813,
+                    "release_year": "1972",
+                    "title": "The Last House on the Left",
+                    "vote_average": 5.954
+                }
+            ],
+            "name": "Wes Craven",
+            "place_of_birth": "Cleveland, Ohio, USA",
+            "profile_path": "/eqwl6owrYykeTGTpKxwcAkbEJmg.jpg"
         }
     }
 }

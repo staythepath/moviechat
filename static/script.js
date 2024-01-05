@@ -1,6 +1,9 @@
 $.fn.popover.Constructor.Default.whiteList.button = [];
 $.fn.popover.Constructor.Default.whiteList.button.push("type");
 $.fn.popover.Constructor.Default.whiteList.button.push("class");
+$.fn.popover.Constructor.Default.whiteList.dl = [];
+$.fn.popover.Constructor.Default.whiteList.dt = [];
+$.fn.popover.Constructor.Default.whiteList.dd = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const configPanel = document.getElementById("config-panel");
@@ -674,21 +677,24 @@ function showPersonPopover(element) {
               ? biography.substring(0, 100) + "..."
               : biography;
           const fullCredits = data.movie_credits
-            .map((credit) => `${credit.title} (${credit.release_year})`)
-            .join(", ");
+            .map(
+              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+            )
+            .join("");
           $(element).data("fullCredits", fullCredits);
 
           // Display initial subset of credits
           const maxDisplayCredits = 5; // Number of movie credits to show initially
           let displayedCredits = data.movie_credits
             .slice(0, maxDisplayCredits)
-            .map((credit) => `${credit.title} (${credit.release_year})`)
-            .join(", ");
+            .map(
+              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+            )
+            .join("");
 
-          // Add "More" link if there are more credits
-          let creditsHtml = displayedCredits;
+          let creditsHtml = `<dl><dt>Movie Credits:</dt>${displayedCredits}</dl>`;
           if (data.movie_credits.length > maxDisplayCredits) {
-            creditsHtml += `<span id="more-credits" class="more-link">... More</span>`;
+            creditsHtml += `<dd><span id="more-credits" class="more-link">... More</span></dd>`;
           }
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
@@ -707,7 +713,7 @@ function showPersonPopover(element) {
             <div class="movie-poster">${imageTag}</div>
             <div class="movie-info">
               <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
-              <p><em>Movie Credits:</em> ${creditsHtml}</p>
+              <p>${creditsHtml}<p>
               <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
               ${
                 biography.length > 100
@@ -779,8 +785,9 @@ function showPersonPopover(element) {
       });
 
       $popover.find("#more-credits").on("click", function () {
-        var fullCredits = $(element).data("fullCredits");
-        $(this).parent().html(fullCredits); // Replace content with full credits
+        var fullCreditsHtml = `${$(element).data("fullCredits")}</dl>`;
+        $(this).parent().replaceWith(fullCreditsHtml); // Replace the dd with full credits
+        $(this).remove(); // Remove the 'More' link
       });
 
       $popover.find(".chat-btn").on("click", function () {
