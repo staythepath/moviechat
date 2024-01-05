@@ -449,7 +449,7 @@ function setupPopoverHideWithDelay(element) {
     console.log("Here is the wiki_url: ", data.wiki_url);
     var buttonsHtml = `
       <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
-        <button type="button" class="btn popover-button">Add to </button>
+        <button type="button" class="btn popover-button">Add to Radarr </button>
         <button type="button" class="btn popover-button">Ask MovieBot</button>
         <button type="button" class="btn popover-button btn-imdb" data-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
         <button type="button" class="btn popover-button btn-wiki" data-wiki-url="${data.wiki_url}" style="margin-left: 5px;">Wiki</button>

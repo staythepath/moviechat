@@ -2,6 +2,7 @@ from tmdbv3api import TMDb, Movie, Person
 import requests
 import imdb  # pip install imdbpy
 import random
+import time
 
 
 class DataManager:
@@ -10,15 +11,27 @@ class DataManager:
         self.tmdb = TMDb()
         self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
         self.movie_api = Movie()
+        self.cache = {}  # Initialize the cache
+        self.cache_duration = 3600  # Cache duration in seconds (e.g., 1 hour)
+
+    def get_from_cache(self, key):
+        """Retrieve an item from the cache if it exists and is not expired."""
+        cached_item = self.cache.get(key)
+        if cached_item and (
+            time.time() - cached_item["timestamp"] < self.cache_duration
+        ):
+            return cached_item["data"]
+        return None
+
+    def add_to_cache(self, key, data):
+        """Add an item to the cache with a timestamp."""
+        self.cache[key] = {"data": data, "timestamp": time.time()}
 
     def update_tmdb_api_key(self):
         self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
 
     def search_movie(self, title):
         return self.movie_api.search(title)
-
-    def get_movie_details(self, tmdb_id):
-        return self.movie_api.details(tmdb_id)
 
     def get_imdb_id(self, title):
         ia = imdb.IMDb()
@@ -54,11 +67,16 @@ class DataManager:
             return f"Error: {e}"
 
     def get_movie_card_details(self, tmdb_id):
+        cache_key = f"movie_card_{tmdb_id}"
+        cached_data = self.get_from_cache(cache_key)
+
+        if cached_data:
+            time.sleep(0.250)  # Add a 350ms delay
+            return cached_data
+
+        # Fetch the movie details and credits if not in cache
         movie = self.movie_api.details(tmdb_id)
         credits = self.movie_api.credits(tmdb_id)
-
-        # Debugging: Print the structure of the 'credits' object
-        # print("Credits Object:", credits)
         imdb_id = self.get_imdb_id(movie.title)
         director = self.get_crew_member(credits, "Director")
         dop = self.get_crew_member(credits, "Director of Photography")
@@ -66,8 +84,7 @@ class DataManager:
         stars = self.get_main_actors(credits)  # Get top 5 actors
         wiki_url = self.get_wiki_url(movie.title)
 
-        print("THIS IS THE IMDB ID::::::::::::::::: ", imdb_id)
-        return {
+        movie_card_data = {
             "title": movie.title,
             "director": director,
             "dop": dop,
@@ -83,9 +100,20 @@ class DataManager:
             "wiki_url": wiki_url,
         }
 
+        # Add the fetched data to the cache
+        self.add_to_cache(cache_key, movie_card_data)
+        return movie_card_data
+
     def get_person_details(self, name):
+        cache_key = f"person_{name}"
+        cached_data = self.get_from_cache(cache_key)
+
+        if cached_data:
+            return cached_data
+
         person_api = Person()
         search_results = person_api.search(name)
+
         if search_results:
             # Fetch the person details
             person_id = search_results[0].id
@@ -93,13 +121,12 @@ class DataManager:
 
             # Fetch the movie credits for the person
             movie_credits = person_api.movie_credits(person_id)
-            # print("Here are the movie credits: ", movie_credits)
 
             # Process the movie credits to extract the required information
             credits_info = self.process_movie_credits(movie_credits)
 
             # Combine the details and credits to return a single response
-            return {
+            person_data = {
                 "name": person_details.name,
                 "biography": person_details.biography,
                 "birthday": person_details.birthday,
@@ -107,8 +134,12 @@ class DataManager:
                 "place_of_birth": person_details.place_of_birth,
                 "profile_path": person_details.profile_path,
                 "movie_credits": credits_info,
-                # Include movie credits in the response
             }
+
+            # Add the fetched data to the cache
+            self.add_to_cache(cache_key, person_data)
+            return person_data
+
         return {}
 
     def process_movie_credits(self, movie_credits, number_of_credits=7):
