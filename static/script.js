@@ -413,7 +413,7 @@ function customPopoverPlacement(context, source) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 350; // Delay in milliseconds
+  var hideDelay = 200; // Delay in milliseconds
   var hideDelayTimer = null;
   var isMouseOverPopover = false; // New variable to track if the mouse is over the popover
 
@@ -602,7 +602,7 @@ function setupPopoverHideWithDelay(element) {
       container: "body",
       content: "Loading details...",
       offset: 10,
-      delay: { show: 100, hide: hideDelay },
+      delay: { show: 1, hide: hideDelay },
     })
     .on("mouseenter", function () {
       var $element = $(this);
@@ -618,7 +618,7 @@ function setupPopoverHideWithDelay(element) {
         ) {
           showPopover.call($element); // Show the popover
         }
-      }, 500); // 500 milliseconds delay
+      }, 100); // 500 milliseconds delay
     })
     .on("mouseleave", function () {
       hideDelayTimer = setTimeout(hidePopover, hideDelay);
