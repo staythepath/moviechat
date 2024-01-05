@@ -3,6 +3,8 @@ import requests
 import imdb  # pip install imdbpy
 import random
 import time
+import json
+import os
 
 
 class DataManager:
@@ -11,21 +13,32 @@ class DataManager:
         self.tmdb = TMDb()
         self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
         self.movie_api = Movie()
-        self.cache = {}  # Initialize the cache
-        self.cache_duration = 3600  # Cache duration in seconds (e.g., 1 hour)
+        self.cache_file = "cache.json"  # Path to the JSON cache file
+        self.load_cache_from_file()  # Load existing cache
 
-    def get_from_cache(self, key):
-        """Retrieve an item from the cache if it exists and is not expired."""
-        cached_item = self.cache.get(key)
-        if cached_item and (
-            time.time() - cached_item["timestamp"] < self.cache_duration
-        ):
-            return cached_item["data"]
-        return None
+    def load_cache_from_file(self):
+        """Load cache from a JSON file."""
+        if os.path.exists(self.cache_file):
+            with open(self.cache_file, "r") as file:
+                self.cache = json.load(file)
+        else:
+            self.cache = {"movie_details": {}, "person_details": {}}
 
-    def add_to_cache(self, key, data):
-        """Add an item to the cache with a timestamp."""
-        self.cache[key] = {"data": data, "timestamp": time.time()}
+    def save_cache_to_file(self):
+        """Save the current state of the cache to a JSON file with pretty-printing."""
+        with open(self.cache_file, "w") as file:
+            json.dump(self.cache, file, indent=4, sort_keys=True)
+
+    def get_from_cache(self, key, is_movie=True):
+        """Retrieve an item from the cache if it exists."""
+        category = "movie_details" if is_movie else "person_details"
+        return self.cache[category].get(key)
+
+    def add_to_cache(self, key, data, is_movie=True):
+        """Add an item to the cache."""
+        category = "movie_details" if is_movie else "person_details"
+        self.cache[category][key] = data
+        self.save_cache_to_file()  # Save updated cache to file
 
     def update_tmdb_api_key(self):
         self.tmdb.api_key = self.config_manager.get_config_value("tmdb_api_key")
@@ -68,7 +81,7 @@ class DataManager:
 
     def get_movie_card_details(self, tmdb_id):
         cache_key = f"movie_card_{tmdb_id}"
-        cached_data = self.get_from_cache(cache_key)
+        cached_data = self.get_from_cache(cache_key, is_movie=True)
 
         if cached_data:
             time.sleep(0.250)  # Add a 350ms delay
@@ -106,7 +119,7 @@ class DataManager:
 
     def get_person_details(self, name):
         cache_key = f"person_{name}"
-        cached_data = self.get_from_cache(cache_key)
+        cached_data = self.get_from_cache(cache_key, is_movie=False)
 
         if cached_data:
             return cached_data
@@ -137,7 +150,7 @@ class DataManager:
             }
 
             # Add the fetched data to the cache
-            self.add_to_cache(cache_key, person_data)
+            self.add_to_cache(cache_key, person_data, is_movie=False)
             return person_data
 
         return {}
