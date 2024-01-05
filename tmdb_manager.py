@@ -27,8 +27,8 @@ class TMDbManager:
 
         director = self.get_crew_member(credits, "Director")
         dop = self.get_crew_member(credits, "Director of Photography")
-        writers = self.get_top_writers(credits, 5)  # Get top 5 writers
-        stars = self.get_main_actors(credits, 5)  # Get top 5 actors
+        writers = self.get_top_writers(credits)  # Get top 5 writers
+        stars = self.get_main_actors(credits)  # Get top 5 actors
 
         return {
             "title": movie.title,
@@ -121,16 +121,15 @@ class TMDbManager:
         return "Not Available"
 
     def get_crew_members(self, credits, job_title):
-        writers = [
+        return [
             member["name"] for member in credits["crew"] if member["job"] == job_title
         ]
-        return ", ".join(writers) if writers else "Not Available"
 
-    def get_main_actors(self, credits, count=3):
-        actors = [
-            member["name"] for member in credits["cast"] if "name" in member
-        ]  # Filter out crew members without a "name" attribute
-        return ", ".join(actors[:count]) if actors else "Not Available"
+    def get_main_actors(
+        self, credits, count=1000
+    ):  # Assuming 1000 is a large enough number to include all actors
+        actors = [member["name"] for member in credits["cast"]][:count]
+        return ", ".join(actors) if actors else "Not Available"
 
     def get_top_writers(self, credits, count=5):
         writers = [

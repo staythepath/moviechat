@@ -58,6 +58,10 @@ body {
   color: #f8f8f8;
 }
 
+.hidden-name {
+  display: none;
+}
+
 #main-content {
   flex-grow: 1;
   display: flex;
@@ -312,6 +316,12 @@ select.form-control:focus {
   white-space: nowrap; /* Prevent text wrapping */
 }
 
+.movie-link:hover {
+  color: #0056b3;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .sender-user {
   color: #3a6ea5;
   font-weight: bold;
@@ -361,6 +371,12 @@ select.form-control:focus {
   color: #596a7c; /* or any other color that indicates interactivity */
 }
 
+.person-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0056b3; /* or any other color that indicates interactivity */
+}
+
 .more-link {
   color: #3a6ea5; /* Bootstrap primary blue color */
   cursor: pointer;
@@ -369,6 +385,47 @@ select.form-control:focus {
 
 .more-link:hover {
   text-decoration: underline;
+  color: #0056b3;
+  cursor: pointer;
+}
+
+.more-toggle {
+  color: #3a6ea5; /* Bootstrap's default link color */
+  text-decoration: underline;
+  cursor: pointer;
+  padding-left: 5px;
+  display: inline-block;
+}
+
+.more-toggle:hover {
+  color: #0056b3; /* Darker shade for hover effect */
+  text-decoration: none; /* Optional: remove underline on hover */
+}
+
+.person-link,
+.more-toggle {
+  display: inline-block;
+  /* other styles */
+}
+
+.popover #more-stars {
+  display: none;
+  color: #27496d;
+}
+
+.popover #more-writers {
+  display: none;
+  color: #27496d;
+}
+
+.popover #more-director {
+  display: none;
+  color: #27496d;
+}
+
+.popover #more-dop {
+  display: none;
+  color: #27496d;
 }
 
 .person-details-card {

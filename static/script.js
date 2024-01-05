@@ -211,7 +211,7 @@ function handleKeyPress(event) {
 function toggleConfigPanel() {
   var configPanel = document.getElementById("config-panel");
   if (configPanel.style.left === "0px") {
-    configPanel.style.left = "-250px"; // Hide the panel
+    configPanel.style.left = "-350px"; // Hide the panel
   } else {
     configPanel.style.left = "0px"; // Show the panel
   }
@@ -409,16 +409,35 @@ function customPopoverPlacement(context, source) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 250; // Delay in milliseconds
+  var hideDelay = 350; // Delay in milliseconds
   var hideDelayTimer = null;
 
   // Function to update the popover content once details are loaded
   function updatePopoverContent(data) {
-    function createPersonSpans(names) {
-      return names
-        .split(",")
+    function createPersonSpans(names, group) {
+      const maxDisplay = 5; // Number of names to display initially
+      let displayedNamesHtml = names
+        .slice(0, maxDisplay)
         .map((name) => `<span class="person-link">${name.trim()}</span>`)
         .join(", ");
+
+      let hiddenNamesHtml = "";
+      if (names.length > maxDisplay) {
+        hiddenNamesHtml = names
+          .slice(maxDisplay)
+          .map(
+            (name) =>
+              `<span class="person-link" style="display: none;">${name.trim()}</span>`
+          )
+          .join(", ");
+      }
+
+      let moreButtonHtml =
+        names.length > maxDisplay
+          ? `<span id="toggle-${group}" class="more-toggle">More</span>`
+          : "";
+
+      return `<span id="displayed-${group}">${displayedNamesHtml}</span><span id="more-${group}" style="display: none;">${hiddenNamesHtml}</span>${moreButtonHtml}`;
     }
 
     var contentHtml = `
@@ -429,30 +448,32 @@ function setupPopoverHideWithDelay(element) {
           data.poster_path
         }" alt="${data.title} Poster" class="img-fluid">
       </div>
-
       <div class="movie-info">
-        <p class="movie-director"><strong>Director: </strong> ${createPersonSpans(
-          data.director
+        <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
+          data.director.split(","),
+          "director"
         )}</p>
-        <p class="movie-dop"><strong>DoP: </strong> ${createPersonSpans(
-          data.dop
+        <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
+          data.dop.split(","),
+          "dop"
         )}</p>
-        <p class="movie-writers"><strong>Writers: </strong> ${createPersonSpans(
-          data.writers
+        <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
+          data.writers.split(","),
+          "writers"
         )}</p>
-        <p class="movie-stars"><strong>Stars: </strong> ${createPersonSpans(
-          data.stars
+        <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
+          data.stars.split(","),
+          "stars"
         )}</p>
-        <p class="movie-rating"><strong>TMDb Rating: </strong> ${
+        <p class="movie-rating"><strong>TMDb Rating: </strong>${
           data.vote_average
         }</p>
-          <p class="movie-release-date"><strong>Release Date: </strong> ${
-            data.release_date
-          }
-          </p>
-          <p class="movie-description"><strong>Description: </strong>${
-            data.description
-          }</p>
+        <p class="movie-release-date"><strong>Release Date: </strong>${
+          data.release_date
+        }</p>
+        <p class="movie-description"><strong>Description: </strong>${
+          data.description
+        }</p>
       </div>
     </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
@@ -516,6 +537,22 @@ function setupPopoverHideWithDelay(element) {
     .on("mouseleave", ".popover", function () {
       hidePopover();
     });
+
+  $(document).on("click", ".more-toggle", function () {
+    let group = this.id.split("-")[1];
+    let moreSpan = $(`#more-${group}`);
+    moreSpan.toggle(); // This toggles the visibility
+
+    // Check if moreSpan is visible and change display property
+    if (moreSpan.is(":visible")) {
+      moreSpan.css("display", "inline"); // or 'inline-block'
+    } else {
+      moreSpan.css("display", "none");
+    }
+
+    // Update button text
+    $(this).text(moreSpan.is(":visible") ? "Less" : "More");
+  });
 }
 
 var popoverTimeout;
@@ -595,7 +632,7 @@ function showPersonPopover(element) {
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 250);
+      popoverTimeout = setTimeout(hidePopover, 350);
     });
 
   // Event binding for popover shown event
@@ -611,7 +648,7 @@ function showPersonPopover(element) {
           clearTimeout(popoverTimeout);
         })
         .on("mouseleave", function () {
-          popoverTimeout = setTimeout(hidePopover, 250);
+          popoverTimeout = setTimeout(hidePopover, 350);
         });
 
       $("#" + popoverId)
