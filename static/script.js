@@ -532,7 +532,7 @@ function setupPopoverHideWithDelay(element) {
     var tmdbId = $element.data("tmdb-id");
 
     // Display "Loading details" message
-    $element.popover("show");
+    //$element.popover("show");
 
     // Load movie details
     $.get(`/movie_details/${tmdbId}`, function (data) {
@@ -604,7 +604,22 @@ function setupPopoverHideWithDelay(element) {
       offset: 10,
       delay: { show: 100, hide: hideDelay },
     })
-    .on("mouseenter", showPopover)
+    .on("mouseenter", function () {
+      var $element = $(this);
+      var elementRect = this.getBoundingClientRect();
+
+      setTimeout(function () {
+        // Check if the current mouse position is within the bounds of the source element
+        if (
+          lastMousePosition.x >= elementRect.left &&
+          lastMousePosition.x <= elementRect.right &&
+          lastMousePosition.y >= elementRect.top &&
+          lastMousePosition.y <= elementRect.bottom
+        ) {
+          showPopover.call($element); // Show the popover
+        }
+      }, 500); // 500 milliseconds delay
+    })
     .on("mouseleave", function () {
       hideDelayTimer = setTimeout(hidePopover, hideDelay);
     });
