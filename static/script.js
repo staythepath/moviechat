@@ -215,7 +215,7 @@ function handleKeyPress(event) {
 function toggleConfigPanel() {
   var configPanel = document.getElementById("config-panel");
   if (configPanel.style.left === "0px") {
-    configPanel.style.left = "-350px"; // Hide the panel
+    configPanel.style.left = "-3000px"; // Hide the panel
   } else {
     configPanel.style.left = "0px"; // Show the panel
   }
@@ -736,14 +736,14 @@ function showPersonPopover(element) {
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 350);
+      popoverTimeout = setTimeout(hidePopover, 3000);
     });
 
   // Event binding for popover shown event
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 350);
+      popoverTimeout = setTimeout(hidePopover, 3000);
     });
 
   // Event binding for popover shown event
@@ -760,7 +760,7 @@ function showPersonPopover(element) {
         })
         .on("mouseleave", function () {
           isMouseOverPopover = false;
-          popoverTimeout = setTimeout(hidePopover, 350);
+          popoverTimeout = setTimeout(hidePopover, 3000);
         });
 
       $("#" + popoverId)
