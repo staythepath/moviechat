@@ -115,6 +115,24 @@ body {
   color: #27496d;
 }
 
+/* Transition animation for color and font-weight */
+@keyframes colorAndBoldTransition {
+  0%,
+  100% {
+    color: #596a7c;
+    font-weight: normal;
+  }
+  50% {
+    color: #0056b3;
+    font-weight: bold;
+  }
+}
+
+/* Class to apply the color and bold transition animation */
+.color-bold-transition {
+  animation: colorAndBoldTransition 2s forwards;
+}
+
 /* Customize the popover header */
 .popover-header {
   background-color: #2a2a2a; /* Change to your desired background color */
