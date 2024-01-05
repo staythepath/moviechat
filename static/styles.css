@@ -278,6 +278,17 @@ select option {
   background-color: #27496d;
   border-color: #27496d;
   color: #ffffff;
+  margin: 5px;
+}
+
+.popover-button {
+  background-color: #27496d;
+  border-color: #27496d;
+  color: #ffffff;
+  margin: 3px;
+  padding: 7px 6px; /* Smaller padding */
+  font-size: 1em; /* Smaller font size */
+  border-radius: 4px; /* Smaller border radius */
 }
 
 select.form-control {

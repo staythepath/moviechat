@@ -1,3 +1,7 @@
+$.fn.popover.Constructor.Default.whiteList.button = [];
+$.fn.popover.Constructor.Default.whiteList.button.push("type");
+$.fn.popover.Constructor.Default.whiteList.button.push("class");
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const configPanel = document.getElementById("config-panel");
   const configToggle = document.getElementById("config-toggle");
@@ -415,7 +419,7 @@ function setupPopoverHideWithDelay(element) {
   // Function to update the popover content once details are loaded
   function updatePopoverContent(data) {
     function createPersonSpans(names, group) {
-      const maxDisplay = 5; // Number of names to display initially
+      const maxDisplay = 3; // Number of names to display initially
       let displayedNamesHtml = names
         .slice(0, maxDisplay)
         .map((name) => `<span class="person-link">${name.trim()}</span>`)
@@ -440,42 +444,54 @@ function setupPopoverHideWithDelay(element) {
       return `<span id="displayed-${group}">${displayedNamesHtml}</span><span id="more-${group}" style="display: none;">${hiddenNamesHtml}</span>${moreButtonHtml}`;
     }
 
-    var contentHtml = `
-    <div class="movie-title">${data.title}</div>
-    <div class="movie-details-card">
-      <div class="movie-poster">
-        <img src="https://image.tmdb.org/t/p/original${
-          data.poster_path
-        }" alt="${data.title} Poster" class="img-fluid">
-      </div>
-      <div class="movie-info">
-        <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
-          data.director.split(","),
-          "director"
-        )}</p>
-        <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
-          data.dop.split(","),
-          "dop"
-        )}</p>
-        <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
-          data.writers.split(","),
-          "writers"
-        )}</p>
-        <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
-          data.stars.split(","),
-          "stars"
-        )}</p>
-        <p class="movie-rating"><strong>TMDb Rating: </strong>${
-          data.vote_average
-        }</p>
-        <p class="movie-release-date"><strong>Release Date: </strong>${
-          data.release_date
-        }</p>
-        <p class="movie-description"><strong>Description: </strong>${
-          data.description
-        }</p>
-      </div>
+    var buttonsHtml = `
+    <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+      <button type="button" class="btn popover-button">Ask MovieBot</button>
+      <button type="button" class="btn popover-button" style="margin-left: 5px;">Add to Radarr</button>
+      <button type="button" class="btn popover-button" style="margin-left: 5px;">IMDb</button>
     </div>`;
+
+    var contentHtml = `
+      <div class="movie-title">${data.title}</div>
+      <div class="movie-details-card">
+        <div class="movie-poster">
+          <img src="https://image.tmdb.org/t/p/original${
+            data.poster_path
+          }" alt="${data.title} Poster" class="img-fluid">
+        </div>
+        <div class="movie-info">
+          <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
+            data.director.split(","),
+            "director"
+          )}</p>
+          <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
+            data.dop.split(","),
+            "dop"
+          )}</p>
+          <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
+            data.writers.split(","),
+            "writers"
+          )}</p>
+          <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
+            data.stars.split(","),
+            "stars"
+          )}</p>
+          <p class="movie-rating"><strong>TMDb Rating: </strong>${
+            data.vote_average
+          }</p>
+          <p class="movie-release-date"><strong>Release Date: </strong>${
+            data.release_date
+          }</p>
+          <p class="movie-description"><strong>Description: </strong>${
+            data.description
+          }</p>
+          <div style="display: flex;">
+            ${buttonsHtml}
+
+          </div>
+        </div>
+        
+      </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
     $(element).popover("show");
     $(element).popover("update");
@@ -485,6 +501,12 @@ function setupPopoverHideWithDelay(element) {
       showPersonPopover(this);
     });
   }
+
+  $(document).on("click", ".popover-button", function () {
+    // Handle the button click event
+    console.log("Popover button clicked");
+    // Add your custom logic here
+  });
 
   var showPopover = function () {
     clearTimeout(hideDelayTimer);
