@@ -823,14 +823,16 @@ function showPersonPopover(element) {
           popoverTimeout = setTimeout(hidePopover, 350);
         });
 
-      $popover.on("click", ".ask-moviebot-person", function () {
-        var personName = $(this).data("person-name");
-        if (personName) {
-          sendPredefinedMessage(`Tell me about ${personName}`);
-        } else {
-          console.log("Person name not found for MovieBot");
-        }
-      });
+      $popover
+        .off("click", ".ask-moviebot-person")
+        .on("click", ".ask-moviebot-person", function () {
+          var personName = $(this).data("person-name");
+          if (personName) {
+            sendPredefinedMessage(`Tell me about ${personName}`);
+          } else {
+            console.log("Person name not found for MovieBot");
+          }
+        });
 
       // Assuming $popover is a static ancestor that contains the dynamic .movie-credit-link elements
 
@@ -869,18 +871,16 @@ function showPersonPopover(element) {
       });
 
       $popover.on("click", ".movie-credit-link", function () {
-        // Store the original text of the link
-        var originalText = $(this).text();
-
         // Temporarily change the link text to indicate action
         $(this).text("Asking MovieBot...");
 
         // Add your logic here to ask MovieBot about the movie
+        // For example, sending a message to MovieBot
         var movieTitle = $(this).data("movie-title");
 
-        // Optional: Reset the text back to the original text after some delay
+        // Optional: Reset the text back to the original title after some delay
         setTimeout(() => {
-          $(this).text(originalText);
+          $(this).text(movieTitle);
         }, 2000); // Reset after 2 seconds
       });
 
