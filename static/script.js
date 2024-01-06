@@ -725,7 +725,7 @@ function showPersonPopover(element) {
 
           let creditsHtml = `<dl><dt>Movie Credits:</dt>${displayedCredits}</dl>`;
           if (data.movie_credits.length > maxDisplayCredits) {
-            creditsHtml += `<dd><span id="more-credits" class="more-link">... More</span></dd>`;
+            creditsHtml += `<dd><span id="more-credits" class="more-link">More...</span></dd>`;
           }
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
@@ -861,9 +861,27 @@ function showPersonPopover(element) {
       });
 
       $popover.find("#more-credits").on("click", function () {
+        $(this).css("color", "green"); // Example: changing the color to green
+        $(this).text("Asking MovieBot..."); // Temporarily change the link text
         var fullCreditsHtml = `${$(element).data("fullCredits")}</dl>`;
         $(this).parent().replaceWith(fullCreditsHtml); // Replace the dd with full credits
         $(this).remove(); // Remove the 'More' link
+      });
+
+      $popover.on("click", ".movie-credit-link", function () {
+        // Store the original text of the link
+        var originalText = $(this).text();
+
+        // Temporarily change the link text to indicate action
+        $(this).text("Asking MovieBot...");
+
+        // Add your logic here to ask MovieBot about the movie
+        var movieTitle = $(this).data("movie-title");
+
+        // Optional: Reset the text back to the original text after some delay
+        setTimeout(() => {
+          $(this).text(originalText);
+        }, 2000); // Reset after 2 seconds
       });
 
       $popover.find(".chat-btn").on("click", function () {

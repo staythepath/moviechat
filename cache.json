@@ -196,6 +196,62 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Interview_with_the_Vampire",
             "writers": "Anne Rice, Anne Rice"
         },
+        "movie_card_664850": {
+            "description": "On the eve of Earth Day, a precocious seven-year-old learns about the wonders of the planet from his parents\u2014and a mysterious exhibit at the aptly named Museum of Everything. Based on the best-selling children's book by Oliver Jeffers.",
+            "director": "Philip Hunt",
+            "dop": "Not Available",
+            "imdb_id": "11692010",
+            "poster_path": "https://image.tmdb.org/t/p/original/tZWgclntziFRPQg0u0nI2FU4nYg.jpg",
+            "release_date": "2020-04-16",
+            "stars": "Meryl Streep, Jacob Tremblay, Chris O'Dowd, Ruth Negga, Rob Rackstraw",
+            "title": "Here We Are: Notes for Living on Planet Earth",
+            "tmdb_id": 664850,
+            "vote_average": 7.73,
+            "wiki_url": "https://en.wikipedia.org/wiki/Meryl_Streep_on_screen_and_stage",
+            "writers": "Philip Hunt, Oliver Jeffers, Luke Matheny"
+        },
+        "movie_card_694": {
+            "description": "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the madness that lurks within.",
+            "director": "Stanley Kubrick",
+            "dop": "John Alcott",
+            "imdb_id": "0081505",
+            "poster_path": "https://image.tmdb.org/t/p/original/9PtPnOJSH6pewElRlJPGqC5Gd3W.jpg",
+            "release_date": "1980-05-23",
+            "stars": "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers, Philip Stone, Joe Turkel, Barry Nelson, Barry Dennen, Tony Burton, Lia Beldam, Billie Gibson, Lisa Burns, Louise Burns, David Baxt, Manning Redwood, Robin Pappas, Anne Jackson, Alison Coleridge, Burnell Tucker, Jana Shelden, Paul Desbois, Vivian Kubrick, Derek Lyons, Alan Harris, Peter McNamara, Guy Standeven, Reg Thomason",
+            "title": "The Shining",
+            "tmdb_id": 694,
+            "vote_average": 8.217,
+            "wiki_url": "https://en.wikipedia.org/wiki/Shining",
+            "writers": "Stanley Kubrick, Stephen King, Diane Johnson"
+        },
+        "movie_card_724495": {
+            "description": "The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.",
+            "director": "Gina Prince-Bythewood",
+            "dop": "Polly Morgan",
+            "imdb_id": "8093700",
+            "poster_path": "https://image.tmdb.org/t/p/original/438QXt1E3WJWb3PqNniK0tAE5c1.jpg",
+            "release_date": "2022-09-16",
+            "stars": "Viola Davis, Thuso Mbedu, Lashana Lynch, Sheila Atim, John Boyega, Jordan Bolger, Hero Fiennes Tiffin, Jimmy Odukoya, Masali Baduza, Jayme Lawson, Adrienne Warren, Chioma Antoinette Umeala, Siyamthanda Makakane, Shaina West, Sivuyile Ngesi, Riaan Visman, Seputla Sebogodi, Ang\u00e9lique Kidjo, Wanda Banda, Lethabo, Kekole Mathabathe, Daniel Hadebe, Kgomotso Moshia, Zozibini Tunzi, Makgotso M, Thando Dlomo, Zeaf Ejama, Julius Tennon, Pumla Ndlazi, Bonko Khoza, Sne Mbatha, Boitumelo Makgalemele, Bongo Mbutuma, Kwanda Tim Dlamini, Nhlanhla Mkhwanazi, Didi Ledwaba, Chumani Pan, Cebelihle Mbambo, Chris Ncekana, Tuks Tad Lungu, Yannick Brand, Nancy Sekhokoane, Joel Mukadi, Princess Elmore",
+            "title": "The Woman King",
+            "tmdb_id": 724495,
+            "vote_average": 7.71,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Woman_King",
+            "writers": "Maria Bello, Dana Stevens, Dana Stevens"
+        },
+        "movie_card_740985": {
+            "description": "14 years after making a film about his journey across the USA, Borat risks life and limb when he returns to the United States with his young daughter, and reveals more about the culture, the COVID-19 pandemic, and the political elections.",
+            "director": "Jason Woliner",
+            "dop": "Luke Geissbuhler",
+            "imdb_id": "13143964",
+            "poster_path": "https://image.tmdb.org/t/p/original/3L1Ml5RWjFVfVq3rQENvgFymT0U.jpg",
+            "release_date": "2020-10-23",
+            "stars": "Sacha Baron Cohen, Maria Bakalova, Tom Hanks, Dani Popescu, Manuel Vieru, Miroslav Tolj, Alin Popa, Ion Gheorghe, Nicolae Gheorghe, Marcela Codrea, Luca Nelu, Judith Dim Evans, Mike Pence, Rudolph Giuliani, Chase Fein",
+            "title": "Borat Subsequent Moviefilm",
+            "tmdb_id": 740985,
+            "vote_average": 6.473,
+            "wiki_url": "https://en.wikipedia.org/wiki/Borat_Subsequent_Moviefilm",
+            "writers": "Sacha Baron Cohen, Sacha Baron Cohen, Sacha Baron Cohen, Anthony Hines, Anthony Hines"
+        },
         "movie_card_769": {
             "description": "The true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is adopted by neighbourhood gangsters at an early age and climbs the ranks of a Mafia family under the guidance of Jimmy Conway.",
             "director": "Martin Scorsese",
@@ -1784,6 +1840,48 @@
             "profile_path": "/WCSZzWdtPmdRxH9LUCVi2JPCSJ.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/George_Lucas"
         },
+        "person_Gina Prince-Bythewood": {
+            "biography": "Gina Prince-Bythewood (born Gina Maria Prince on June 10, 1969) is an American film director and writer. Her primary credits as a director include the films Disappearing Acts and Love &amp; Basketball, produced by Spike Lee and starring Omar Epps and Sanaa Lathan, which won her the Independent Spirit Award for Best First Screenplay.\n\nBythewood attended UCLA's film school, where she also ran competitive track. At UCLA, she received the Gene Reynolds Scholarship for Directing and the Ray Stark Memorial Scholarship for Outstanding Undergraduates. She graduated in 1991. Along with her friends Mara Brock Akil, Sara Finney Johnson and Felicia Henderson (also a UCLA graduate), she endows The Four Sisters Scholarship.\n\nShe directed The Secret Life of Bees which was adapted from the best-selling book by Sue Monk Kidd. It was released by Fox Searchlight in October of 2008, and debuted at the Toronto International Film Festival and Urbanworld Film Festival that same year.\n\nHer husband is Reggie Rock Bythewood, also a film director and writer.\n\nDescription above from the Wikipedia article Gina Prince-Bythewood, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1969-06-10",
+            "deathday": null,
+            "imdb_id": "0697656",
+            "movie_credits": [
+                {
+                    "popularity": 70.985,
+                    "release_year": "2022",
+                    "title": "The Woman King",
+                    "vote_average": 7.71
+                },
+                {
+                    "popularity": 23.958,
+                    "release_year": "2020",
+                    "title": "The Old Guard",
+                    "vote_average": 7.163
+                },
+                {
+                    "popularity": 8.977,
+                    "release_year": "2014",
+                    "title": "Beyond the Lights",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 14.97,
+                    "release_year": "2008",
+                    "title": "The Secret Life of Bees",
+                    "vote_average": 7.485
+                },
+                {
+                    "popularity": 12.042,
+                    "release_year": "2000",
+                    "title": "Love & Basketball",
+                    "vote_average": 7.453
+                }
+            ],
+            "name": "Gina Prince-Bythewood",
+            "place_of_birth": "USA",
+            "profile_path": "/fsQAZXF2hjNnysaCFCWmfwGMY9Z.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Gina_Prince-Bythewood"
+        },
         "person_Harrison Ford": {
             "biography": "Legendary Hollywood Icon Harrison Ford was born on July 13,\u00a01942 in Chicago, Illinois. His family\u00a0history includes a strong lineage of actors, radio personalities, and models.\u00a0Harrison attended public high school in Park\u00a0Ridge, Illinois where he was a member of the school Radio Station WMTH.\u00a0Harrison worked as the lead voice for sports reporting at WMTH for several\u00a0years.\u00a0Acting wasn\u2019t a major interest to\u00a0Ford until his junior year at Ripon College when he first took an acting class. Harrison Ford\u2019s career started in 1964 when he travelled to\u00a0California in search of a voice-over job.\u00a0He never received that position, but instead signed a contract with\u00a0Columbia Pictures where he earned $150 weekly to play small fill in roles in\u00a0various films.\n\nThrough the 60\u2019s Harrison\u00a0worked on several TV shows including Gunsmoke,\u00a0Ironside, Kung Fu, and American Style. It wasn\u2019t until 1967 that Harrison received\u00a0his first credited role in the Western film, A Time for Killing. Dissatisfied with the meager roles he was being\u00a0offered, Ford took a hiatus from acting to work as a self-employed carpenter.\u00a0This seemingly odd diversion turned out to be a blessing in disguise for\u00a0Harrison\u2019s acting career when he was soon hired by famous film producer George\u00a0Lucas. This was a turning point in\u00a0Harrison\u2019s life that led to him be casted in milestone roles such as Hans Solo\u00a0and Indiana Jones.\n\nSince his most famous\u00a0roles in the Star Wars Trilogy and Raiders\u00a0of the Lost Ark, Harrison Ford has starred in over 40 films. Many criticize his recent work, saying his\u00a0performances have been lackluster leading to commercially disappointing films. Harrison has always worked hard to protect his off-screen\u00a0private life, keeping details about his children and marriages quite. He has a total of five children including one\u00a0recent adoption with third and current wife Calista Flockhart. In addition to\u00a0acting Harrison Ford is passionate about environmental conservation, aviation,\u00a0and archeology.",
             "birthday": "1942-07-13",
@@ -2737,6 +2835,114 @@
             "place_of_birth": "Saint Louis, Missouri, USA",
             "profile_path": "/3jswDdLDsmSAO4ZtVPwyKAp6D5d.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Linda_Blair"
+        },
+        "person_Matthew Rhys": {
+            "biography": "Matthew Rhys Evans, known professionally as Matthew Rhys, is a Welsh actor, best-known as Kevin Walker on the U.S. ABC family drama \"Brothers & Sisters\", and as Dylan Thomas in \"The Edge of Love\".",
+            "birthday": "1974-11-08",
+            "deathday": null,
+            "imdb_id": "0722629",
+            "movie_credits": [
+                {
+                    "popularity": 91.332,
+                    "release_year": "2023",
+                    "title": "Cocaine Bear",
+                    "vote_average": 6.14
+                },
+                {
+                    "popularity": 17.166,
+                    "release_year": "2021",
+                    "title": "Seal Team",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 15.293,
+                    "release_year": "2019",
+                    "title": "The Report",
+                    "vote_average": 7.044
+                },
+                {
+                    "popularity": 17.102,
+                    "release_year": "2019",
+                    "title": "A Beautiful Day in the Neighborhood",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 34.072,
+                    "release_year": "2018",
+                    "title": "Mowgli: Legend of the Jungle",
+                    "vote_average": 6.487
+                },
+                {
+                    "popularity": 23.477,
+                    "release_year": "2017",
+                    "title": "The Post",
+                    "vote_average": 6.999
+                },
+                {
+                    "popularity": 3.486,
+                    "release_year": "2015",
+                    "title": "Come What May",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 20.184,
+                    "release_year": "2015",
+                    "title": "Burnt",
+                    "vote_average": 6.513
+                },
+                {
+                    "popularity": 6.815,
+                    "release_year": "2012",
+                    "title": "The Scapegoat",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 10.547,
+                    "release_year": "2008",
+                    "title": "The Edge of Love",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 25.895,
+                    "release_year": "2007",
+                    "title": "Virgin Territory",
+                    "vote_average": 4.666
+                },
+                {
+                    "popularity": 11.327,
+                    "release_year": "2006",
+                    "title": "Love and Other Disasters",
+                    "vote_average": 5.784
+                },
+                {
+                    "popularity": 8.488,
+                    "release_year": "2002",
+                    "title": "Deathwatch",
+                    "vote_average": 5.757
+                },
+                {
+                    "popularity": 5.455,
+                    "release_year": "2001",
+                    "title": "The Lost World",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 12.86,
+                    "release_year": "1999",
+                    "title": "Titus",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 15.002,
+                    "release_year": "1998",
+                    "title": "Elizabeth",
+                    "vote_average": 7.174
+                }
+            ],
+            "name": "Matthew Rhys",
+            "place_of_birth": "Cardiff, Wales, UK",
+            "profile_path": "/1HO4P8rMOPLRUUfz9m43zkzJNCK.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Matthew_Rhys"
         },
         "person_Meryl Streep": {
             "biography": "Mary Louise \"Meryl\" Streep (born June 22, 1949) is an American actress. Often described as \"the best actress of her generation\", Streep is particularly known for her versatility and accent adaptability. She has received numerous accolades throughout her career spanning over five decades, including a record 21 Academy Award nominations, winning three, and a record 32 Golden Globe Award nominations, winning eight. She has also received two British Academy Film Awards, two Screen Actors Guild Awards, and three Primetime Emmy Awards, in addition to nominations for a Tony Award and six Grammy Awards.\n\nDescription above from the Wikipedia article Meryl Streep, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
@@ -4514,6 +4720,396 @@
             "profile_path": "/3IvlZd2PpT3Tuxy8lr6ymWLyoNU.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Robin_Wright"
         },
+        "person_Russell Crowe": {
+            "biography": "Russell Ira Crowe (born 7 April 1964) is an Academy Award-winning actor. He was born in New Zealand, spent ten years of his childhood in Australia, and moved there permanently at age 21. He came to international attention for his role as Roman General Maximus Decimus Meridius in the epic historical film Gladiator (2000), for which he won an Academy Award, Broadcast Film Critics Association Award, Empire Award, and London Film Critics Circle Award for Best Leading Actor, along with 10 other nominations in the same category.\n\nHis other award-winning performances include tobacco firm whistle-blower Jeffrey Wigand in the drama film The Insider (1999) and mathematician John Forbes Nash Jr. in the biopic A Beautiful Mind (2001). He has also starred in films such as the drama Romper Stomper (1992), the mystery-detective thriller L.A. Confidential (1997), the epic war film Master and Commander: The Far Side of the World (2003), the biographical boxing drama Cinderella Man (2005), the western 3:10 to Yuma (2007), the crime drama American Gangster (2007), the thriller-drama State of Play (2009), and Robin Hood (2010).\n\nHe later starred as Javert in the musical drama Les Mis\u00e9rables (2012), Jor-El in the superhero epic Man of Steel (2013), Noah in the biblical fantasy drama Noah (2014), Jackson Healy in the action comedy The Nice Guys (2016), Jekyll / Hyde in The Mummy (2017), Marshall Eamons in Boy Erased (2018), the psychotic Man in Unhinged (2018), Jake Foley in Poker Face (2022), Zeus Panhellenios in the Marvel Cinematic Universe (MCU) film Thor: Love and Thunder (2022), and Nikolai Kravinoff in Sony's Spider-Man Universe (SSU) film Kraven the Hunter (2023).\n\nIn 2014, he made his directorial debut with the drama The Water Diviner, in which he also starred. He has earned various accolades, including a star on the Hollywood Walk of Fame, two Golden Globe Awards, a British Academy Film Award, and an Academy Award out of three consecutive nominations (1999, 2000, and 2001).  He has been the co-owner of the National Rugby League (NRL) team South Sydney Rabbitohs since 2006.",
+            "birthday": "1964-04-07",
+            "deathday": null,
+            "imdb_id": "0000128",
+            "movie_credits": [
+                {
+                    "popularity": 127.8,
+                    "release_year": "2023",
+                    "title": "The Pope's Exorcist",
+                    "vote_average": 7.068
+                },
+                {
+                    "popularity": 12.98,
+                    "release_year": "2022",
+                    "title": "Poker Face",
+                    "vote_average": 5.595
+                },
+                {
+                    "popularity": 19.684,
+                    "release_year": "2022",
+                    "title": "The Greatest Beer Run Ever",
+                    "vote_average": 7.631
+                },
+                {
+                    "popularity": 39.102,
+                    "release_year": "2022",
+                    "title": "Prizefighter: The Life of Jem Belcher",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 116.613,
+                    "release_year": "2022",
+                    "title": "Thor: Love and Thunder",
+                    "vote_average": 6.495
+                },
+                {
+                    "popularity": 108.546,
+                    "release_year": "2021",
+                    "title": "Zack Snyder's Justice League",
+                    "vote_average": 8.179
+                },
+                {
+                    "popularity": 29.796,
+                    "release_year": "2020",
+                    "title": "Unhinged",
+                    "vote_average": 6.468
+                },
+                {
+                    "popularity": 12.78,
+                    "release_year": "2019",
+                    "title": "True History of the Kelly Gang",
+                    "vote_average": 5.937
+                },
+                {
+                    "popularity": 18.518,
+                    "release_year": "2018",
+                    "title": "Boy Erased",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 10.652,
+                    "release_year": "2017",
+                    "title": "War Machine",
+                    "vote_average": 5.58
+                },
+                {
+                    "popularity": 34.055,
+                    "release_year": "2017",
+                    "title": "The Mummy",
+                    "vote_average": 5.509
+                },
+                {
+                    "popularity": 25.646,
+                    "release_year": "2016",
+                    "title": "The Nice Guys",
+                    "vote_average": 7.112
+                },
+                {
+                    "popularity": 24.608,
+                    "release_year": "2015",
+                    "title": "Fathers and Daughters",
+                    "vote_average": 7.2
+                },
+                {
+                    "popularity": 11.218,
+                    "release_year": "2014",
+                    "title": "The Water Diviner",
+                    "vote_average": 6.807
+                },
+                {
+                    "popularity": 23.316,
+                    "release_year": "2014",
+                    "title": "Winter's Tale",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 35.607,
+                    "release_year": "2014",
+                    "title": "Noah",
+                    "vote_average": 5.658
+                },
+                {
+                    "popularity": 18.987,
+                    "release_year": "2013",
+                    "title": "Broken City",
+                    "vote_average": 5.931
+                },
+                {
+                    "popularity": 64.181,
+                    "release_year": "2013",
+                    "title": "Man of Steel",
+                    "vote_average": 6.617
+                },
+                {
+                    "popularity": 14.323,
+                    "release_year": "2012",
+                    "title": "The Man with the Iron Fists",
+                    "vote_average": 5.523
+                },
+                {
+                    "popularity": 34.631,
+                    "release_year": "2012",
+                    "title": "Les Mis\u00e9rables",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 19.633,
+                    "release_year": "2010",
+                    "title": "The Next Three Days",
+                    "vote_average": 7.075
+                },
+                {
+                    "popularity": 50.586,
+                    "release_year": "2010",
+                    "title": "Robin Hood",
+                    "vote_average": 6.39
+                },
+                {
+                    "popularity": 8.294,
+                    "release_year": "2009",
+                    "title": "Tenderness",
+                    "vote_average": 5.141
+                },
+                {
+                    "popularity": 22.688,
+                    "release_year": "2009",
+                    "title": "State of Play",
+                    "vote_average": 6.793
+                },
+                {
+                    "popularity": 19.819,
+                    "release_year": "2008",
+                    "title": "Body of Lies",
+                    "vote_average": 6.628
+                },
+                {
+                    "popularity": 21.063,
+                    "release_year": "2007",
+                    "title": "3:10 to Yuma",
+                    "vote_average": 7.207
+                },
+                {
+                    "popularity": 28.092,
+                    "release_year": "2007",
+                    "title": "American Gangster",
+                    "vote_average": 7.577
+                },
+                {
+                    "popularity": 16.928,
+                    "release_year": "2006",
+                    "title": "A Good Year",
+                    "vote_average": 6.68
+                },
+                {
+                    "popularity": 18.941,
+                    "release_year": "2005",
+                    "title": "Cinderella Man",
+                    "vote_average": 7.538
+                },
+                {
+                    "popularity": 28.835,
+                    "release_year": "2003",
+                    "title": "Master and Commander: The Far Side of the World",
+                    "vote_average": 7.137
+                },
+                {
+                    "popularity": 76.545,
+                    "release_year": "2001",
+                    "title": "A Beautiful Mind",
+                    "vote_average": 7.854
+                },
+                {
+                    "popularity": 12.552,
+                    "release_year": "2000",
+                    "title": "Proof of Life",
+                    "vote_average": 6.12
+                },
+                {
+                    "popularity": 66.484,
+                    "release_year": "2000",
+                    "title": "Gladiator",
+                    "vote_average": 8.212
+                },
+                {
+                    "popularity": 9.983,
+                    "release_year": "1999",
+                    "title": "Mystery, Alaska",
+                    "vote_average": 6.233
+                },
+                {
+                    "popularity": 14.211,
+                    "release_year": "1999",
+                    "title": "The Insider",
+                    "vote_average": 7.464
+                },
+                {
+                    "popularity": 25.174,
+                    "release_year": "1997",
+                    "title": "L.A. Confidential",
+                    "vote_average": 7.785
+                },
+                {
+                    "popularity": 8.499,
+                    "release_year": "1995",
+                    "title": "No Way Back",
+                    "vote_average": 4.894
+                },
+                {
+                    "popularity": 16.882,
+                    "release_year": "1995",
+                    "title": "Virtuosity",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 19.665,
+                    "release_year": "1995",
+                    "title": "The Quick and the Dead",
+                    "vote_average": 6.536
+                },
+                {
+                    "popularity": 3.817,
+                    "release_year": "1994",
+                    "title": "The Sum of Us",
+                    "vote_average": 6.767
+                },
+                {
+                    "popularity": 8.714,
+                    "release_year": "1992",
+                    "title": "Romper Stomper",
+                    "vote_average": 6.571
+                },
+                {
+                    "popularity": 5.376,
+                    "release_year": "1991",
+                    "title": "Proof",
+                    "vote_average": 6.569
+                }
+            ],
+            "name": "Russell Crowe",
+            "place_of_birth": "Wellington, New Zealand",
+            "profile_path": "/fbzD4utSGJlsV8XbYMLoMdEZ1Fc.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Russell_Crowe"
+        },
+        "person_Sacha Baron Cohen": {
+            "biography": "Sacha Noam Baron Cohen (born 13 October 1971) is an English actor, comedian, writer, and producer. He is best known for his creation and portrayal of the fictional satirical characters Ali G, Borat Sagdiyev, Br\u00fcno Gehard, and Admiral General Aladeen. He adopts a variety of accents and guises for his characters and interacts with unsuspecting subjects who do not realise they have been set up. At the 2012 British Comedy Awards, he received the Outstanding Achievement Award and accepted the award in-character as Ali G. In 2013, he received the BAFTA Charlie Chaplin Britannia Award for Excellence in Comedy. In 2018, The Times named him among the 30 best living comedians.\n\nBaron Cohen has produced and/or performed in comedic films such as Ali G Indahouse (2002), Borat (2006) and its sequel Borat Subsequent Moviefilm (2020), Talladega Nights: The Ballad of Ricky Bobby (2006), Br\u00fcno (2009), and The Dictator (2012). He has also appeared in dramatic films including Tim Burton's Sweeney Todd: The Demon Barber of Fleet Street (2007), Martin Scorsese's Hugo (2011), Tom Hooper's Les Mis\u00e9rables (2012), and Aaron Sorkin's The Trial of the Chicago 7 (2020). He made a cameo as a BBC News anchor in Anchorman 2: The Legend Continues (2013). In 2016, he appeared in the comedy film Grimsby and co-starred in the fantasy sequel Alice Through the Looking Glass. His voice acting roles include King Julien XIII in the Madagascar film series (2005\u20132012) and Uncle Ugo in Luca (2021).\n\nBeginning his career in television, Baron Cohen was named Best Newcomer at the 1999 British Comedy Awards for The 11 O'Clock Show. He created and starred in Da Ali G Show (2000\u20132004), receiving two BAFTA Awards. His next television project, Who Is America? (2018) for Showtime, saw him nominated for a Golden Globe Award for Best Actor \u2013 Television Series Musical or Comedy. In 2019, he portrayed Eli Cohen in the limited series The Spy for OCS and Netflix, for which he received a nomination for the Golden Globe Award for Best Actor - Miniseries or Television Film.\n\nBaron Cohen has two nominations for the Academy Award for Best Adapted Screenplay, three Golden Globe Award nominations, resulting in two wins for Best Actor \u2013 Motion Picture Musical or Comedy for his work in the feature film Borat and its sequel. In 2021, he received Academy Award, Golden Globe Award, and Screen Actors Guild Award nominations for his performance as Abbot \"Abbie\" Hoffman in The Trial of the Chicago 7. He has been a member of the Academy of Motion Picture Arts and Sciences in the Actors Branch since 2008. After the release of Borat, Baron Cohen said he would retire Borat and Ali G because the public had become too familiar with the characters. After the release of Br\u00fcno, he said he would retire that character. However, the character of Borat was brought back for the 2020 sequel Borat Subsequent Moviefilm.\n\nDescription above from the Wikipedia article Sacha Baron Cohen, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1971-10-13",
+            "deathday": null,
+            "imdb_id": "0056187",
+            "movie_credits": [
+                {
+                    "popularity": 98.385,
+                    "release_year": "2021",
+                    "title": "Luca",
+                    "vote_average": 7.848
+                },
+                {
+                    "popularity": 20.96,
+                    "release_year": "2020",
+                    "title": "The Trial of the Chicago 7",
+                    "vote_average": 7.721
+                },
+                {
+                    "popularity": 24.252,
+                    "release_year": "2020",
+                    "title": "Borat Subsequent Moviefilm",
+                    "vote_average": 6.473
+                },
+                {
+                    "popularity": 5.511,
+                    "release_year": "2018",
+                    "title": "Seth Rogen's Hilarity for Charity",
+                    "vote_average": 5.201
+                },
+                {
+                    "popularity": 23.513,
+                    "release_year": "2016",
+                    "title": "Grimsby",
+                    "vote_average": 5.941
+                },
+                {
+                    "popularity": 46.878,
+                    "release_year": "2016",
+                    "title": "Alice Through the Looking Glass",
+                    "vote_average": 6.552
+                },
+                {
+                    "popularity": 18.056,
+                    "release_year": "2013",
+                    "title": "Anchorman 2: The Legend Continues",
+                    "vote_average": 6.136
+                },
+                {
+                    "popularity": 29.853,
+                    "release_year": "2012",
+                    "title": "The Dictator",
+                    "vote_average": 6.18
+                },
+                {
+                    "popularity": 34.631,
+                    "release_year": "2012",
+                    "title": "Les Mis\u00e9rables",
+                    "vote_average": 7.338
+                },
+                {
+                    "popularity": 48.288,
+                    "release_year": "2012",
+                    "title": "Madagascar 3: Europe's Most Wanted",
+                    "vote_average": 6.61
+                },
+                {
+                    "popularity": 25.34,
+                    "release_year": "2011",
+                    "title": "Hugo",
+                    "vote_average": 7.175
+                },
+                {
+                    "popularity": 16.85,
+                    "release_year": "2009",
+                    "title": "Br\u00fcno",
+                    "vote_average": 5.614
+                },
+                {
+                    "popularity": 50.032,
+                    "release_year": "2008",
+                    "title": "Madagascar: Escape 2 Africa",
+                    "vote_average": 6.495
+                },
+                {
+                    "popularity": 22.988,
+                    "release_year": "2007",
+                    "title": "Sweeney Todd: The Demon Barber of Fleet Street",
+                    "vote_average": 7.19
+                },
+                {
+                    "popularity": 16.322,
+                    "release_year": "2006",
+                    "title": "Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan",
+                    "vote_average": 6.77
+                },
+                {
+                    "popularity": 19.555,
+                    "release_year": "2006",
+                    "title": "Talladega Nights: The Ballad of Ricky Bobby",
+                    "vote_average": 6.358
+                },
+                {
+                    "popularity": 61.306,
+                    "release_year": "2005",
+                    "title": "Madagascar",
+                    "vote_average": 6.898
+                },
+                {
+                    "popularity": 12.64,
+                    "release_year": "2002",
+                    "title": "Ali G Indahouse",
+                    "vote_average": 6.1
+                },
+                {
+                    "popularity": 3.763,
+                    "release_year": "2000",
+                    "title": "Ali G, Aiii",
+                    "vote_average": 6.595
+                }
+            ],
+            "name": "Sacha Baron Cohen",
+            "place_of_birth": "Hammersmith, London, England, UK",
+            "profile_path": "/8J2LxfW3owPTc9OzbBoUbADFOBb.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Sacha_Baron_Cohen"
+        },
         "person_Scott Glenn": {
             "biography": "Theodore Scott Glenn (born January 26, 1939) is an American actor. His roles have included Pfc Glenn Kelly in Nashville (1975), Wes Hightower in Urban Cowboy (1980), astronaut Alan Shepard in The Right Stuff (1983), Emmett in Silverado (1985), Captain Bart Mancuso in The Hunt for Red October (1990), Jack Crawford in The Silence of the Lambs (1991), John Adcox in Backdraft (1991), Montgomery Wick in Vertical Limit (2000), Roger in Training Day (2001), Ezra Kramer in The Bourne Ultimatum (2007), Kevin Garvey Sr. in The Leftovers (2014\u20132017), and as Stick in both Daredevil (2015\u20132016) and The Defenders (2017).",
             "birthday": "1939-01-26",
@@ -4747,6 +5343,114 @@
             "place_of_birth": "Pittsburgh, Pennsylvania, USA",
             "profile_path": "/8DHORod2l6ZFS9KR0gNAAM3WZfI.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Scott_Glenn"
+        },
+        "person_Stanley Kubrick": {
+            "biography": "Stanley Kubrick (July 26, 1928 \u2013 March 7, 1999) was an American film director, writer, producer, and photographer who lived in England during most of the last four decades of his career. Kubrick was noted for the scrupulous care with which he chose his subjects, his slow method of working, the variety of genres he worked in, his technical perfectionism, and his reclusiveness about his films and personal life. He maintained almost complete artistic control, making movies according to his own whims and time constraints, but with the rare advantage of big-studio financial support for all his endeavors. Kubrick's films are characterized by a formal visual style and meticulous attention to detail\u2014his later films often have elements of surrealism and expressionism that eschews structured linear narrative. His films are repeatedly described as slow and methodical, and are often perceived as a reflection of his obsessive and perfectionist nature. A recurring theme in his films is man's inhumanity to man. While often viewed as expressing an ironic pessimism, a few critics feel his films contain a cautious optimism when viewed more carefully.\n\nThe film that first brought him attention to many critics was Paths of Glory (1957), the first of three films of his about the dehumanizing effects of war. Many of his films at first got a lukewarm reception, only to be years later acclaimed as masterpieces that had a seminal influence on many later generations of film-makers. Considered especially groundbreaking was 2001: A Space Odyssey (1968) noted for being both one of the most scientifically realistic and visually innovative science-fiction films ever made while maintaining an enigmatic non-linear storyline. He voluntarily withdrew his film A Clockwork Orange (1971) from England, after it was accused of inspiring copycat crimes which in turn resulted in threats against Kubrick's family. His films were largely successful at the box-office, although Barry Lyndon (1975) performed poorly in the United States. Living authors Anthony Burgess and Stephen King were both unhappy with Kubrick's adaptations of their novels A Clockwork Orange and The Shining (1980) respectively, and both authors were engaged with subsequent adaptations. All of Kubrick's films from the mid-1950s to his death except for The Shining were nominated for Oscars, Golden Globes, or BAFTAs. Although he was nominated for an Academy Award as a screenwriter and director on several occasions, his only personal win was for the special effects in 2001: A Space Odyssey.\n\nEven though all of his films, apart from the first two, were adapted from novels or short stories, his works have been described by Jason Ankeny and others as \"original and visionary\". Although some critics, notably Andrew Sarris and Pauline Kael, frequently disparaged Kubrick's work, Ankeny describes Kubrick as one of the most \"universally acclaimed and influential directors of the postwar era\" with a \"standing unique among the filmmakers of his day.\"",
+            "birthday": "1928-07-26",
+            "deathday": "1999-03-07",
+            "imdb_id": "0000040",
+            "movie_credits": [
+                {
+                    "popularity": 48.494,
+                    "release_year": "1999",
+                    "title": "Eyes Wide Shut",
+                    "vote_average": 7.477
+                },
+                {
+                    "popularity": 45.385,
+                    "release_year": "1987",
+                    "title": "Full Metal Jacket",
+                    "vote_average": 8.135
+                },
+                {
+                    "popularity": 47.694,
+                    "release_year": "1980",
+                    "title": "The Shining",
+                    "vote_average": 8.217
+                },
+                {
+                    "popularity": 21.498,
+                    "release_year": "1975",
+                    "title": "Barry Lyndon",
+                    "vote_average": 8.001
+                },
+                {
+                    "popularity": 48.007,
+                    "release_year": "1971",
+                    "title": "A Clockwork Orange",
+                    "vote_average": 8.21
+                },
+                {
+                    "popularity": 49.035,
+                    "release_year": "1968",
+                    "title": "2001: A Space Odyssey",
+                    "vote_average": 8.077
+                },
+                {
+                    "popularity": 25.721,
+                    "release_year": "1964",
+                    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                    "vote_average": 8.127
+                },
+                {
+                    "popularity": 24.774,
+                    "release_year": "1962",
+                    "title": "Lolita",
+                    "vote_average": 7.344
+                },
+                {
+                    "popularity": 49.92,
+                    "release_year": "1960",
+                    "title": "Spartacus",
+                    "vote_average": 7.544
+                },
+                {
+                    "popularity": 58.725,
+                    "release_year": "1957",
+                    "title": "Paths of Glory",
+                    "vote_average": 8.276
+                },
+                {
+                    "popularity": 13.79,
+                    "release_year": "1956",
+                    "title": "The Killing",
+                    "vote_average": 7.671
+                },
+                {
+                    "popularity": 8.986,
+                    "release_year": "1955",
+                    "title": "Killer's Kiss",
+                    "vote_average": 6.332
+                },
+                {
+                    "popularity": 4.422,
+                    "release_year": "1953",
+                    "title": "The Seafarers",
+                    "vote_average": 4.5
+                },
+                {
+                    "popularity": 9.487,
+                    "release_year": "1953",
+                    "title": "Fear and Desire",
+                    "vote_average": 5.4
+                },
+                {
+                    "popularity": 4.965,
+                    "release_year": "1951",
+                    "title": "Day of the Fight",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 5.994,
+                    "release_year": "1951",
+                    "title": "Flying Padre",
+                    "vote_average": 5.0
+                }
+            ],
+            "name": "Stanley Kubrick",
+            "place_of_birth": "New York City, New York",
+            "profile_path": "/exfQ6vXXq7rMS5YWb3B88PK39a1.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Stanley_Kubrick"
         },
         "person_Stephen King": {
             "biography": "Stephen King is an American author of contemporary horror, suspense, science fiction, and fantasy fiction. His books have sold more than 350 million copies, which have been adapted into a number of feature films, television movies, and comic books. As of 2011, King has written and published 49 novels, including seven under the pen name Richard Bachman, five non-fiction books, and nine collections of short stories. Many of his stories are set in his home state of Maine. King has received Bram Stoker Awards, World Fantasy Awards, British Fantasy Society Awards, his novella The Way Station was a Nebula Award novelette nominee, and in 2003, the National Book Foundation awarded him the Medal for Distinguished Contribution to American Letters.",

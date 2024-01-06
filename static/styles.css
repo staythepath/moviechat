@@ -255,8 +255,14 @@ body {
 
 .movie-credit-link {
   color: #596a7c !important; /* Example: making the text color blue */
-  text-decoration: none !important; /* Example: underlining to indicate it's a link */
+  text-decoration: none !important; /* Example: removing underline to indicate it's a link */
+  cursor: pointer; /* Changes the cursor to a hand icon when hovering */
   /* Add other styles as needed */
+}
+
+.movie-credit-link:hover {
+  color: rgb(91, 142, 197) !important; /* Example: change color on hover */
+  /* Add other hover styles as needed */
 }
 
 dl {
