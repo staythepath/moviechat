@@ -657,18 +657,18 @@ function setupPopoverHideWithDelay(element) {
   $("body").on("mouseenter", ".popover", function () {
     isMouseOverPopover = true;
   });
-
-  $(document).on("click", ".more-toggle", function () {
-    let group = this.id.split("-")[1];
-    let moreSpan = $(`#more-${group}`);
-
-    // Toggle the visibility
-    moreSpan.toggle();
-
-    // Update button text based on the visibility of moreSpan
-    $(this).text(moreSpan.is(":visible") ? "Less" : "More");
-  });
 }
+
+$(document).on("click", ".more-toggle", function () {
+  let group = this.id.split("-")[1];
+  let moreSpan = $(`#more-${group}`);
+
+  // Toggle the visibility
+  moreSpan.toggle();
+
+  // Update button text based on the visibility of moreSpan
+  $(this).text(moreSpan.is(":visible") ? "Less" : "More");
+});
 
 var popoverTimeout;
 
@@ -871,16 +871,18 @@ function showPersonPopover(element) {
       });
 
       $popover.on("click", ".movie-credit-link", function () {
+        // Store the original text of the link
+        var originalText = $(this).text();
+
         // Temporarily change the link text to indicate action
         $(this).text("Asking MovieBot...");
 
         // Add your logic here to ask MovieBot about the movie
-        // For example, sending a message to MovieBot
         var movieTitle = $(this).data("movie-title");
 
-        // Optional: Reset the text back to the original title after some delay
+        // Optional: Reset the text back to the original text after some delay
         setTimeout(() => {
-          $(this).text(movieTitle);
+          $(this).text(originalText);
         }, 2000); // Reset after 2 seconds
       });
 
