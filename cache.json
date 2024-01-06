@@ -167,6 +167,20 @@
             "vote_average": 7.722,
             "wiki_url": "https://en.wikipedia.org/wiki/The_Exorcist",
             "writers": "William Peter Blatty, William Peter Blatty"
+        },
+        "movie_card_9800": {
+            "description": "Two competing lawyers join forces to sue a prestigious law firm for AIDS discrimination. As their unlikely friendship develops their courage overcomes the prejudice and corruption of their powerful adversaries.",
+            "director": "Jonathan Demme",
+            "dop": "Tak Fujimoto",
+            "imdb_id": "0107818",
+            "poster_path": "https://image.tmdb.org/t/p/original/tFe5Yoo5zT495okA49bq1vPPkiV.jpg",
+            "release_date": "1993-12-22",
+            "stars": "Tom Hanks, Denzel Washington, Jason Robards, Mary Steenburgen, Antonio Banderas, Ron Vawter, Robert Ridgely, Charles Napier, Lisa Summerour, Obba Babatund\u00e9, Andre B. Blake, Robert W. Castle, Daniel Chapman, Roger Corman, Ann Dowd, David Drake, Karen Finley, Charles Glenn, Peter Jacobs, Paul Lazar, John Bedford Lloyd, Roberta Maxwell, Warren Miller, Harry Northup, Dan Olmstead, Joey Perillo, Lauren Roselli, Anna Deavere Smith, Lisa Talerico, Daniel von Bargen, Tracey Walter, Bradley Whitford, Chandra Wilson, Kathryn Witt, Joanne Woodward, Buzz Kilman, Mark Sorensen Jr., Jeffrey Williamson, Stephanie Roth Haberle, Bill Rowe, Ford Wheeler, Julius Erving, Adam LeFevre, Gary Goetzman, Kenneth Utt, Lawrence T. Wrentz, Charles Techman, Jim Roche, Tony Fitzpatrick, Gene Borkan, Q Lazzarus, Lucas Platt, Jos\u00e9 Castillo, Roy Blount Jr., Bob Bowersox, Quentin Crisp, Tom Detrik, Tony Devon, Tak Fujimoto, Ana Leza, Jaime Gomez, Elizabeth Roby",
+            "title": "Philadelphia",
+            "tmdb_id": 9800,
+            "vote_average": 7.725,
+            "wiki_url": "https://en.wikipedia.org/wiki/Philadelphia",
+            "writers": "Ron Nyswaner"
         }
     },
     "person_details": {
