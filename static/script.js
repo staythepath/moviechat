@@ -716,7 +716,8 @@ function showPersonPopover(element) {
           let displayedCredits = data.movie_credits
             .slice(0, maxDisplayCredits)
             .map(
-              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+              (credit) =>
+                `<button class="ask-moviebot-movie" data-movie-title="${credit.title}">${credit.title} (${credit.release_year})</button>`
             )
             .join("");
 
@@ -808,6 +809,11 @@ function showPersonPopover(element) {
         } else {
           console.log("Person name not found for MovieBot");
         }
+      });
+
+      $popover.on("click", ".ask-moviebot-movie", function () {
+        var movieTitle = $(this).data("movie-title");
+        sendPredefinedMessage(`Tell me about ${movieTitle}`);
       });
 
       $popover.on("click", ".btn-imdb-person", function () {
