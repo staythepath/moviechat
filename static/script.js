@@ -105,8 +105,14 @@ function waitForServerReady() {
 }
 
 function markdownToHTML(text) {
+  // Convert names wrapped in # into clickable links
+  let htmlText = text.replace(
+    /#([^#]+)#/g,
+    "<a href='#' class='person-link' onclick='showPersonDetails(\"$1\")'>$1</a>"
+  );
+
   // Convert italics
-  let htmlText = text.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
+  htmlText = htmlText.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
 
   // Convert bullet points with indentation
   htmlText = htmlText.replace(
@@ -305,6 +311,12 @@ function updateChat(sender, text) {
     .find('[data-toggle="popover"]')
     .each(function () {
       setupPopoverHideWithDelay(this);
+    });
+
+  $(messageDiv)
+    .find(".person-link")
+    .each(function () {
+      showPersonPopover(this);
     });
 }
 
