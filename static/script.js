@@ -716,8 +716,7 @@ function showPersonPopover(element) {
           let displayedCredits = data.movie_credits
             .slice(0, maxDisplayCredits)
             .map(
-              (credit) =>
-                `<button class="ask-moviebot-movie" data-movie-title="${credit.title}">${credit.title} (${credit.release_year})</button>`
+              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
             )
             .join("");
 
@@ -727,13 +726,12 @@ function showPersonPopover(element) {
           }
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
-          console.log("Here is the imdb_id for the person: ", data.imdb_id);
-          console.log("Here is the wiki_url for the person: ", data.wiki_url);
+
           var buttonsHtml = `
               <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
-                <button type="button" class="btn popover-button ask-moviebot-person" data-person-name="${data.name}" style="margin-left: 5px;">Ask MovieBot</button>
-                <button type="button" class="btn popover-button btn-imdb-person" data-person-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
-                <button type="button" class="btn popover-button btn-wiki-person" data-wiki-url="" style="margin-left: 5px;">Wiki</button>
+                <button type="button" class="btn popover-button">Ask MovieBot</button>
+                <button type="button" class="btn popover-button" style="margin-left: 5px;">IMDb</button>
+                <button type="button" class="btn popover-button" style="margin-left: 5px;">Wiki</button>
                 
               </div>`;
 
@@ -761,10 +759,6 @@ function showPersonPopover(element) {
           $(element).data("fullBiography", data.biography);
           $(element).data("bs.popover").config.content = contentHtml;
           $(element).popover("show");
-
-          $(".btn-imdb-person").attr("data-person-imdb-id", data.imdb_id);
-          $(".btn-wiki-person").attr("data-wiki-url", data.wiki_url);
-          $(".ask-moviebot-person").attr("data-person-name", data.name);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -801,40 +795,6 @@ function showPersonPopover(element) {
     .on("shown.bs.popover", function () {
       var popoverId = $(element).attr("aria-describedby");
       var $popover = $("#" + popoverId);
-
-      $popover.on("click", ".ask-moviebot-person", function () {
-        var personName = $(this).data("person-name");
-        if (personName) {
-          sendPredefinedMessage(`Tell me about ${personName}`);
-        } else {
-          console.log("Person name not found for MovieBot");
-        }
-      });
-
-      $popover.on("click", ".ask-moviebot-movie", function () {
-        var movieTitle = $(this).data("movie-title");
-        sendPredefinedMessage(`Tell me about ${movieTitle}`);
-      });
-
-      $popover.on("click", ".btn-imdb-person", function () {
-        var imdbId = $(this).data("person-imdb-id");
-        console.log("Clicked person IMDb ID: ", imdbId);
-        if (imdbId) {
-          window.open(`https://www.imdb.com/name/nm${imdbId}`, "_blank");
-        } else {
-          console.log("IMDb ID for person not found");
-        }
-      });
-
-      $popover.on("click", ".btn-wiki-person", function () {
-        var wikiUrl = $(this).data("wiki-url");
-        console.log("WWWWWWWWWWWWWWWWWWIKI URLL::::::::::: ", wikiUrl);
-        if (wikiUrl) {
-          window.open(wikiUrl, "_blank");
-        } else {
-          console.log("Wikipedia URL for person not found");
-        }
-      });
 
       $popover
         .on("mouseenter", function () {
