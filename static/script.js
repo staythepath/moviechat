@@ -677,6 +677,7 @@ function showPersonPopover(element) {
               ? biography.substring(0, 100) + "..."
               : biography;
           const fullCredits = data.movie_credits
+            .slice(5)
             .map(
               (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
             )

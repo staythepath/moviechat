@@ -255,17 +255,22 @@ body {
 
 dl {
   margin: 0;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 dt {
   font-weight: bold; /* Make the term bold */
   color: #f8f8f8; /* Give the term a dark color */
-  margin-bottom: 5px; /* Space between the term and its description */
+  margin-bottom: 1px; /* Space between the term and its description */
   display: inline-block;
 }
 
 dd {
+  line-height: 1.2; /* Adjust this value to increase or decrease line spacing */
+  margin-bottom: 4px; /* Adjust this value to increase or decrease space between entries */
   margin-left: 0; /* Ensure descriptions align with the terms */
+  margin-top: 1px; /* Space between descriptions */
   padding-left: 15px; /* Add some padding to offset descriptions from the terms */
 }
 
