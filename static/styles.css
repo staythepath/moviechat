@@ -261,7 +261,7 @@ body {
 }
 
 .movie-credit-link:hover {
-  color: rgb(91, 142, 197) !important; /* Example: change color on hover */
+  color: #0056b3 !important; /* Example: change color on hover */
   /* Add other hover styles as needed */
 }
 
