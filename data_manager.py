@@ -140,6 +140,14 @@ class DataManager:
             return search_results[0].movieID
         return "Not Available"
 
+    def get_imdb_id_for_person(self, name):
+        ia = imdb.IMDb()
+        search_results = ia.search_person(name)
+        if search_results:
+            # Assuming the first search result is the desired one
+            return search_results[0].personID
+        return "Not Available"
+
     def get_wiki_url(self, title):
         """
         Retrieve the Wikipedia URL for a given movie title using Wikimedia API.
@@ -157,6 +165,7 @@ class DataManager:
                 if search_results:
                     page_title = search_results[0]["title"]
                     wiki_url = f"https://{language_code}.wikipedia.org/wiki/{page_title.replace(' ', '_')}"
+                    print("Here is the wiki url: ", wiki_url)
                     return wiki_url
                 else:
                     return "Wikipedia page not found"
@@ -219,6 +228,10 @@ class DataManager:
 
             # Fetch the person details
             person_details = person_api.details(person_id)
+            imdb_id = self.get_imdb_id_for_person(person_details.name)
+            print(
+                "HERE IS THE IMDB IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD:", imdb_id
+            )
 
             # Fetch the combined credits for the person using the TMDb API
             combined_credits_url = f"https://api.themoviedb.org/3/person/{person_id}/combined_credits?api_key={self.tmdb.api_key}&language=en-US"
@@ -238,6 +251,8 @@ class DataManager:
                 "place_of_birth": person_details.place_of_birth,
                 "profile_path": person_details.profile_path,
                 "movie_credits": credits_info,
+                "imdb_id": imdb_id,
+                "wiki_url": self.get_wiki_url(person_details.name),
             }
 
             # Add the fetched data to the cache
