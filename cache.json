@@ -1858,6 +1858,222 @@
             "profile_path": "/6RAAxI4oPnDMzXpXWgkkzSgnIAJ.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Kirsten_Dunst"
         },
+        "person_Leonardo DiCaprio": {
+            "biography": "Leonardo Wilhelm DiCaprio (born November 11, 1974) is an American actor and film producer. Known for his work in biopics and period films, DiCaprio is the recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards. As of 2019, his films have grossed over $7.2 billion worldwide, and he has been placed eight times in annual rankings of the world's highest-paid actors.\n\nBorn in Los Angeles, DiCaprio began his career in the late 1980s by appearing in television commercials. In the early 1990s, he had recurring roles in various television shows, such as the sitcom Parenthood, and had his first major film part as author Tobias Wolff in This Boy's Life (1993). At age 19, he received critical acclaim and his first Academy Award and Golden Globe Award nominations for his performance as a developmentally disabled boy in What's Eating Gilbert Grape (1993). He achieved international stardom with the star-crossed romances Romeo + Juliet (1996) and Titanic (1997).\n\nAfter the latter became the highest-grossing film at the time, he reduced his workload for a few years. In an attempt to shed his image of a romantic hero, DiCaprio sought roles in other genres, including crime drama in Catch Me If You Can (2002) and Gangs of New York (2002); the latter marked the first of his many successful collaborations with director Martin Scorsese. DiCaprio portrayed Howard Hughes in The Aviator (2004) and received acclaim for his performances in the political thriller Blood Diamond (2006), the crime drama The Departed (2006), and the romantic drama Revolutionary Road (2008).\n\nIn the following decade, DiCaprio starred in several high-profile directors' projects, including the science fiction thriller Inception (2010), the western Django Unchained (2012), the biopic The Wolf of Wall Street (2013), the survival drama The Revenant (2015), for which he won an Academy Award and a BAFTA Award for Best Actor in a Leading Role, and the comedy-drama Once Upon a Time in Hollywood (2019), all of which were critical and commercial successes.\n\nDiCaprio is the founder of Appian Way Productions, a production company that has produced some of his films and the documentary series Greensburg (2008\u20132010), and the Leonardo DiCaprio Foundation, a nonprofit organization devoted to promoting environmental awareness. He regularly supports charitable causes and has produced several documentaries on the environment. In 2005, he was named a Commander of the Ordre des Arts et des Lettres for his contributions to the arts, and in 2016, he appeared in Time magazine's 100 most influential people in the world.",
+            "birthday": "1974-11-11",
+            "deathday": null,
+            "imdb_id": "0000138",
+            "movie_credits": [
+                {
+                    "popularity": 324.738,
+                    "release_year": "2023",
+                    "title": "Killers of the Flower Moon",
+                    "vote_average": 7.534
+                },
+                {
+                    "popularity": 45.31,
+                    "release_year": "2021",
+                    "title": "Don't Look Up",
+                    "vote_average": 7.125
+                },
+                {
+                    "popularity": 50.944,
+                    "release_year": "2019",
+                    "title": "Once Upon a Time\u2026 in Hollywood",
+                    "vote_average": 7.44
+                },
+                {
+                    "popularity": 5.909,
+                    "release_year": "2015",
+                    "title": "The Audition",
+                    "vote_average": 6.14
+                },
+                {
+                    "popularity": 36.857,
+                    "release_year": "2015",
+                    "title": "The Revenant",
+                    "vote_average": 7.528
+                },
+                {
+                    "popularity": 35.277,
+                    "release_year": "2013",
+                    "title": "The Great Gatsby",
+                    "vote_average": 7.374
+                },
+                {
+                    "popularity": 94.754,
+                    "release_year": "2013",
+                    "title": "The Wolf of Wall Street",
+                    "vote_average": 8.035
+                },
+                {
+                    "popularity": 5.788,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 49.941,
+                    "release_year": "2012",
+                    "title": "Django Unchained",
+                    "vote_average": 8.174
+                },
+                {
+                    "popularity": 11.735,
+                    "release_year": "2011",
+                    "title": "J. Edgar",
+                    "vote_average": 6.224
+                },
+                {
+                    "popularity": 8.041,
+                    "release_year": "2010",
+                    "title": "Inception: The Cobol Job",
+                    "vote_average": 7.258
+                },
+                {
+                    "popularity": 71.381,
+                    "release_year": "2010",
+                    "title": "Shutter Island",
+                    "vote_average": 8.201
+                },
+                {
+                    "popularity": 107.899,
+                    "release_year": "2010",
+                    "title": "Inception",
+                    "vote_average": 8.367
+                },
+                {
+                    "popularity": 19.819,
+                    "release_year": "2008",
+                    "title": "Body of Lies",
+                    "vote_average": 6.628
+                },
+                {
+                    "popularity": 21.736,
+                    "release_year": "2008",
+                    "title": "Revolutionary Road",
+                    "vote_average": 6.974
+                },
+                {
+                    "popularity": 45.682,
+                    "release_year": "2006",
+                    "title": "The Departed",
+                    "vote_average": 8.166
+                },
+                {
+                    "popularity": 48.489,
+                    "release_year": "2006",
+                    "title": "Blood Diamond",
+                    "vote_average": 7.534
+                },
+                {
+                    "popularity": 20.35,
+                    "release_year": "2004",
+                    "title": "The Aviator",
+                    "vote_average": 7.226
+                },
+                {
+                    "popularity": 22.736,
+                    "release_year": "2002",
+                    "title": "Gangs of New York",
+                    "vote_average": 7.319
+                },
+                {
+                    "popularity": 57.88,
+                    "release_year": "2002",
+                    "title": "Catch Me If You Can",
+                    "vote_average": 7.975
+                },
+                {
+                    "popularity": 11.092,
+                    "release_year": "2001",
+                    "title": "Don's Plum",
+                    "vote_average": 5.3
+                },
+                {
+                    "popularity": 20.524,
+                    "release_year": "2000",
+                    "title": "The Beach",
+                    "vote_average": 6.462
+                },
+                {
+                    "popularity": 12.503,
+                    "release_year": "1998",
+                    "title": "Celebrity",
+                    "vote_average": 5.971
+                },
+                {
+                    "popularity": 23.162,
+                    "release_year": "1998",
+                    "title": "The Man in the Iron Mask",
+                    "vote_average": 6.633
+                },
+                {
+                    "popularity": 114.958,
+                    "release_year": "1997",
+                    "title": "Titanic",
+                    "vote_average": 7.901
+                },
+                {
+                    "popularity": 13.946,
+                    "release_year": "1996",
+                    "title": "Marvin's Room",
+                    "vote_average": 6.71
+                },
+                {
+                    "popularity": 22.414,
+                    "release_year": "1996",
+                    "title": "Romeo + Juliet",
+                    "vote_average": 6.795
+                },
+                {
+                    "popularity": 15.446,
+                    "release_year": "1995",
+                    "title": "Total Eclipse",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 19.665,
+                    "release_year": "1995",
+                    "title": "The Quick and the Dead",
+                    "vote_average": 6.536
+                },
+                {
+                    "popularity": 24.535,
+                    "release_year": "1995",
+                    "title": "The Basketball Diaries",
+                    "vote_average": 7.387
+                },
+                {
+                    "popularity": 19.081,
+                    "release_year": "1993",
+                    "title": "This Boy's Life",
+                    "vote_average": 7.107
+                },
+                {
+                    "popularity": 26.141,
+                    "release_year": "1993",
+                    "title": "What's Eating Gilbert Grape",
+                    "vote_average": 7.668
+                },
+                {
+                    "popularity": 22.338,
+                    "release_year": "1992",
+                    "title": "Poison Ivy",
+                    "vote_average": 5.43
+                },
+                {
+                    "popularity": 13.104,
+                    "release_year": "1991",
+                    "title": "Critters 3",
+                    "vote_average": 5.096
+                }
+            ],
+            "name": "Leonardo DiCaprio",
+            "place_of_birth": "Los Angeles, California, USA",
+            "profile_path": "/5Brc5dLifH3UInk3wUaCuGXpCqy.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Leonardo_DiCaprio"
+        },
         "person_Linda Blair": {
             "biography": "From Wikipedia, the free encyclopedia.\n\nLinda Denise Blair (born January 22, 1959) is an American actress. Blair is best known for her role as the possessed child, Regan, in the 1973 acclaimed blockbuster The Exorcist, for which she was nominated for an Academy Award and two Golden Globes, winning one. She reprised her role in 1977's Exorcist II: The Heretic, a controversial sequel which had a poor response with both audiences and critics.\n\nDescription above from the Wikipedia article Linda Blair, licensed under CC-BY-SA, full list of contributors on Wikipedia",
             "birthday": "1959-01-22",

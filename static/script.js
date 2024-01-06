@@ -819,11 +819,6 @@ function showPersonPopover(element) {
         }
       });
 
-      $popover.on("click", ".ask-moviebot-movie", function () {
-        var movieTitle = $(this).data("movie-title");
-        sendPredefinedMessage(`Tell me about ${movieTitle}`);
-      });
-
       $popover.on("click", ".btn-imdb-person", function () {
         var imdbId = $(this).data("person-imdb-id");
         console.log("Clicked person IMDb ID: ", imdbId);
