@@ -26,6 +26,19 @@
             "wiki_url": "https://en.wikipedia.org/wiki/A_Clockwork_Orange_(film)",
             "writers": "Stanley Kubrick, Anthony Burgess"
         },
+        "movie_card_274": {
+            "description": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism.  Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+            "director": "Jonathan Demme",
+            "dop": "Tak Fujimoto",
+            "imdb_id": "0102926",
+            "poster_path": "https://image.tmdb.org/t/p/original/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+            "release_date": "1991-02-14",
+            "stars": "Jodie Foster, Anthony Hopkins, Scott Glenn, Ted Levine, Anthony Heald, Brooke Smith, Diane Baker, Kasi Lemmons, Frankie Faison, Tracey Walter, Charles Napier, Danny Darst, Alex Coleman, Dan Butler, Paul Lazar, Ron Vawter, Roger Corman, Lawrence A. Bonney, Lawrence T. Wrentz, Don Brockett, Frank Seals Jr., Stuart Rudin, Jeffrie Lane, Leib Lensky, George 'Red' Schwartz, Jim Roche, James B. Howard, Bill Miller, Chuck Aber, Gene Borkan, Pat McNamara, Kenneth Utt, Adelle Lutz, Obba Babatund\u00e9, George Michael, Jim Dratfield, Stanton-Miranda, Rebecca Saxon, Cynthia Ettinger, Brent Hinkley, Steve Wyatt, David Early, Andre B. Blake, Bill Dalzell, Chris Isaak, Daniel von Bargen, Tommy Lafitte, Josh Broder, Buzz Kilman, Harry Northup, Lauren Roselli, Maria Skorobogatov, Lamont Arnold, John Hall, Ted Monte, George A. Romero, John W. Iwanonkiw, Robert W. Castle, Chris McGinn, Gary Goetzman",
+            "title": "The Silence of the Lambs",
+            "vote_average": 8.344,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)",
+            "writers": "Thomas Harris, Ted Tally"
+        },
         "movie_card_345": {
             "description": "After Dr. Bill Harford's wife, Alice, admits to having sexual fantasies about a man she met, Bill becomes obsessed with having a sexual encounter. He discovers an underground sexual group and attends one of their meetings -- and quickly discovers that he is in over his head.",
             "director": "Stanley Kubrick",
@@ -132,6 +145,412 @@
         }
     },
     "person_details": {
+        "person_Anthony Hopkins": {
+            "biography": "Sir Philip Anthony Hopkins CBE (born December 31, 1937) is a Welsh actor, film director, and film producer. He is the recipient of numerous accolades, including two Academy Awards, four British Academy Film Awards, two Primetime Emmy Awards and a British Academy Television Award. He has also received an honorary Golden Globe Award and the BAFTA Fellowship from the British Academy of Film and Television Arts. In 1993, he was knighted by Queen Elizabeth II for his services to the arts, and in 2003, he received a star on the Hollywood Walk of Fame for his achievements in the motion picture industry.\n\nAfter graduating from the Royal Welsh College of Music & Drama in 1957, Hopkins trained at the Royal Academy of Dramatic Art in London, and was then spotted by Laurence Olivier who invited him to join the Royal National Theatre in 1965. Productions at the National included King Lear, his favourite Shakespeare play. His last stage play was a West End production of M. Butterfly in 1989.\n\nIn 1968, Hopkins achieved recognition in film, playing Richard the Lionheart in The Lion in Winter. In the mid-1970s, Richard Attenborough, who directed five Hopkins films, called him \"the greatest actor of his generation.\" In 1991, he portrayed Hannibal Lecter in the psychological horror film The Silence of the Lambs, winning the Academy Award for Best Actor. He reprised the role in its sequel Hannibal and the prequel Red Dragon. Other notable films include The Elephant Man (1980), 84 Charing Cross Road (1987), Howards End (1992), Bram Stoker's Dracula (1992), Shadowlands (1993), Legends of the Fall (1994), Meet Joe Black (1998), The Mask of Zorro (1998), Thor (2011), Thor: The Dark World (2013), Transformers: The Last Knight (2017), and Thor: Ragnarok (2017). He received four more Academy Award nominations for The Remains of the Day (1993), Nixon (1995), Amistad (1997) and The Two Popes (2019) before winning a fourth BAFTA Award and a second Academy Award for Best Actor for his portrayal of an elderly man diagnosed with dementia in The Father (2020), becoming the oldest Best Actor Oscar winner to date.\n\nSince making his television debut with the BBC in 1967, Hopkins has continued to appear on television. In 1973 he received a British Academy Television Award for Best Actor for his performance in War and Peace. In 2015, he starred in the BBC film The Dresser alongside Ian McKellen. In 2018, he starred in King Lear opposite Emma Thompson. In 2016 and 2018, he starred in the HBO television series Westworld, for which he received a Primetime Emmy Award nomination.\n\nDescription above from the Wikipedia article Anthony Hopkins, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1937-12-31",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 2811.615,
+                    "release_year": "2023",
+                    "title": "Rebel Moon - Part One: A Child of Fire",
+                    "vote_average": 6.471
+                },
+                {
+                    "popularity": 19.954,
+                    "release_year": "2022",
+                    "title": "Armageddon Time",
+                    "vote_average": 6.541
+                },
+                {
+                    "popularity": 21.574,
+                    "release_year": "2022",
+                    "title": "The Son",
+                    "vote_average": 6.719
+                },
+                {
+                    "popularity": 20.509,
+                    "release_year": "2021",
+                    "title": "The Virtuoso",
+                    "vote_average": 5.977
+                },
+                {
+                    "popularity": 27.495,
+                    "release_year": "2020",
+                    "title": "The Father",
+                    "vote_average": 8.145
+                },
+                {
+                    "popularity": 15.106,
+                    "release_year": "2019",
+                    "title": "The Two Popes",
+                    "vote_average": 7.51
+                },
+                {
+                    "popularity": 7.315,
+                    "release_year": "2018",
+                    "title": "King Lear",
+                    "vote_average": 5.933
+                },
+                {
+                    "popularity": 55.485,
+                    "release_year": "2017",
+                    "title": "Transformers: The Last Knight",
+                    "vote_average": 6.055
+                },
+                {
+                    "popularity": 66.968,
+                    "release_year": "2017",
+                    "title": "Thor: Ragnarok",
+                    "vote_average": 7.593
+                },
+                {
+                    "popularity": 15.176,
+                    "release_year": "2016",
+                    "title": "Collide",
+                    "vote_average": 5.538
+                },
+                {
+                    "popularity": 19.272,
+                    "release_year": "2016",
+                    "title": "Misconduct",
+                    "vote_average": 5.6
+                },
+                {
+                    "popularity": 5.63,
+                    "release_year": "2015",
+                    "title": "The Dresser",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 10.069,
+                    "release_year": "2015",
+                    "title": "Kidnapping Mr. Heineken",
+                    "vote_average": 6.008
+                },
+                {
+                    "popularity": 12.252,
+                    "release_year": "2015",
+                    "title": "Blackway",
+                    "vote_average": 5.256
+                },
+                {
+                    "popularity": 18.536,
+                    "release_year": "2015",
+                    "title": "Solace",
+                    "vote_average": 6.394
+                },
+                {
+                    "popularity": 34.689,
+                    "release_year": "2014",
+                    "title": "Noah",
+                    "vote_average": 5.66
+                },
+                {
+                    "popularity": 29.788,
+                    "release_year": "2013",
+                    "title": "RED 2",
+                    "vote_average": 6.524
+                },
+                {
+                    "popularity": 58.455,
+                    "release_year": "2013",
+                    "title": "Thor: The Dark World",
+                    "vote_average": 6.533
+                },
+                {
+                    "popularity": 10.74,
+                    "release_year": "2012",
+                    "title": "360",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 13.067,
+                    "release_year": "2012",
+                    "title": "Hitchcock",
+                    "vote_average": 6.545
+                },
+                {
+                    "popularity": 13.799,
+                    "release_year": "2011",
+                    "title": "The Rite",
+                    "vote_average": 6.096
+                },
+                {
+                    "popularity": 62.592,
+                    "release_year": "2011",
+                    "title": "Thor",
+                    "vote_average": 6.766
+                },
+                {
+                    "popularity": 12.428,
+                    "release_year": "2010",
+                    "title": "You Will Meet a Tall Dark Stranger",
+                    "vote_average": 5.922
+                },
+                {
+                    "popularity": 20.314,
+                    "release_year": "2010",
+                    "title": "The Wolfman",
+                    "vote_average": 5.846
+                },
+                {
+                    "popularity": 6.632,
+                    "release_year": "2007",
+                    "title": "Slipstream",
+                    "vote_average": 5.0
+                },
+                {
+                    "popularity": 26.385,
+                    "release_year": "2007",
+                    "title": "Beowulf",
+                    "vote_average": 5.89
+                },
+                {
+                    "popularity": 27.758,
+                    "release_year": "2007",
+                    "title": "Fracture",
+                    "vote_average": 7.278
+                },
+                {
+                    "popularity": 10.348,
+                    "release_year": "2006",
+                    "title": "Bobby",
+                    "vote_average": 6.396
+                },
+                {
+                    "popularity": 10.943,
+                    "release_year": "2006",
+                    "title": "All the King's Men",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 17.056,
+                    "release_year": "2005",
+                    "title": "Proof",
+                    "vote_average": 6.304
+                },
+                {
+                    "popularity": 19.587,
+                    "release_year": "2005",
+                    "title": "The World's Fastest Indian",
+                    "vote_average": 7.612
+                },
+                {
+                    "popularity": 34.031,
+                    "release_year": "2004",
+                    "title": "Alexander",
+                    "vote_average": 5.927
+                },
+                {
+                    "popularity": 11.651,
+                    "release_year": "2003",
+                    "title": "The Human Stain",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 15.181,
+                    "release_year": "2003",
+                    "title": "Shortcut to Happiness",
+                    "vote_average": 5.671
+                },
+                {
+                    "popularity": 6.267,
+                    "release_year": "2002",
+                    "title": "Red Dragon",
+                    "vote_average": 7.019
+                },
+                {
+                    "popularity": 13.359,
+                    "release_year": "2002",
+                    "title": "Bad Company",
+                    "vote_average": 5.466
+                },
+                {
+                    "popularity": 8.51,
+                    "release_year": "2001",
+                    "title": "Hannibal",
+                    "vote_average": 6.769
+                },
+                {
+                    "popularity": 18.47,
+                    "release_year": "2001",
+                    "title": "Hearts in Atlantis",
+                    "vote_average": 6.752
+                },
+                {
+                    "popularity": 36.525,
+                    "release_year": "2000",
+                    "title": "Mission: Impossible II",
+                    "vote_average": 6.121
+                },
+                {
+                    "popularity": 131.401,
+                    "release_year": "2000",
+                    "title": "How the Grinch Stole Christmas",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 12.26,
+                    "release_year": "1999",
+                    "title": "Instinct",
+                    "vote_average": 6.401
+                },
+                {
+                    "popularity": 12.396,
+                    "release_year": "1999",
+                    "title": "Titus",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 35.91,
+                    "release_year": "1998",
+                    "title": "The Mask of Zorro",
+                    "vote_average": 6.56
+                },
+                {
+                    "popularity": 41.109,
+                    "release_year": "1998",
+                    "title": "Meet Joe Black",
+                    "vote_average": 7.314
+                },
+                {
+                    "popularity": 5.186,
+                    "release_year": "1997",
+                    "title": "Amistad",
+                    "vote_average": 7.009
+                },
+                {
+                    "popularity": 19.433,
+                    "release_year": "1997",
+                    "title": "The Edge",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 6.694,
+                    "release_year": "1996",
+                    "title": "Surviving Picasso",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 8.02,
+                    "release_year": "1995",
+                    "title": "Nixon",
+                    "vote_average": 6.896
+                },
+                {
+                    "popularity": 11.534,
+                    "release_year": "1994",
+                    "title": "The Road to Wellville",
+                    "vote_average": 5.595
+                },
+                {
+                    "popularity": 27.09,
+                    "release_year": "1994",
+                    "title": "Legends of the Fall",
+                    "vote_average": 7.383
+                },
+                {
+                    "popularity": 9.127,
+                    "release_year": "1993",
+                    "title": "Shadowlands",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 19.235,
+                    "release_year": "1993",
+                    "title": "The Remains of the Day",
+                    "vote_average": 7.361
+                },
+                {
+                    "popularity": 11.208,
+                    "release_year": "1992",
+                    "title": "Howards End",
+                    "vote_average": 7.1
+                },
+                {
+                    "popularity": 14.878,
+                    "release_year": "1992",
+                    "title": "Freejack",
+                    "vote_average": 5.4
+                },
+                {
+                    "popularity": 15.565,
+                    "release_year": "1992",
+                    "title": "Chaplin",
+                    "vote_average": 7.437
+                },
+                {
+                    "popularity": 38.691,
+                    "release_year": "1992",
+                    "title": "Bram Stoker's Dracula",
+                    "vote_average": 7.452
+                },
+                {
+                    "popularity": 13.272,
+                    "release_year": "1991",
+                    "title": "The Silence of the Lambs",
+                    "vote_average": 8.344
+                },
+                {
+                    "popularity": 10.377,
+                    "release_year": "1990",
+                    "title": "Desperate Hours",
+                    "vote_average": 5.465
+                },
+                {
+                    "popularity": 12.279,
+                    "release_year": "1987",
+                    "title": "84 Charing Cross Road",
+                    "vote_average": 7.115
+                },
+                {
+                    "popularity": 12.958,
+                    "release_year": "1984",
+                    "title": "The Bounty",
+                    "vote_average": 6.688
+                },
+                {
+                    "popularity": 21.34,
+                    "release_year": "1980",
+                    "title": "The Elephant Man",
+                    "vote_average": 8.047
+                },
+                {
+                    "popularity": 8.909,
+                    "release_year": "1978",
+                    "title": "Magic",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 7.505,
+                    "release_year": "1977",
+                    "title": "Audrey Rose",
+                    "vote_average": 5.543
+                },
+                {
+                    "popularity": 22.091,
+                    "release_year": "1977",
+                    "title": "A Bridge Too Far",
+                    "vote_average": 7.227
+                },
+                {
+                    "popularity": 11.227,
+                    "release_year": "1974",
+                    "title": "Juggernaut",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 18.029,
+                    "release_year": "1968",
+                    "title": "The Lion in Winter",
+                    "vote_average": 7.41
+                }
+            ],
+            "name": "Anthony Hopkins",
+            "place_of_birth": "Margam, Port Talbot, Glamorgan, Wales, UK",
+            "profile_path": "/9ukJS2QWTJ22HcwR1ktMmoJ6RSL.jpg"
+        },
         "person_Ari Aster": {
             "biography": "Ari Aster (born July 15, 1986) is an American writer-director, best known for the acclaimed horror films \"Hereditary\" (2018) and \"Midsommar\" (2019).  He has also written and directed several short films, including \"The Strange Thing About the Johnsons\" (2011), \"Beau\" (2011), \"Munchausen\" (2013), and \"Basically\" (2014).",
             "birthday": "1986-07-15",
@@ -654,6 +1073,238 @@
             "name": "Jack Nicholson",
             "place_of_birth": "Manhattan, New York, USA",
             "profile_path": "/6h12pZsgj3WWjMtykUgfLkLEBWz.jpg"
+        },
+        "person_Jodie Foster": {
+            "biography": "Alicia Christian \"Jodie\" Foster (born November 19, 1962) is an American actress and filmmaker. She is the recipient of numerous accolades, including two Academy Awards, three BAFTA Awards, three Golden Globe Awards, and a Screen Actors Guild Award. For her work as a producer and director, she has been nominated for a Primetime Emmy Award. She has also earned numerous honors such as the Golden Globe Cecil B. DeMille Award in 2013, was inducted into the Hollywood Walk of Fame in 2016 and received the Cannes Film Festival's Honorary Palme d'Or in 2021.\n\nFoster began her professional career as a child model and later as a teen idol in various Disney films including Napoleon and Samantha (1972), Freaky Friday (1976) and Candleshoe (1977). She acted in Martin Scorsese's comedy-drama Alice Doesn't Live Here Anymore (1974) and reunited with him in Taxi Driver (1976) in a role for which she received an Academy Award for Best Supporting Actress nomination. Other early films include Tom Sawyer (1973), Bugsy Malone (1976), The Little Girl Who Lives Down the Lane (1976), Carny (1980) and Foxes (1980).\n\nAfter attending Yale University, Foster transitioned into mature leading roles earning two Academy Awards for playing a rape victim in The Accused (1988), and Clarice Starling in The Silence of the Lambs (1991). She also received a nomination for Nell (1994). Her other notable films include Sommersby (1993), Maverick (1994), Contact (1997), Anna and the King (1999), Panic Room (2002), Flightplan (2005), Inside Man (2006), The Brave One (2007), Nim's Island (2008), Carnage (2011), Elysium (2013), Hotel Artemis (2018), and The Mauritanian (2021).\n\nFoster made her directorial film debut with Little Man Tate (1991) and has since directed films such as Home for the Holidays (1995), The Beaver (2011) and Money Monster (2016). She founded her own production company, Egg Pictures, in 1992. She earned two Primetime Emmy Awards for producing The Baby Dance (1999), and directing the Orange Is the New Black episode \"Lesbian Request Denied\" in 2014. She has also directed episodes for Tales from the Darkside, House of Cards, Black Mirror, and Tales from the Loop.",
+            "birthday": "1962-11-19",
+            "deathday": null,
+            "movie_credits": [
+                {
+                    "popularity": 25.867,
+                    "release_year": "2023",
+                    "title": "NYAD",
+                    "vote_average": 7.079
+                },
+                {
+                    "popularity": 18.377,
+                    "release_year": "2021",
+                    "title": "The Mauritanian",
+                    "vote_average": 7.426
+                },
+                {
+                    "popularity": 17.223,
+                    "release_year": "2018",
+                    "title": "Hotel Artemis",
+                    "vote_average": 6.035
+                },
+                {
+                    "popularity": 13.111,
+                    "release_year": "2016",
+                    "title": "Money Monster",
+                    "vote_average": 6.442
+                },
+                {
+                    "popularity": 31.314,
+                    "release_year": "2013",
+                    "title": "Elysium",
+                    "vote_average": 6.502
+                },
+                {
+                    "popularity": 6.636,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 9.629,
+                    "release_year": "2011",
+                    "title": "The Beaver",
+                    "vote_average": 6.382
+                },
+                {
+                    "popularity": 12.721,
+                    "release_year": "2011",
+                    "title": "Carnage",
+                    "vote_average": 7.174
+                },
+                {
+                    "popularity": 8.675,
+                    "release_year": "2009",
+                    "title": "Motherhood",
+                    "vote_average": 5.045
+                },
+                {
+                    "popularity": 11.024,
+                    "release_year": "2008",
+                    "title": "Nim's Island",
+                    "vote_average": 5.904
+                },
+                {
+                    "popularity": 12.503,
+                    "release_year": "2007",
+                    "title": "The Brave One",
+                    "vote_average": 6.536
+                },
+                {
+                    "popularity": 28.233,
+                    "release_year": "2006",
+                    "title": "Inside Man",
+                    "vote_average": 7.401
+                },
+                {
+                    "popularity": 18.567,
+                    "release_year": "2005",
+                    "title": "Flightplan",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 13.901,
+                    "release_year": "2004",
+                    "title": "A Very Long Engagement",
+                    "vote_average": 7.327
+                },
+                {
+                    "popularity": 6.064,
+                    "release_year": "2002",
+                    "title": "The Dangerous Lives of Altar Boys",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 22.072,
+                    "release_year": "2002",
+                    "title": "Panic Room",
+                    "vote_average": 6.766
+                },
+                {
+                    "popularity": 7.875,
+                    "release_year": "1999",
+                    "title": "Anna and the King",
+                    "vote_average": 6.754
+                },
+                {
+                    "popularity": 28.507,
+                    "release_year": "1997",
+                    "title": "Contact",
+                    "vote_average": 7.4
+                },
+                {
+                    "popularity": 14.048,
+                    "release_year": "1995",
+                    "title": "Home for the Holidays",
+                    "vote_average": 6.342
+                },
+                {
+                    "popularity": 11.793,
+                    "release_year": "1994",
+                    "title": "Nell",
+                    "vote_average": 6.543
+                },
+                {
+                    "popularity": 18.422,
+                    "release_year": "1994",
+                    "title": "Maverick",
+                    "vote_average": 6.87
+                },
+                {
+                    "popularity": 19.159,
+                    "release_year": "1993",
+                    "title": "Sommersby",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 9.684,
+                    "release_year": "1991",
+                    "title": "Little Man Tate",
+                    "vote_average": 6.523
+                },
+                {
+                    "popularity": 12.163,
+                    "release_year": "1991",
+                    "title": "Shadows and Fog",
+                    "vote_average": 6.762
+                },
+                {
+                    "popularity": 13.272,
+                    "release_year": "1991",
+                    "title": "The Silence of the Lambs",
+                    "vote_average": 8.344
+                },
+                {
+                    "popularity": 8.161,
+                    "release_year": "1990",
+                    "title": "Catchfire",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 18.396,
+                    "release_year": "1988",
+                    "title": "The Accused",
+                    "vote_average": 7.024
+                },
+                {
+                    "popularity": 12.677,
+                    "release_year": "1984",
+                    "title": "The Hotel New Hampshire",
+                    "vote_average": 5.564
+                },
+                {
+                    "popularity": 6.427,
+                    "release_year": "1980",
+                    "title": "Foxes",
+                    "vote_average": 5.932
+                },
+                {
+                    "popularity": 7.22,
+                    "release_year": "1977",
+                    "title": "Beach House",
+                    "vote_average": 6.643
+                },
+                {
+                    "popularity": 12.445,
+                    "release_year": "1977",
+                    "title": "Candleshoe",
+                    "vote_average": 6.84
+                },
+                {
+                    "popularity": 11.044,
+                    "release_year": "1976",
+                    "title": "Freaky Friday",
+                    "vote_average": 6.119
+                },
+                {
+                    "popularity": 12.145,
+                    "release_year": "1976",
+                    "title": "Bugsy Malone",
+                    "vote_average": 6.559
+                },
+                {
+                    "popularity": 14.965,
+                    "release_year": "1976",
+                    "title": "The Little Girl Who Lives Down the Lane",
+                    "vote_average": 7.009
+                },
+                {
+                    "popularity": 40.638,
+                    "release_year": "1976",
+                    "title": "Taxi Driver",
+                    "vote_average": 8.155
+                },
+                {
+                    "popularity": 11.49,
+                    "release_year": "1974",
+                    "title": "Alice Doesn't Live Here Anymore",
+                    "vote_average": 6.973
+                },
+                {
+                    "popularity": 6.797,
+                    "release_year": "1973",
+                    "title": "Tom Sawyer",
+                    "vote_average": 6.3
+                }
+            ],
+            "name": "Jodie Foster",
+            "place_of_birth": "Los Angeles, California, USA",
+            "profile_path": "/resiaRfWvj4N84TgJi9DPOafCpq.jpg"
         },
         "person_Jordan Peele": {
             "biography": "Jordan Haworth Peele (born February 21, 1979) is an American actor, comedian, and filmmaker. He is known for his film and television work in the comedy and horror genres. Peele started his career in sketch comedy before transitioning his career as a writer and director of psychological horror and satirical films. In 2017, Peele was included on the annual Time 100 list of the most influential people in the world.\n\nPeele's breakout role came in 2003, when he was hired as a cast member on the Fox sketch comedy series Mad TV, where he spent five seasons, leaving the show in 2008. In the following years, he and his frequent Mad TV collaborator, Keegan-Michael Key, created and starred in their own Comedy Central sketch comedy series Key & Peele (2012\u20132015). The series was critically acclaimed, winning two Primetime Emmy Awards and a Peabody Award. The two wrote, produced, and starred in the comedy film Keanu (2016) and appeared in various projects since.\n\nHis 2017 directorial debut, the horror film Get Out, was a critical and box office success, for which he received numerous accolades, including the Academy Award for Best Original Screenplay, along with nominations for Best Picture and Best Director. Critics have frequently named Get Out as one of the best films of the 21st century. He received another Academy Award nomination for Best Picture for producing Spike Lee's drama BlacKkKlansman (2018). He directed, wrote, and produced the acclaimed films Us (2019) and Nope (2022). He founded the film and television production company Monkeypaw Productions in 2012. He wrote and produced Candyman (2021), and Wendell and Wild (2022).\n\nPeele has also voice acted in the animated films Storks (2016), Captain Underpants: The First Epic Movie (2017) and Toy Story 4 (2019), as well as in the adult animated sitcom Big Mouth (2017\u2013present). He co-created the TBS comedy series The Last O.G. (2018\u20132022) and the YouTube Premium comedy series Weird City (2019). He also served as the host and producer of the CBS All Access revival of the anthology series The Twilight Zone (2019\u20132020).",

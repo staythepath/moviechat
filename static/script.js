@@ -712,9 +712,9 @@ function showPersonPopover(element) {
           <div class="movie-details-card">
             <div class="movie-poster">${imageTag}</div>
             <div class="movie-info">
-              <p><em>Birthday:</em> ${data.birthday || "N/A"}</p>
+              <p><dt>Birthday:</dt> ${data.birthday || "N/A"}</p>
               <p>${creditsHtml}<p>
-              <p><em>Biography:</em> <span id="short-bio">${shortBio}</span>
+              <p><dt>Biography:</dt> <span id="short-bio">${shortBio}</span>
               ${
                 biography.length > 100
                   ? `<span id="more-bio" class="more-link">More</span>`

@@ -261,6 +261,7 @@ dt {
   font-weight: bold; /* Make the term bold */
   color: #f8f8f8; /* Give the term a dark color */
   margin-bottom: 5px; /* Space between the term and its description */
+  display: inline-block;
 }
 
 dd {
