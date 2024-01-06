@@ -1,11 +1,11 @@
 from arrapi import RadarrAPI
-from tmdb_manager import TMDbManager  # Import TMDbManager
+from data_manager import DataManager  # Import TMDbManager
 
 
 class RadarrManager:
-    def __init__(self, config_manager, tmdb_manager):
+    def __init__(self, config_manager, data_manager):
         self.config_manager = config_manager
-        self.tmdb_manager = tmdb_manager  # Use TMDbManager instance
+        self.data_manager = data_manager  # Use TMDbManager instance
         self.radarr = self.initialize_radarr()
 
     def initialize_radarr(self):
@@ -23,7 +23,7 @@ class RadarrManager:
             return {"status": "error", "message": "Radarr is not configured."}
 
         try:
-            movie_details = self.tmdb_manager.get_movie_details(
+            movie_details = self.data_manager.get_movie_details(
                 tmdb_id
             )  # Get movie details using TMDbManager
             movie_title = movie_details.title

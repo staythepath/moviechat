@@ -1,3 +1,4 @@
 .env
 config1.yaml
+config.yaml
 .gitignore

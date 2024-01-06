@@ -1,3 +1,10 @@
+$.fn.popover.Constructor.Default.whiteList.button = [];
+$.fn.popover.Constructor.Default.whiteList.button.push("type");
+$.fn.popover.Constructor.Default.whiteList.button.push("class");
+$.fn.popover.Constructor.Default.whiteList.dl = [];
+$.fn.popover.Constructor.Default.whiteList.dt = [];
+$.fn.popover.Constructor.Default.whiteList.dd = [];
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const configPanel = document.getElementById("config-panel");
   const configToggle = document.getElementById("config-toggle");
@@ -98,8 +105,14 @@ function waitForServerReady() {
 }
 
 function markdownToHTML(text) {
+  // Convert names wrapped in # into clickable links
+  let htmlText = text.replace(
+    /#([^#]+)#/g,
+    "<a href='#' class='person-link' onclick='showPersonDetails(\"$1\")'>$1</a>"
+  );
+
   // Convert italics
-  let htmlText = text.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
+  htmlText = htmlText.replace(/\*([^\*]+)\*/g, "<em>$1</em>");
 
   // Convert bullet points with indentation
   htmlText = htmlText.replace(
@@ -135,12 +148,12 @@ function waitForServerReady() {
         resetUI();
       } else {
         // Retry after a delay
-        setTimeout(waitForServerReady, 3000); // Retry after 3 seconds
+        setTimeout(waitForServerReady, 350); // Retry after 3 seconds
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      setTimeout(waitForServerReady, 3000);
+      setTimeout(waitForServerReady, 350);
     });
 }
 
@@ -211,7 +224,7 @@ function handleKeyPress(event) {
 function toggleConfigPanel() {
   var configPanel = document.getElementById("config-panel");
   if (configPanel.style.left === "0px") {
-    configPanel.style.left = "-250px"; // Hide the panel
+    configPanel.style.left = "-3000px"; // Hide the panel
   } else {
     configPanel.style.left = "0px"; // Show the panel
   }
@@ -220,10 +233,12 @@ function toggleConfigPanel() {
 function sendMessage() {
   let messageInput = document.getElementById("message-input");
   let message = messageInput.value;
+
+  // Update chat with user's message
   updateChat("user", message);
 
-  // Clear the input box right after sending the message
-  messageInput.value = "";
+  // Show loading message in chat
+  displayChatLoadingMessage();
 
   fetch("/send_message", {
     method: "POST",
@@ -234,11 +249,17 @@ function sendMessage() {
   })
     .then((response) => response.json())
     .then((data) => {
+      // Hide loading message and update chat with bot's response
+      hideChatLoadingMessage();
       updateChat("bot", data.response);
     })
     .catch((error) => {
       console.error("Error:", error);
+      hideChatLoadingMessage();
     });
+
+  // Clear the input box right after sending the message
+  messageInput.value = "";
 }
 
 function refreshDiscordChannels() {
@@ -291,6 +312,40 @@ function updateChat(sender, text) {
     .each(function () {
       setupPopoverHideWithDelay(this);
     });
+
+  $(messageDiv)
+    .find(".person-link")
+    .each(function () {
+      showPersonPopover(this);
+    });
+}
+
+function displayChatLoadingMessage() {
+  let chatBox = document.getElementById("chat-box");
+  let loadingDiv = document.createElement("div");
+  loadingDiv.id = "chatLoadingMessage";
+  loadingDiv.classList.add("message");
+
+  let botLabelSpan = document.createElement("span");
+  botLabelSpan.classList.add("sender-bot");
+  botLabelSpan.textContent = "Bot:";
+  botLabelSpan.style.marginRight = "12px"; // Set right margin for spacing
+
+  let loadingAnimationSpan = document.createElement("span");
+  loadingAnimationSpan.classList.add("loading-animation");
+
+  loadingDiv.appendChild(botLabelSpan);
+  loadingDiv.appendChild(loadingAnimationSpan);
+
+  chatBox.appendChild(loadingDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function hideChatLoadingMessage() {
+  let loadingDiv = document.getElementById("chatLoadingMessage");
+  if (loadingDiv) {
+    loadingDiv.remove();
+  }
 }
 
 // Function to add a movie to Radarr and update the chat
@@ -308,6 +363,28 @@ function addMovieToRadarr(tmdbId) {
 $(document).on("mousemove", ".movie-title", function (event) {
   lastMousePosition = { x: event.pageX, y: event.pageY };
 });
+
+function sendPredefinedMessage(message) {
+  updateChat("user", message); // Display the message as if the user has sent it
+  displayChatLoadingMessage();
+
+  fetch("/send_message", {
+    method: "POST",
+    body: JSON.stringify({ message: message }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      hideChatLoadingMessage();
+      updateChat("bot", data.response); // Display the bot's response in chat
+    })
+    .catch((error) => {
+      hideChatLoadingMessage();
+      console.error("Error:", error);
+    });
+}
 
 function customPopoverPlacement(context, source) {
   const wordPosition = $(source).data("word-position");
@@ -351,32 +428,139 @@ function customPopoverPlacement(context, source) {
 
 // Updated function for setupPopoverHideWithDelay
 function setupPopoverHideWithDelay(element) {
-  var hideDelay = 100; // Delay in milliseconds
+  var hideDelay = 200; // Delay in milliseconds
   var hideDelayTimer = null;
+  var isMouseOverPopover = false; // New variable to track if the mouse is over the popover
 
   // Function to update the popover content once details are loaded
   function updatePopoverContent(data) {
+    function createPersonSpans(names, group) {
+      const maxDisplay = 3; // Number of names to display initially
+      let displayedNamesHtml = names
+        .slice(0, maxDisplay)
+        .map((name) => `<span class="person-link">${name.trim()}</span>`)
+        .join(", ");
+
+      let hiddenNamesHtml = "";
+      if (names.length > maxDisplay) {
+        hiddenNamesHtml = names
+          .slice(maxDisplay)
+          .map(
+            (name) =>
+              `<span class="person-link" style="display: none;">${name.trim()}</span>`
+          )
+          .join(", ");
+      }
+
+      let moreButtonHtml =
+        names.length > maxDisplay
+          ? `<span id="toggle-${group}" class="more-toggle">More</span>`
+          : "";
+
+      return `<span id="displayed-${group}">${displayedNamesHtml}</span><span id="more-${group}" style="display: none;">${hiddenNamesHtml}</span>${moreButtonHtml}`;
+    }
+    console.log("Here is the data:", data);
+    console.log("Here is the imdb_id: ", data.imdb_id);
+    console.log("Here is the wiki_url: ", data.wiki_url);
+    var buttonsHtml = `
+      <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+        <button type="button" class="btn popover-button add-to-radarr" data-tmdb-id="${data.tmdb_id}">Add to Radarr</button>
+        <button type="button" class="btn popover-button ask-moviebot" data-movie-title="${data.title}">Ask MovieBot</button>
+        <button type="button" class="btn popover-button btn-imdb" data-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
+        <button type="button" class="btn popover-button btn-wiki" data-wiki-url="${data.wiki_url}" style="margin-left: 5px;">Wiki</button>
+      </div>`;
+
     var contentHtml = `
       <div class="movie-title">${data.title}</div>
       <div class="movie-details-card">
         <div class="movie-poster">
-          <img src="https://image.tmdb.org/t/p/original${data.poster_path}" alt="${data.title} Poster" class="img-fluid">
+          <img src="https://image.tmdb.org/t/p/original${
+            data.poster_path
+          }" alt="${data.title} Poster" class="img-fluid">
         </div>
         <div class="movie-info">
-          
-          <p class="movie-director"><strong>Director:</strong> ${data.director}</p>
-          <p class="movie-dop"><strong>DoP:</strong> ${data.dop}</p>
-          <p class="movie-writers"><strong>Writers:</strong> ${data.writers}</p>
-          <p class="movie-stars"><strong>Stars:</strong> ${data.stars}</p>
-          <p class="movie-rating"><strong>Rating:</strong> ${data.vote_average}</p>
-          <p class="movie-release-date"><strong>Release Date:</strong> ${data.release_date}</p>
-          <p class="movie-description">${data.description}</p>
+          <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
+            data.director.split(","),
+            "director"
+          )}</p>
+          <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
+            data.dop.split(","),
+            "dop"
+          )}</p>
+          <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
+            data.writers.split(","),
+            "writers"
+          )}</p>
+          <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
+            data.stars.split(","),
+            "stars"
+          )}</p>
+          <p class="movie-rating"><strong>TMDb Rating: </strong>${
+            data.vote_average
+          }</p>
+          <p class="movie-release-date"><strong>Release Date: </strong>${
+            data.release_date
+          }</p>
+          <p class="movie-description"><strong>Description: </strong>${
+            data.description
+          }</p>
+          <div style="display: flex;">
+            ${buttonsHtml}
+
+          </div>
         </div>
+        
       </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
     $(element).popover("show");
     $(element).popover("update");
+
+    $(".btn-wiki").attr("data-wiki-url", data.wiki_url);
+
+    $(".btn-imdb").attr("data-imdb-id", data.imdb_id);
+
+    $(document)
+      .off("click", ".ask-moviebot")
+      .on("click", ".ask-moviebot", function () {
+        var movieTitle = $(this).data("movie-title");
+        sendPredefinedMessage(`Tell me about ${data.title}`);
+      });
+
+    $(document)
+      .off("click", ".add-to-radarr")
+      .on("click", ".add-to-radarr", function () {
+        var tmdbId = $(this).data("tmdb-id");
+        addMovieToRadarr(data.tmdb_id);
+      });
+
+    // Setup mouseover event for each person link
+    $(".person-link").on("mouseover", function () {
+      showPersonPopover(this);
+    });
   }
+
+  $(document).on("click", ".popover-button", function () {
+    // Handle the button click event
+    console.log("Popover button clicked");
+    // Add your custom logic here
+  });
+
+  $(document).on("click", ".btn-wiki", function () {
+    var wikiUrl = $(this).data("wiki-url");
+    if (wikiUrl) {
+      window.open(wikiUrl, "_blank");
+    } else {
+      console.log("Wikipedia URL not found");
+    }
+  });
+
+  var lastMousePosition = { x: 0, y: 0 };
+
+  // Track mouse position
+  $(document).on("mousemove", function (event) {
+    lastMousePosition.x = event.pageX;
+    lastMousePosition.y = event.pageY;
+  });
 
   var showPopover = function () {
     clearTimeout(hideDelayTimer);
@@ -386,10 +570,7 @@ function setupPopoverHideWithDelay(element) {
     var tmdbId = $element.data("tmdb-id");
 
     // Display "Loading details" message
-    $element.popover("show");
-    var loadingContent =
-      '<div class="loading-content">Loading details...</div>';
-    $element.data("bs.popover").config.content = loadingContent;
+    //$element.popover("show");
 
     // Load movie details
     $.get(`/movie_details/${tmdbId}`, function (data) {
@@ -400,12 +581,46 @@ function setupPopoverHideWithDelay(element) {
     });
   };
 
+  // Updated hidePopover function
   var hidePopover = function () {
-    clearTimeout(hideDelayTimer);
-    hideDelayTimer = setTimeout(function () {
-      $(element).popover("hide");
-    }, hideDelay);
+    if (!isMouseOverPopover) {
+      var popover = $(element).data("bs.popover").getTipElement();
+      var popoverRect = popover.getBoundingClientRect();
+      var buffer = 10; // 10 pixels buffer
+
+      // Check if the mouse is within the buffer area around the popover
+      if (
+        lastMousePosition.x < popoverRect.left - buffer ||
+        lastMousePosition.x > popoverRect.right + buffer ||
+        lastMousePosition.y < popoverRect.top - buffer ||
+        lastMousePosition.y > popoverRect.bottom + buffer
+      ) {
+        $(element).popover("hide");
+      } else {
+        setTimeout(hidePopover, 100); // Check again after a short delay
+      }
+    }
   };
+
+  // When mouse enters the popover, set isMouseOverPopover to true
+  $("body").on("mouseenter", ".popover", function () {
+    isMouseOverPopover = true;
+  });
+
+  // When mouse leaves the popover, set isMouseOverPopover to false and start the hide delay
+  $("body").on("mouseleave", ".popover", function () {
+    isMouseOverPopover = false;
+    hideDelayTimer = setTimeout(hidePopover, hideDelay);
+  });
+
+  $(document).on("click", ".btn-imdb", function () {
+    var imdbId = $(this).data("imdb-id");
+    if (imdbId) {
+      window.open(`https://www.imdb.com/title/tt${imdbId}`, "_blank");
+    } else {
+      console.log("IMDbbbbb ID not found");
+    }
+  });
 
   $(element)
     .popover({
@@ -417,17 +632,244 @@ function setupPopoverHideWithDelay(element) {
       container: "body",
       content: "Loading details...",
       offset: 10,
-      delay: { show: 100, hide: hideDelay },
+      delay: { show: 1, hide: hideDelay },
     })
-    .on("mouseenter", showPopover)
-    .on("mouseleave", hidePopover);
+    .on("mouseenter", function () {
+      var $element = $(this);
+      var elementRect = this.getBoundingClientRect();
 
-  $("body")
-    .on("mouseenter", ".popover", function () {
-      clearTimeout(hideDelayTimer);
+      setTimeout(function () {
+        // Check if the current mouse position is within the bounds of the source element
+        if (
+          lastMousePosition.x >= elementRect.left &&
+          lastMousePosition.x <= elementRect.right &&
+          lastMousePosition.y >= elementRect.top &&
+          lastMousePosition.y <= elementRect.bottom
+        ) {
+          showPopover.call($element); // Show the popover
+        }
+      }, 100); // 500 milliseconds delay
     })
-    .on("mouseleave", ".popover", function () {
-      hidePopover();
+    .on("mouseleave", function () {
+      hideDelayTimer = setTimeout(hidePopover, hideDelay);
+    });
+
+  $("body").on("mouseenter", ".popover", function () {
+    isMouseOverPopover = true;
+  });
+
+  $(document).on("click", ".more-toggle", function () {
+    let group = this.id.split("-")[1];
+    let moreSpan = $(`#more-${group}`);
+
+    // Toggle the visibility
+    moreSpan.toggle();
+
+    // Update button text based on the visibility of moreSpan
+    $(this).text(moreSpan.is(":visible") ? "Less" : "More");
+  });
+}
+
+var popoverTimeout;
+
+function showPersonPopover(element) {
+  var popoverTimeout;
+  var isMouseOverPopover = false;
+
+  // Initialize the popover
+  if (!$(element).data("bs.popover")) {
+    $(element).popover({
+      trigger: "manual",
+      placement: "auto",
+      title: "Person Details",
+      content: "Loading details...",
+      html: true,
+    });
+  }
+
+  // Click event to show popover
+  $(element)
+    .off("click")
+    .on("click", function () {
+      var personName = $(element).text().trim();
+      fetch(`/person_details/${encodeURIComponent(personName)}`)
+        .then((response) => response.json())
+        .then((data) => {
+          var imagePath = data.profile_path
+            ? `https://image.tmdb.org/t/p/original${data.profile_path}`
+            : "static/no_photo_image.jpg";
+          var biography = data.biography || "No biography available";
+          var shortBio =
+            biography.length > 100
+              ? biography.substring(0, 100) + "..."
+              : biography;
+          const fullCredits = data.movie_credits
+            .slice(5)
+            .map(
+              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+            )
+            .join("");
+          $(element).data("fullCredits", fullCredits);
+
+          // Display initial subset of credits
+          const maxDisplayCredits = 5; // Number of movie credits to show initially
+          let displayedCredits = data.movie_credits
+            .slice(0, maxDisplayCredits)
+            .map(
+              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+            )
+            .join("");
+
+          let creditsHtml = `<dl><dt>Movie Credits:</dt>${displayedCredits}</dl>`;
+          if (data.movie_credits.length > maxDisplayCredits) {
+            creditsHtml += `<dd><span id="more-credits" class="more-link">... More</span></dd>`;
+          }
+
+          var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
+
+          var buttonsHtml = `
+              <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+                <button type="button" class="btn popover-button ask-moviebot-person" data-person-name="${data.name}" style="margin-left: 5px;">Ask MovieBot</button>
+                <button type="button" class="btn popover-button btn-imdb-person" data-person-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
+                <button type="button" class="btn popover-button btn-wiki-person" data-wiki-url="" style="margin-left: 5px;">Wiki</button>
+                
+              </div>`;
+
+          var contentHtml = `
+          <div class="movie-title">${data.name}</div>
+          <div class="movie-details-card">
+            <div class="movie-poster">${imageTag}</div>
+            <div class="movie-info">
+              <p><dt>Birthday:</dt> ${data.birthday || "N/A"}</p>
+              <p>${creditsHtml}<p>
+              <p><dt>Biography:</dt> <span id="short-bio">${shortBio}</span>
+              ${
+                biography.length > 100
+                  ? `<span id="more-bio" class="more-link">More</span>`
+                  : ""
+              }
+              <div style="display: flex;">
+                ${buttonsHtml}
+
+              </div>
+            </div>
+            
+          </div>`;
+
+          $(element).data("fullBiography", data.biography);
+          $(element).data("bs.popover").config.content = contentHtml;
+          $(element).popover("show");
+
+          $(".btn-imdb-person").attr("data-person-imdb-id", data.imdb_id);
+          $(".btn-wiki-person").attr("data-wiki-url", data.wiki_url);
+          $(".ask-moviebot-person").attr("data-person-name", data.name);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          $(element).data("bs.popover").config.content =
+            "Details not available";
+          $(element).popover("show");
+        });
+    });
+
+  // Function to hide popover on mouseleave
+  function hidePopover() {
+    if (!isMouseOverPopover) {
+      $(element).popover("hide");
+    }
+  }
+
+  // Event binding for mouseleave on the triggering element
+  $(element)
+    .off("mouseleave")
+    .on("mouseleave", function () {
+      popoverTimeout = setTimeout(hidePopover, 350);
+    });
+
+  // Event binding for popover shown event
+  $(element)
+    .off("mouseleave")
+    .on("mouseleave", function () {
+      popoverTimeout = setTimeout(hidePopover, 350);
+    });
+
+  // Event binding for popover shown event
+  $(element)
+    .off("shown.bs.popover")
+    .on("shown.bs.popover", function () {
+      var popoverId = $(element).attr("aria-describedby");
+      var $popover = $("#" + popoverId);
+
+      $popover
+        .on("mouseenter", function () {
+          isMouseOverPopover = true;
+          clearTimeout(popoverTimeout);
+        })
+        .on("mouseleave", function () {
+          isMouseOverPopover = false;
+          popoverTimeout = setTimeout(hidePopover, 350);
+        });
+
+      $popover.on("click", ".ask-moviebot-person", function () {
+        var personName = $(this).data("person-name");
+        if (personName) {
+          sendPredefinedMessage(`Tell me about ${personName}`);
+        } else {
+          console.log("Person name not found for MovieBot");
+        }
+      });
+
+      $popover.on("click", ".ask-moviebot-movie", function () {
+        var movieTitle = $(this).data("movie-title");
+        sendPredefinedMessage(`Tell me about ${movieTitle}`);
+      });
+
+      $popover.on("click", ".btn-imdb-person", function () {
+        var imdbId = $(this).data("person-imdb-id");
+        console.log("Clicked person IMDb ID: ", imdbId);
+        if (imdbId) {
+          window.open(`https://www.imdb.com/name/nm${imdbId}`, "_blank");
+        } else {
+          console.log("IMDb ID for person not found");
+        }
+      });
+
+      $popover.on("click", ".btn-wiki-person", function () {
+        var wikiUrl = $(this).data("wiki-url");
+        console.log("WWWWWWWWWWWWWWWWWWIKI URLL::::::::::: ", wikiUrl);
+        if (wikiUrl) {
+          window.open(wikiUrl, "_blank");
+        } else {
+          console.log("Wikipedia URL for person not found");
+        }
+      });
+
+      $popover.find("#more-bio").on("click", function () {
+        var fullBiography = $(element).data("fullBiography");
+        $popover.find("#short-bio").text(fullBiography);
+        $(this).remove(); // Remove the 'More' button
+      });
+
+      $popover.find("#more-credits").on("click", function () {
+        var fullCreditsHtml = `${$(element).data("fullCredits")}</dl>`;
+        $(this).parent().replaceWith(fullCreditsHtml); // Replace the dd with full credits
+        $(this).remove(); // Remove the 'More' link
+      });
+
+      $popover.find(".chat-btn").on("click", function () {
+        var title = $(this).data("title");
+        sendPredefinedMessage(`Tell me more about ${title}.`);
+      });
+
+      // Here's the binding for the 'More' button
+      $popover
+        .find("#more-bio")
+        .off("click")
+        .on("click", function () {
+          var fullBiography = $(element).data("fullBiography");
+          $popover.find("#short-bio").text(fullBiography);
+          $(this).remove(); // Remove the 'More' button after it's clicked
+        });
     });
 }
 

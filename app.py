@@ -11,7 +11,7 @@ import yaml
 # import DiscordBot
 
 from config_manager import ConfigManager
-from tmdb_manager import TMDbManager
+from data_manager import DataManager
 from radarr_manager import RadarrManager
 from openai_chat_manager import OpenAIChatManager
 
@@ -21,10 +21,10 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 config_manager = ConfigManager()
-tmdb_manager = TMDbManager(config_manager)
-radarr_manager = RadarrManager(config_manager, tmdb_manager)
-openai_chat_manager = OpenAIChatManager(config_manager, tmdb_manager)
-# discord_bot = DiscordBot(config_manager, tmdb_manager, radarr_manager)
+data_manager = DataManager(config_manager)
+radarr_manager = RadarrManager(config_manager, data_manager)
+openai_chat_manager = OpenAIChatManager(config_manager, data_manager)
+# discord_bot = DiscordBot(config_manager, data_manager, radarr_manager)
 
 channels_data = []
 
@@ -97,6 +97,15 @@ def fetch_root_folders():
     return jsonify({"error": "Radarr not configured"})
 
 
+@app.route("/person/<int:person_id>/movie_credits")
+def person_movie_credits(person_id):
+    try:
+        credits = data_manager.get_person_movie_credits(person_id)
+        return jsonify(credits), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -134,7 +143,7 @@ def index():
         with open(config_manager.config_path, "w") as file:
             yaml.dump(config_manager.config, file)
 
-        tmdb_manager.update_tmdb_api_key()
+        data_manager.update_tmdb_api_key()
         radarr_manager.radarr = radarr_manager.initialize_radarr()
         openai_chat_manager.initialize_openai_client()
 
@@ -151,7 +160,7 @@ def index():
 
 @app.route("/movie_details/<int:tmdb_id>")
 def movie_details(tmdb_id):
-    movie_details = tmdb_manager.get_movie_card_details(tmdb_id)
+    movie_details = data_manager.get_movie_card_details(tmdb_id)
     return jsonify(movie_details)
 
 
@@ -168,6 +177,12 @@ def send_message():
     return jsonify({"response": response})
 
 
+@app.route("/person_details/<name>")
+def person_details(name):
+    details = data_manager.get_person_details(name)
+    return jsonify(details)
+
+
 @app.route("/add_movie_to_radarr/<int:tmdb_id>", methods=["GET"])
 def add_movie_to_radarr(tmdb_id):
     quality_profile_id = config_manager.get_config_value("radarr_quality")
@@ -179,5 +194,5 @@ def add_movie_to_radarr(tmdb_id):
 
 @app.route("/movie_card_details/<int:tmdb_id>")
 def movie_card_details(tmdb_id):
-    details = tmdb_manager.get_movie_card_details(tmdb_id)
+    details = data_manager.get_movie_card_details(tmdb_id)
     return jsonify(details)
