@@ -253,6 +253,12 @@ body {
   margin-left: 0; /* Align with the 'Movie Credits:' label */
 }
 
+.movie-credit-link {
+  color: #596a7c !important; /* Example: making the text color blue */
+  text-decoration: none !important; /* Example: underlining to indicate it's a link */
+  /* Add other styles as needed */
+}
+
 dl {
   margin: 0;
   margin-top: 1px;

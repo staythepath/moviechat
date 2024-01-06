@@ -704,19 +704,22 @@ function showPersonPopover(element) {
               ? biography.substring(0, 100) + "..."
               : biography;
           const fullCredits = data.movie_credits
-            .slice(5)
+            .slice(5) // Start from the 6th element
             .map(
-              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+              (credit) =>
+                `<dd><a class="movie-credit-link" data-movie-title="${credit.title}" href="javascript:void(0);">${credit.title} (${credit.release_year})</a></dd>`
             )
             .join("");
           $(element).data("fullCredits", fullCredits);
 
           // Display initial subset of credits
+          console.log("Here is data.movie_credits: ", data.movie_credits);
           const maxDisplayCredits = 5; // Number of movie credits to show initially
           let displayedCredits = data.movie_credits
-            .slice(0, maxDisplayCredits)
+            .slice(0, maxDisplayCredits) // Take the first 5 elements
             .map(
-              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+              (credit) =>
+                `<dd><a class="movie-credit-link" data-movie-title="${credit.title}" href="javascript:void(0);">${credit.title} (${credit.release_year})</a></dd>`
             )
             .join("");
 
@@ -763,6 +766,16 @@ function showPersonPopover(element) {
           $(".btn-imdb-person").attr("data-person-imdb-id", data.imdb_id);
           $(".btn-wiki-person").attr("data-wiki-url", data.wiki_url);
           $(".ask-moviebot-person").attr("data-person-name", data.name);
+          $(".movie-credit-link").each(function (index) {
+            // Ensure index is within the range of the data.movie_credits array
+            if (index < data.movie_credits.length) {
+              $(this).attr("data-movie-title", data.movie_credits[index].title);
+            }
+          });
+          console.log(
+            "Here is the data.movie_creditssssssss: ",
+            data.movie_credits
+          );
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -819,6 +832,8 @@ function showPersonPopover(element) {
         }
       });
 
+      // Assuming $popover is a static ancestor that contains the dynamic .movie-credit-link elements
+
       $popover.on("click", ".btn-imdb-person", function () {
         var imdbId = $(this).data("person-imdb-id");
         console.log("Clicked person IMDb ID: ", imdbId);
@@ -867,6 +882,18 @@ function showPersonPopover(element) {
         });
     });
 }
+
+$(document)
+  .off("click", ".movie-credit-link")
+  .on("click", ".movie-credit-link", function () {
+    var movieTitle = $(this).data("movie-title");
+    console.log("Movie title clicked:", movieTitle);
+    if (movieTitle) {
+      sendPredefinedMessage(`Tell me about the movie "${movieTitle}".`);
+    } else {
+      console.log("Movie title not found");
+    }
+  });
 
 // Function to close all open popovers
 function closeAllPopovers() {
