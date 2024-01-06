@@ -6,7 +6,7 @@
     <MyIP/>
     <Privileged>false</Privileged>
     <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
-    <Overview>MovieChat Bot - A OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the corresponding reaction to add it to radarr.</Overview>
+    <Overview>MovieChat Bot - An OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the corresponding reaction to add it to radarr.</Overview>
     <Category>Media:Tools</Category>
     <WebUI>http://[IP]:[PORT:1138]/</WebUI>
     <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
@@ -18,23 +18,5 @@
     <DonateText/>
     <DonateLink/>
     <Description>A Docker container for the MovieChat Bot application.</Description>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>1138</HostPort>
-                <ContainerPort>1138</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/moviechat-bot/config.yaml</HostDir>
-            <ContainerDir>/usr/src/app/config.yaml</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
     <Config Name="WebUI" Target="1138" Default="1138" Mode="tcp" Description="WebUI port." Type="Port" Display="always" Required="true" Mask="false"/>
-    <Config Name="Config Path" Target="/mnt/user/appdata/moviechat-bot" Default="/mnt/user/appdata/moviechat-bot" Mode="rw" Description="Path to config file." Type="Path" Display="always" Required="true" Mask="false"/>
 </Container>
