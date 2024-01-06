@@ -704,25 +704,28 @@ function showPersonPopover(element) {
               ? biography.substring(0, 100) + "..."
               : biography;
           const fullCredits = data.movie_credits
-            .slice(5)
+            .slice(5) // Start from the 6th element
             .map(
-              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+              (credit) =>
+                `<dd><a class="movie-credit-link" data-movie-title="${credit.title}" href="javascript:void(0);">${credit.title} (${credit.release_year})</a></dd>`
             )
             .join("");
           $(element).data("fullCredits", fullCredits);
 
           // Display initial subset of credits
+          console.log("Here is data.movie_credits: ", data.movie_credits);
           const maxDisplayCredits = 5; // Number of movie credits to show initially
           let displayedCredits = data.movie_credits
-            .slice(0, maxDisplayCredits)
+            .slice(0, maxDisplayCredits) // Take the first 5 elements
             .map(
-              (credit) => `<dd>${credit.title} (${credit.release_year})</dd>`
+              (credit) =>
+                `<dd><a class="movie-credit-link" data-movie-title="${credit.title}" href="javascript:void(0);">${credit.title} (${credit.release_year})</a></dd>`
             )
             .join("");
 
           let creditsHtml = `<dl><dt>Movie Credits:</dt>${displayedCredits}</dl>`;
           if (data.movie_credits.length > maxDisplayCredits) {
-            creditsHtml += `<dd><span id="more-credits" class="more-link">... More</span></dd>`;
+            creditsHtml += `<dd><span id="more-credits" class="more-link">More...</span></dd>`;
           }
 
           var imageTag = `<img src="${imagePath}" alt="${data.name} Photo" class="img-fluid" style="width: 185px; height: 278px;">`;
@@ -763,6 +766,16 @@ function showPersonPopover(element) {
           $(".btn-imdb-person").attr("data-person-imdb-id", data.imdb_id);
           $(".btn-wiki-person").attr("data-wiki-url", data.wiki_url);
           $(".ask-moviebot-person").attr("data-person-name", data.name);
+          $(".movie-credit-link").each(function (index) {
+            // Ensure index is within the range of the data.movie_credits array
+            if (index < data.movie_credits.length) {
+              $(this).attr("data-movie-title", data.movie_credits[index].title);
+            }
+          });
+          console.log(
+            "Here is the data.movie_creditssssssss: ",
+            data.movie_credits
+          );
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -810,19 +823,18 @@ function showPersonPopover(element) {
           popoverTimeout = setTimeout(hidePopover, 350);
         });
 
-      $popover.on("click", ".ask-moviebot-person", function () {
-        var personName = $(this).data("person-name");
-        if (personName) {
-          sendPredefinedMessage(`Tell me about ${personName}`);
-        } else {
-          console.log("Person name not found for MovieBot");
-        }
-      });
+      $popover
+        .off("click", ".ask-moviebot-person")
+        .on("click", ".ask-moviebot-person", function () {
+          var personName = $(this).data("person-name");
+          if (personName) {
+            sendPredefinedMessage(`Tell me about ${personName}`);
+          } else {
+            console.log("Person name not found for MovieBot");
+          }
+        });
 
-      $popover.on("click", ".ask-moviebot-movie", function () {
-        var movieTitle = $(this).data("movie-title");
-        sendPredefinedMessage(`Tell me about ${movieTitle}`);
-      });
+      // Assuming $popover is a static ancestor that contains the dynamic .movie-credit-link elements
 
       $popover.on("click", ".btn-imdb-person", function () {
         var imdbId = $(this).data("person-imdb-id");
@@ -851,9 +863,25 @@ function showPersonPopover(element) {
       });
 
       $popover.find("#more-credits").on("click", function () {
+        $(this).css("color", "green"); // Example: changing the color to green
+        $(this).text("Asking MovieBot..."); // Temporarily change the link text
         var fullCreditsHtml = `${$(element).data("fullCredits")}</dl>`;
         $(this).parent().replaceWith(fullCreditsHtml); // Replace the dd with full credits
         $(this).remove(); // Remove the 'More' link
+      });
+
+      $popover.on("click", ".movie-credit-link", function () {
+        // Temporarily change the link text to indicate action
+        $(this).text("Asking MovieBot...");
+
+        // Add your logic here to ask MovieBot about the movie
+        // For example, sending a message to MovieBot
+        var movieTitle = $(this).data("movie-title");
+
+        // Optional: Reset the text back to the original title after some delay
+        setTimeout(() => {
+          $(this).text(movieTitle);
+        }, 2000); // Reset after 2 seconds
       });
 
       $popover.find(".chat-btn").on("click", function () {
@@ -872,6 +900,18 @@ function showPersonPopover(element) {
         });
     });
 }
+
+$(document)
+  .off("click", ".movie-credit-link")
+  .on("click", ".movie-credit-link", function () {
+    var movieTitle = $(this).data("movie-title");
+    console.log("Movie title clicked:", movieTitle);
+    if (movieTitle) {
+      sendPredefinedMessage(`Tell me about the movie "${movieTitle}".`);
+    } else {
+      console.log("Movie title not found");
+    }
+  });
 
 // Function to close all open popovers
 function closeAllPopovers() {
