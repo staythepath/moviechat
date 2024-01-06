@@ -365,7 +365,7 @@ $(document).on("mousemove", ".movie-title", function (event) {
 });
 
 function sendPredefinedMessage(message) {
-  updateChat("user", message);
+  updateChat("user", message); // Display the message as if the user has sent it
   displayChatLoadingMessage();
 
   fetch("/send_message", {
@@ -378,7 +378,7 @@ function sendPredefinedMessage(message) {
     .then((response) => response.json())
     .then((data) => {
       hideChatLoadingMessage();
-      updateChat("bot", data.response);
+      updateChat("bot", data.response); // Display the bot's response in chat
     })
     .catch((error) => {
       hideChatLoadingMessage();
@@ -464,8 +464,8 @@ function setupPopoverHideWithDelay(element) {
     console.log("Here is the wiki_url: ", data.wiki_url);
     var buttonsHtml = `
       <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
-        <button type="button" class="btn popover-button">Add to Radarr </button>
-        <button type="button" class="btn popover-button">Ask MovieBot</button>
+        <button type="button" class="btn popover-button add-to-radarr" data-tmdb-id="${data.tmdb_id}">Add to Radarr</button>
+        <button type="button" class="btn popover-button ask-moviebot" data-movie-title="${data.title}">Ask MovieBot</button>
         <button type="button" class="btn popover-button btn-imdb" data-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
         <button type="button" class="btn popover-button btn-wiki" data-wiki-url="${data.wiki_url}" style="margin-left: 5px;">Wiki</button>
       </div>`;
@@ -516,7 +516,26 @@ function setupPopoverHideWithDelay(element) {
     $(element).popover("update");
 
     $(".btn-wiki").attr("data-wiki-url", data.wiki_url);
+
     $(".btn-imdb").attr("data-imdb-id", data.imdb_id);
+    $(document).on("click", ".ask-moviebot", function () {
+      var movieTitle = $(this).data("movie-title");
+      sendPredefinedMessage(`Tell me about ${data.title}`);
+    });
+
+    $(document)
+      .off("click", ".ask-moviebot")
+      .on("click", ".ask-moviebot", function () {
+        var movieTitle = $(this).data("movie-title");
+        sendPredefinedMessage(`Tell me about ${data.title}`);
+      });
+
+    $(document)
+      .off("click", ".add-to-radarr")
+      .on("click", ".add-to-radarr", function () {
+        var tmdbId = $(this).data("tmdb-id");
+        addMovieToRadarr(data.tmdb_id);
+      });
 
     // Setup mouseover event for each person link
     $(".person-link").on("mouseover", function () {
@@ -719,6 +738,13 @@ function showPersonPopover(element) {
                 <button type="button" class="btn popover-button" style="margin-left: 5px;">Wiki</button>
                 
               </div>`;
+
+          $(document)
+            .off("click", ".ask-moviebot")
+            .on("click", ".ask-moviebot", function () {
+              var movieTitle = $(this).data("movie-title");
+              sendPredefinedMessage(`Tell me about ${movieTitle}`);
+            });
 
           var contentHtml = `
           <div class="movie-title">${data.name}</div>

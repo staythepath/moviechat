@@ -184,6 +184,7 @@ class DataManager:
         wiki_url = self.get_wiki_url(movie.title)
 
         movie_card_data = {
+            "tmdb_id": tmdb_id,
             "title": movie.title,
             "director": director,
             "dop": dop,
