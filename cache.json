@@ -70,6 +70,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Star_Wars",
             "writers": "George Lucas"
         },
+        "movie_card_11816": {
+            "description": "For Norman and Ethel Thayer, this summer on golden pond is filled with conflict and resolution. When their daughter Chelsea arrives, the family is forced to renew the bonds of love and overcome the generational friction that has existed for years.",
+            "director": "Mark Rydell",
+            "dop": "Billy Williams",
+            "imdb_id": "0082846",
+            "poster_path": "https://image.tmdb.org/t/p/original/ic4f03J6pnf9cpQmVDABFhUpbCU.jpg",
+            "release_date": "1981-12-01",
+            "stars": "Katharine Hepburn, Henry Fonda, Jane Fonda, Doug McKeon, Dabney Coleman, William Lanteau, Christopher Rydell, Troy Garity",
+            "title": "On Golden Pond",
+            "tmdb_id": 11816,
+            "vote_average": 7.271,
+            "wiki_url": "https://en.wikipedia.org/wiki/On_Golden_Pond_(1981_film)",
+            "writers": "Ernest Thompson, Ernest Thompson"
+        },
         "movie_card_120": {
             "description": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
             "director": "Peter Jackson",
@@ -238,6 +252,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Stuck_on_You_(film)",
             "writers": "Bobby Farrelly, Peter Farrelly"
         },
+        "movie_card_1879": {
+            "description": "A couple's attitudes are challenged when their daughter brings home a fianc\u00e9 who is black.",
+            "director": "Stanley Kramer",
+            "dop": "Sam Leavitt",
+            "imdb_id": "0061735",
+            "poster_path": "https://image.tmdb.org/t/p/original/fkHeYWahNbhxhuLefaAg553lYo5.jpg",
+            "release_date": "1967-12-11",
+            "stars": "Katharine Houghton, Sidney Poitier, Katharine Hepburn, Spencer Tracy, Cecil Kellaway, Beah Richards, Roy Glenn, Isabel Sanford, Virginia Christine, Alexandra Hay, Barbara Randolph, D'Urville Martin, Tom Heaton, Grace Gaynor, Skip Martin, John Hudkins, Natalie Core, Timothy Scott, Jacqueline Fontaine, June Whitley Taylor",
+            "title": "Guess Who's Coming to Dinner",
+            "tmdb_id": 1879,
+            "vote_average": 7.567,
+            "wiki_url": "https://en.wikipedia.org/wiki/Guess_Who's_Coming_to_Dinner",
+            "writers": "William Rose"
+        },
         "movie_card_2034": {
             "description": "On his first day on the job as a narcotics officer, a rookie cop works with a rogue detective who isn't what he appears.",
             "director": "Antoine Fuqua",
@@ -251,6 +279,20 @@
             "vote_average": 7.492,
             "wiki_url": "https://en.wikipedia.org/wiki/Training_Day",
             "writers": "David Ayer"
+        },
+        "movie_card_20763": {
+            "description": "A father reminisces about his childhood when he and his younger brother moved to a new town with their mother, her new husband and their dog, Shane. When the younger brother is subjected to physical abuse at the hands of their brutal stepfather, Mike decides to convert their toy trolley, the \"Radio Flyer\", into a plane to fly him to safety.",
+            "director": "Richard Donner",
+            "dop": "L\u00e1szl\u00f3 Kov\u00e1cs",
+            "imdb_id": "0105211",
+            "poster_path": "https://image.tmdb.org/t/p/original/vwS1R7g0g3ru5DDt1lLbLxX2k2J.jpg",
+            "release_date": "1992-02-21",
+            "stars": "Lorraine Bracco, John Heard, Adam Baldwin, Elijah Wood, Joseph Mazzello, Ben Johnson, Sean Baca, Robert Munic, Garette Ratliff Henson, Thomas Ian Nicholas, Noah Verduzco, Isaac Ocampo, Kaylan Romero, Abraham Verduzco, T.J. Evans, Victor DiMattia, Adam Hendershott, Daniel Bieber, Coleby Lombardo, Mike Simmrin, Elden Henson, Lennard Camarillo, Lois Foraker, William J. Bonnel, Henry LaPlante, Steve Kahan, Steven Anthony Jones, Paul Tuerpe, Scott Nimerfro, Reye Reed, Susan Gale Linn, Dawan Scott, James Oliver, Michael Maiello, Hattie Schwartzberg, Joan Hyman, John Mazzello, Hannah Wood, James W. Gavin, Tom Hanks",
+            "title": "Radio Flyer",
+            "tmdb_id": 20763,
+            "vote_average": 7.0,
+            "wiki_url": "https://en.wikipedia.org/wiki/Radio_Flyer",
+            "writers": "David Mickey Evans"
         },
         "movie_card_2108": {
             "description": "Five high school students from different walks of life endure a Saturday detention under a power-hungry principal. The disparate group includes rebel John, princess Claire, outcast Allison, brainy Brian and Andrew, the jock. Each has a chance to tell his or her story, making the others see them a little differently -- and when the day ends, they question whether school will ever be the same.",
@@ -321,6 +363,20 @@
             "vote_average": 5.8,
             "wiki_url": "https://en.wikipedia.org/wiki/Into_the_Woods",
             "writers": "Stephen Sondheim, Stephen Sondheim, James Lapine, James Lapine, Nick Pelham"
+        },
+        "movie_card_22584": {
+            "description": "A Martinique charter boat skipper gets mixed up with the underground French resistance operatives during WWII.",
+            "director": "Howard Hawks",
+            "dop": "Sidney Hickox",
+            "imdb_id": "0037382",
+            "poster_path": "https://image.tmdb.org/t/p/original/jLOmQ6yHWSKZDrJ2CMuSrXE3t3J.jpg",
+            "release_date": "1945-01-20",
+            "stars": "Humphrey Bogart, Walter Brennan, Lauren Bacall, Dolores Moran, Hoagy Carmichael, Sheldon Leonard, Walter Szurovy, Marcel Dalio, Walter Sande, Dan Seymour, Aldo Nadi, Eugene Borden, Lance Fuller, Maurice Marsac, Ron Randell, Jack Chefe, Adrienne D'Ambricourt, Jean De Briac, Marcel De La Brosse, Elzie Emanuel, Harold Garrison, Fred Farrell, Suzette Harbin, Sir Lancelot, Paul Marion, Louis Mercier, George Suzanne, Crane Whitley, Chef Milani, Pedro Regas, Patricia Shay, Emmett Smith, George Sorel, Marguerita Sylva, Pat West",
+            "title": "To Have and Have Not",
+            "tmdb_id": 22584,
+            "vote_average": 7.446,
+            "wiki_url": "https://en.wikipedia.org/wiki/To_Have_and_Have_Not_(film)",
+            "writers": "Jules Furthman, William Faulkner, Ernest Hemingway, Frederick de Cordova, Whitman Chambers"
         },
         "movie_card_2259": {
             "description": "A rancher, his clairvoyant wife and their family face turbulent years in South America.",
@@ -475,6 +531,20 @@
             "vote_average": 7.393,
             "wiki_url": "https://en.wikipedia.org/wiki/As_Good_as_It_Gets",
             "writers": "James L. Brooks, Mark Andrus, Mark Andrus"
+        },
+        "movie_card_3085": {
+            "description": "Walter Burns is an irresistibly conniving newspaper publisher desperate to woo back his paper\u2019s star reporter, who also happens to be his estranged wife. She\u2019s threatening to quit and settle down with a new beau, but, as Walter knows, she has a weakness: she can\u2019t resist a juicy scoop.",
+            "director": "Howard Hawks",
+            "dop": "Joseph Walker",
+            "imdb_id": "0032599",
+            "poster_path": "https://image.tmdb.org/t/p/original/da95rurNghmKWmraPyqP6IsnAt1.jpg",
+            "release_date": "1940-01-18",
+            "stars": "Cary Grant, Rosalind Russell, Ralph Bellamy, Gene Lockhart, Helen Mack, Porter Hall, Ernest Truex, Cliff Edwards, Clarence Kolb, Roscoe Karns, Frank Jenks, Regis Toomey, Abner Biberman, Frank Orth, John Qualen, Alma Kruger, Billy Gilbert, Pat West, Edwin Maxwell, Irving Bacon, Wade Boteler, Harry C. Bradley, Wheaton Chambers, Edmund Cobb, Ann Doran, Ralph Dunn, Earl Dwire, Pat Flaherty, Jack Gardner, Eddie Hart, Marion Martin, Frank McLure, James Millican, Gene Morgan, Delmar Watson",
+            "title": "His Girl Friday",
+            "tmdb_id": 3085,
+            "vote_average": 7.405,
+            "wiki_url": "https://en.wikipedia.org/wiki/His_Girl_Friday",
+            "writers": "Charles Lederer, Ben Hecht, Ben Hecht, Charles MacArthur"
         },
         "movie_card_313369": {
             "description": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced with decisions that begin to fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other threaten to rip them apart.",
@@ -643,6 +713,20 @@
             "vote_average": 5.599,
             "wiki_url": "https://en.wikipedia.org/wiki/The_Cloverfield_Paradox",
             "writers": "Doug Jung, Oren Uziel"
+        },
+        "movie_card_389": {
+            "description": "The defense and the prosecution have rested and the jury is filing into the jury room to decide if a young Spanish-American is guilty or innocent of murdering his father. What begins as an open and shut case soon becomes a mini-drama of each of the jurors' prejudices and preconceptions about the trial, the accused, and each other.",
+            "director": "Sidney Lumet",
+            "dop": "Boris Kaufman",
+            "imdb_id": "0050083",
+            "poster_path": "https://image.tmdb.org/t/p/original/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+            "release_date": "1957-04-10",
+            "stars": "Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Marshall, Jack Klugman, Edward Binns, Jack Warden, Henry Fonda, Joseph Sweeney, Ed Begley, George Voskovec, Robert Webber, Rudy Bond, Tom Gorman, James Kelly, Billy Nelson, John Savoca, Walter Stocker, John Gavin",
+            "title": "12 Angry Men",
+            "tmdb_id": 389,
+            "vote_average": 8.545,
+            "wiki_url": "https://en.wikipedia.org/wiki/Twelve_Angry_Men",
+            "writers": "Reginald Rose, Reginald Rose"
         },
         "movie_card_405774": {
             "description": "Five years after an ominous unseen presence drives most of society to suicide, a survivor and her two children make a desperate bid to reach safety.",
@@ -868,6 +952,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/The_Terminal",
             "writers": "Jeff Nathanson, Andrew Niccol, Sacha Gervasi, Sacha Gervasi"
         },
+        "movie_card_596": {
+            "description": "Tom Joad returns to his home after a jail sentence to find his family kicked out of their farm due to foreclosure. He catches up with them on his Uncle\u2019s farm, and joins them the next day as they head for California and a new life... Hopefully.",
+            "director": "John Ford",
+            "dop": "Gregg Toland",
+            "imdb_id": "0032551",
+            "poster_path": "https://image.tmdb.org/t/p/original/eUcxMVBIA0Jg8l1RGUqycrc3eIQ.jpg",
+            "release_date": "1940-03-15",
+            "stars": "Henry Fonda, Jane Darwell, John Carradine, Charley Grapewin, Dorris Bowdon, Russell Simpson, O. Z. Whitehead, John Qualen, Eddie Quillan, Zeffie Tilbury, Frank Sully, Frank Darien, Darryl Hickman, Shirley Mills, Roger Imhof, Grant Mitchell, Charles D. Brown, John Arledge, Harry Tyler, William Pawley, Charles Tannen, Selmer Jackson, Charles Middleton, Eddy Waller, Paul Guilfoyle, David Hughes, Cliff Clark, Joe Sawyer, Frank Faylen, Adrian Morris, Hollis Jewell, Robert Homans, Irving Bacon, Kitty McHugh, Gino Corrado, Pat Flaherty, Francis Ford, Herbert Heywood, Mae Marsh, Dan White, Wally Albright, Erville Alderson, Robert J. Anderson, Arthur Aylesworth, Trevor Bardette, Joe Bordeaux, George P. Breakston, Buster Brodie, Delmar Costello, W.H. Davis, Emily Gerdes, Barney Gilmore, Edna Hall, Charles Herzinger, Harry Holden, David Kirkland, Lillian Lawrence, Scotty Mattraw, Frank Newburg, Walter Perry, Rose Plumer, Al Stewart, Charles Thurston, D.H. Turner, John Wallace, Charles West, Russ Clark, James Flavin, Philip Morris, Max Wagner, Harry Cording, Ralph Dunn, Bob Reeves, Lee Shumway, Paul Sutton, William Haade, Frank O'Connor, Harry Tenbrook, Tom Tyler, Thornton Edwards, Rex Lease, Ben Hall, Louis Mason, Walter McGrail, Walter Miller, George O'Hara, Ted Oliver, Inez Palange, Steve Pendleton, Robert Shaw, Jack Pennick, Dick Rich, Gloria Roy, Peggy Ryan, Georgia Simmons, Harry Strang, Glen Walters, Norman Willis, Bill Wolfe, Waclaw Rekwart, Josephine Allen, John Binns, Leon Brace, Henry Brahe, Scotty Brown, Hal Budlong, Nora Bush, Shirley Coates, Cal Cohen, Cecil Cook, Jim Corey, Jane Crowley, Helen Dean, John Dilson, Lillian Drew, Ward Bond",
+            "title": "The Grapes of Wrath",
+            "tmdb_id": 596,
+            "vote_average": 7.821,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Grapes_of_Wrath",
+            "writers": "John Steinbeck, Nunnally Johnson"
+        },
         "movie_card_597": {
             "description": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00e9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
             "director": "James Cameron",
@@ -909,6 +1007,20 @@
             "vote_average": 6.152,
             "wiki_url": "https://en.wikipedia.org/wiki/Prom",
             "writers": "Bob Martin, Jack Viertel, Chad Beguelin"
+        },
+        "movie_card_614934": {
+            "description": "The life story of Elvis Presley as seen through the complicated relationship with his enigmatic manager, Colonel Tom Parker.",
+            "director": "Baz Luhrmann",
+            "dop": "Mandy Walker",
+            "imdb_id": "3704428",
+            "poster_path": "https://image.tmdb.org/t/p/original/qBOKWqAFbveZ4ryjJJwbie6tXkQ.jpg",
+            "release_date": "2022-06-22",
+            "stars": "Austin Butler, Tom Hanks, Olivia DeJonge, Helen Thomson, Richard Roxburgh, Kelvin Harrison Jr., David Wenham, Kodi Smit-McPhee, Luke Bracey, Dacre Montgomery, Leon Ford, Gary Clark Jr., Yola, Natasha Bassett, Xavier Samuel, Adam Dunn, Alton Mason, Shonka Dukureh, David Gannon, Shannon Sanders, Charles Grounds, Josh McConville, Kate Mulvany, Gareth Davies, Chaydon Jay, Christian Kisando, John Mukristayo, Miles Burton, Gad Banza, Aristene Kisando, Senayt Mebrahtu, Mariama Princess Andrews, Sharon Brooks, Nicholas Bell, Anthony Phelan, Sandro Colarelli, Cle Morgan, Charles Allen, Natalie Bassingthwaighte, Liz Blackett, Mike Bingaman, Christian McCarty, Tony Nixon, Andrea Moor, Mark Leonard Winter, Hugh Parker, Thomas Larkin, Hilton Hyppolite Denis, Christopher Sommers, Brad Leaver, Simon Mallory, Terepai Richmond, Alex Knight, Jordan A. Holland, Lenesha Randolph, Elizabeth Cullen, Angie Milliken, Luke Corrin Care, Jack McGirr, Miranda Frangou, Lakota Johnson, Ruby Gonzales-Judd, Greg Powell, Patrick Shearer, Sarah Ogden, Iain Gardiner, Melina Vidler, Traneshia Chiles, Lauren McClinton, Gary Hale, Kellee Halford, Angela Hill, Jamiah Hudson, Norris Jones, Stephen R. Ladson, Alfreda McCrary, Angela McCrary, Beverly Ann McCrary, Keb' Mo', Tamica Nicole, Marqo Patton, Robert Randolph, Calvin Settles II, Calvin V. Settles Sr., Ira Wayne Settles Sr., Odessa L. Settles, Sara Settles, Shirley M. Settles, Jacqueline Smith-Jefferson, Torshia Suggs, Cameron Keith Walls, Andrea Baker, Libe Barer, Doug Burch, Cathy Cavadini",
+            "title": "Elvis",
+            "tmdb_id": 614934,
+            "vote_average": 7.573,
+            "wiki_url": "https://en.wikipedia.org/wiki/Elvis_Presley",
+            "writers": "Baz Luhrmann, Baz Luhrmann, Craig Pearce, Jeremy Doner, Jeremy Doner"
         },
         "movie_card_615667": {
             "description": "Tensions rise when the trailblazing Mother of the Blues and her band gather at a Chicago recording studio in 1927. Adapted from August Wilson's play.",
@@ -993,6 +1105,20 @@
             "vote_average": 8.217,
             "wiki_url": "https://en.wikipedia.org/wiki/Shining",
             "writers": "Stanley Kubrick, Stephen King, Diane Johnson"
+        },
+        "movie_card_703451": {
+            "description": "When best friends and total opposites Debbie and Peter swap homes for a week, they get a peek into each other's lives that could open the door to love.",
+            "director": "Aline Brosh McKenna",
+            "dop": "Florian Ballhaus",
+            "imdb_id": "12823454",
+            "poster_path": "https://image.tmdb.org/t/p/original/3oFfY1HpzJDlRzKSCBF2sA5mb9U.jpg",
+            "release_date": "2023-02-10",
+            "stars": "Reese Witherspoon, Ashton Kutcher, Jesse Williams, Zo\u00eb Chao, Steve Zahn, Tig Notaro, Wesley Kimmel, Griffin Matthews, Rachel Bloom, Shiri Appleby, Vella Lovell, Mystic Inscho, Lavinia Postolache, Duncan Calladine, Ted Griffin, Jasmine Richard-Brooks, Gloria Calder\u00f3n Kellett, Tom Yi, Julia Westcott-Hutton, Ianthe Marini, Anna Benuzzi, Kelly Lester, Mark Roman, Ken Heang, Christopher V. Nelson, Tanner Swagger, Carl Salonen, Britney Young",
+            "title": "Your Place or Mine",
+            "tmdb_id": 703451,
+            "vote_average": 6.296,
+            "wiki_url": "https://en.wikipedia.org/wiki/Your_Place_or_Mine_(film)",
+            "writers": "Aline Brosh McKenna"
         },
         "movie_card_7191": {
             "description": "Five young New Yorkers throw their friend a going-away party the night that a monster the size of a skyscraper descends upon the city. Told from the point of view of their video camera, the film is a document of their attempt to survive the most surreal, horrifying event of their lives.",
@@ -1106,6 +1232,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Toy_Story",
             "writers": "Andrew Stanton, Andrew Stanton, John Lasseter, Joe Ranft, Joe Ranft"
         },
+        "movie_card_900": {
+            "description": "David Huxley is waiting to get a bone he needs for his museum collection. Through a series of strange circumstances, he meets Susan Vance, and the duo have a series of misadventures which include a leopard called Baby.",
+            "director": "Howard Hawks",
+            "dop": "Russell Metty",
+            "imdb_id": "0029947",
+            "poster_path": "https://image.tmdb.org/t/p/original/vTNNOtemaYmtx3k2NpsLMRJKEwZ.jpg",
+            "release_date": "1938-02-18",
+            "stars": "Katharine Hepburn, Cary Grant, Charles Ruggles, Walter Catlett, Barry Fitzgerald, May Robson, Fritz Feld, Leona Roberts, George Irving, Tala Birell, Virginia Walker, John Kelly, William Benedict, Billy Bevan, Ward Bond, Jack Carson, Judith Ford, Edward Gargan, Paul Guilfoyle, Karl 'Karchy' Kosiczky, Skippy, Jack Gardner",
+            "title": "Bringing Up Baby",
+            "tmdb_id": 900,
+            "vote_average": 7.535,
+            "wiki_url": "https://en.wikipedia.org/wiki/Bringing_Up_Baby",
+            "writers": "Dudley Nichols, Hagar Wilde, Hagar Wilde, Hagar Wilde"
+        },
         "movie_card_9552": {
             "description": "Twelve year old Regan MacNeil begins to adapt an explicit new personality as strange events befall the local area of Georgetown. Her mother becomes torn between science and superstition in a desperate bid to save her daughter, and ultimately turns to her last hope: Father Damien Karras, a troubled priest struggling with his own faith.",
             "director": "William Friedkin",
@@ -1148,6 +1288,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Gladiator",
             "writers": "David Franzoni, David Franzoni, John Logan, William Nicholson"
         },
+        "movie_card_980": {
+            "description": "A posse discovers a trio of men they suspect of murder and cow theft and are split between handing them over to the law or lynching them on the spot.",
+            "director": "William A. Wellman",
+            "dop": "Arthur C. Miller",
+            "imdb_id": "0036244",
+            "poster_path": "https://image.tmdb.org/t/p/original/mAiDUTELbMUJKOTroJLrbYMBk3i.jpg",
+            "release_date": "1943-03-11",
+            "stars": "Henry Fonda, Dana Andrews, Mary Beth Hughes, Anthony Quinn, Jane Darwell, Matt Briggs, Frank Conroy, Marc Lawrence, William Eythe, Paul Hurst, Victor Kilian, Harry Morgan, Rondo Hatton, Harry Davenport, Chris-Pin Martin, Willard Robertson, Ted North, C.E. Anderson, Tex Cooper, Larry Dods, Tex Driscoll, Don House, Frank McGrath, Ben Watson, Stanley Andrews, Hank Bell, William Benedict, Paul E. Burns, George Chandler, Forrest Dillon, Francis Ford, Margaret Hamilton, George Lloyd, Tom London, George Meeker, Frank Orth, George Plues, Dick Rich, Almira Sessions, Leigh Whipper",
+            "title": "The Ox-Bow Incident",
+            "tmdb_id": 980,
+            "vote_average": 7.7,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Ox-Bow_Incident",
+            "writers": "Walter Van Tilburg Clark, Lamar Trotti"
+        },
         "movie_card_9800": {
             "description": "Two competing lawyers join forces to sue a prestigious law firm for AIDS discrimination. As their unlikely friendship develops their courage overcomes the prejudice and corruption of their powerful adversaries.",
             "director": "Jonathan Demme",
@@ -1161,6 +1315,20 @@
             "vote_average": 7.725,
             "wiki_url": "https://en.wikipedia.org/wiki/Philadelphia",
             "writers": "Ron Nyswaner"
+        },
+        "movie_card_981": {
+            "description": "When a rich woman's ex-husband and a tabloid-type reporter turn up just before her planned remarriage, she begins to learn the truth about herself.",
+            "director": "George Cukor",
+            "dop": "Joseph Ruttenberg",
+            "imdb_id": "0032904",
+            "poster_path": "https://image.tmdb.org/t/p/original/dKUubjvxO78XDts6VP1Ggcp4R9O.jpg",
+            "release_date": "1940-12-05",
+            "stars": "Cary Grant, Katharine Hepburn, James Stewart, Ruth Hussey, John Howard, Roland Young, John Halliday, Mary Nash, Virginia Weidler, Henry Daniell, Lionel Pape, Rex Evans, King Baggot, Hillary Brooke, Veda Buckland, Lita Chevret, Russ Clark, David Clyde, Robert De Bruce, Dorothy Fay, Claude King, Eric Mayne, Florine McKinney, Lee Phelps, Hilda Plowright, Helene Reynolds, Mildred Shay, Joseph Sweeney, Sally Cleaves, Oliver Cross, Dick Gordon, Sam Harris, Frank McLure, Paul Power, Ellinor Vanderveer, Florence Wix",
+            "title": "The Philadelphia Story",
+            "tmdb_id": 981,
+            "vote_average": 7.645,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Philadelphia_Story_(film)",
+            "writers": "Philip Barry, Donald Ogden Stewart, Waldo Salt"
         }
     },
     "person_details": {
@@ -1799,6 +1967,24 @@
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/Alice_Arlen"
         },
+        "person_Aline Brosh McKenna": {
+            "biography": "Aline Brosh McKenna was born on August 2, 1967 in New Jersey, USA. She is a writer and producer, known for The Devil Wears Prada (2006), 27 Dresses (2008, We Bought a Zoo (2011), Annie (2014) and  Cinderella (2015).",
+            "birthday": "1967-08-02",
+            "deathday": null,
+            "imdb_id": "0112459",
+            "movie_credits": [
+                {
+                    "popularity": 23.349,
+                    "release_year": "2023",
+                    "title": "Your Place or Mine",
+                    "vote_average": 6.296
+                }
+            ],
+            "name": "Aline Brosh McKenna",
+            "place_of_birth": "Frankreich",
+            "profile_path": "/7U6a2yhwkxvOkOm9HjfDl0qUmm2.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Aline_Brosh_McKenna"
+        },
         "person_Alonzo F. Jones": {
             "biography": "",
             "birthday": "1970-06-13",
@@ -1852,6 +2038,240 @@
             "place_of_birth": null,
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/1986_in_film"
+        },
+        "person_Anne Hathaway": {
+            "biography": "Anne Jacqueline Hathaway (born November 12, 1982) is an American actress. She is the recipient of various accolades, including an Academy Award, a Golden Globe Award, and a Primetime Emmy Award, and was among the world's highest-paid actresses in 2015. Her films have grossed over $6.8 billion worldwide, and she appeared on the Forbes Celebrity 100 list in 2009.\n\nHathaway graduated from Millburn High School in New Jersey, where she performed in several plays. As a teenager, she was cast in the television series Get Real (1999\u20132000) and made her breakthrough as the protagonist in her debut film, the Disney comedy The Princess Diaries (2001). Hathaway made a transition to adult roles with the 2005 dramas Havoc and Brokeback Mountain. The comedy-drama The Devil Wears Prada (2006), in which she played an assistant to a fashion magazine editor, was her biggest commercial success to that point. She played a recovering addict with a mental illness in the drama Rachel Getting Married (2008), which earned her a nomination for the Academy Award for Best Actress.  Hathaway went on to star in several commercially successful films, including the comedy Get Smart (2008), the romances Bride Wars (2009), Valentine's Day (2010), and Love & Other Drugs (2010), and the fantasy film Alice in Wonderland (2010). In 2012, she starred as Selina Kyle / Catwoman in her highest-grossing film, The Dark Knight Rises. Also that year, she played Fantine, a prostitute dying of tuberculosis, in the musical Les Mis\u00e9rables, for which she won the Academy Award for Best Supporting Actress. She has since played a scientist in the science fiction film Interstellar (2014), the owner of an online fashion site in the comedy The Intern (2015), a haughty actress in the heist film Ocean's 8 (2018), a con artist in the comedy The Hustle (2019), and Rebekah Neumann in the miniseries WeCrashed (2022).\n\nIn addition to film roles, Hathaway has won a Primetime Emmy Award for her voice role in the sitcom The Simpsons, sung for soundtracks, appeared on stage, and hosted events.",
+            "birthday": "1982-11-12",
+            "deathday": null,
+            "imdb_id": "0004266",
+            "movie_credits": [
+                {
+                    "popularity": 20.662,
+                    "release_year": "2022",
+                    "title": "Armageddon Time",
+                    "vote_average": 6.541
+                },
+                {
+                    "popularity": 6.764,
+                    "release_year": "2021",
+                    "title": "Locked Down",
+                    "vote_average": 5.265
+                },
+                {
+                    "popularity": 20.062,
+                    "release_year": "2020",
+                    "title": "The Last Thing He Wanted",
+                    "vote_average": 4.885
+                },
+                {
+                    "popularity": 67.105,
+                    "release_year": "2020",
+                    "title": "Roald Dahl's The Witches",
+                    "vote_average": 6.376
+                },
+                {
+                    "popularity": 17.6,
+                    "release_year": "2019",
+                    "title": "Serenity",
+                    "vote_average": 5.447
+                },
+                {
+                    "popularity": 20.367,
+                    "release_year": "2019",
+                    "title": "Dark Waters",
+                    "vote_average": 7.52
+                },
+                {
+                    "popularity": 36.822,
+                    "release_year": "2019",
+                    "title": "The Hustle",
+                    "vote_average": 6.209
+                },
+                {
+                    "popularity": 52.916,
+                    "release_year": "2018",
+                    "title": "Ocean's Eight",
+                    "vote_average": 6.988
+                },
+                {
+                    "popularity": 25.715,
+                    "release_year": "2017",
+                    "title": "Colossal",
+                    "vote_average": 6.299
+                },
+                {
+                    "popularity": 48.388,
+                    "release_year": "2016",
+                    "title": "Alice Through the Looking Glass",
+                    "vote_average": 6.553
+                },
+                {
+                    "popularity": 37.298,
+                    "release_year": "2015",
+                    "title": "The Intern",
+                    "vote_average": 7.203
+                },
+                {
+                    "popularity": 7.633,
+                    "release_year": "2014",
+                    "title": "Song One",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 42.957,
+                    "release_year": "2014",
+                    "title": "Rio 2",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 169.855,
+                    "release_year": "2014",
+                    "title": "Interstellar",
+                    "vote_average": 8.424
+                },
+                {
+                    "popularity": 27.978,
+                    "release_year": "2013",
+                    "title": "Don Jon",
+                    "vote_average": 5.999
+                },
+                {
+                    "popularity": 23.398,
+                    "release_year": "2012",
+                    "title": "Les Mis\u00e9rables",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 83.465,
+                    "release_year": "2012",
+                    "title": "The Dark Knight Rises",
+                    "vote_average": 7.777
+                },
+                {
+                    "popularity": 29.228,
+                    "release_year": "2011",
+                    "title": "One Day",
+                    "vote_average": 7.424
+                },
+                {
+                    "popularity": 48.041,
+                    "release_year": "2011",
+                    "title": "Rio",
+                    "vote_average": 6.725
+                },
+                {
+                    "popularity": 15.15,
+                    "release_year": "2010",
+                    "title": "Family Guy Presents: It's a Trap!",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 19.053,
+                    "release_year": "2010",
+                    "title": "Valentine's Day",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 51.685,
+                    "release_year": "2010",
+                    "title": "Love & Other Drugs",
+                    "vote_average": 7.044
+                },
+                {
+                    "popularity": 72.411,
+                    "release_year": "2010",
+                    "title": "Alice in Wonderland",
+                    "vote_average": 6.6
+                },
+                {
+                    "popularity": 26.832,
+                    "release_year": "2009",
+                    "title": "Bride Wars",
+                    "vote_average": 6.242
+                },
+                {
+                    "popularity": 10.053,
+                    "release_year": "2008",
+                    "title": "Rachel Getting Married",
+                    "vote_average": 6.279
+                },
+                {
+                    "popularity": 14.251,
+                    "release_year": "2008",
+                    "title": "Passengers",
+                    "vote_average": 6.079
+                },
+                {
+                    "popularity": 21.922,
+                    "release_year": "2008",
+                    "title": "Get Smart",
+                    "vote_average": 6.18
+                },
+                {
+                    "popularity": 14.137,
+                    "release_year": "2007",
+                    "title": "Becoming Jane",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 62.971,
+                    "release_year": "2006",
+                    "title": "The Devil Wears Prada",
+                    "vote_average": 7.39
+                },
+                {
+                    "popularity": 16.026,
+                    "release_year": "2005",
+                    "title": "Havoc",
+                    "vote_average": 5.164
+                },
+                {
+                    "popularity": 24.015,
+                    "release_year": "2005",
+                    "title": "Hoodwinked!",
+                    "vote_average": 6.218
+                },
+                {
+                    "popularity": 34.256,
+                    "release_year": "2005",
+                    "title": "Brokeback Mountain",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 20.968,
+                    "release_year": "2004",
+                    "title": "Ella Enchanted",
+                    "vote_average": 6.44
+                },
+                {
+                    "popularity": 35.184,
+                    "release_year": "2004",
+                    "title": "The Princess Diaries 2: Royal Engagement",
+                    "vote_average": 6.686
+                },
+                {
+                    "popularity": 10.298,
+                    "release_year": "2002",
+                    "title": "Nicholas Nickleby",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 4.873,
+                    "release_year": "2001",
+                    "title": "The Other Side of Heaven",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 43.467,
+                    "release_year": "2001",
+                    "title": "The Princess Diaries",
+                    "vote_average": 6.95
+                }
+            ],
+            "name": "Anne Hathaway",
+            "place_of_birth": "Brooklyn, New York,  USA",
+            "profile_path": "/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Anne_Hathaway"
         },
         "person_Anthony Heald": {
             "biography": "An American actor known for portraying Hannibal Lecter's jail nemesis, Dr. Frederick Chilton in The Silence of the Lambs and Red Dragon, and for playing assistant principal Scott Guber in David E. Kelley's Boston Public. He also had a recurring role as Judge Cooper on Kelley's The Practice and Boston Legal.\n\n\u200bFrom Wikipedia, the free encyclopedia",
@@ -4683,6 +5103,150 @@
             "place_of_birth": null,
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/Brendan_McCarthy"
+        },
+        "person_Bridget Fonda": {
+            "biography": "Bridget Jane Fonda Elfman is an American former actress. She is known for her roles in The Godfather Part III, Single White Female, Singles, Point of No Return, It Could Happen to You, and Jackie Brown. She is the daughter of Peter Fonda, niece of Jane Fonda, and granddaughter of Henry Fonda.",
+            "birthday": "1964-01-27",
+            "deathday": null,
+            "imdb_id": "0000403",
+            "movie_credits": [
+                {
+                    "popularity": 7.1,
+                    "release_year": "2002",
+                    "title": "Snow Queen",
+                    "vote_average": 6.037
+                },
+                {
+                    "popularity": 11.999,
+                    "release_year": "2001",
+                    "title": "Monkeybone",
+                    "vote_average": 5.109
+                },
+                {
+                    "popularity": 18.94,
+                    "release_year": "2001",
+                    "title": "Kiss of the Dragon",
+                    "vote_average": 6.821
+                },
+                {
+                    "popularity": 17.728,
+                    "release_year": "1999",
+                    "title": "Lake Placid",
+                    "vote_average": 5.883
+                },
+                {
+                    "popularity": 13.559,
+                    "release_year": "1998",
+                    "title": "A Simple Plan",
+                    "vote_average": 7.168
+                },
+                {
+                    "popularity": 22.938,
+                    "release_year": "1997",
+                    "title": "Jackie Brown",
+                    "vote_average": 7.357
+                },
+                {
+                    "popularity": 4.266,
+                    "release_year": "1996",
+                    "title": "Grace of My Heart",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 14.596,
+                    "release_year": "1996",
+                    "title": "City Hall",
+                    "vote_average": 5.902
+                },
+                {
+                    "popularity": 21.407,
+                    "release_year": "1995",
+                    "title": "Balto",
+                    "vote_average": 7.296
+                },
+                {
+                    "popularity": 8.422,
+                    "release_year": "1994",
+                    "title": "The Road to Wellville",
+                    "vote_average": 5.598
+                },
+                {
+                    "popularity": 15.981,
+                    "release_year": "1994",
+                    "title": "It Could Happen to You",
+                    "vote_average": 6.477
+                },
+                {
+                    "popularity": 13.618,
+                    "release_year": "1993",
+                    "title": "Point of No Return",
+                    "vote_average": 6.228
+                },
+                {
+                    "popularity": 18.457,
+                    "release_year": "1993",
+                    "title": "Little Buddha",
+                    "vote_average": 6.234
+                },
+                {
+                    "popularity": 10.806,
+                    "release_year": "1992",
+                    "title": "Singles",
+                    "vote_average": 6.35
+                },
+                {
+                    "popularity": 12.736,
+                    "release_year": "1992",
+                    "title": "Single White Female",
+                    "vote_average": 6.253
+                },
+                {
+                    "popularity": 23.536,
+                    "release_year": "1992",
+                    "title": "Army of Darkness",
+                    "vote_average": 7.254
+                },
+                {
+                    "popularity": 12.9,
+                    "release_year": "1991",
+                    "title": "Doc Hollywood",
+                    "vote_average": 6.339
+                },
+                {
+                    "popularity": 13.121,
+                    "release_year": "1991",
+                    "title": "Drop Dead Fred",
+                    "vote_average": 5.893
+                },
+                {
+                    "popularity": 5.083,
+                    "release_year": "1990",
+                    "title": "Frankenstein Unbound",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 87.433,
+                    "release_year": "1990",
+                    "title": "The Godfather Part III",
+                    "vote_average": 7.425
+                },
+                {
+                    "popularity": 11.999,
+                    "release_year": "1989",
+                    "title": "Scandal",
+                    "vote_average": 5.865
+                },
+                {
+                    "popularity": 22.408,
+                    "release_year": "1969",
+                    "title": "Easy Rider",
+                    "vote_average": 7.068
+                }
+            ],
+            "name": "Bridget Fonda",
+            "place_of_birth": "Los Angeles, California, USA",
+            "profile_path": "/huy47Gj6dB9mcicgo7bMqpzPmdy.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Bridget_Fonda"
         },
         "person_Carl Gilliard": {
             "biography": "Carl is a native of Chicago, attended high school in Detroit (Osborn High) and received his degree from Michigan State University.  Carl initially worked as a radio newscaster at WGPR (107.5) in Detroit before accepting a sales position with the Eastman Kodak Company in Detroit. Shortly thereafter, he accepted a position with the Pepsi-Cola Bottling Group as a District Manager which took him first to Grand Rapids, and then to Kalamazoo Michigan, where Carl was re-introduced to theatre at the Kalamazoo Civic Theatre.  In 1985, Carl re-located to Los Angeles, where he became a notable fixture on the LA Theatre circuit.  As an actor, Carl has appeared in over 2 dozen plays mesmerizing audiences with his trademark baritone voice and fearless character portrayals. He has appeared in \"The River Niger\", \"Livin' Fat\", \"Bubblin' Brown Sugar\", \"Zooman &amp; The Sign\", \"South Of Where We Live\", \"Jeffrey's Plan\" &amp; \"The Ninth Wave\".  His theatre work paved the way for his numerous television &amp; film roles in sitcoms such as \"Freddie\", \"Barbershop\", \"Family Matters\", \"Martin\", \"The Fresh Prince Of Bel-Air &amp; \"Roc as well as other appearances in \"24\", Michael Mann's, \"Robbery Homicide Division\", \"Alias\", \"Cold Case\", \"Sleeper Cell\", \"Strong Medicine\", \"Hunter\", \"Mike Hammer\", \"Sherman Oaks\" and features such as \"Nothin' 2 Lose\", \"Chatroom\", \"Contact\", \"The Luau\" , \"Coach Carter\", the Wes Craven's thriller, \"Red Eye\" , the upcoming prison drama, \"The Mannsfield 12\", directed by Craig Ross, Jr. &amp; the romantic comedy, \"Divine Intervention\", directed by Van Elder.  Carl has also appeared in numerous television commercials for IBM, GM, Burger King, Pepto Bismol, Bank One, Habitat For Humanity, Nicoderm, Saturn, Miller Beer &amp; the hilarious \"dropped call\" campaign for Cingular.  Through Carl's various experiences in film, television &amp; theatre, he quickly forged his niche as a Producer with keen discernment for developing and discovering new screenplays by new and exciting writers. In collaboration with partner, Tony Winters, he produced the Pan African Audience Award winning feature \"Retiring Tatiana\". Carl's first outing as director is the poignant drama, \"Section 8\".  Carl is the Ministry Director of the Faithful Central Bible Church Repertory Company, the drama team at Faithful Central Bible Church and also is Co-Creator and Program Director for the Bill Duke Media Foundation's Youth Media Camp.  IMDb Mini Biography By: I-94 Entertainment",
@@ -7522,6 +8086,414 @@
             "profile_path": "/rGdpdQ0DDVDX4FlQzrdFGcOlRGB.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Don_McManus"
         },
+        "person_Dwayne Johnson": {
+            "biography": "An American and Canadian actor, producer and semi-retired professional wrestler, signed with WWE.  Johnson is half-Black and half-Samoan. His father, Rocky Johnson, is a Black Canadian, from Nova Scotia, and part of the first Black tag team champions in WWE history back when it was known as the WWF along with Tony Atlas. His mother is Samoan and the daughter of Peter Maivia, who was also a pro wrestler. Maivia's wife, Lia Maivia, was one of wrestling's few female promoters, taking over Polynesian Pacific Pro Wrestling after her husband's death in 1982, until 1988. Through his mother, he is considered a non-blood relative of the Anoa'i wrestling family. On March 29, 2008, The Rock inducted his father and his grandfather into the WWE Hall of Fame.\n\nAs of 2014, Johnson has a home in Southwest Ranches, Florida as well as Los Angeles, California. He also owns a farm in Virginia. In 2009, Johnson gained citizenship in Canada in honor of his father's background. Though Johnson was previously registered as a Republican, he voted for Barack Obama in the 2008 and 2012 United States presidential elections and is now an independent voter. He stated he did not vote in the 2016 U.S. election.\n\nIn recognition of his service to the Samoan people, and because he is a descendant of Samoan chiefs, Johnson had the noble title of Seiuli bestowed upon him by Malietoa Tanumafili II during his visit there in July 2004. He received a partial Samoan pe'a tattoo on his left side in 2003,and, in 2017, had the small \"Brahma bull\" tattoo on his right arm covered with a larger half-sleeve tattoo of a bull's skull.\n\nJohnson married Dany Garcia on May 3, 1997. Their only child together, a daughter named Simone, was born in August 2001. On June 1, 2007, they announced they were splitting up amicably. Johnson then began dating Lauren Hashian, daughter of Boston drummer Sib Hashian. They first met in 2006 while Johnson was filming The Game Plan. Their first child together, a daughter, was born in December 2015. Their second child, another daughter, was born in April 2018.\n\nJohnson attended the 2000 Democratic National Convention as part of WWE's non-partisan \"Smackdown Your Vote\" campaign, which aimed to influence young people to vote. He also had a speaking role at the 2000 Republican National Convention that same year.\n\nIn 2006, Johnson founded the Dwayne Johnson Rock Foundation, a charity working with at-risk and terminally ill children. On October 2, 2007, he and his ex-wife donated $1 million to the University of Miami to support the renovation of its football facilities; it was noted as the largest donation ever given to the university's athletics department by former students. The University of Miami renamed the Hurricanes' locker room in Johnson's honor. In 2015, Johnson donated $1,500 to a GoFundMe to pay for an abandoned dog's surgery. In 2017, he donated $25,000 to Hurricane Harvey relief efforts. In 2018, Johnson donated a gym to a military base in Oahu, Hawaii. After the 2018 Hawaii floods, he worked with Malama Kauai, a nonprofit organization, to help repair damages caused by the floods.",
+            "birthday": "1972-05-02",
+            "deathday": null,
+            "imdb_id": "0425005",
+            "movie_credits": [
+                {
+                    "popularity": 75.215,
+                    "release_year": "2023",
+                    "title": "Once Upon a Studio",
+                    "vote_average": 8.375
+                },
+                {
+                    "popularity": 506.47,
+                    "release_year": "2023",
+                    "title": "Fast X",
+                    "vote_average": 7.177
+                },
+                {
+                    "popularity": 57.139,
+                    "release_year": "2022",
+                    "title": "DC League of Super-Pets",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 232.743,
+                    "release_year": "2022",
+                    "title": "Black Adam",
+                    "vote_average": 6.984
+                },
+                {
+                    "popularity": 54.128,
+                    "release_year": "2021",
+                    "title": "Free Guy",
+                    "vote_average": 7.531
+                },
+                {
+                    "popularity": 56.593,
+                    "release_year": "2021",
+                    "title": "Jungle Cruise",
+                    "vote_average": 7.401
+                },
+                {
+                    "popularity": 61.711,
+                    "release_year": "2021",
+                    "title": "Red Notice",
+                    "vote_average": 6.786
+                },
+                {
+                    "popularity": 25.979,
+                    "release_year": "2019",
+                    "title": "Fighting with My Family",
+                    "vote_average": 6.862
+                },
+                {
+                    "popularity": 83.577,
+                    "release_year": "2019",
+                    "title": "Jumanji: The Next Level",
+                    "vote_average": 6.916
+                },
+                {
+                    "popularity": 104.933,
+                    "release_year": "2019",
+                    "title": "Fast & Furious Presents: Hobbs & Shaw",
+                    "vote_average": 6.866
+                },
+                {
+                    "popularity": 37.681,
+                    "release_year": "2018",
+                    "title": "Skyscraper",
+                    "vote_average": 6.312
+                },
+                {
+                    "popularity": 54.702,
+                    "release_year": "2018",
+                    "title": "Rampage",
+                    "vote_average": 6.454
+                },
+                {
+                    "popularity": 63.207,
+                    "release_year": "2017",
+                    "title": "Jumanji: Welcome to the Jungle",
+                    "vote_average": 6.826
+                },
+                {
+                    "popularity": 67.564,
+                    "release_year": "2017",
+                    "title": "Baywatch",
+                    "vote_average": 6.093
+                },
+                {
+                    "popularity": 80.484,
+                    "release_year": "2017",
+                    "title": "The Fate of the Furious",
+                    "vote_average": 6.884
+                },
+                {
+                    "popularity": 4.238,
+                    "release_year": "2016",
+                    "title": "WWE WrestleMania 32",
+                    "vote_average": 7.2
+                },
+                {
+                    "popularity": 25.417,
+                    "release_year": "2016",
+                    "title": "Moana",
+                    "vote_average": 7.568
+                },
+                {
+                    "popularity": 43.712,
+                    "release_year": "2016",
+                    "title": "Central Intelligence",
+                    "vote_average": 6.417
+                },
+                {
+                    "popularity": 7.518,
+                    "release_year": "2015",
+                    "title": "WWE WrestleMania 31",
+                    "vote_average": 8.0
+                },
+                {
+                    "popularity": 8.993,
+                    "release_year": "2015",
+                    "title": "Jem and the Holograms",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 68.792,
+                    "release_year": "2015",
+                    "title": "San Andreas",
+                    "vote_average": 6.232
+                },
+                {
+                    "popularity": 94.336,
+                    "release_year": "2015",
+                    "title": "Furious 7",
+                    "vote_average": 7.236
+                },
+                {
+                    "popularity": 7.992,
+                    "release_year": "2014",
+                    "title": "WWE WrestleMania XXX",
+                    "vote_average": 8.0
+                },
+                {
+                    "popularity": 47.742,
+                    "release_year": "2014",
+                    "title": "Hercules",
+                    "vote_average": 5.761
+                },
+                {
+                    "popularity": 3.483,
+                    "release_year": "2013",
+                    "title": "WWE WrestleMania 29",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 8.722,
+                    "release_year": "2013",
+                    "title": "Fast & Furious 6",
+                    "vote_average": 6.816
+                },
+                {
+                    "popularity": 14.977,
+                    "release_year": "2013",
+                    "title": "Snitch",
+                    "vote_average": 6.09
+                },
+                {
+                    "popularity": 17.009,
+                    "release_year": "2013",
+                    "title": "Empire State",
+                    "vote_average": 5.36
+                },
+                {
+                    "popularity": 33.679,
+                    "release_year": "2013",
+                    "title": "Pain & Gain",
+                    "vote_average": 6.255
+                },
+                {
+                    "popularity": 40.674,
+                    "release_year": "2013",
+                    "title": "G.I. Joe: Retaliation",
+                    "vote_average": 5.618
+                },
+                {
+                    "popularity": 5.602,
+                    "release_year": "2012",
+                    "title": "WWE WrestleMania XXVIII",
+                    "vote_average": 8.1
+                },
+                {
+                    "popularity": 45.76,
+                    "release_year": "2012",
+                    "title": "Journey 2: The Mysterious Island",
+                    "vote_average": 6.15
+                },
+                {
+                    "popularity": 4.976,
+                    "release_year": "2011",
+                    "title": "WWE WrestleMania XXVII",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 8.751,
+                    "release_year": "2011",
+                    "title": "Fast Five",
+                    "vote_average": 7.249
+                },
+                {
+                    "popularity": 8.628,
+                    "release_year": "2010",
+                    "title": "Why Did I Get Married Too?",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 13.909,
+                    "release_year": "2010",
+                    "title": "You Again",
+                    "vote_average": 6.306
+                },
+                {
+                    "popularity": 22.868,
+                    "release_year": "2010",
+                    "title": "The Other Guys",
+                    "vote_average": 6.303
+                },
+                {
+                    "popularity": 25.961,
+                    "release_year": "2010",
+                    "title": "Tooth Fairy",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 28.469,
+                    "release_year": "2010",
+                    "title": "Faster",
+                    "vote_average": 6.327
+                },
+                {
+                    "popularity": 15.612,
+                    "release_year": "2009",
+                    "title": "Planet 51",
+                    "vote_average": 5.852
+                },
+                {
+                    "popularity": 22.888,
+                    "release_year": "2009",
+                    "title": "Race to Witch Mountain",
+                    "vote_average": 5.828
+                },
+                {
+                    "popularity": 21.922,
+                    "release_year": "2008",
+                    "title": "Get Smart",
+                    "vote_average": 6.18
+                },
+                {
+                    "popularity": 9.803,
+                    "release_year": "2007",
+                    "title": "Reno 911!: Miami",
+                    "vote_average": 5.746
+                },
+                {
+                    "popularity": 30.9,
+                    "release_year": "2007",
+                    "title": "The Game Plan",
+                    "vote_average": 6.482
+                },
+                {
+                    "popularity": 13.066,
+                    "release_year": "2006",
+                    "title": "Gridiron Gang",
+                    "vote_average": 7.035
+                },
+                {
+                    "popularity": 15.577,
+                    "release_year": "2006",
+                    "title": "Southland Tales",
+                    "vote_average": 5.135
+                },
+                {
+                    "popularity": 16.345,
+                    "release_year": "2005",
+                    "title": "Be Cool",
+                    "vote_average": 5.448
+                },
+                {
+                    "popularity": 25.258,
+                    "release_year": "2005",
+                    "title": "Doom",
+                    "vote_average": 5.127
+                },
+                {
+                    "popularity": 25.485,
+                    "release_year": "2004",
+                    "title": "Walking Tall",
+                    "vote_average": 6.319
+                },
+                {
+                    "popularity": 24.919,
+                    "release_year": "2003",
+                    "title": "The Rundown",
+                    "vote_average": 6.45
+                },
+                {
+                    "popularity": 4.021,
+                    "release_year": "2002",
+                    "title": "WWE Wrestlemania X8",
+                    "vote_average": 8.2
+                },
+                {
+                    "popularity": 26.338,
+                    "release_year": "2002",
+                    "title": "The Scorpion King",
+                    "vote_average": 5.571
+                },
+                {
+                    "popularity": 48.593,
+                    "release_year": "2001",
+                    "title": "The Mummy Returns",
+                    "vote_average": 6.365
+                }
+            ],
+            "name": "Dwayne Johnson",
+            "place_of_birth": "Hayward, California, USA",
+            "profile_path": "/kuqFzlYMc2IrsOyPznMd1FroeGq.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Dwayne_Johnson"
+        },
+        "person_Elvis Presley": {
+            "biography": "Elvis Aaron Presley (January 8, 1935 \u2013 August 16, 1977), or simply Elvis, was an American singer and actor. Dubbed the \"King of Rock and Roll\", he is regarded as one of the most significant cultural figures of the 20th century. His energized interpretations of songs and sexually provocative performance style, combined with a singularly potent mix of influences across color lines during a transformative era in race relations, led him to both great success and initial controversy.\n\nPresley was born in Tupelo, Mississippi, and relocated to Memphis, Tennessee, with his family when he was 13 years old. His music career began there in 1954, recording at Sun Records with producer Sam Phillips, who wanted to bring the sound of African-American music to a wider audience. Presley, on rhythm acoustic guitar, and accompanied by lead guitarist Scotty Moore and bassist Bill Black, was a pioneer of rockabilly, an uptempo, backbeat-driven fusion of country music and rhythm and blues. In 1955, drummer D. J. Fontana joined to complete the lineup of Presley's classic quartet and RCA Victor acquired his contract in a deal arranged by Colonel Tom Parker, who would manage him for more than two decades. Presley's first RCA Victor single, \"Heartbreak Hotel\", was released in January 1956 and became a number-one hit in the United States. Within a year, RCA would sell ten million Presley singles. With a series of successful network television appearances and chart-topping records, Presley became the leading figure of the newly popular sound of rock and roll, though his performative style and promotion of the then-marginalized sound of African-Americans led to him being widely considered a threat to the moral well-being of the White American youth.\n\nIn November 1956, Presley made his film debut in Love Me Tender. Drafted into military service in 1958, Presley relaunched his recording career two years later with some of his most commercially successful work. He held few concerts, however, and guided by Parker, proceeded to devote much of the 1960s to making Hollywood films and soundtrack albums, most of them critically derided. Some of his most famous films included Jailhouse Rock (1957), Blue Hawaii (1961), and Viva Las Vegas (1964). In 1968, following a seven-year break from live performances, he returned to the stage in the acclaimed television comeback special Elvis, which led to an extended Las Vegas concert residency and a string of highly profitable tours. In 1973, Presley gave the first concert by a solo artist to be broadcast around the world, Aloha from Hawaii. Years of prescription drug abuse and unhealthy eating habits severely compromised his health, and he died suddenly in 1977 at his Graceland estate at the age of 42.",
+            "birthday": "1935-01-08",
+            "deathday": "1977-08-16",
+            "imdb_id": "0000062",
+            "movie_credits": [
+                {
+                    "popularity": 8.271,
+                    "release_year": "1993",
+                    "title": "La Classe am\u00e9ricaine",
+                    "vote_average": 7.675
+                },
+                {
+                    "popularity": 7.539,
+                    "release_year": "1970",
+                    "title": "Elvis: That's the Way It Is",
+                    "vote_average": 7.693
+                },
+                {
+                    "popularity": 13.685,
+                    "release_year": "1964",
+                    "title": "Viva Las Vegas",
+                    "vote_average": 6.238
+                },
+                {
+                    "popularity": 7.832,
+                    "release_year": "1963",
+                    "title": "Fun in Acapulco",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 6.063,
+                    "release_year": "1962",
+                    "title": "Girls! Girls! Girls!",
+                    "vote_average": 5.19
+                },
+                {
+                    "popularity": 9.89,
+                    "release_year": "1961",
+                    "title": "Blue Hawaii",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 6.648,
+                    "release_year": "1960",
+                    "title": "G.I. Blues",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 8.016,
+                    "release_year": "1960",
+                    "title": "Flaming Star",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 9.128,
+                    "release_year": "1958",
+                    "title": "King Creole",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 9.934,
+                    "release_year": "1957",
+                    "title": "Jailhouse Rock",
+                    "vote_average": 6.143
+                },
+                {
+                    "popularity": 7.1,
+                    "release_year": "1956",
+                    "title": "Love Me Tender",
+                    "vote_average": 6.099
+                }
+            ],
+            "name": "Elvis Presley",
+            "place_of_birth": "Tupelo, Mississippi, USA",
+            "profile_path": "/psf1wJUw48ALsfV3tN31FX0mDW5.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Elvis_Presley"
+        },
         "person_Emile Hirsch": {
             "biography": "Emile Davenport Hirsch (born March 13, 1985) is an American actor. He played Chris McCandless in Into the Wild (2007). Other notable film roles include The Girl Next Door (2004), Lords of Dogtown (2005), Alpha Dog (2006), Speed Racer (2008), Milk (2008), Lone Survivor (2013), An Evening with Beverly Luff Linn (2018), and Once Upon a Time in Hollywood (2019).\n\nDescription above from the Wikipedia article Emile Hirsch, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
             "birthday": "1985-03-13",
@@ -8224,6 +9196,36 @@
             "profile_path": "/3UaYw9KF4fEXRMRWhf25aGJpAW2.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Emma_Stone"
         },
+        "person_Ernest Thompson": {
+            "biography": "From Wikipedia, the free encyclopedia\n\nErnest Thompson (born Richard Ernest Thompson; November 6, 1949) is an American writer, actor, and director.\n\nDescription above from the Wikipedia article Ernest Thompson, licensed under CC-BY-SA, full list of contributors on Wikipedia.\n\n\u200b",
+            "birthday": "1949-11-06",
+            "deathday": null,
+            "imdb_id": "0860125",
+            "movie_credits": [
+                {
+                    "popularity": 5.351,
+                    "release_year": "1998",
+                    "title": "Next Stop Wonderland",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 4.471,
+                    "release_year": "1988",
+                    "title": "1969",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 8.945,
+                    "release_year": "1983",
+                    "title": "Star 80",
+                    "vote_average": 6.5
+                }
+            ],
+            "name": "Ernest Thompson",
+            "place_of_birth": "Bellows Falls, Vermont",
+            "profile_path": null,
+            "wiki_url": "https://en.wikipedia.org/wiki/Ernest_Thompson_Seton"
+        },
         "person_Eugene C. DePasquale": {
             "biography": "",
             "birthday": null,
@@ -8775,6 +9777,24 @@
             "place_of_birth": null,
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/Far_from_Home_(1989_film)"
+        },
+        "person_Frederick de Cordova": {
+            "biography": "From Wikipedia, the free encyclopedia.\n\nFrederick \"Fred\" Timmins de Cordova (October 27, 1910 - September 15, 2001) was an American stage, motion picture and television director and producer. He is best known for his work on The Tonight Show Starring Johnny Carson.\n\nDescription above from the Wikipedia article Frederick De Cordova, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1910-10-27",
+            "deathday": "2001-09-15",
+            "imdb_id": "0208111",
+            "movie_credits": [
+                {
+                    "popularity": 21.007,
+                    "release_year": "1982",
+                    "title": "The King of Comedy",
+                    "vote_average": 7.795
+                }
+            ],
+            "name": "Frederick de Cordova",
+            "place_of_birth": "New York City, New York",
+            "profile_path": "/xOhvTodv5fsEWjfNqm3Wbtodb1C.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Fred_de_Cordova"
         },
         "person_Gary A. Jones": {
             "biography": "",
@@ -10324,6 +11344,282 @@
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/Prisons_in_South_Africa"
         },
+        "person_Henry Fonda": {
+            "biography": "Henry Jaynes Fonda (May 16, 1905 \u2013 August 12, 1982) was an American actor who had a career that spanned five decades in Hollywood. Fonda cultivated a strong, appealing screen image in several films now considered to be classics, earning one Academy Award for Best Actor on two nominations.\n\nFonda made his mark early as a Broadway actor and made his Hollywood film debut in 1935. His film career began to gain momentum with roles such as Bette Davis's fiancee in her Academy Award-winning performance in Jezebel (1938), brother Frank in Jesse James (1939), and the future President in Young Mr. Lincoln (1939), directed by John Ford. His early career peaked with his Academy Award-nominated performance as Tom Joad in The Grapes of Wrath, about an Oklahoma family who moved to California during the Dust Bowl 1930s. This film is widely considered to be among the greatest American films.\n\nIn 1941 he starred opposite Barbara Stanwyck in the screwball comedy classic The Lady Eve. Book-ending his service in WWII were his starring roles in two highly regarded westerns: The Ox-Bow Incident (1943) and My Darling Clementine (1946), the latter directed by John Ford, and he also starred in Ford's western Fort Apache (1948). After a seven-year break from films, during which Fonda focused on stage productions, he returned with the WWII war-boat ensemble Mister Roberts (1955). In 1957 he starred as Juror No.8, the hold-out juror, in 12 Angry Men. Fonda, who was also co-producer, won the BAFTA for Best Foreign Actor.\n\nLater in his career, Fonda moved into darker roles, such as the villain in the epic Once Upon a Time in the West (1968), underrated and a box office disappointment at its time of release, but now regarded as one of the best westerns of all time. He also played in lighter-hearted fare such as Yours, Mine and Ours with Lucille Ball, but also often played important military figures, such as a Colonel in Battle of the Bulge (1965), and Admiral Nimitz in Midway (1976). He finally won the Academy Award for Best Actor at the 54th Academy Awards for his final film role in On Golden Pond (1981), which also starred Katharine Hepburn and his daughter Jane Fonda, but was too ill to attend the ceremony. He died from heart disease a few months later.\n\nDescription above from the Wikipedia article Henry Fonda, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1905-05-16",
+            "deathday": "1982-08-12",
+            "imdb_id": "0000020",
+            "movie_credits": [
+                {
+                    "popularity": 8.271,
+                    "release_year": "1993",
+                    "title": "La Classe am\u00e9ricaine",
+                    "vote_average": 7.675
+                },
+                {
+                    "popularity": 12.055,
+                    "release_year": "1981",
+                    "title": "On Golden Pond",
+                    "vote_average": 7.271
+                },
+                {
+                    "popularity": 10.412,
+                    "release_year": "1979",
+                    "title": "Meteor",
+                    "vote_average": 5.07
+                },
+                {
+                    "popularity": 9.089,
+                    "release_year": "1978",
+                    "title": "Fedora",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 12.0,
+                    "release_year": "1978",
+                    "title": "The Swarm",
+                    "vote_average": 4.941
+                },
+                {
+                    "popularity": 6.954,
+                    "release_year": "1977",
+                    "title": "Tentacles",
+                    "vote_average": 4.692
+                },
+                {
+                    "popularity": 7.777,
+                    "release_year": "1977",
+                    "title": "Rollercoaster",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 20.373,
+                    "release_year": "1976",
+                    "title": "Midway",
+                    "vote_average": 6.627
+                },
+                {
+                    "popularity": 19.429,
+                    "release_year": "1973",
+                    "title": "My Name Is Nobody",
+                    "vote_average": 7.2
+                },
+                {
+                    "popularity": 7.482,
+                    "release_year": "1971",
+                    "title": "Sometimes a Great Notion",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 5.89,
+                    "release_year": "1970",
+                    "title": "Too Late the Hero",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 7.483,
+                    "release_year": "1970",
+                    "title": "There Was a Crooked Man...",
+                    "vote_average": 6.79
+                },
+                {
+                    "popularity": 7.505,
+                    "release_year": "1970",
+                    "title": "The Cheyenne Social Club",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 5.176,
+                    "release_year": "1968",
+                    "title": "Madigan",
+                    "vote_average": 6.1
+                },
+                {
+                    "popularity": 6.745,
+                    "release_year": "1968",
+                    "title": "Firecreek",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 9.837,
+                    "release_year": "1968",
+                    "title": "The Boston Strangler",
+                    "vote_average": 6.816
+                },
+                {
+                    "popularity": 15.526,
+                    "release_year": "1968",
+                    "title": "Yours, Mine and Ours",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 38.822,
+                    "release_year": "1968",
+                    "title": "Once Upon a Time in the West",
+                    "vote_average": 8.287
+                },
+                {
+                    "popularity": 5.259,
+                    "release_year": "1966",
+                    "title": "A Big Hand for the Little Lady",
+                    "vote_average": 7.1
+                },
+                {
+                    "popularity": 10.936,
+                    "release_year": "1965",
+                    "title": "In Harm's Way",
+                    "vote_average": 6.545
+                },
+                {
+                    "popularity": 14.102,
+                    "release_year": "1965",
+                    "title": "Battle of the Bulge",
+                    "vote_average": 6.955
+                },
+                {
+                    "popularity": 13.098,
+                    "release_year": "1964",
+                    "title": "Sex and the Single Girl",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 16.664,
+                    "release_year": "1964",
+                    "title": "Fail Safe",
+                    "vote_average": 7.789
+                },
+                {
+                    "popularity": 5.248,
+                    "release_year": "1962",
+                    "title": "Advise & Consent",
+                    "vote_average": 7.255
+                },
+                {
+                    "popularity": 19.505,
+                    "release_year": "1962",
+                    "title": "The Longest Day",
+                    "vote_average": 7.593
+                },
+                {
+                    "popularity": 21.989,
+                    "release_year": "1962",
+                    "title": "How the West Was Won",
+                    "vote_average": 7.041
+                },
+                {
+                    "popularity": 13.197,
+                    "release_year": "1959",
+                    "title": "Warlock",
+                    "vote_average": 6.679
+                },
+                {
+                    "popularity": 13.253,
+                    "release_year": "1957",
+                    "title": "The Tin Star",
+                    "vote_average": 7.015
+                },
+                {
+                    "popularity": 47.739,
+                    "release_year": "1957",
+                    "title": "12 Angry Men",
+                    "vote_average": 8.545
+                },
+                {
+                    "popularity": 9.183,
+                    "release_year": "1956",
+                    "title": "The Wrong Man",
+                    "vote_average": 7.145
+                },
+                {
+                    "popularity": 15.236,
+                    "release_year": "1956",
+                    "title": "War and Peace",
+                    "vote_average": 6.658
+                },
+                {
+                    "popularity": 7.676,
+                    "release_year": "1955",
+                    "title": "Mister Roberts",
+                    "vote_average": 7.1
+                },
+                {
+                    "popularity": 15.236,
+                    "release_year": "1948",
+                    "title": "Fort Apache",
+                    "vote_average": 7.005
+                },
+                {
+                    "popularity": 14.482,
+                    "release_year": "1946",
+                    "title": "My Darling Clementine",
+                    "vote_average": 7.46
+                },
+                {
+                    "popularity": 12.277,
+                    "release_year": "1943",
+                    "title": "The Ox-Bow Incident",
+                    "vote_average": 7.7
+                },
+                {
+                    "popularity": 5.476,
+                    "release_year": "1942",
+                    "title": "The Battle of Midway",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 10.998,
+                    "release_year": "1941",
+                    "title": "The Lady Eve",
+                    "vote_average": 7.218
+                },
+                {
+                    "popularity": 11.774,
+                    "release_year": "1940",
+                    "title": "The Return of Frank James",
+                    "vote_average": 6.297
+                },
+                {
+                    "popularity": 15.828,
+                    "release_year": "1940",
+                    "title": "The Grapes of Wrath",
+                    "vote_average": 7.821
+                },
+                {
+                    "popularity": 5.323,
+                    "release_year": "1939",
+                    "title": "Young Mr. Lincoln",
+                    "vote_average": 7.19
+                },
+                {
+                    "popularity": 6.676,
+                    "release_year": "1939",
+                    "title": "Jesse James",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 8.924,
+                    "release_year": "1939",
+                    "title": "Drums Along the Mohawk",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 9.401,
+                    "release_year": "1938",
+                    "title": "Jezebel",
+                    "vote_average": 7.061
+                },
+                {
+                    "popularity": 9.164,
+                    "release_year": "1937",
+                    "title": "You Only Live Once",
+                    "vote_average": 7.132
+                }
+            ],
+            "name": "Henry Fonda",
+            "place_of_birth": "Grand Island, Nebraska, USA",
+            "profile_path": "/6wXWsqSXF3wCsGcwVqiszy6RX9X.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Henry_Fonda"
+        },
         "person_Hiroshi Kasuga": {
             "biography": "",
             "birthday": null,
@@ -10377,6 +11673,150 @@
             "place_of_birth": "Japan",
             "profile_path": "/lKi2oPCGSeotF4WidIyYztyM8Qp.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/13_Assassins_(1963_film)"
+        },
+        "person_Howard Hawks": {
+            "biography": "Howard Winchester Hawks (May 30, 1896 \u2013 December 26, 1977) was an American film director, producer and screenwriter of the classic Hollywood era. He is popular for his films from a wide range of genres, including screwball comedies [Bringing Up Baby (1938), His Girl Friday (1940), Gentlemen Prefer Blondes (1953)], westerns [Red River (1948), Rio Bravo (1959), El Dorado (1967)], adventure films [Only Angels Have Wings (1939), To Have and Have Not (1944)], films noirs [The Big Sleep (1946)] and gangster films [Scarface (1932)]. Notable characteristics of his films are independent and tough-talking female protagonists (\"Hawksian woman\") and witty and fast-paced dialogues.\n\nIn 1975, Hawks was awarded the Honorary Academy Award as \"a master American filmmaker whose creative efforts hold a distinguished place in world cinema,\" and in 1942 he was nominated for the Academy Award for Best Director for Sergeant York.\n\nHawks has been considered by film critics to be an auteur because of his recognizable style and frequent use of certain thematic elements. Andrew Sarris in his influential book of film criticism The American Cinema: Directors and Directions 1929\u20131968 included him in the \"pantheon\" of the 14 greatest film directors who had worked in the United States. Hawks influenced numerous filmmakers such as Quentin Tarantino and Martin Scorsese.",
+            "birthday": "1896-05-30",
+            "deathday": "1977-12-26",
+            "imdb_id": "0001328",
+            "movie_credits": [
+                {
+                    "popularity": 14.832,
+                    "release_year": "1970",
+                    "title": "Rio Lobo",
+                    "vote_average": 6.384
+                },
+                {
+                    "popularity": 20.775,
+                    "release_year": "1966",
+                    "title": "El Dorado",
+                    "vote_average": 7.366
+                },
+                {
+                    "popularity": 8.063,
+                    "release_year": "1964",
+                    "title": "Man's Favorite Sport?",
+                    "vote_average": 7.014
+                },
+                {
+                    "popularity": 12.174,
+                    "release_year": "1962",
+                    "title": "Hatari!",
+                    "vote_average": 6.659
+                },
+                {
+                    "popularity": 35.284,
+                    "release_year": "1959",
+                    "title": "Rio Bravo",
+                    "vote_average": 7.832
+                },
+                {
+                    "popularity": 7.332,
+                    "release_year": "1955",
+                    "title": "Land of the Pharaohs",
+                    "vote_average": 6.233
+                },
+                {
+                    "popularity": 21.251,
+                    "release_year": "1953",
+                    "title": "Gentlemen Prefer Blondes",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 6.471,
+                    "release_year": "1952",
+                    "title": "The Big Sky",
+                    "vote_average": 6.468
+                },
+                {
+                    "popularity": 9.589,
+                    "release_year": "1952",
+                    "title": "Monkey Business",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 13.185,
+                    "release_year": "1951",
+                    "title": "The Thing from Another World",
+                    "vote_average": 6.751
+                },
+                {
+                    "popularity": 7.826,
+                    "release_year": "1949",
+                    "title": "I Was a Male War Bride",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 14.664,
+                    "release_year": "1948",
+                    "title": "Red River",
+                    "vote_average": 7.387
+                },
+                {
+                    "popularity": 16.649,
+                    "release_year": "1946",
+                    "title": "The Big Sleep",
+                    "vote_average": 7.601
+                },
+                {
+                    "popularity": 7.54,
+                    "release_year": "1945",
+                    "title": "To Have and Have Not",
+                    "vote_average": 7.446
+                },
+                {
+                    "popularity": 5.085,
+                    "release_year": "1943",
+                    "title": "Air Force",
+                    "vote_average": 6.356
+                },
+                {
+                    "popularity": 6.35,
+                    "release_year": "1941",
+                    "title": "Ball of Fire",
+                    "vote_average": 7.362
+                },
+                {
+                    "popularity": 11.431,
+                    "release_year": "1941",
+                    "title": "Sergeant York",
+                    "vote_average": 7.2
+                },
+                {
+                    "popularity": 14.132,
+                    "release_year": "1940",
+                    "title": "His Girl Friday",
+                    "vote_average": 7.405
+                },
+                {
+                    "popularity": 10.178,
+                    "release_year": "1939",
+                    "title": "Only Angels Have Wings",
+                    "vote_average": 7.271
+                },
+                {
+                    "popularity": 12.266,
+                    "release_year": "1938",
+                    "title": "Bringing Up Baby",
+                    "vote_average": 7.535
+                },
+                {
+                    "popularity": 6.486,
+                    "release_year": "1934",
+                    "title": "Twentieth Century",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 27.133,
+                    "release_year": "1932",
+                    "title": "Scarface",
+                    "vote_average": 7.459
+                }
+            ],
+            "name": "Howard Hawks",
+            "place_of_birth": "Goshen, Indiana, USA",
+            "profile_path": "/hG2oF9wZlqwGqP6EhG0qaN9Afg7.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Howard_Hawks"
         },
         "person_Hunter Stratton Boland": {
             "biography": "",
@@ -11606,6 +13046,17 @@
             "place_of_birth": null,
             "profile_path": null,
             "wiki_url": "https://en.wikipedia.org/wiki/Lawrence_Summers"
+        },
+        "person_John L. Russell": {
+            "biography": "",
+            "birthday": "1905-05-15",
+            "deathday": "1967-07-22",
+            "imdb_id": "0005852",
+            "movie_credits": [],
+            "name": "John L. Russell",
+            "place_of_birth": "New York City, New York, USA",
+            "profile_path": null,
+            "wiki_url": "https://en.wikipedia.org/wiki/John_Russell"
         },
         "person_John Logan": {
             "biography": "John David Logan is an American playwright and filmmaker. He is known for his work as a screenwriter for such films as Martin Scorsese's The Aviator and Hugo, Tim Burton's Sweeney Todd: The Demon Barber of Fleet Street and Sam Mendes's James Bond films Skyfall, and Spectre. He has been nominated three times for Academy Awards, and has won a Tony Award and a Golden Globe Award.",
@@ -13437,6 +14888,150 @@
             "profile_path": "/zIiU5mOcinbkpHWCxuDigucsyZC.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Kate_Winslet"
         },
+        "person_Katharine Hepburn": {
+            "biography": "Katharine Houghton Hepburn (May 12, 1907 \u2013 June 29, 2003) was an American actress of film, stage, and television. Raised in Connecticut by wealthy parents, Hepburn turned to acting after graduation. Favorable reviews of her work on stage in 1932 brought her to the notice of Hollywood. After a few early film successes, including her first Academy Award, for Morning Glory, Hepburn endured a string of flops, which led to her being voted \"box office poison\". She arranged with playwright Philip Barry to write a play with her in mind, one that smoothed over her prickly public image. This play, The Philadelphia Story, turned out to be a huge success on Broadway. Securing the film rights for herself with the help of Howard Hughes, Hepburn sold them to Metro-Goldwyn-Mayer on the condition that she reprise her leading role as Tracy Lord. The hit film adaptation revived her flagging career.\n\nThroughout her six-decade career, Hepburn co-starred with screen legends including Cary Grant (Bringing Up Baby, Holiday, The Philadelphia Story), Humphrey Bogart (The African Queen), John Wayne (Rooster Cogburn), Laurence Olivier (Love Among the Ruins) and Henry Fonda (On Golden Pond). Her most successful pairing was with Spencer Tracy, with whom she made a string of hit pictures, starting with 1942's Woman of the Year. The last of their nine films together was Guess Who's Coming to Dinner (1967), which was completed shortly before Tracy's death.\n\nHepburn holds the record for the most Best Actress Oscar wins with four out of 12 nominations. She won an Emmy Award in 1976 for her lead role in Love Among the Ruins, and was nominated for four other Emmys, two Tony Awards and eight Golden Globes. In 1999, she was ranked by the American Film Institute as the greatest female star in the history of American cinema.\n\nDescription above from the Wikipedia article Katharine Hepburn, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1907-05-12",
+            "deathday": "2003-06-29",
+            "imdb_id": "0000031",
+            "movie_credits": [
+                {
+                    "popularity": 4.411,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 7.023,
+                    "release_year": "1994",
+                    "title": "Love Affair",
+                    "vote_average": 5.4
+                },
+                {
+                    "popularity": 12.055,
+                    "release_year": "1981",
+                    "title": "On Golden Pond",
+                    "vote_average": 7.271
+                },
+                {
+                    "popularity": 12.658,
+                    "release_year": "1975",
+                    "title": "Rooster Cogburn",
+                    "vote_average": 6.466
+                },
+                {
+                    "popularity": 3.21,
+                    "release_year": "1974",
+                    "title": "That's Entertainment!",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 15.537,
+                    "release_year": "1968",
+                    "title": "The Lion in Winter",
+                    "vote_average": 7.41
+                },
+                {
+                    "popularity": 17.682,
+                    "release_year": "1967",
+                    "title": "Guess Who's Coming to Dinner",
+                    "vote_average": 7.567
+                },
+                {
+                    "popularity": 3.847,
+                    "release_year": "1962",
+                    "title": "Long Day's Journey Into Night",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 12.067,
+                    "release_year": "1959",
+                    "title": "Suddenly, Last Summer",
+                    "vote_average": 7.321
+                },
+                {
+                    "popularity": 7.799,
+                    "release_year": "1957",
+                    "title": "Desk Set",
+                    "vote_average": 6.99
+                },
+                {
+                    "popularity": 8.105,
+                    "release_year": "1955",
+                    "title": "Summertime",
+                    "vote_average": 6.824
+                },
+                {
+                    "popularity": 4.053,
+                    "release_year": "1952",
+                    "title": "Pat and Mike",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 15.725,
+                    "release_year": "1952",
+                    "title": "The African Queen",
+                    "vote_average": 7.35
+                },
+                {
+                    "popularity": 8.766,
+                    "release_year": "1949",
+                    "title": "Adam's Rib",
+                    "vote_average": 7.1
+                },
+                {
+                    "popularity": 4.327,
+                    "release_year": "1948",
+                    "title": "State of the Union",
+                    "vote_average": 6.645
+                },
+                {
+                    "popularity": 7.632,
+                    "release_year": "1942",
+                    "title": "Woman of the Year",
+                    "vote_average": 6.908
+                },
+                {
+                    "popularity": 11.198,
+                    "release_year": "1940",
+                    "title": "The Philadelphia Story",
+                    "vote_average": 7.645
+                },
+                {
+                    "popularity": 9.204,
+                    "release_year": "1938",
+                    "title": "Holiday",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 12.266,
+                    "release_year": "1938",
+                    "title": "Bringing Up Baby",
+                    "vote_average": 7.536
+                },
+                {
+                    "popularity": 6.99,
+                    "release_year": "1937",
+                    "title": "Stage Door",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 4.449,
+                    "release_year": "1935",
+                    "title": "Sylvia Scarlett",
+                    "vote_average": 6.429
+                },
+                {
+                    "popularity": 8.406,
+                    "release_year": "1933",
+                    "title": "Little Women",
+                    "vote_average": 6.7
+                }
+            ],
+            "name": "Katharine Hepburn",
+            "place_of_birth": "Hartford, Connecticut, USA",
+            "profile_path": "/hzBSOe6bburyMeeCqD9kR9tRfdD.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Katharine_Hepburn"
+        },
         "person_Ken Kesey": {
             "biography": "From Wikipedia, the free encyclopedia\n\nKenneth Elton \"Ken\" Kesey (September 17, 1935 \u2013 November 10, 2001) was an American author, best known for his novel One Flew Over the Cuckoo's Nest (1962), and as a counter-cultural figure who considered himself a link between the Beat Generation of the 1950s and the hippies of the 1960s. \"I was too young to be a beatnik, and too old to be a hippie,\" Kesey said in a 1999 interview with Robert K. Elder.\n\nDescription above from the Wikipedia article Ken Kesey, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
             "birthday": "1935-09-17",
@@ -14534,6 +16129,108 @@
             "place_of_birth": "Great Britain Scotland",
             "profile_path": "/vJtsImFDTSyUXEarfiaeuWbQdre.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Lisa_McAllister"
+        },
+        "person_Lorraine Bracco": {
+            "biography": "Lorraine Bracco (born October 2, 1954) is an American actress. She is known for her roles as Karen Hill in Goodfellas, Dr. Jennifer Melfi on the HBO television series The Sopranos, and Angela Rizzoli, Jane's mother on Rizzoli & Isles.",
+            "birthday": "1954-10-02",
+            "deathday": null,
+            "imdb_id": "0000966",
+            "movie_credits": [
+                {
+                    "popularity": 47.839,
+                    "release_year": "2022",
+                    "title": "Pinocchio",
+                    "vote_average": 6.408
+                },
+                {
+                    "popularity": 5.078,
+                    "release_year": "2007",
+                    "title": "Snowglobe",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 10.822,
+                    "release_year": "2001",
+                    "title": "Riding in Cars with Boys",
+                    "vote_average": 6.774
+                },
+                {
+                    "popularity": 25.58,
+                    "release_year": "1995",
+                    "title": "The Basketball Diaries",
+                    "vote_average": 7.384
+                },
+                {
+                    "popularity": 26.797,
+                    "release_year": "1995",
+                    "title": "Hackers",
+                    "vote_average": 6.33
+                },
+                {
+                    "popularity": 6.1,
+                    "release_year": "1994",
+                    "title": "Being Human",
+                    "vote_average": 5.0
+                },
+                {
+                    "popularity": 6.38,
+                    "release_year": "1994",
+                    "title": "Even Cowgirls Get the Blues",
+                    "vote_average": 4.358
+                },
+                {
+                    "popularity": 9.934,
+                    "release_year": "1992",
+                    "title": "Radio Flyer",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 13.822,
+                    "release_year": "1992",
+                    "title": "Medicine Man",
+                    "vote_average": 5.994
+                },
+                {
+                    "popularity": 17.95,
+                    "release_year": "1991",
+                    "title": "Switch",
+                    "vote_average": 5.953
+                },
+                {
+                    "popularity": 70.11,
+                    "release_year": "1990",
+                    "title": "GoodFellas",
+                    "vote_average": 8.465
+                },
+                {
+                    "popularity": 10.043,
+                    "release_year": "1989",
+                    "title": "The Dream Team",
+                    "vote_average": 6.117
+                },
+                {
+                    "popularity": 12.63,
+                    "release_year": "1989",
+                    "title": "Sea of Love",
+                    "vote_average": 6.585
+                },
+                {
+                    "popularity": 7.84,
+                    "release_year": "1987",
+                    "title": "The Pick-up Artist",
+                    "vote_average": 5.643
+                },
+                {
+                    "popularity": 9.076,
+                    "release_year": "1987",
+                    "title": "Someone to Watch Over Me",
+                    "vote_average": 5.942
+                }
+            ],
+            "name": "Lorraine Bracco",
+            "place_of_birth": "New York City, New York, USA",
+            "profile_path": "/1lQiN8yggIJ8aGYLp4Nul3ALdXC.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Lorraine_Bracco"
         },
         "person_Louise Fletcher": {
             "biography": "\u200bFrom Wikipedia, the free encyclopedia.\n\nLouise Fletcher (July 22, 1934 \u2013 September 23, 2022) was an American actress, best known for her portrayal of Nurse Ratched in One Flew Over the Cuckoo's Nest (1975), which earned her an Academy Award for Best Actress, a BAFTA Award, and a Golden Globe Award. She was also well-known for her recurring role as the Bajoran religious leader Kai Winn Adami in the television series Star Trek: Deep Space Nine (1993\u201399), as well as for her role as Helen Rosemond in the movie Cruel Intentions (1999). She was nominated for two Emmy Awards for her roles in the television series Picket Fences (1996) and Joan of Arcadia (2004). Her final role was as Rosie in the Netflix series Girlboss (2017). Fletcher died at her home in Montdurausse, France, on September 23, 2022, at the age of 88.\n\nDescription above from the Wikipedia article Louise Fletcher, licensed under CC-BY-SA, full list of contributors on Wikipedia",
@@ -19224,6 +20921,270 @@
             "place_of_birth": "Ipswich, Suffolk, England, UK",
             "profile_path": "/tJr9GcmGNHhLVVEH3i7QYbj6hBi.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Ralph_Fiennes"
+        },
+        "person_Reese Witherspoon": {
+            "biography": "Laura Jeanne Reese Witherspoon (born March 22, 1976) is an American actress and producer. She is the recipient of various accolades, including an Academy Award, a Primetime Emmy Award, and two Golden Globe Awards. Time magazine named her one of the 100 most influential people in the world in 2006 and 2015, and Forbes listed her among the World's 100 Most Powerful Women in 2019 and 2021. In 2021, Forbes named her the world's highest earning actress, and in 2023, she was named one of the richest women in America with an estimated net worth of $440 million.[1][2]\n\nWitherspoon began her career as a teenager, making her screen debut in The Man in the Moon (1991). Her breakthrough came in 1999 with a supporting role in Cruel Intentions, and for her portrayal of Tracy Flick in the black comedy Election. She gained wider recognition for playing Elle Woods in the comedy Legally Blonde (2001) and its 2003 sequel, and for starring in the romantic comedy Sweet Home Alabama (2002). She won the Academy Award for Best Actress for portraying June Carter Cash in the musical biopic Walk the Line (2005). Following a career downturn, during which her sole box-office success was the romantic drama Water for Elephants (2011), Witherspoon made a comeback by producing and starring as Cheryl Strayed in the drama Wild (2014), which earned her a second nomination for Best Actress at the Academy Awards.\n\nShe has since worked primarily in television, producing and starring in several female-led literary adaptations under her company Hello Sunshine. These include the HBO drama series Big Little Lies (2017\u20132019), the Apple TV+ drama series The Morning Show (2019\u2013present), and the Hulu miniseries Little Fires Everywhere (2020). For the first of these, she won the Primetime Emmy Award for Outstanding Limited Series. She has also produced the film adaptations Gone Girl (2014) and Where the Crawdads Sing (2022), and the miniseries adaptation Daisy Jones & the Six (2023).\n\nWitherspoon also owns Reese's Book Club and a clothing company, Draper James. She is involved in children's and women's advocacy organizations. She serves on the board of the Children's Defense Fund (CDF) and was named Global Ambassador of Avon Products in 2007, serving as honorary chair of the charitable Avon Foundation dedicated to women's causes.\n\nDescription above from the Wikipedia article Reese Witherspoon, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1976-03-22",
+            "deathday": null,
+            "imdb_id": "0000702",
+            "movie_credits": [
+                {
+                    "popularity": 23.349,
+                    "release_year": "2023",
+                    "title": "Your Place or Mine",
+                    "vote_average": 6.296
+                },
+                {
+                    "popularity": 113.992,
+                    "release_year": "2022",
+                    "title": "Minions & More Volume 2",
+                    "vote_average": 7.294
+                },
+                {
+                    "popularity": 113.702,
+                    "release_year": "2021",
+                    "title": "Sing 2",
+                    "vote_average": 7.901
+                },
+                {
+                    "popularity": 16.859,
+                    "release_year": "2018",
+                    "title": "A Wrinkle in Time",
+                    "vote_average": 5.094
+                },
+                {
+                    "popularity": 16.279,
+                    "release_year": "2017",
+                    "title": "Home Again",
+                    "vote_average": 6.123
+                },
+                {
+                    "popularity": 71.687,
+                    "release_year": "2016",
+                    "title": "Sing",
+                    "vote_average": 7.111
+                },
+                {
+                    "popularity": 18.934,
+                    "release_year": "2015",
+                    "title": "Hot Pursuit",
+                    "vote_average": 5.703
+                },
+                {
+                    "popularity": 8.754,
+                    "release_year": "2014",
+                    "title": "The Good Lie",
+                    "vote_average": 7.358
+                },
+                {
+                    "popularity": 18.441,
+                    "release_year": "2014",
+                    "title": "Wild",
+                    "vote_average": 7.02
+                },
+                {
+                    "popularity": 28.486,
+                    "release_year": "2014",
+                    "title": "Inherent Vice",
+                    "vote_average": 6.579
+                },
+                {
+                    "popularity": 13.921,
+                    "release_year": "2013",
+                    "title": "Devil's Knot",
+                    "vote_average": 6.141
+                },
+                {
+                    "popularity": 16.31,
+                    "release_year": "2013",
+                    "title": "Mud",
+                    "vote_average": 7.057
+                },
+                {
+                    "popularity": 15.103,
+                    "release_year": "2012",
+                    "title": "This Means War",
+                    "vote_average": 6.154
+                },
+                {
+                    "popularity": 14.474,
+                    "release_year": "2011",
+                    "title": "Water for Elephants",
+                    "vote_average": 6.945
+                },
+                {
+                    "popularity": 11.692,
+                    "release_year": "2010",
+                    "title": "How Do You Know",
+                    "vote_average": 5.305
+                },
+                {
+                    "popularity": 9.069,
+                    "release_year": "2009",
+                    "title": "Mutant Pumpkins from Outer Space",
+                    "vote_average": 5.784
+                },
+                {
+                    "popularity": 35.421,
+                    "release_year": "2009",
+                    "title": "Monsters vs Aliens",
+                    "vote_average": 6.209
+                },
+                {
+                    "popularity": 23.246,
+                    "release_year": "2008",
+                    "title": "Four Christmases",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 10.257,
+                    "release_year": "2007",
+                    "title": "Rendition",
+                    "vote_average": 6.427
+                },
+                {
+                    "popularity": 15.766,
+                    "release_year": "2006",
+                    "title": "Penelope",
+                    "vote_average": 6.723
+                },
+                {
+                    "popularity": 22.286,
+                    "release_year": "2005",
+                    "title": "Walk the Line",
+                    "vote_average": 7.492
+                },
+                {
+                    "popularity": 23.047,
+                    "release_year": "2005",
+                    "title": "Just Like Heaven",
+                    "vote_average": 6.94
+                },
+                {
+                    "popularity": 11.667,
+                    "release_year": "2004",
+                    "title": "Vanity Fair",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 34.977,
+                    "release_year": "2003",
+                    "title": "Legally Blonde 2: Red, White & Blonde",
+                    "vote_average": 5.654
+                },
+                {
+                    "popularity": 11.185,
+                    "release_year": "2002",
+                    "title": "The Importance of Being Earnest",
+                    "vote_average": 6.843
+                },
+                {
+                    "popularity": 18.709,
+                    "release_year": "2002",
+                    "title": "Sweet Home Alabama",
+                    "vote_average": 6.398
+                },
+                {
+                    "popularity": 7.092,
+                    "release_year": "2001",
+                    "title": "The Trumpet of the Swan",
+                    "vote_average": 5.46
+                },
+                {
+                    "popularity": 40.048,
+                    "release_year": "2001",
+                    "title": "Legally Blonde",
+                    "vote_average": 6.751
+                },
+                {
+                    "popularity": 20.316,
+                    "release_year": "2000",
+                    "title": "Little Nicky",
+                    "vote_average": 5.867
+                },
+                {
+                    "popularity": 43.673,
+                    "release_year": "2000",
+                    "title": "American Psycho",
+                    "vote_average": 7.405
+                },
+                {
+                    "popularity": 6.108,
+                    "release_year": "1999",
+                    "title": "Best Laid Plans",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 15.107,
+                    "release_year": "1999",
+                    "title": "Election",
+                    "vote_average": 6.84
+                },
+                {
+                    "popularity": 26.347,
+                    "release_year": "1999",
+                    "title": "Cruel Intentions",
+                    "vote_average": 6.791
+                },
+                {
+                    "popularity": 6.551,
+                    "release_year": "1998",
+                    "title": "Overnight Delivery",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 10.408,
+                    "release_year": "1998",
+                    "title": "Twilight",
+                    "vote_average": 6.034
+                },
+                {
+                    "popularity": 14.172,
+                    "release_year": "1998",
+                    "title": "Pleasantville",
+                    "vote_average": 7.247
+                },
+                {
+                    "popularity": 10.224,
+                    "release_year": "1996",
+                    "title": "Freeway",
+                    "vote_average": 6.429
+                },
+                {
+                    "popularity": 20.952,
+                    "release_year": "1996",
+                    "title": "Fear",
+                    "vote_average": 6.347
+                },
+                {
+                    "popularity": 6.617,
+                    "release_year": "1994",
+                    "title": "S.F.W.",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 3.155,
+                    "release_year": "1993",
+                    "title": "Jack the Bear",
+                    "vote_average": 6.422
+                },
+                {
+                    "popularity": 4.659,
+                    "release_year": "1993",
+                    "title": "A Far Off Place",
+                    "vote_average": 6.208
+                },
+                {
+                    "popularity": 15.616,
+                    "release_year": "1991",
+                    "title": "The Man in the Moon",
+                    "vote_average": 7.3
+                }
+            ],
+            "name": "Reese Witherspoon",
+            "place_of_birth": "New Orleans, Louisiana, USA",
+            "profile_path": "/AcNKSc2uYvgtULfoLWzcIV88bGE.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Reese_Witherspoon"
         },
         "person_Renee Blaine": {
             "biography": "Renee Blaine is an actress, known for The Shawshank Redemption\u00a0(1994).",
@@ -27172,6 +29133,78 @@
             "place_of_birth": null,
             "profile_path": "/4H11cOROVjOyVNOoaIDdYYOkNNr.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Jodie_Foster"
+        },
+        "person_Vera Miles": {
+            "biography": "Vera June Miles (born August 23, 1929) is an American actress. Born in Boise City, Oklahoma, Vera Miles attended school in Pratt,  Kansas and Wichita, Kansas. The patrician beauty of Miss Miles won her  the title of \"Miss Kansas\" in 1948, leading soon to small roles in  Hollywood films and television series. Fame came to the forthright,  spirited Miles when she attracted the attention of two master directors,  Alfred Hitchcock and John Ford. Ford cast her in the classic western The Searchers (1956) and Hitchcock, who put her under personal contract and hailed her as his \"new Grace Kelly\", paired her with the great Henry Fonda in The Wrong Man (1956). Hitchcock cast Miles in the potentially star-making role of Judy Barton in Vertigo  (1958), but Miles withdrew from the film when she became pregnant.  Hitchcock gave Miles a supporting role in another masterpiece Psycho (1960), as did Ford when he cast her opposite John Wayne and James Stewart in The Man Who Shot Liberty Valance (1962), She also starred in such films as Beau James (1957) opposite Bob Hope, The FBI Story (1959) opposite Stewart, Back Street (1961) opposite Susan Hayward and John Gavin and Sergeant Ryker (1968) opposite Lee Marvin,  as well as showing her consistently remarkable and versatile talent on  dozens of popular television movies and series including The Alfred Hitchcock Hour (1962), Twilight Zone (1959), The Outer Limits (1963), The Fugitive (1963), My Three Sons (1960), Bonanza (1959), \"Columbo\" and Murder, She Wrote (1984). In 1983, she reprised her role as \"Lila Crane\" in the film sequel Psycho II (1983), starring Anthony Perkins.  Although, too often, the stunningly beautiful Miles' gifts were  underutilized, before her retirement in 1995, hers was a most intriguing  and enduring Hollywood career.",
+            "birthday": "1929-08-23",
+            "deathday": null,
+            "imdb_id": "0587256",
+            "movie_credits": [
+                {
+                    "popularity": 13.493,
+                    "release_year": "1985",
+                    "title": "Into the Night",
+                    "vote_average": 6.519
+                },
+                {
+                    "popularity": 5.714,
+                    "release_year": "1984",
+                    "title": "The Initiation",
+                    "vote_average": 5.6
+                },
+                {
+                    "popularity": 11.688,
+                    "release_year": "1983",
+                    "title": "Psycho II",
+                    "vote_average": 6.451
+                },
+                {
+                    "popularity": 5.434,
+                    "release_year": "1982",
+                    "title": "Mazes and Monsters",
+                    "vote_average": 4.3
+                },
+                {
+                    "popularity": 8.27,
+                    "release_year": "1968",
+                    "title": "Hellfighters",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 18.886,
+                    "release_year": "1962",
+                    "title": "The Man Who Shot Liberty Valance",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 43.624,
+                    "release_year": "1960",
+                    "title": "Psycho",
+                    "vote_average": 8.433
+                },
+                {
+                    "popularity": 4.773,
+                    "release_year": "1956",
+                    "title": "23 Paces to Baker Street",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 9.183,
+                    "release_year": "1956",
+                    "title": "The Wrong Man",
+                    "vote_average": 7.145
+                },
+                {
+                    "popularity": 23.533,
+                    "release_year": "1956",
+                    "title": "The Searchers",
+                    "vote_average": 7.714
+                }
+            ],
+            "name": "Vera Miles",
+            "place_of_birth": "Boise City, Oklahoma, USA",
+            "profile_path": "/9PDTsJnBfrAlvVPOBBFS3ehN8lD.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Vera_Miles"
         },
         "person_Viola Davis": {
             "biography": "Viola Davis (born August 11, 1965) is an American actress and producer. The recipient of numerous accolades, Davis is one of the few performers to have been awarded an Emmy, a Grammy, an Oscar, and a Tony (EGOT); additionally, she is the sole African-American to achieve the Triple Crown of Acting as well as the third person to achieve both statuses. Time named her one of the 100 most influential people in the world in 2012 and 2017, and in 2020, The New York Times ranked her ninth on its list of the greatest actors of the 21st century.\n\nDavis began her career in Central Falls, Rhode Island, appearing in small stage productions. After graduating from the Juilliard School in 1993, she won an Obie Award in 1999 for her performance as Ruby McCollum in Everybody's Ruby. She played minor roles in film and television in the late 1990s and early 2000s, before earning the Tony Award for Best Featured Actress in a Play for her role as Tonya in the 2001 Broadway production of August Wilson's King Hedley II. Her film breakthrough came with her role as a troubled mother in the drama Doubt (2008), for which she received her first Academy Award nomination for Best Supporting Actress. Davis won the 2010 Tony Award for Best Actress in a Play for her role as Rose Maxson in the Broadway revival of August Wilson's play Fences.\n\nFor starring as a 1960s housemaid in the comedy-drama The Help (2011), Davis received a nomination for the Academy Award for Best Actress. From 2014 to 2020, she played lawyer Annalise Keating in the ABC drama series How to Get Away with Murder, for which she became the first black actress to win the Primetime Emmy Award for Outstanding Lead Actress in a Drama Series in 2015. In 2016, Davis reprised the role of Maxson in the film adaptation of Fences, winning the Academy Award for Best Supporting Actress. She played Amanda Waller in the DC Extended Universe, beginning with Suicide Squad (2016). In 2020, she portrayed Ma Rainey in the biopic Ma Rainey's Black Bottom, for which she received a fourth Academy Award nomination, becoming the most-Oscar-nominated black actress. Her performances in Widows (2018) and The Woman King (2022) earned her further nominations for the BAFTA Best Actress Award, making her the most-BAFTA-nominated black actress.\n\nDavis and her husband, Julius Tennon, are founders of a production company, JuVee Productions. Davis is also widely recognized for her advocacy and support of human rights and equal rights for women and women of color. She received a star on the Hollywood Walk of Fame in 2017 and became a L'Or\u00e9al Paris ambassador in 2019. The audiobook narration of her 2022 memoir Finding Me earned Davis a Grammy Award in 2023.",

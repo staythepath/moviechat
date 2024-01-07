@@ -109,7 +109,8 @@ body {
   width: auto;
   background-color: #2a2a2a;
   border-color: #27496d;
-  border-radius: 8px;
+  border-radius: 7px;
+  border-width: 1px;
   z-index: 1000;
 }
 
@@ -210,13 +211,19 @@ body {
   /* background-color: orange !important; */
   display: flex; /* Add this */
   align-items: center; /* Center vertically */
-  background-color: #333;
+  background-color: #2a2a2a;
   color: #fff;
-  padding: 15px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-left: 5px;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   max-width: 600px;
   max-height: max-content;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .movie-info {
@@ -238,12 +245,27 @@ body {
   align-items: left;
   justify-content: left;
   max-height: 600px;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
+  margin: 10px;
+  margin-right: 10px;
+  width: 100%;
+  margin-left: 0px;
+  /* background-color: gray; */
+  padding-left: 8px;
+  margin-right: 200px !important;
+}
+
+.movie-buttons {
+  display: flex;
+  justify-content: right;
+  align-items: right;
   margin: 10px;
   width: 100%;
   margin-left: 0px;
@@ -264,7 +286,7 @@ body {
 .movie-poster img {
   width: 100%;
   height: auto;
-  border: 1px solid #6783a0;
+  border: 1px solid #27496d;
 }
 
 .movie-info h5 {
@@ -301,6 +323,12 @@ body {
 .movie-credit-link:hover {
   color: #0056b3 !important; /* Example: change color on hover */
   /* Add other hover styles as needed */
+}
+
+.movie-credit-link.clicked-style {
+  font-weight: bold !important;
+  color: #0056b3 !important;
+  text-decoration: none !important;
 }
 
 dl {

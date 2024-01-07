@@ -667,7 +667,7 @@ function setupPopoverHideWithDelay(element) {
         ) {
           showPopover.call($element); // Show the popover
         }
-      }, 100); // 500 milliseconds delay
+      }, 200); // 500 milliseconds delay
     });
   $(element).on("mouseleave", function () {
     var $element = $(this);
@@ -754,8 +754,8 @@ function showPersonPopover(element) {
             : "static/no_photo_image.jpg";
           var biography = data.biography || "No biography available";
           var shortBio =
-            biography.length > 100
-              ? biography.substring(0, 100) + "..."
+            biography.length > 200
+              ? biography.substring(0, 200) + "..."
               : biography;
           const fullCredits = data.movie_credits
             .slice(5) // Start from the 6th element
@@ -803,7 +803,7 @@ function showPersonPopover(element) {
                 <p>${creditsHtml}<p>
                 <p><dt>Biography:</dt> <span id="short-bio">${shortBio}</span>
                 ${
-                  biography.length > 100
+                  biography.length > 200
                     ? `<span id="more-bio" class="more-link">More</span>`
                     : ""
                 }
@@ -849,14 +849,14 @@ function showPersonPopover(element) {
       if (!isMouseOverPopover) {
         $(element).popover("hide");
       }
-    }, 350); // Delay of 350ms
+    }, 200); // Delay of 200ms
   }
 
   // Event binding for mouseleave on the triggering element
   $(element)
     .off("mouseleave")
     .on("mouseleave", function () {
-      popoverTimeout = setTimeout(hidePopover, 350);
+      popoverTimeout = setTimeout(hidePopover, 200);
     });
 
   // Event binding for mouseleave on the triggering element
@@ -877,7 +877,7 @@ function showPersonPopover(element) {
         ) {
           $element.popover("hide");
         }
-      }, 100); // Delay of 350ms
+      }, 200); // Delay of 350ms
     });
   // Event binding for popover shown event
   $(element)
@@ -893,7 +893,7 @@ function showPersonPopover(element) {
         })
         .on("mouseleave", function () {
           isMouseOverPopover = false;
-          popoverTimeout = setTimeout(hidePopover, 350);
+          popoverTimeout = setTimeout(hidePopover, 200);
         });
 
       $popover
@@ -937,7 +937,7 @@ function showPersonPopover(element) {
 
       $popover.find("#more-credits").on("click", function () {
         $(this).css("color", "green"); // Example: changing the color to green
-        $(this).text("Asking MovieBot..."); // Temporarily change the link text
+        $(this).text("Asking MovieBot"); // Temporarily change the link text
         var fullCreditsHtml = `${$(element).data("fullCredits")}</dl>`;
         $(this).parent().replaceWith(fullCreditsHtml); // Replace the dd with full credits
         $(this).remove(); // Remove the 'More' link
@@ -947,16 +947,18 @@ function showPersonPopover(element) {
         // Store the original text of the link
         var originalText = $(this).text();
 
-        // Temporarily change the link text to indicate action
-        $(this).text("Asking MovieBot...");
+        // Temporarily change the link text and style to indicate action
+        $(this).text("Asking MovieBot");
+        $(this).addClass("clicked-style"); // Add a class to change color and font weight
 
         // Add your logic here to ask MovieBot about the movie
         var movieTitle = $(this).data("movie-title");
 
-        // Optional: Reset the text back to the original text after some delay
+        // Reset the text and style back to the original after some delay
         setTimeout(() => {
           $(this).text(originalText);
-        }, 2000); // Reset after 2 seconds
+          $(this).removeClass("clicked-style"); // Remove the class to revert styles
+        }, 2500); // Adjust the time as needed
       });
 
       $popover.find(".chat-btn").on("click", function () {
