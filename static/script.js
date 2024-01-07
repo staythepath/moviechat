@@ -224,9 +224,9 @@ function handleKeyPress(event) {
 function toggleConfigPanel() {
   var configPanel = document.getElementById("config-panel");
   if (configPanel.style.left === "0px") {
-    configPanel.style.left = "-3000px"; // Hide the panel
+    configPanel.style.left = "-300px"; // Adjust the value to match the width of the panel
   } else {
-    configPanel.style.left = "0px"; // Show the panel
+    configPanel.style.left = "0px";
   }
 }
 

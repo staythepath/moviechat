@@ -252,6 +252,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/Killers_of_the_Flower_Moon_(film)",
             "writers": "Eric Roth, Martin Scorsese, David Grann, Troy Caballero"
         },
+        "movie_card_510": {
+            "description": "A petty criminal fakes insanity to serve his sentence in a mental ward rather than prison. He soon finds himself as a leader to the other patients\u2014and an enemy to the cruel, domineering nurse who runs the ward.",
+            "director": "Milo\u0161 Forman",
+            "dop": "Haskell Wexler",
+            "imdb_id": "0073486",
+            "poster_path": "https://image.tmdb.org/t/p/original/3jcbDmRFiQ83drXNOvRDeKHxS0C.jpg",
+            "release_date": "1975-11-19",
+            "stars": "Jack Nicholson, Brad Dourif, Louise Fletcher, Danny DeVito, William Redfield, Scatman Crothers, Christopher Lloyd, Will Sampson, Dean R. Brooks, Michael Berryman, Sydney Lassick, William Duell, Vincent Schiavelli, Peter Brocco, Alonzo Brown, Mwako Cumbuka, Josip Elic, Ken Kenny, Nathan George, Ted Markland, Louisa Moritz, Mews Small, Delos V. Smith Jr., Lan Fendors, Mimi Sarkisian, Mel Lambert, Kay Lee, Dwight Marfield, Tin Welch, Philip Roth, Aurore Cl\u00e9ment, Anjelica Huston, Audrey Landers, Saul Zaentz",
+            "title": "One Flew Over the Cuckoo's Nest",
+            "tmdb_id": 510,
+            "vote_average": 8.421,
+            "wiki_url": "https://en.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo's_Nest_(novel)",
+            "writers": "Bo Goldman, Ken Kesey, Lawrence Hauben, Dale Wasserman"
+        },
         "movie_card_517909": {
             "description": "When her idyllic vacation takes an unthinkable turn, Ellen Martin begins investigating a fake insurance policy, only to find herself down a rabbit hole of questionable dealings that can be linked to a Panama City law firm and its vested interest in helping the world's wealthiest citizens amass larger fortunes.",
             "director": "Steven Soderbergh",
@@ -4545,6 +4559,312 @@
             "place_of_birth": "Rotherhithe, London, England, UK",
             "profile_path": "/hZruclwEPCKw3e83rnFSIH5sRFZ.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Michael_Caine"
+        },
+        "person_Nicholson": {
+            "biography": "John Joseph \"Jack\" Nicholson (born April 22, 1937) is an American actor, film director, producer and writer. He is renowned for his often dark-themed portrayals of neurotic characters. Nicholson has been nominated for Academy Awards 12 times. He has won the Academy Award for Best Actor twice, for One Flew Over the Cuckoo's Nest and for As Good as It Gets. He won the Academy Award for Best Supporting Actor for the 1983 film Terms of Endearment. He is tied with Walter Brennan for most acting wins by a male actor (three), and second to Katharine Hepburn for most acting wins overall (four).\n\nHe is also one of only two actors nominated for an Academy Award for acting (either lead or supporting) in every decade from the 1960s to 2000s (the other one being Michael Caine). He has won seven Golden Globe Awards, and received a Kennedy Center Honor in 2001. In 1994, he became one of the youngest actors to be awarded the American Film Institute's Life Achievement Award. Notable films in which he has starred include, in chronological order, Easy Rider, Five Easy Pieces, Chinatown, One Flew Over the Cuckoo's Nest, The Shining, The Postman Always Rings Twice, Reds, Terms of Endearment, Batman, A Few Good Men, As Good as It Gets, About Schmidt, Something's Gotta Give and The Departed.\n\nDescription above from the Wikipedia article Jack Nicholson, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1937-04-22",
+            "deathday": null,
+            "imdb_id": "0000197",
+            "movie_credits": [
+                {
+                    "popularity": 5.788,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 11.692,
+                    "release_year": "2010",
+                    "title": "How Do You Know",
+                    "vote_average": 5.305
+                },
+                {
+                    "popularity": 15.787,
+                    "release_year": "2010",
+                    "title": "I'm Still Here",
+                    "vote_average": 6.006
+                },
+                {
+                    "popularity": 46.362,
+                    "release_year": "2007",
+                    "title": "The Bucket List",
+                    "vote_average": 7.184
+                },
+                {
+                    "popularity": 51.254,
+                    "release_year": "2006",
+                    "title": "The Departed",
+                    "vote_average": 8.165
+                },
+                {
+                    "popularity": 20.631,
+                    "release_year": "2003",
+                    "title": "Something's Gotta Give",
+                    "vote_average": 6.627
+                },
+                {
+                    "popularity": 26.342,
+                    "release_year": "2003",
+                    "title": "Anger Management",
+                    "vote_average": 6.144
+                },
+                {
+                    "popularity": 13.848,
+                    "release_year": "2002",
+                    "title": "About Schmidt",
+                    "vote_average": 6.832
+                },
+                {
+                    "popularity": 19.356,
+                    "release_year": "2001",
+                    "title": "The Pledge",
+                    "vote_average": 6.52
+                },
+                {
+                    "popularity": 19.341,
+                    "release_year": "1997",
+                    "title": "As Good as It Gets",
+                    "vote_average": 7.393
+                },
+                {
+                    "popularity": 7.651,
+                    "release_year": "1996",
+                    "title": "The Evening Star",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 8.281,
+                    "release_year": "1996",
+                    "title": "Blood and Wine",
+                    "vote_average": 5.708
+                },
+                {
+                    "popularity": 26.813,
+                    "release_year": "1996",
+                    "title": "Mars Attacks!",
+                    "vote_average": 6.398
+                },
+                {
+                    "popularity": 12.844,
+                    "release_year": "1995",
+                    "title": "The Crossing Guard",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 13.519,
+                    "release_year": "1994",
+                    "title": "Wolf",
+                    "vote_average": 6.103
+                },
+                {
+                    "popularity": 3.742,
+                    "release_year": "1992",
+                    "title": "Man Trouble",
+                    "vote_average": 4.9
+                },
+                {
+                    "popularity": 12.776,
+                    "release_year": "1992",
+                    "title": "Hoffa",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 27.764,
+                    "release_year": "1992",
+                    "title": "A Few Good Men",
+                    "vote_average": 7.528
+                },
+                {
+                    "popularity": 13.716,
+                    "release_year": "1990",
+                    "title": "The Two Jakes",
+                    "vote_average": 5.962
+                },
+                {
+                    "popularity": 36.16,
+                    "release_year": "1989",
+                    "title": "Batman",
+                    "vote_average": 7.222
+                },
+                {
+                    "popularity": 9.012,
+                    "release_year": "1987",
+                    "title": "Broadcast News",
+                    "vote_average": 6.714
+                },
+                {
+                    "popularity": 10.429,
+                    "release_year": "1987",
+                    "title": "Ironweed",
+                    "vote_average": 6.355
+                },
+                {
+                    "popularity": 19.895,
+                    "release_year": "1987",
+                    "title": "The Witches of Eastwick",
+                    "vote_average": 6.535
+                },
+                {
+                    "popularity": 7.651,
+                    "release_year": "1986",
+                    "title": "Heartburn",
+                    "vote_average": 6.003
+                },
+                {
+                    "popularity": 10.287,
+                    "release_year": "1985",
+                    "title": "Prizzi's Honor",
+                    "vote_average": 6.346
+                },
+                {
+                    "popularity": 13.664,
+                    "release_year": "1983",
+                    "title": "Terms of Endearment",
+                    "vote_average": 7.101
+                },
+                {
+                    "popularity": 9.736,
+                    "release_year": "1982",
+                    "title": "The Border",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 9.605,
+                    "release_year": "1981",
+                    "title": "Reds",
+                    "vote_average": 6.898
+                },
+                {
+                    "popularity": 14.972,
+                    "release_year": "1981",
+                    "title": "The Postman Always Rings Twice",
+                    "vote_average": 6.545
+                },
+                {
+                    "popularity": 66.772,
+                    "release_year": "1980",
+                    "title": "The Shining",
+                    "vote_average": 8.218
+                },
+                {
+                    "popularity": 6.349,
+                    "release_year": "1978",
+                    "title": "Goin' South",
+                    "vote_average": 5.775
+                },
+                {
+                    "popularity": 6.913,
+                    "release_year": "1976",
+                    "title": "The Last Tycoon",
+                    "vote_average": 6.425
+                },
+                {
+                    "popularity": 10.481,
+                    "release_year": "1976",
+                    "title": "The Missouri Breaks",
+                    "vote_average": 6.521
+                },
+                {
+                    "popularity": 8.113,
+                    "release_year": "1975",
+                    "title": "Tommy",
+                    "vote_average": 6.437
+                },
+                {
+                    "popularity": 10.108,
+                    "release_year": "1975",
+                    "title": "The Passenger",
+                    "vote_average": 7.315
+                },
+                {
+                    "popularity": 50.471,
+                    "release_year": "1975",
+                    "title": "One Flew Over the Cuckoo's Nest",
+                    "vote_average": 8.421
+                },
+                {
+                    "popularity": 36.646,
+                    "release_year": "1974",
+                    "title": "Chinatown",
+                    "vote_average": 7.915
+                },
+                {
+                    "popularity": 12.463,
+                    "release_year": "1973",
+                    "title": "The Last Detail",
+                    "vote_average": 7.014
+                },
+                {
+                    "popularity": 6.453,
+                    "release_year": "1972",
+                    "title": "The King of Marvin Gardens",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 10.156,
+                    "release_year": "1971",
+                    "title": "Carnal Knowledge",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 8.137,
+                    "release_year": "1970",
+                    "title": "Five Easy Pieces",
+                    "vote_average": 7.153
+                },
+                {
+                    "popularity": 22.408,
+                    "release_year": "1969",
+                    "title": "Easy Rider",
+                    "vote_average": 7.068
+                },
+                {
+                    "popularity": 4.169,
+                    "release_year": "1968",
+                    "title": "Head",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 11.126,
+                    "release_year": "1967",
+                    "title": "The St. Valentine's Day Massacre",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 6.446,
+                    "release_year": "1966",
+                    "title": "The Shooting",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 7.199,
+                    "release_year": "1966",
+                    "title": "Ride in the Whirlwind",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 11.086,
+                    "release_year": "1963",
+                    "title": "The Raven",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 11.685,
+                    "release_year": "1963",
+                    "title": "The Terror",
+                    "vote_average": 5.049
+                },
+                {
+                    "popularity": 12.115,
+                    "release_year": "1960",
+                    "title": "The Little Shop of Horrors",
+                    "vote_average": 6.196
+                }
+            ],
+            "name": "Jack Nicholson",
+            "place_of_birth": "Manhattan, New York, USA",
+            "profile_path": "/6h12pZsgj3WWjMtykUgfLkLEBWz.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Jack_Nicholson"
         },
         "person_Robert De Niro": {
             "biography": "Robert Anthony De Niro (born August 17, 1943) is an American actor. Known for his collaborations with Martin Scorsese, he is considered to be one of the best actors of his generation. De Niro is the recipient of various accolades, including two Academy Awards, a Golden Globe Award, the Cecil B. DeMille Award, and a Screen Actors Guild Life Achievement Award. In 2009, De Niro received the Kennedy Center Honor, and earned a Presidential Medal of Freedom from U.S. President Barack Obama in 2016.\n\nDe Niro studied acting at HB Studio, Stella Adler Conservatory, and Lee Strasberg's Actors Studio. His first collaboration with Scorsese was with the 1973 film Mean Streets. De Niro earned two Academy Awards, one for Best Supporting Actor for his role as Vito Corleone in Francis Ford Coppola's The Godfather Part II (1974) and the other for Best Actor portraying Jake LaMotta in Scorsese's drama Raging Bull (1980). His other Oscar-nominated roles were for Taxi Driver (1976), The Deer Hunter (1978), Awakenings (1990), Cape Fear (1991), and Silver Linings Playbook (2012).\n\nOther notable roles include in 1900 (1976), The King of Comedy (1982), Once Upon a Time in America (1984), Brazil (1985), The Mission (1986), Goodfellas (1990), This Boy's Life (1993), Mary Shelley\u2019s Frankenstein (1994), Heat (1995), Casino (1995), Jackie Brown (1997), The Good Shepherd (2006), Joker (2019), and The Irishman (2019). He made his directorial film debut with A Bronx Tale (1993). His comedic roles include Midnight Run (1988), Wag the Dog (1997), Analyze This (1999), the Meet the Parents films (2000-2010), and The Intern (2015).\n\nAlso known for his television roles, De Niro portrayed Bernie Madoff in the HBO film The Wizard of Lies (2017), earning a Primetime Emmy Award for Outstanding Lead Actor in a Limited Series or Movie nomination. He received further Emmy Award nominations for producing the Netflix limited series When They See Us (2019), and for portraying Robert Mueller on Saturday Night Live.[1]\n\nDe Niro and producer Jane Rosenthal founded the film and television production company TriBeCa Productions in 1989, which has produced several films alongside his own. Also with Rosenthal, he founded the Tribeca Film Festival in 2002. Six of De Niro's films have been inducted into the United States National Film Registry by the Library of Congress as \"culturally, historically, or aesthetically significant\".\n\nFrom Wikipedia, the free encyclopedia.",

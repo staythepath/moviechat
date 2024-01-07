@@ -10,45 +10,11 @@ body {
   flex-direction: column;
 }
 
-/* Utility and Responsive Classes */
-@media (max-width: 768px) {
-  #config-panel {
-    width: 100%;
-    left: 0;
-  }
-  #main-content.margin-apply {
-    margin-left: 0;
-  }
-  body {
-    font-size: 1.1em;
-  }
-  .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-  input,
-  select,
-  textarea {
-    font-size: 0.5em;
-  }
-  #main-content {
-    height: calc(100vh - 56px);
-  }
-  #chat-box {
-    height: calc(100% - 20px);
-  }
-}
-
-/* Layout and Components */
-#config-panel,
-#main-content {
-  transition: margin-left 0.5s;
-}
-
+/* Default state of the config panel */
 #config-panel {
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -250px; /* Panel is initially off-screen */
   width: 250px;
   height: 100vh;
   overflow-x: hidden;
@@ -56,6 +22,16 @@ body {
   padding: 20px;
   z-index: 2;
   color: #f8f8f8;
+  transition: left 0.5s ease-in-out; /* Smooth transition for the left property */
+}
+
+/* CSS Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  #config-panel {
+    width: 100%; /* Full width on smaller screens */
+    left: -100%; /* Use 100% to ensure it's off-screen regardless of the width */
+    transition: left 0.5s ease-in-out; /* Keep the transition the same */
+  }
 }
 
 .hidden-name {
@@ -184,6 +160,11 @@ body {
 .loading-text {
   margin-left: 10px;
   color: #fff;
+}
+
+.moviebot-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* This ensures the aspect ratio is maintained */
 }
 
 .movie-title {
