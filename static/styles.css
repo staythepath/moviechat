@@ -315,7 +315,7 @@ body {
 
 .movie-credit-link {
   color: #596a7c !important; /* Example: making the text color blue */
-  text-decoration: none !important; /* Example: removing underline to indicate it's a link */
+  text-decoration: underline !important; /* Example: removing underline to indicate it's a link */
   cursor: pointer; /* Changes the cursor to a hand icon when hovering */
   /* Add other styles as needed */
 }
@@ -328,7 +328,7 @@ body {
 .movie-credit-link.clicked-style {
   font-weight: bold !important;
   color: #0056b3 !important;
-  text-decoration: none !important;
+  text-decoration: underline !important;
 }
 
 dl {

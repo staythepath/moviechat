@@ -9,15 +9,15 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/staythepath/moviechat-bot/issues</Support>
   <Project/>
-  <Overview>An OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the movie title to add the movie to radarr. If you hover over the title a popover comes up with details about the movie. If you click a persons name a popover comes up with details about the person. The discord bot is sort of functional, but you have to restart the container to get it to start and stop. </Overview>
-  <Category>MediaApp:Other Other:</Category>
+  <Overview>An OpenAI based chatbot with radarr integration. You can talk to the bot about movies and any time it mentions a movie you can click the movie title to add the movie to radarr. If you hover over a movie title a popover comes up with details about the movie. If you click a persons name a popover comes up with details about the person. The discord bot is sort of functional, but you kind of have to restart the container to get it to start and stop correctly.</Overview>
+  <Category>Other: MediaApp:Other Status:Beta</Category>
   <WebUI>http://[IP]:[PORT:1138]/</WebUI>
   <TemplateURL>https://github.com/staythepath/moviechat-bot/template.xml</TemplateURL>
   <Icon>https://github.com/staythepath/moviechat/blob/main/icon128.png?raw=true</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1704588725</DateInstalled>
+  <DateInstalled>1704663272</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
