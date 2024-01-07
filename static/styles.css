@@ -10,11 +10,46 @@ body {
   flex-direction: column;
 }
 
-/* Default state of the config panel */
+/* Utility and Responsive Classes */
+@media (max-width: 768px) {
+  #config-panel {
+    width: 100%;
+    left: -300px;
+    transition: left 0.5s ease-in-out; /* Adjust the duration (0.5s) as needed */
+  }
+  #main-content.margin-apply {
+    margin-left: 0;
+  }
+  body {
+    font-size: 1.1em;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 0.5em;
+  }
+  #main-content {
+    height: calc(100vh - 56px);
+  }
+  #chat-box {
+    height: calc(100% - 20px);
+  }
+}
+
+/* Layout and Components */
+#config-panel,
+#main-content {
+  transition: margin-left 0.5s;
+}
+
 #config-panel {
   position: fixed;
   top: 0;
-  left: -250px; /* Panel is initially off-screen */
+  left: -250px;
   width: 250px;
   height: 100vh;
   overflow-x: hidden;
@@ -22,16 +57,6 @@ body {
   padding: 20px;
   z-index: 2;
   color: #f8f8f8;
-  transition: left 0.5s ease-in-out; /* Smooth transition for the left property */
-}
-
-/* CSS Media Query for Smaller Screens */
-@media (max-width: 768px) {
-  #config-panel {
-    width: 100%; /* Full width on smaller screens */
-    left: -100%; /* Use 100% to ensure it's off-screen regardless of the width */
-    transition: left 0.5s ease-in-out; /* Keep the transition the same */
-  }
 }
 
 .hidden-name {
@@ -84,6 +109,7 @@ body {
   background-color: #2a2a2a;
   border-color: #27496d;
   border-radius: 8px;
+  z-index: 1000;
 }
 
 .popover-body {
@@ -180,6 +206,7 @@ body {
 }
 
 .movie-details-card {
+  /* background-color: orange !important; */
   display: flex; /* Add this */
   align-items: center; /* Center vertically */
   background-color: #333;
@@ -188,6 +215,39 @@ body {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   max-width: 600px;
+  max-height: max-content;
+}
+
+.movie-info {
+  flex-grow: 1;
+  width: 100%;
+  /* background-color: red !important; */
+  max-height: 500px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  padding-right: 17px;
+}
+
+.movie-div {
+  /* background-color: purple !important; */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  max-height: 600px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+  margin-left: 0px;
+  /* background-color: gray; */
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .movie-poster {
@@ -203,11 +263,6 @@ body {
   width: 100%;
   height: auto;
   border: 1px solid #6783a0;
-}
-
-.movie-info {
-  flex-grow: 1;
-  width: 65%;
 }
 
 .movie-info h5 {

@@ -463,7 +463,7 @@ function setupPopoverHideWithDelay(element) {
     console.log("Here is the imdb_id: ", data.imdb_id);
     console.log("Here is the wiki_url: ", data.wiki_url);
     var buttonsHtml = `
-      <div style="text-align: right; padding-top: 10px; display: flex; justify-content: flex-end;">
+      <div style="text-align: right; padding-top: 10px; display: flex; justify-content: left;">
         <button type="button" class="btn popover-button add-to-radarr" data-tmdb-id="${data.tmdb_id}">Add to Radarr</button>
         <button type="button" class="btn popover-button ask-moviebot" data-movie-title="${data.title}">Ask MovieBot</button>
         <button type="button" class="btn popover-button btn-imdb" data-imdb-id="${data.imdb_id}" style="margin-left: 5px;">IMDb</button>
@@ -478,42 +478,44 @@ function setupPopoverHideWithDelay(element) {
             data.poster_path
           }" alt="${data.title} Poster" class="img-fluid">
         </div>
-        <div class="movie-info">
-          <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
-            data.director.split(","),
-            "director"
-          )}</p>
-          <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
-            data.dop.split(","),
-            "dop"
-          )}</p>
-          <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
-            data.writers.split(","),
-            "writers"
-          )}</p>
-          <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
-            data.stars.split(","),
-            "stars"
-          )}</p>
-          <p class="movie-rating"><strong>TMDb Rating: </strong>${
-            data.vote_average
-          }</p>
-          <p class="movie-release-date"><strong>Release Date: </strong>${
-            data.release_date
-          }</p>
-          <p class="movie-description"><strong>Description: </strong>${
-            data.description
-          }</p>
-          <div style="display: flex;">
+        <div class="movie-div">
+          <div class="movie-info">       
+            <p class="movie-director"><strong>Director: </strong>${createPersonSpans(
+              data.director.split(","),
+              "director"
+            )}</p>
+            <p class="movie-dop"><strong>DoP: </strong>${createPersonSpans(
+              data.dop.split(","),
+              "dop"
+            )}</p>
+            <p class="movie-writers"><strong>Writers: </strong>${createPersonSpans(
+              data.writers.split(","),
+              "writers"
+            )}</p>
+            <p class="movie-stars"><strong>Stars: </strong>${createPersonSpans(
+              data.stars.split(","),
+              "stars"
+            )}</p>
+            <p class="movie-rating"><strong>TMDb Rating: </strong>${
+              data.vote_average
+            }</p>
+            <p class="movie-release-date"><strong>Release Date: </strong>${
+              data.release_date
+            }</p>
+            <p class="movie-description"><strong>Description: </strong>${
+              data.description
+            }</p>  
+          </div>
+          <div class="buttons" style="display: flex;">
             ${buttonsHtml}
-
           </div>
         </div>
-        
       </div>`;
     $(element).data("bs.popover").config.content = contentHtml;
     $(element).popover("show");
     $(element).popover("update");
+
+    rebindEventHandlers();
 
     $(".btn-wiki").attr("data-wiki-url", data.wiki_url);
 
@@ -569,12 +571,9 @@ function setupPopoverHideWithDelay(element) {
     var $element = $(element);
     var tmdbId = $element.data("tmdb-id");
 
-    // Display "Loading details" message
-    //$element.popover("show");
-
-    // Load movie details
     $.get(`/movie_details/${tmdbId}`, function (data) {
       updatePopoverContent(data); // Update the popover content
+      isMouseOverPopover = true; // Assume the mouse is over the popover when it is shown
     }).fail(function () {
       $element.data("bs.popover").config.content = "Failed to load details.";
       $element.popover("show");
@@ -583,23 +582,26 @@ function setupPopoverHideWithDelay(element) {
 
   // Updated hidePopover function
   var hidePopover = function () {
-    if (!isMouseOverPopover) {
-      var popover = $(element).data("bs.popover").getTipElement();
-      var popoverRect = popover.getBoundingClientRect();
-      var buffer = 10; // 10 pixels buffer
+    // Delay the hide check to allow time for the mouse to be detected over the popover
+    setTimeout(function () {
+      if (!isMouseOverPopover) {
+        var popover = $(element).data("bs.popover").getTipElement();
+        var popoverRect = popover.getBoundingClientRect();
+        var buffer = 10; // 10 pixels buffer
 
-      // Check if the mouse is within the buffer area around the popover
-      if (
-        lastMousePosition.x < popoverRect.left - buffer ||
-        lastMousePosition.x > popoverRect.right + buffer ||
-        lastMousePosition.y < popoverRect.top - buffer ||
-        lastMousePosition.y > popoverRect.bottom + buffer
-      ) {
-        $(element).popover("hide");
-      } else {
-        setTimeout(hidePopover, 100); // Check again after a short delay
+        // Check if the mouse is within the buffer area around the popover
+        if (
+          lastMousePosition.x < popoverRect.left - buffer ||
+          lastMousePosition.x > popoverRect.right + buffer ||
+          lastMousePosition.y < popoverRect.top - buffer ||
+          lastMousePosition.y > popoverRect.bottom + buffer
+        ) {
+          $(element).popover("hide");
+        } else {
+          setTimeout(hidePopover, 100); // Check again after a short delay
+        }
       }
-    }
+    }, 200); // A brief delay, adjust as needed
   };
 
   // When mouse enters the popover, set isMouseOverPopover to true
@@ -654,9 +656,18 @@ function setupPopoverHideWithDelay(element) {
       hideDelayTimer = setTimeout(hidePopover, hideDelay);
     });
 
-  $("body").on("mouseenter", ".popover", function () {
-    isMouseOverPopover = true;
-  });
+  $("body")
+    .on("mouseenter", ".popover", function () {
+      isMouseOverPopover = true;
+    })
+    .on("mouseleave", ".popover", function () {
+      isMouseOverPopover = false;
+      hideDelayTimer = setTimeout(function () {
+        if (!isMouseOverPopover) {
+          $(element).popover("hide");
+        }
+      }, hideDelay);
+    });
 }
 
 $(document).on("click", ".more-toggle", function () {
@@ -674,7 +685,7 @@ var popoverTimeout;
 
 function showPersonPopover(element) {
   var popoverTimeout;
-  var isMouseOverPopover = false;
+  var isMouseOverPopover = true;
 
   // Initialize the popover
   if (!$(element).data("bs.popover")) {
@@ -741,21 +752,25 @@ function showPersonPopover(element) {
           var contentHtml = `
           <div class="movie-title">${data.name}</div>
           <div class="movie-details-card">
+            
             <div class="movie-poster">${imageTag}</div>
-            <div class="movie-info">
-              <p><dt>Birthday:</dt> ${data.birthday || "N/A"}</p>
-              <p>${creditsHtml}<p>
-              <p><dt>Biography:</dt> <span id="short-bio">${shortBio}</span>
-              ${
-                biography.length > 100
-                  ? `<span id="more-bio" class="more-link">More</span>`
-                  : ""
-              }
-              <div style="display: flex;">
+            <div class="movie-div">
+              <div class="movie-info">
+                <p><dt>Birthday:</dt> ${data.birthday || "N/A"}</p>
+                <p>${creditsHtml}<p>
+                <p><dt>Biography:</dt> <span id="short-bio">${shortBio}</span>
+                ${
+                  biography.length > 100
+                    ? `<span id="more-bio" class="more-link">More</span>`
+                    : ""
+                }
+            
+              </div>
+              <div class="movie-buttons" style="display: flex;">
                 ${buttonsHtml}
-
               </div>
             </div>
+            
             
           </div>`;
 
@@ -901,6 +916,35 @@ function showPersonPopover(element) {
           $(this).remove(); // Remove the 'More' button after it's clicked
         });
     });
+}
+
+function rebindEventHandlers() {
+  // Unbind and rebind event handlers for dynamic content
+
+  // For .ask-moviebot button
+  $(document)
+    .off("click", ".ask-moviebot")
+    .on("click", ".ask-moviebot", function () {
+      var movieTitle = $(this).data("movie-title");
+      sendPredefinedMessage(`Tell me about the movie ${movieTitle}`);
+    });
+
+  // For .add-to-radarr button
+  $(document)
+    .off("click", ".add-to-radarr")
+    .on("click", ".add-to-radarr", function () {
+      var tmdbId = $(this).data("tmdb-id");
+      addMovieToRadarr(tmdbId);
+    });
+
+  // For .person-link elements
+  $(".person-link")
+    .off("mouseover")
+    .on("mouseover", function () {
+      showPersonPopover(this);
+    });
+
+  // Add other dynamic elements' event handlers here
 }
 
 $(document)
