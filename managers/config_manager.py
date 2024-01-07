@@ -3,8 +3,8 @@ import os
 
 
 class ConfigManager:
-    def __init__(self, config_path="config.yaml"):
-        self.config_path = config_path
+    def __init__(self, config_directory="config", config_filename="config.yaml"):
+        self.config_path = os.path.join(config_directory, config_filename)
         self.config = self.load_config()
 
     def load_config(self):
@@ -28,6 +28,7 @@ class ConfigManager:
             "discord_channel": "",
             "radarr_root_folder": "",
         }
+        os.makedirs(os.path.dirname(self.config_path), exist_ok=True)
         with open(self.config_path, "w") as file:
             yaml.dump(default_config, file)
         return default_config

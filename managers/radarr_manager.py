@@ -1,5 +1,6 @@
 from arrapi import RadarrAPI
-from data_manager import DataManager  # Import TMDbManager
+
+# from data_manager import DataManager  # Import TMDbManager
 
 
 class RadarrManager:

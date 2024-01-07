@@ -8,14 +8,16 @@ import requests
 import os
 import yaml
 
-# import DiscordBot
 
-from config_manager import ConfigManager
-from data_manager import DataManager
-from radarr_manager import RadarrManager
-from openai_chat_manager import OpenAIChatManager
+# Updated import statements
+from managers.config_manager import ConfigManager
+from managers.data_manager import DataManager
+from managers.radarr_manager import RadarrManager
+from managers.openai_chat_manager import OpenAIChatManager
 
-# from discord_bot import DiscordBot
+# Import DiscordBot from the bots directory if needed
+# from bots.discord_bot import DiscordBot
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -30,7 +32,7 @@ channels_data = []
 
 
 def start_discord_bot_process():
-    subprocess.Popen(["python", "DiscordBot.py"])
+    subprocess.Popen(["python", "bots/DiscordBot.py"])
 
 
 def start_discord_client(token):
