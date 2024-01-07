@@ -322,6 +322,24 @@ dd {
   padding-left: 15px; /* Add some padding to offset descriptions from the terms */
 }
 
+/* Scrollbar Customization for WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 3px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  display: none; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
 /* Scrollbar Customization */
 #chat-box::-webkit-scrollbar,
 #config-panel::-webkit-scrollbar {

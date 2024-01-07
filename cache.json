@@ -546,6 +546,20 @@
             "wiki_url": "https://en.wikipedia.org/wiki/The_Equalizer_2",
             "writers": "Richard Wenk, Michael Sloan, Richard Lindheim"
         },
+        "movie_card_350": {
+            "description": "Andy moves to New York to work in the fashion industry. Her boss is extremely demanding, cruel and won't let her succeed if she doesn't fit into the high class elegant look of their magazine.",
+            "director": "David Frankel",
+            "dop": "Florian Ballhaus",
+            "imdb_id": "0458352",
+            "poster_path": "https://image.tmdb.org/t/p/original/8912AsVuS7Sj915apArUFbv6F9L.jpg",
+            "release_date": "2006-06-29",
+            "stars": "Anne Hathaway, Meryl Streep, Emily Blunt, Stanley Tucci, Simon Baker, Adrian Grenier, Tracie Thoms, Rich Sommer, Daniel Sunjata, David Marshall Grant, James Naughton, Tibor Feldman, Rebecca Mader, Jimena Hoyos, Gisele B\u00fcndchen, George C. Wolfe, John Rothman, Stephanie Szostak, Colleen Dengel, Suzanne Dengel, Heidi Klum, Valentino Garavani, Bridget Hall, Ines Rivero, Alyssa Sutherland, Robert Verdi, Paul Keany, David Callegati, Rori Cannon, Stan Newman, James Cronin, Eric Seltzer, Lindsay Brice, Steve Benisty, John Graham, Wells Dixon, Ilona Alexandra, Frank Anello, Alexander Blaise, Marie Brandt, Carl Burrows, Dono Cunningham, Guy A. Fortt, Alexie Gilmore, Toree Hill, Vivian Kalinov, Tim Krueger, Hector Lincoln, Nina Lisandrello, Zev McAllister, Denis McKeown, Matt Murray, Ingrid Sophie Schram, Bobby Shue, Brandhyze Stanley, Jen Taylor, Taylor Treadwell, Donatella Versace, Lauren Weisberger, Laura D. Williams",
+            "title": "The Devil Wears Prada",
+            "tmdb_id": 350,
+            "vote_average": 7.39,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Devil_Wears_Prada_(film)",
+            "writers": "Aline Brosh McKenna, Lauren Weisberger"
+        },
         "movie_card_365717": {
             "description": "Robert De Niro and Leonardo DiCaprio must compete for the lead role in Martin Scorsese's next film.",
             "director": "Martin Scorsese",
