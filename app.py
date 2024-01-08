@@ -19,7 +19,7 @@ from managers.openai_chat_manager import OpenAIChatManager
 # from bots.discord_bot import DiscordBot
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = os.urandom(24)
 
 config_manager = ConfigManager()
@@ -82,8 +82,8 @@ def load_config_endpoint():
 
 @app.route("/fetch_root_folders")
 def fetch_root_folders():
-    radarr_url = config_manager.get_config_value("radarr_url")
-    radarr_api_key = config_manager.get_config_value("radarr_api_key")
+    radarr_url = request.args.get("radarr_url")
+    radarr_api_key = request.args.get("radarr_api_key")
 
     if radarr_url and radarr_api_key:
         try:
@@ -96,7 +96,7 @@ def fetch_root_folders():
                 return jsonify({"error": f"HTTP {response.status_code}"})
         except Exception as e:
             return jsonify({"error": str(e)})
-    return jsonify({"error": "Radarr not configured"})
+    return jsonify({"error": "Radarr URL or API key not provided"})
 
 
 @app.route("/person/<int:person_id>/movie_credits")

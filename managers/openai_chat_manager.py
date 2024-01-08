@@ -63,7 +63,7 @@ class OpenAIChatManager:
         for title, tmdb_id in movie_titles_map.items():
             response_content = response_content.replace(
                 f"*{title}*",
-                f"<span class='movie-link' data-toggle='popover' data-tmdb-id='{tmdb_id}' data-title='{title}' onclick='addMovieToRadarr({tmdb_id})'>{title}</span>",
+                f"<span class='movie-link' data-toggle='popover' data-tmdb-id='{tmdb_id}' data-title='{title}'>{title}</span>",
             )
         return response_content
 

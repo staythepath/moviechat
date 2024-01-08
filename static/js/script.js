@@ -5,6 +5,8 @@ $.fn.popover.Constructor.Default.whiteList.dl = [];
 $.fn.popover.Constructor.Default.whiteList.dt = [];
 $.fn.popover.Constructor.Default.whiteList.dd = [];
 
+console.log("script.js loaded");
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const configPanel = document.getElementById("config-panel");
   const configToggle = document.getElementById("config-toggle");

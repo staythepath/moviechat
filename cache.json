@@ -1,5 +1,89 @@
 {
     "movie_details": {
+        "movie_card_10895": {
+            "description": "When loving Geppetto creates a wooden puppet, his wish is granted when it comes to life as a little wooden boy named Pinocchio. With his faithful friend and conscience Jiminy Cricket by his side, Pinocchio, embarks on fantastic adventures that his bravery, loyalty and honesty until triumphs in his triumphs in his quest for his heart's desire: to become a real boy.",
+            "director": "Ben Sharpsteen",
+            "dop": "Not Available",
+            "imdb_id": "1488589",
+            "poster_path": "https://image.tmdb.org/t/p/original/bnZJrLRnoQHpzEJdka1KYfsAF3N.jpg",
+            "release_date": "1940-02-23",
+            "stars": "Dickie Jones, Cliff Edwards, Christian Rub, Evelyn Venable, Walter Catlett, Mel Blanc, Charles Judels, Frankie Darro, Don Brodie, Marion Darlington, John McLeish, Patricia Page, Thurl Ravenscroft, Stuart Buchanan",
+            "title": "Pinocchio",
+            "tmdb_id": 10895,
+            "vote_average": 7.106,
+            "wiki_url": "https://en.wikipedia.org/wiki/Pinocchio",
+            "writers": "Ted Sears, Otto Englander, Webb Smith, Erdman Penner, Carlo Collodi"
+        },
+        "movie_card_155": {
+            "description": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+            "director": "Christopher Nolan",
+            "dop": "Wally Pfister",
+            "imdb_id": "0468569",
+            "poster_path": "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+            "release_date": "2008-07-16",
+            "stars": "Christian Bale, Heath Ledger, Michael Caine, Gary Oldman, Aaron Eckhart, Maggie Gyllenhaal, Morgan Freeman, Nestor Carbonell, Monique Gabriela Curnen, Ron Dean, Chin Han, Eric Roberts, Ritchie Coster, Anthony Michael Hall, Keith Szarabajka, Joshua Harto, Melinda McGraw, Nathan Gamble, Michael Jai White, Colin McFarlane, Nydia Rodriguez Terracina, Tommy Lister Jr., William Fichtner, Cillian Murphy, Patrick Leahy, Matt Skiba, David Dastmalchian, Michael Vieau, Michael Stoyanov, William Smillie, Danny Goldring, Matthew O'Neill, Olumiji Olawumi, Greg Beam, Erik Hellman, Beatrice Rosen, Vincenzo Nicoli, Edison Chen, Andy Luther, James Farruggio, Tom McElroy, Will Zahrn, James Fierro, Sam Derence, Jennifer Knox, Patrick Clear, Sarah Jayne Dunn, Charles Venn, Winston Ellis, Sophia Hinshelwood, Keith Kupferer, Joseph Luis Caballero, Richard Dillane, Daryl Satcher, Chris Petschler, Aidan Feore, Philip Bulcock, Paul Birchard, Walter Lewis, Vincent Riotta, Nancy Crane, K. Todd Freeman, Matt Shallenberger, Michael Andrew Gorman, Lanny Lutz, Peter DeFaria, Matt Rippy, Andrew Bicknell, Ariyon Bakare, Doug Ballard, Helene Maksoud, Tommy Campbell, Craig Heaney, Lorna Gayle, Lisa McAllister, Peter Brooke, Joshua Rollins, Dale Rivera, Matthew Leitch, Thomas Gaitsch, William Armstrong, Adam Kalesperis, Tristan Tait, Bronson Webb, David Ajala, Gertrude Kyles, Jonathan Ryland, James Scales, Nigel Carrington, Ian Pirie, Lateef Lovejoy, Grahame Edwards, Roger Monk, Ronan Summers, Wai Wong, Michael Corey Foster, Hannah Gunn, Jon Lee Brody, Debbi Burns, Maritza Cabrera, Shirin Caiola, Laura Chernicky, Henry Milton Chu, Kelli Clevenger, Richard Divizio, Tony Domino, David Fultz, Natalie Hallam, Jordon Hodges, Erron Jay, Nicky Katt, Thomas Kosik, Don Kress, Tim Krueger, Dan Latham, Tom McComas, James Mellor, Joseph Oliveira, Buster Reeves, Peter Rnic, Amit Shah, Michelle Shields, Sofiya Smirnova, Bruce Spielbauer, Robert Patrick Stern, Robert Stone, Richard Strobel, Tom Townsend, John Turk, John Warman, Chris Wilson, Kevin Zaideman, Rob Clark, Brandon Lambdin, Craig Braginsky, Mike Whyte, Tina Simmons",
+            "title": "The Dark Knight",
+            "tmdb_id": 155,
+            "vote_average": 8.5,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+            "writers": "Christopher Nolan, Christopher Nolan, Jonathan Nolan, David S. Goyer, Bob Kane"
+        },
+        "movie_card_238": {
+            "description": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+            "director": "Francis Ford Coppola",
+            "dop": "Gordon Willis",
+            "imdb_id": "0068646",
+            "poster_path": "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+            "release_date": "1972-03-14",
+            "stars": "Marlon Brando, Al Pacino, James Caan, Robert Duvall, Richard S. Castellano, Diane Keaton, Talia Shire, Gianni Russo, Sterling Hayden, John Marley, Richard Conte, Al Lettieri, Abe Vigoda, John Cazale, Rudy Bond, Al Martino, Morgana King, Lenny Montana, John Martino, Salvatore Corsitto, Richard Bright, Alex Rocco, Tony Giorgio, Vito Scotti, Tere Livrano, Victor Rendina, Jeannie Linero, Julie Gregg, Ardell Sheridan, Simonetta Stefanelli, Angelo Infanti, Corrado Gaipa, Franco Citti, Saro Urz\u00ec, Roman Coppola, Sofia Coppola, Don Costello, Italia Coppola, Gray Frederickson, Ron Gilbert, Sonny Grosso, Louis Guss, Randy Jurgensen, Tony King, Tony Lip, Joe Lo Grippo, Lou Martini Jr., Raymond Martino, Joseph Medaglia, Carol Morley, Rick Petrucelli, Sal Richards, Tom Rosqui, Frank Sivero, Filomena Spagnuolo, Joe Spinell, Gabriele Torrei, Nick Vallelonga, Conrad Yama",
+            "title": "The Godfather",
+            "tmdb_id": 238,
+            "vote_average": 8.708,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Godfather",
+            "writers": "Francis Ford Coppola, Mario Puzo, Mario Puzo"
+        },
+        "movie_card_27205": {
+            "description": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+            "director": "Christopher Nolan",
+            "dop": "Wally Pfister",
+            "imdb_id": "1375666",
+            "poster_path": "https://image.tmdb.org/t/p/original/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+            "release_date": "2010-07-15",
+            "stars": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ken Watanabe, Tom Hardy, Elliot Page, Dileep Rao, Cillian Murphy, Tom Berenger, Marion Cotillard, Pete Postlethwaite, Michael Caine, Lukas Haas, Talulah Riley, Tohoru Masamune, Taylor Geare, Claire Geare, Johnathan Geare, Yuji Okumoto, Earl Cameron, Ryan Hayward, Miranda Nolan, Russ Fega, Tim Kelleher, Coralie Dedykere, Silvie Laguna, Virgile Bramly, Nicolas Clerc, Jean-Michel Dagory, Marc Raducci, Tai-Li Lee, Magnus Nolan, Helena Cullinan, Mark Fleischmann, Shelley Lang, Adam Cole, Jack Murray, Kraig Thornber, Angela Nathenson, Natasha Beaumont, Carl Gilliard, Jill Maddrell, Alex Lombard, Nicole Pulliam, Peter Basham, Michael Gaston, Felix Scott, Andrew Pleavin, Lisa Reynolds, Jason Tendell, Jack Gilroy, Shannon Welles, Daniel Girondeaud",
+            "title": "Inception",
+            "tmdb_id": 27205,
+            "vote_average": 8.4,
+            "wiki_url": "https://en.wikipedia.org/wiki/Inception",
+            "writers": "Christopher Nolan"
+        },
+        "movie_card_278": {
+            "description": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+            "director": "Frank Darabont",
+            "dop": "Roger Deakins",
+            "imdb_id": "0111161",
+            "poster_path": "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+            "release_date": "1994-09-23",
+            "stars": "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Clancy Brown, Gil Bellows, James Whitmore, Mark Rolston, Jeffrey DeMunn, Larry Brandenburg, Neil Giuntoli, Brian Libby, David Proval, Joseph Ragno, Jude Ciccolella, Paul McCrane, Renee Blaine, Scott Mann, John Horton, Gordon Greene, Alfonso Freeman, V.J. Foster, John E. Summers, Frank Medrano, Mack Miles, Alan R. Kessler, Morgan Lund, Cornell Wallace, Gary Lee Davis, Neil Summers, Ned Bellamy, Joe Pecoraro, Harold E. Cope Jr., Brian Delate, Don McManus, Donald Zinn, Dorothy Silver, Robert Haley, Dana Snyder, John D. Craig, Ken Magee, Eugene C. DePasquale, Bill Bolender, Ron Newell, John R. Woodward, Chuck Brauchler, Dion Anderson, Claire Slemmer, James Kisicki, Rohn Thomas, Charlie Kearns, Rob Reider, Brian Brophy, Paul Kennedy, James Babson, Dennis Baker, Fred Culbertson, Alonzo F. Jones, Sergio Kato, Gary A. Jones",
+            "title": "The Shawshank Redemption",
+            "tmdb_id": 278,
+            "vote_average": 8.71,
+            "wiki_url": "https://en.wikipedia.org/wiki/The_Shawshank_Redemption",
+            "writers": "Stephen King, Frank Darabont"
+        },
+        "movie_card_322": {
+            "description": "The lives of three men who were childhood friends are shattered when one of them suffers a family tragedy.",
+            "director": "Clint Eastwood",
+            "dop": "Tom Stern",
+            "imdb_id": "0327056",
+            "poster_path": "https://image.tmdb.org/t/p/original/hCHVDbo6XJGj3r2i4hVjKhE0GKF.jpg",
+            "release_date": "2003-03-03",
+            "stars": "Sean Penn, Tim Robbins, Kevin Bacon, Laurence Fishburne, Marcia Gay Harden, Laura Linney, Kevin Chapman, Tom Guiry, Emmy Rossum, Spencer Treat Clark, Andrew Mackin, Adam Nelson, Robert Wahlberg, Jenny O'Hara, John Doman, Cameron Bowen, Jason Kelly, Connor Paolo, T. Bruce Page, Miles Herter, Cayden Boyd, Tori Davis, Jonathan Togo, Shawn Fitzgibbon, Will Lyman, Celine du Tertre, Ari Graynor, Zabeth Russell, Joe Stapleton, Susan Willis, Jos\u00e9 Ram\u00f3n Rosario, Tom Kemp, Charley Broderick, Lonnie Farmer, Celeste Oliva, Bates Wilder, Douglass Bowen Flynn, Bill Thorpe, Matty Blake, Ken Cheeseman, Scott Winters, Thomas Derrah, Jim Smith, Patrick Shea, Duncan B. Putney, Ed O'Keefe, Dave Zee Garison, Michael McGovern, Bill Richards, Michael Peavey, John Franchi, Colleen Kelly, Eli Wallach, Kevin Conway, Frank Ridley, Kris Williams, Jillian Wheeler, Lance Norris, John Zaffis",
+            "title": "Mystic River",
+            "tmdb_id": 322,
+            "vote_average": 7.745,
+            "wiki_url": "https://en.wikipedia.org/wiki/Mystic_River",
+            "writers": "Dennis Lehane, Brian Helgeland"
+        },
         "movie_card_419430": {
             "description": "Chris and his girlfriend Rose go upstate to visit her parents for the weekend. At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.",
             "director": "Jordan Peele",
@@ -13,9 +97,349 @@
             "vote_average": 7.618,
             "wiki_url": "https://en.wikipedia.org/wiki/Get_Out",
             "writers": "Jordan Peele"
+        },
+        "movie_card_424": {
+            "description": "The true story of how businessman Oskar Schindler saved over a thousand Jewish lives from the Nazis while they worked as slaves in his factory during World War II.",
+            "director": "Steven Spielberg",
+            "dop": "Janusz Kami\u0144ski",
+            "imdb_id": "0108052",
+            "poster_path": "https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+            "release_date": "1993-12-15",
+            "stars": "Liam Neeson, Ben Kingsley, Ralph Fiennes, Caroline Goodall, Jonathan Sagall, Embeth Davidtz, Malgorzata Gebel, Shmuel Levy, Mark Ivanir, B\u00e9atrice Macola, Andrzej Seweryn, Friedrich von Thun, Krzysztof Luft, Harry Nehring, Norbert Weisser, Adi Nitzan, Michael Schneider, Miri Fabian, Anna Mucha, Albert Misak, Michael Gordon, Aldona Grochal, Jacek W\u00f3jcicki, Beata Paluch, Piotr Polk, Ezra Dagan, Beata Deskur, Rami Heuberger, Leopold Kozlowski, Jerzy Nowak, Uri Avrahami, Adam Siemion, Magdalena Dandourian, Pawe\u0142 Del\u0105g, Shabtai Konorti, Oliwia Dabrowska, Henryk Bista, Tadeusz Bradecki, Wojciech Klata, Elina L\u00f6wensohn, Ewa Kolasi\u0144ska-Szramel, Bettina Kupfer, Grzegorz Kwas, Vili Matula, Stanislaw Koczanowicz, Hans-J\u00f6rg Assmann, Geno Lechner, August Schm\u00f6lzer, Ludger Pistor, Beata Rybotycka, Branko Lustig, Artus-Maria Matthiessen, Hans-Michael Rehberg, Eugeniusz Priwieziencew, Michael Z. Hoffmann, Erwin Leder, Jochen Nickel, Andrzej Welminski, Daniel Del-Ponte, Marian Glinka, Grzegorz Dami\u0119cki, Stanis\u0142aw Brejdygant, Olaf Lubaszenko, Haymon Maria Buttinger, Peter Appiano, Jacek Pulanecki, Tomasz Dedek, S\u0142awomir Holland, Martin Semmelrogge, Tadeusz Huk, Alexander Held, Piotr Cyrwus, Joachim Paul Assb\u00f6ck, Osman Ragheb, Maciej Or\u0142o\u015b, Marek Wrona, Zbigniew Koz\u0142owski, Marcin Grzymowicz, Dieter Witting, Magdalena Komornicka, Agnieszka Kruk\u00f3wna, Anemona Knut, Jeremy Flynn, Agnieszka Wagner, Jan Jurewicz, Wies\u0142aw Komasa, Maciej Koz\u0142owski, Martin Bergmann, Wilhelm Manske, Peter Flechtner, Sigurd Bemme, Etl Szyc, Lucyna Zabawa, Ruth Farhi, Jerzy Sagan, Dariusz Szymaniak, Dirk Bender, Maciej Winkler, Rados\u0142aw Krzy\u017cowski, Jacek Link-Lenczowski, Hanna Kossowska, Maja Ostaszewska, Sebastian Skalski, Ryszard Radwa\u0144ski, Piotr Kadlcik, Lech Niebielski, Thomas Morris, Sebastian Konrad, Lidia Wyrobiec-Bank, Ravit Ferera, Agnieszka Korzeniowska, Dominika Bednarczyk, Alicja Kubaszewska, Danny Marcu, Hans Rosner, Edward Linde-Lubaszenko, Alexander Strobele, Georges Kern, Alexander Buczolich, Michael Schiller, G\u00f6tz Otto, Wolfgang Seidenberg, Hubert Kramar, Razia Israeli, Dorit Seadia, Esti Yerushalmi, Marta Bizo\u0144, Maciej Kowalewski, Zuzanna Lipiec, Maria Peszek, Leopold Pfefferberg, Leopold Rosner, Emilie Schindler, Katarzyna \u015amiechowicz",
+            "title": "Schindler's List",
+            "tmdb_id": 424,
+            "vote_average": 8.572,
+            "wiki_url": "https://en.wikipedia.org/wiki/Schindler's_List",
+            "writers": "Steven Zaillian, Thomas Keneally"
+        },
+        "movie_card_680": {
+            "description": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+            "director": "Quentin Tarantino",
+            "dop": "Andrzej Sekula",
+            "imdb_id": "0110912",
+            "poster_path": "https://image.tmdb.org/t/p/original/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+            "release_date": "1994-09-10",
+            "stars": "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Ving Rhames, Harvey Keitel, Eric Stoltz, Tim Roth, Amanda Plummer, Maria de Medeiros, Quentin Tarantino, Christopher Walken, Rosanna Arquette, Peter Greene, Duane Whitaker, Angela Jones, Phil LaMarr, Steve Buscemi, Bronagh Gallagher, Laura Lovelace, Frank Whaley, Burr Steers, Paul Calderon, Jerome Patrick Hoban, Michael Gilden, Gary Shorelle, Susan Griffiths, Eric Clark, Joseph Pilato, Brad Blumenthal, Lorelei Leslie, Emil Sitka, Brenda Hillhouse, Chandler Lindauer, Sy Sher, Robert Ruth, Rich Turner, Don Blakely, Carl Allen, Karen Maruyama, Kathy Griffin, Venessia Valentino, Linda Kaye, Stephen Hibbert, Alexis Arquette, Julia Sweeney, Lawrence Bender, Cie Allman, Rene Beard, Lori Pizzo, Glendon Rich, Devan Richardson, Ani Sava, Richard Rossi",
+            "title": "Pulp Fiction",
+            "tmdb_id": 680,
+            "vote_average": 8.489,
+            "wiki_url": "https://en.wikipedia.org/wiki/Pulp_Fiction",
+            "writers": "Quentin Tarantino, Quentin Tarantino, Roger Avary"
         }
     },
     "person_details": {
+        "person_Denzel Washington": {
+            "biography": "Denzel Hayes Washington, Jr. (born December 28, 1954) is an American actor, screenwriter, director and film producer. He first rose to prominence when he joined the cast of the medical drama St. Elsewhere, playing Dr. Philip Chandler for six years. He has received much critical acclaim for his work in film since the 1990s, including for his portrayals of real-life figures, such as Steve Biko, Malcolm X, Rubin \u2018Hurricane\u2019 Carter, Melvin B. Tolson, Frank Lucas, and Herman Boone. Washington has received two Academy Awards, two Golden Globe awards, and a Tony Award. He is notable for winning the Best Supporting Actor Oscar for his part in Glory in 1989, and the Academy Award for Best Actor in 2001 for his role in the film Training Day.",
+            "birthday": "1954-12-28",
+            "deathday": null,
+            "imdb_id": "0000243",
+            "movie_credits": [
+                {
+                    "popularity": 451.715,
+                    "release_year": "2023",
+                    "title": "The Equalizer 3",
+                    "vote_average": 7.416
+                },
+                {
+                    "popularity": 12.13,
+                    "release_year": "2021",
+                    "title": "A Journal for Jordan",
+                    "vote_average": 7.158
+                },
+                {
+                    "popularity": 22.303,
+                    "release_year": "2021",
+                    "title": "The Tragedy of Macbeth",
+                    "vote_average": 6.972
+                },
+                {
+                    "popularity": 28.434,
+                    "release_year": "2021",
+                    "title": "The Little Things",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 86.169,
+                    "release_year": "2018",
+                    "title": "The Equalizer 2",
+                    "vote_average": 6.737
+                },
+                {
+                    "popularity": 3.854,
+                    "release_year": "2017",
+                    "title": "Chasing Trane",
+                    "vote_average": 7.269
+                },
+                {
+                    "popularity": 20.427,
+                    "release_year": "2017",
+                    "title": "Roman J. Israel, Esq.",
+                    "vote_average": 6.317
+                },
+                {
+                    "popularity": 21.807,
+                    "release_year": "2016",
+                    "title": "Fences",
+                    "vote_average": 6.875
+                },
+                {
+                    "popularity": 40.241,
+                    "release_year": "2016",
+                    "title": "The Magnificent Seven",
+                    "vote_average": 6.424
+                },
+                {
+                    "popularity": 137.393,
+                    "release_year": "2014",
+                    "title": "The Equalizer",
+                    "vote_average": 7.264
+                },
+                {
+                    "popularity": 30.223,
+                    "release_year": "2013",
+                    "title": "2 Guns",
+                    "vote_average": 6.537
+                },
+                {
+                    "popularity": 19.907,
+                    "release_year": "2012",
+                    "title": "Safe House",
+                    "vote_average": 6.458
+                },
+                {
+                    "popularity": 25.911,
+                    "release_year": "2012",
+                    "title": "Flight",
+                    "vote_average": 6.823
+                },
+                {
+                    "popularity": 25.078,
+                    "release_year": "2010",
+                    "title": "Unstoppable",
+                    "vote_average": 6.568
+                },
+                {
+                    "popularity": 31.3,
+                    "release_year": "2010",
+                    "title": "The Book of Eli",
+                    "vote_average": 6.781
+                },
+                {
+                    "popularity": 21.969,
+                    "release_year": "2009",
+                    "title": "The Taking of Pelham 1 2 3",
+                    "vote_average": 6.348
+                },
+                {
+                    "popularity": 11.073,
+                    "release_year": "2007",
+                    "title": "The Great Debaters",
+                    "vote_average": 7.208
+                },
+                {
+                    "popularity": 39.329,
+                    "release_year": "2007",
+                    "title": "American Gangster",
+                    "vote_average": 7.577
+                },
+                {
+                    "popularity": 26.443,
+                    "release_year": "2006",
+                    "title": "D\u00e9j\u00e0 Vu",
+                    "vote_average": 6.856
+                },
+                {
+                    "popularity": 26.575,
+                    "release_year": "2006",
+                    "title": "Inside Man",
+                    "vote_average": 7.401
+                },
+                {
+                    "popularity": 11.977,
+                    "release_year": "2004",
+                    "title": "The Manchurian Candidate",
+                    "vote_average": 6.467
+                },
+                {
+                    "popularity": 43.15,
+                    "release_year": "2004",
+                    "title": "Man on Fire",
+                    "vote_average": 7.457
+                },
+                {
+                    "popularity": 17.094,
+                    "release_year": "2003",
+                    "title": "Out of Time",
+                    "vote_average": 6.325
+                },
+                {
+                    "popularity": 12.021,
+                    "release_year": "2002",
+                    "title": "Antwone Fisher",
+                    "vote_average": 6.864
+                },
+                {
+                    "popularity": 20.15,
+                    "release_year": "2002",
+                    "title": "John Q",
+                    "vote_average": 7.109
+                },
+                {
+                    "popularity": 40.676,
+                    "release_year": "2001",
+                    "title": "Training Day",
+                    "vote_average": 7.492
+                },
+                {
+                    "popularity": 26.922,
+                    "release_year": "2000",
+                    "title": "Remember the Titans",
+                    "vote_average": 7.622
+                },
+                {
+                    "popularity": 15.702,
+                    "release_year": "1999",
+                    "title": "The Hurricane",
+                    "vote_average": 7.425
+                },
+                {
+                    "popularity": 26.793,
+                    "release_year": "1999",
+                    "title": "The Bone Collector",
+                    "vote_average": 6.784
+                },
+                {
+                    "popularity": 14.179,
+                    "release_year": "1998",
+                    "title": "He Got Game",
+                    "vote_average": 6.746
+                },
+                {
+                    "popularity": 19.723,
+                    "release_year": "1998",
+                    "title": "The Siege",
+                    "vote_average": 6.283
+                },
+                {
+                    "popularity": 19.775,
+                    "release_year": "1998",
+                    "title": "Fallen",
+                    "vote_average": 6.787
+                },
+                {
+                    "popularity": 12.183,
+                    "release_year": "1996",
+                    "title": "The Preacher's Wife",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 17.0,
+                    "release_year": "1996",
+                    "title": "Courage Under Fire",
+                    "vote_average": 6.475
+                },
+                {
+                    "popularity": 13.932,
+                    "release_year": "1995",
+                    "title": "Virtuosity",
+                    "vote_average": 5.501
+                },
+                {
+                    "popularity": 15.105,
+                    "release_year": "1995",
+                    "title": "Devil in a Blue Dress",
+                    "vote_average": 6.389
+                },
+                {
+                    "popularity": 20.434,
+                    "release_year": "1995",
+                    "title": "Crimson Tide",
+                    "vote_average": 7.164
+                },
+                {
+                    "popularity": 16.636,
+                    "release_year": "1993",
+                    "title": "Much Ado About Nothing",
+                    "vote_average": 6.951
+                },
+                {
+                    "popularity": 20.945,
+                    "release_year": "1993",
+                    "title": "Philadelphia",
+                    "vote_average": 7.725
+                },
+                {
+                    "popularity": 22.339,
+                    "release_year": "1993",
+                    "title": "The Pelican Brief",
+                    "vote_average": 6.597
+                },
+                {
+                    "popularity": 16.119,
+                    "release_year": "1992",
+                    "title": "Malcolm X",
+                    "vote_average": 7.53
+                },
+                {
+                    "popularity": 6.955,
+                    "release_year": "1991",
+                    "title": "Mississippi Masala",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 17.665,
+                    "release_year": "1991",
+                    "title": "Ricochet",
+                    "vote_average": 6.064
+                },
+                {
+                    "popularity": 5.944,
+                    "release_year": "1990",
+                    "title": "Heart Condition",
+                    "vote_average": 5.506
+                },
+                {
+                    "popularity": 6.824,
+                    "release_year": "1990",
+                    "title": "Mo' Better Blues",
+                    "vote_average": 6.512
+                },
+                {
+                    "popularity": 8.264,
+                    "release_year": "1989",
+                    "title": "The Mighty Quinn",
+                    "vote_average": 6.155
+                },
+                {
+                    "popularity": 22.731,
+                    "release_year": "1989",
+                    "title": "Glory",
+                    "vote_average": 7.5
+                },
+                {
+                    "popularity": 18.353,
+                    "release_year": "1987",
+                    "title": "Cry Freedom",
+                    "vote_average": 7.1
+                },
+                {
+                    "popularity": 8.081,
+                    "release_year": "1986",
+                    "title": "Power",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 7.89,
+                    "release_year": "1984",
+                    "title": "A Soldier's Story",
+                    "vote_average": 6.727
+                }
+            ],
+            "name": "Denzel Washington",
+            "place_of_birth": "Mount Vernon, New York, USA",
+            "profile_path": "/jj2Gcobpopokal0YstuCQW0ldJ4.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Denzel_Washington"
+        },
         "person_Dwayne Johnson": {
             "biography": "An American and Canadian actor, producer and semi-retired professional wrestler, signed with WWE.  Johnson is half-Black and half-Samoan. His father, Rocky Johnson, is a Black Canadian, from Nova Scotia, and part of the first Black tag team champions in WWE history back when it was known as the WWF along with Tony Atlas. His mother is Samoan and the daughter of Peter Maivia, who was also a pro wrestler. Maivia's wife, Lia Maivia, was one of wrestling's few female promoters, taking over Polynesian Pacific Pro Wrestling after her husband's death in 1982, until 1988. Through his mother, he is considered a non-blood relative of the Anoa'i wrestling family. On March 29, 2008, The Rock inducted his father and his grandfather into the WWE Hall of Fame.\n\nAs of 2014, Johnson has a home in Southwest Ranches, Florida as well as Los Angeles, California. He also owns a farm in Virginia. In 2009, Johnson gained citizenship in Canada in honor of his father's background. Though Johnson was previously registered as a Republican, he voted for Barack Obama in the 2008 and 2012 United States presidential elections and is now an independent voter. He stated he did not vote in the 2016 U.S. election.\n\nIn recognition of his service to the Samoan people, and because he is a descendant of Samoan chiefs, Johnson had the noble title of Seiuli bestowed upon him by Malietoa Tanumafili II during his visit there in July 2004. He received a partial Samoan pe'a tattoo on his left side in 2003,and, in 2017, had the small \"Brahma bull\" tattoo on his right arm covered with a larger half-sleeve tattoo of a bull's skull.\n\nJohnson married Dany Garcia on May 3, 1997. Their only child together, a daughter named Simone, was born in August 2001. On June 1, 2007, they announced they were splitting up amicably. Johnson then began dating Lauren Hashian, daughter of Boston drummer Sib Hashian. They first met in 2006 while Johnson was filming The Game Plan. Their first child together, a daughter, was born in December 2015. Their second child, another daughter, was born in April 2018.\n\nJohnson attended the 2000 Democratic National Convention as part of WWE's non-partisan \"Smackdown Your Vote\" campaign, which aimed to influence young people to vote. He also had a speaking role at the 2000 Republican National Convention that same year.\n\nIn 2006, Johnson founded the Dwayne Johnson Rock Foundation, a charity working with at-risk and terminally ill children. On October 2, 2007, he and his ex-wife donated $1 million to the University of Miami to support the renovation of its football facilities; it was noted as the largest donation ever given to the university's athletics department by former students. The University of Miami renamed the Hurricanes' locker room in Johnson's honor. In 2015, Johnson donated $1,500 to a GoFundMe to pay for an abandoned dog's surgery. In 2017, he donated $25,000 to Hurricane Harvey relief efforts. In 2018, Johnson donated a gym to a military base in Oahu, Hawaii. After the 2018 Hawaii floods, he worked with Malama Kauai, a nonprofit organization, to help repair damages caused by the floods.",
             "birthday": "1972-05-02",
@@ -346,6 +770,60 @@
             "profile_path": "/kuqFzlYMc2IrsOyPznMd1FroeGq.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Dwayne_Johnson"
         },
+        "person_Frank Darabont": {
+            "biography": "Frank Darabont (born January 28, 1959) is a Hungarian-American film director, screenwriter and producer who has been nominated for three Academy Awards and a Golden Globe. He was born in France by Hungarian parents who fled Budapest during the 1956 uprising, but the family moved to Los Angeles while he was still an infant.\n\nHe has directed the films The Shawshank Redemption, The Green Mile, and The Mist, all based on stories by Stephen King. In 2010 he developed and executive produced the first season of the AMC network television series The Walking Dead.\n\nDescription above from the Wikipedia article Frank Darabont, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1959-01-28",
+            "deathday": null,
+            "imdb_id": "0001104",
+            "movie_credits": [
+                {
+                    "popularity": 10.36,
+                    "release_year": "2010",
+                    "title": "Never Sleep Again: The Elm Street Legacy",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 34.206,
+                    "release_year": "2007",
+                    "title": "The Mist",
+                    "vote_average": 6.921
+                },
+                {
+                    "popularity": 12.6,
+                    "release_year": "2001",
+                    "title": "The Majestic",
+                    "vote_average": 6.765
+                },
+                {
+                    "popularity": 78.636,
+                    "release_year": "1999",
+                    "title": "The Green Mile",
+                    "vote_average": 8.511
+                },
+                {
+                    "popularity": 16.898,
+                    "release_year": "1998",
+                    "title": "Vampires",
+                    "vote_average": 6.306
+                },
+                {
+                    "popularity": 143.848,
+                    "release_year": "1994",
+                    "title": "The Shawshank Redemption",
+                    "vote_average": 8.71
+                },
+                {
+                    "popularity": 9.628,
+                    "release_year": "1990",
+                    "title": "Buried Alive",
+                    "vote_average": 6.6
+                }
+            ],
+            "name": "Frank Darabont",
+            "place_of_birth": "Montb\u00e9liard, Doubs, France",
+            "profile_path": "/7LqmE3p1XTwCdNCOmBxovq210Qk.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Frank_Darabont"
+        },
         "person_Jordan Peele": {
             "biography": "Jordan Haworth Peele (born February 21, 1979) is an American actor, comedian, and filmmaker. He is known for his film and television work in the comedy and horror genres. Peele started his career in sketch comedy before transitioning his career as a writer and director of psychological horror and satirical films. In 2017, Peele was included on the annual Time 100 list of the most influential people in the world.\n\nPeele's breakout role came in 2003, when he was hired as a cast member on the Fox sketch comedy series Mad TV, where he spent five seasons, leaving the show in 2008. In the following years, he and his frequent Mad TV collaborator, Keegan-Michael Key, created and starred in their own Comedy Central sketch comedy series Key & Peele (2012\u20132015). The series was critically acclaimed, winning two Primetime Emmy Awards and a Peabody Award. The two wrote, produced, and starred in the comedy film Keanu (2016) and appeared in various projects since.\n\nHis 2017 directorial debut, the horror film Get Out, was a critical and box office success, for which he received numerous accolades, including the Academy Award for Best Original Screenplay, along with nominations for Best Picture and Best Director. Critics have frequently named Get Out as one of the best films of the 21st century. He received another Academy Award nomination for Best Picture for producing Spike Lee's drama BlacKkKlansman (2018). He directed, wrote, and produced the acclaimed films Us (2019) and Nope (2022). He founded the film and television production company Monkeypaw Productions in 2012. He wrote and produced Candyman (2021), and Wendell and Wild (2022).\n\nPeele has also voice acted in the animated films Storks (2016), Captain Underpants: The First Epic Movie (2017) and Toy Story 4 (2019), as well as in the adult animated sitcom Big Mouth (2017\u2013present). He co-created the TBS comedy series The Last O.G. (2018\u20132022) and the YouTube Premium comedy series Weird City (2019). He also served as the host and producer of the CBS All Access revival of the anthology series The Twilight Zone (2019\u20132020).",
             "birthday": "1979-02-21",
@@ -423,6 +901,2118 @@
             "place_of_birth": "New York City, New York, USA",
             "profile_path": "/kFUKn5g3ebpyZ3CSZZZo2HFWRNQ.jpg",
             "wiki_url": "https://en.wikipedia.org/wiki/Jordan_Peele"
+        },
+        "person_Leonardo DiCaprio": {
+            "biography": "Leonardo Wilhelm DiCaprio (born November 11, 1974) is an American actor and film producer. Known for his work in biopics and period films, DiCaprio is the recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards. As of 2019, his films have grossed over $7.2 billion worldwide, and he has been placed eight times in annual rankings of the world's highest-paid actors.\n\nBorn in Los Angeles, DiCaprio began his career in the late 1980s by appearing in television commercials. In the early 1990s, he had recurring roles in various television shows, such as the sitcom Parenthood, and had his first major film part as author Tobias Wolff in This Boy's Life (1993). At age 19, he received critical acclaim and his first Academy Award and Golden Globe Award nominations for his performance as a developmentally disabled boy in What's Eating Gilbert Grape (1993). He achieved international stardom with the star-crossed romances Romeo + Juliet (1996) and Titanic (1997).\n\nAfter the latter became the highest-grossing film at the time, he reduced his workload for a few years. In an attempt to shed his image of a romantic hero, DiCaprio sought roles in other genres, including crime drama in Catch Me If You Can (2002) and Gangs of New York (2002); the latter marked the first of his many successful collaborations with director Martin Scorsese. DiCaprio portrayed Howard Hughes in The Aviator (2004) and received acclaim for his performances in the political thriller Blood Diamond (2006), the crime drama The Departed (2006), and the romantic drama Revolutionary Road (2008).\n\nIn the following decade, DiCaprio starred in several high-profile directors' projects, including the science fiction thriller Inception (2010), the western Django Unchained (2012), the biopic The Wolf of Wall Street (2013), the survival drama The Revenant (2015), for which he won an Academy Award and a BAFTA Award for Best Actor in a Leading Role, and the comedy-drama Once Upon a Time in Hollywood (2019), all of which were critical and commercial successes.\n\nDiCaprio is the founder of Appian Way Productions, a production company that has produced some of his films and the documentary series Greensburg (2008\u20132010), and the Leonardo DiCaprio Foundation, a nonprofit organization devoted to promoting environmental awareness. He regularly supports charitable causes and has produced several documentaries on the environment. In 2005, he was named a Commander of the Ordre des Arts et des Lettres for his contributions to the arts, and in 2016, he appeared in Time magazine's 100 most influential people in the world.",
+            "birthday": "1974-11-11",
+            "deathday": null,
+            "imdb_id": "0000138",
+            "movie_credits": [
+                {
+                    "popularity": 402.753,
+                    "release_year": "2023",
+                    "title": "Killers of the Flower Moon",
+                    "vote_average": 7.533
+                },
+                {
+                    "popularity": 58.321,
+                    "release_year": "2021",
+                    "title": "Don't Look Up",
+                    "vote_average": 7.126
+                },
+                {
+                    "popularity": 66.253,
+                    "release_year": "2019",
+                    "title": "Once Upon a Time\u2026 in Hollywood",
+                    "vote_average": 7.44
+                },
+                {
+                    "popularity": 8.273,
+                    "release_year": "2015",
+                    "title": "The Audition",
+                    "vote_average": 6.14
+                },
+                {
+                    "popularity": 51.6,
+                    "release_year": "2015",
+                    "title": "The Revenant",
+                    "vote_average": 7.529
+                },
+                {
+                    "popularity": 49.388,
+                    "release_year": "2013",
+                    "title": "The Great Gatsby",
+                    "vote_average": 7.4
+                },
+                {
+                    "popularity": 101.567,
+                    "release_year": "2013",
+                    "title": "The Wolf of Wall Street",
+                    "vote_average": 8.035
+                },
+                {
+                    "popularity": 4.411,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 69.344,
+                    "release_year": "2012",
+                    "title": "Django Unchained",
+                    "vote_average": 8.2
+                },
+                {
+                    "popularity": 11.713,
+                    "release_year": "2011",
+                    "title": "J. Edgar",
+                    "vote_average": 6.224
+                },
+                {
+                    "popularity": 8.109,
+                    "release_year": "2010",
+                    "title": "Inception: The Cobol Job",
+                    "vote_average": 7.26
+                },
+                {
+                    "popularity": 80.909,
+                    "release_year": "2010",
+                    "title": "Shutter Island",
+                    "vote_average": 8.201
+                },
+                {
+                    "popularity": 120.888,
+                    "release_year": "2010",
+                    "title": "Inception",
+                    "vote_average": 8.367
+                },
+                {
+                    "popularity": 17.175,
+                    "release_year": "2008",
+                    "title": "Body of Lies",
+                    "vote_average": 6.628
+                },
+                {
+                    "popularity": 24.112,
+                    "release_year": "2008",
+                    "title": "Revolutionary Road",
+                    "vote_average": 6.974
+                },
+                {
+                    "popularity": 51.254,
+                    "release_year": "2006",
+                    "title": "The Departed",
+                    "vote_average": 8.166
+                },
+                {
+                    "popularity": 51.575,
+                    "release_year": "2006",
+                    "title": "Blood Diamond",
+                    "vote_average": 7.535
+                },
+                {
+                    "popularity": 19.754,
+                    "release_year": "2004",
+                    "title": "The Aviator",
+                    "vote_average": 7.2
+                },
+                {
+                    "popularity": 24.761,
+                    "release_year": "2002",
+                    "title": "Gangs of New York",
+                    "vote_average": 7.318
+                },
+                {
+                    "popularity": 63.133,
+                    "release_year": "2002",
+                    "title": "Catch Me If You Can",
+                    "vote_average": 7.975
+                },
+                {
+                    "popularity": 6.655,
+                    "release_year": "2001",
+                    "title": "Don's Plum",
+                    "vote_average": 5.3
+                },
+                {
+                    "popularity": 20.78,
+                    "release_year": "2000",
+                    "title": "The Beach",
+                    "vote_average": 6.462
+                },
+                {
+                    "popularity": 9.826,
+                    "release_year": "1998",
+                    "title": "Celebrity",
+                    "vote_average": 5.974
+                },
+                {
+                    "popularity": 24.925,
+                    "release_year": "1998",
+                    "title": "The Man in the Iron Mask",
+                    "vote_average": 6.633
+                },
+                {
+                    "popularity": 128.195,
+                    "release_year": "1997",
+                    "title": "Titanic",
+                    "vote_average": 7.902
+                },
+                {
+                    "popularity": 13.092,
+                    "release_year": "1996",
+                    "title": "Marvin's Room",
+                    "vote_average": 6.71
+                },
+                {
+                    "popularity": 25.762,
+                    "release_year": "1996",
+                    "title": "Romeo + Juliet",
+                    "vote_average": 6.795
+                },
+                {
+                    "popularity": 11.317,
+                    "release_year": "1995",
+                    "title": "Total Eclipse",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 24.85,
+                    "release_year": "1995",
+                    "title": "The Quick and the Dead",
+                    "vote_average": 6.536
+                },
+                {
+                    "popularity": 25.58,
+                    "release_year": "1995",
+                    "title": "The Basketball Diaries",
+                    "vote_average": 7.385
+                },
+                {
+                    "popularity": 18.562,
+                    "release_year": "1993",
+                    "title": "This Boy's Life",
+                    "vote_average": 7.108
+                },
+                {
+                    "popularity": 26.071,
+                    "release_year": "1993",
+                    "title": "What's Eating Gilbert Grape",
+                    "vote_average": 7.669
+                },
+                {
+                    "popularity": 24.301,
+                    "release_year": "1992",
+                    "title": "Poison Ivy",
+                    "vote_average": 5.429
+                },
+                {
+                    "popularity": 10.716,
+                    "release_year": "1991",
+                    "title": "Critters 3",
+                    "vote_average": 5.096
+                }
+            ],
+            "name": "Leonardo DiCaprio",
+            "place_of_birth": "Los Angeles, California, USA",
+            "profile_path": "/5Brc5dLifH3UInk3wUaCuGXpCqy.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Leonardo_DiCaprio"
+        },
+        "person_Meryl Streep": {
+            "biography": "Mary Louise \"Meryl\" Streep (born June 22, 1949) is an American actress. Often described as \"the best actress of her generation\", Streep is particularly known for her versatility and accent adaptability. She has received numerous accolades throughout her career spanning over five decades, including a record 21 Academy Award nominations, winning three, and a record 32 Golden Globe Award nominations, winning eight. She has also received two British Academy Film Awards, two Screen Actors Guild Awards, and three Primetime Emmy Awards, in addition to nominations for a Tony Award and six Grammy Awards.\n\nDescription above from the Wikipedia article Meryl Streep, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1949-06-22",
+            "deathday": null,
+            "imdb_id": "0000658",
+            "movie_credits": [
+                {
+                    "popularity": 58.321,
+                    "release_year": "2021",
+                    "title": "Don't Look Up",
+                    "vote_average": 7.126
+                },
+                {
+                    "popularity": 7.488,
+                    "release_year": "2020",
+                    "title": "Here We Are: Notes for Living on Planet Earth",
+                    "vote_average": 7.73
+                },
+                {
+                    "popularity": 9.5,
+                    "release_year": "2020",
+                    "title": "The Prom",
+                    "vote_average": 6.151
+                },
+                {
+                    "popularity": 11.407,
+                    "release_year": "2020",
+                    "title": "Let Them All Talk",
+                    "vote_average": 5.693
+                },
+                {
+                    "popularity": 9.438,
+                    "release_year": "2019",
+                    "title": "The Laundromat",
+                    "vote_average": 6.001
+                },
+                {
+                    "popularity": 49.603,
+                    "release_year": "2019",
+                    "title": "Little Women",
+                    "vote_average": 7.895
+                },
+                {
+                    "popularity": 28.369,
+                    "release_year": "2018",
+                    "title": "Mary Poppins Returns",
+                    "vote_average": 6.502
+                },
+                {
+                    "popularity": 28.68,
+                    "release_year": "2018",
+                    "title": "Mamma Mia! Here We Go Again",
+                    "vote_average": 7.127
+                },
+                {
+                    "popularity": 23.679,
+                    "release_year": "2017",
+                    "title": "The Post",
+                    "vote_average": 6.999
+                },
+                {
+                    "popularity": 13.675,
+                    "release_year": "2016",
+                    "title": "Florence Foster Jenkins",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 11.114,
+                    "release_year": "2015",
+                    "title": "Ricki and the Flash",
+                    "vote_average": 5.788
+                },
+                {
+                    "popularity": 14.971,
+                    "release_year": "2015",
+                    "title": "Suffragette",
+                    "vote_average": 7.256
+                },
+                {
+                    "popularity": 13.309,
+                    "release_year": "2014",
+                    "title": "The Homesman",
+                    "vote_average": 6.547
+                },
+                {
+                    "popularity": 19.34,
+                    "release_year": "2014",
+                    "title": "Into the Woods",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 32.404,
+                    "release_year": "2014",
+                    "title": "The Giver",
+                    "vote_average": 6.552
+                },
+                {
+                    "popularity": 16.072,
+                    "release_year": "2013",
+                    "title": "August: Osage County",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 4.411,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 9.204,
+                    "release_year": "2012",
+                    "title": "Hope Springs",
+                    "vote_average": 6.262
+                },
+                {
+                    "popularity": 14.607,
+                    "release_year": "2011",
+                    "title": "The Iron Lady",
+                    "vote_average": 6.371
+                },
+                {
+                    "popularity": 14.217,
+                    "release_year": "2009",
+                    "title": "Julie & Julia",
+                    "vote_average": 6.698
+                },
+                {
+                    "popularity": 17.207,
+                    "release_year": "2009",
+                    "title": "It's Complicated",
+                    "vote_average": 6.515
+                },
+                {
+                    "popularity": 36.561,
+                    "release_year": "2009",
+                    "title": "Fantastic Mr. Fox",
+                    "vote_average": 7.785
+                },
+                {
+                    "popularity": 4.058,
+                    "release_year": "2008",
+                    "title": "Dark Matter",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 17.147,
+                    "release_year": "2008",
+                    "title": "Doubt",
+                    "vote_average": 7.192
+                },
+                {
+                    "popularity": 35.284,
+                    "release_year": "2008",
+                    "title": "Mamma Mia!",
+                    "vote_average": 6.972
+                },
+                {
+                    "popularity": 8.54,
+                    "release_year": "2007",
+                    "title": "Evening",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 10.791,
+                    "release_year": "2007",
+                    "title": "Rendition",
+                    "vote_average": 6.427
+                },
+                {
+                    "popularity": 14.658,
+                    "release_year": "2007",
+                    "title": "Lions for Lambs",
+                    "vote_average": 6.027
+                },
+                {
+                    "popularity": 9.427,
+                    "release_year": "2006",
+                    "title": "A Prairie Home Companion",
+                    "vote_average": 6.305
+                },
+                {
+                    "popularity": 33.317,
+                    "release_year": "2006",
+                    "title": "The Ant Bully",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 69.698,
+                    "release_year": "2006",
+                    "title": "The Devil Wears Prada",
+                    "vote_average": 7.39
+                },
+                {
+                    "popularity": 15.622,
+                    "release_year": "2005",
+                    "title": "Prime",
+                    "vote_average": 5.96
+                },
+                {
+                    "popularity": 14.748,
+                    "release_year": "2004",
+                    "title": "The Manchurian Candidate",
+                    "vote_average": 6.467
+                },
+                {
+                    "popularity": 50.808,
+                    "release_year": "2004",
+                    "title": "Lemony Snicket's A Series of Unfortunate Events",
+                    "vote_average": 6.817
+                },
+                {
+                    "popularity": 14.627,
+                    "release_year": "2003",
+                    "title": "Stuck on You",
+                    "vote_average": 5.327
+                },
+                {
+                    "popularity": 15.135,
+                    "release_year": "2002",
+                    "title": "Adaptation.",
+                    "vote_average": 7.367
+                },
+                {
+                    "popularity": 18.642,
+                    "release_year": "2002",
+                    "title": "The Hours",
+                    "vote_average": 7.289
+                },
+                {
+                    "popularity": 33.521,
+                    "release_year": "2001",
+                    "title": "A.I. Artificial Intelligence",
+                    "vote_average": 7.039
+                },
+                {
+                    "popularity": 10.717,
+                    "release_year": "1999",
+                    "title": "Music of the Heart",
+                    "vote_average": 6.704
+                },
+                {
+                    "popularity": 6.834,
+                    "release_year": "1998",
+                    "title": "One True Thing",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 7.918,
+                    "release_year": "1996",
+                    "title": "Before and After",
+                    "vote_average": 5.944
+                },
+                {
+                    "popularity": 9.714,
+                    "release_year": "1996",
+                    "title": "Marvin's Room",
+                    "vote_average": 6.71
+                },
+                {
+                    "popularity": 24.564,
+                    "release_year": "1995",
+                    "title": "The Bridges of Madison County",
+                    "vote_average": 7.7
+                },
+                {
+                    "popularity": 17.091,
+                    "release_year": "1994",
+                    "title": "The River Wild",
+                    "vote_average": 6.416
+                },
+                {
+                    "popularity": 26.515,
+                    "release_year": "1993",
+                    "title": "The House of the Spirits",
+                    "vote_average": 6.877
+                },
+                {
+                    "popularity": 23.122,
+                    "release_year": "1992",
+                    "title": "Death Becomes Her",
+                    "vote_average": 6.752
+                },
+                {
+                    "popularity": 11.656,
+                    "release_year": "1991",
+                    "title": "Defending Your Life",
+                    "vote_average": 6.961
+                },
+                {
+                    "popularity": 8.541,
+                    "release_year": "1990",
+                    "title": "Postcards from the Edge",
+                    "vote_average": 6.6
+                },
+                {
+                    "popularity": 9.871,
+                    "release_year": "1989",
+                    "title": "She-Devil",
+                    "vote_average": 5.899
+                },
+                {
+                    "popularity": 10.987,
+                    "release_year": "1988",
+                    "title": "Evil Angels",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 10.429,
+                    "release_year": "1987",
+                    "title": "Ironweed",
+                    "vote_average": 6.355
+                },
+                {
+                    "popularity": 10.648,
+                    "release_year": "1986",
+                    "title": "Heartburn",
+                    "vote_average": 6.003
+                },
+                {
+                    "popularity": 19.744,
+                    "release_year": "1985",
+                    "title": "Out of Africa",
+                    "vote_average": 7.165
+                },
+                {
+                    "popularity": 11.713,
+                    "release_year": "1984",
+                    "title": "Falling in Love",
+                    "vote_average": 6.621
+                },
+                {
+                    "popularity": 14.018,
+                    "release_year": "1983",
+                    "title": "Silkwood",
+                    "vote_average": 6.954
+                },
+                {
+                    "popularity": 7.56,
+                    "release_year": "1982",
+                    "title": "Still of the Night",
+                    "vote_average": 5.742
+                },
+                {
+                    "popularity": 14.298,
+                    "release_year": "1982",
+                    "title": "Sophie's Choice",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 12.733,
+                    "release_year": "1981",
+                    "title": "The French Lieutenant's Woman",
+                    "vote_average": 6.4
+                },
+                {
+                    "popularity": 15.06,
+                    "release_year": "1979",
+                    "title": "Manhattan",
+                    "vote_average": 7.75
+                },
+                {
+                    "popularity": 20.503,
+                    "release_year": "1979",
+                    "title": "Kramer vs. Kramer",
+                    "vote_average": 7.556
+                },
+                {
+                    "popularity": 25.366,
+                    "release_year": "1978",
+                    "title": "The Deer Hunter",
+                    "vote_average": 8.002
+                },
+                {
+                    "popularity": 8.92,
+                    "release_year": "1977",
+                    "title": "Julia",
+                    "vote_average": 6.6
+                }
+            ],
+            "name": "Meryl Streep",
+            "place_of_birth": "Summit, New Jersey, USA",
+            "profile_path": "/emAAzyK1rJ6aiMi0wsWYp51EC3h.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Meryl_Streep"
+        },
+        "person_Morgan Freeman": {
+            "biography": "Morgan Freeman (born June 1, 1937) is an American actor, director, and narrator. Noted for his distinctive deep voice, Freeman is known for his various roles in a wide variety of film genres. Throughout his career spanning over five decades, he has received multiple accolades, including an Academy Award, a Screen Actors Guild Award, and a Golden Globe Award.\n\nBorn in Memphis, Tennessee, Freeman was raised in Mississippi where he began acting in school plays. He studied theatre arts in Los Angeles and appeared in stage productions in his early career. He rose to fame in the 1970s for his role in the children's television series The Electric Company. Freeman then appeared in the Shakespearean plays Coriolanus and Julius Caesar, the former of which earned him an Obie Award. His breakout role was in Street Smart (1987), playing a hustler, which earned him an Academy Award nomination for Best Supporting Actor. He achieved further stardom in Glory, the biographical drama Lean on Me, and comedy-drama Driving Miss Daisy (all 1989), the latter of which garnered him his first Academy Award nomination for Best Actor.\n\nIn 1992, Freeman starred alongside Clint Eastwood in the western revenge film Unforgiven; this would be the first of several collaborations with Eastwood. In 1994, he starred in the prison drama The Shawshank Redemption for which he received another Academy Award nomination. Freeman also starred in David Fincher's crime thriller Se7en (1995), and Steven Spielberg's historical drama Amistad (1997). Freeman won the Academy Award for Best Supporting Actor for his performance in Clint Eastwood's 2004 sports drama Million Dollar Baby. In 2009, he received his fifth Oscar nomination for playing former South African President Nelson Mandela in Eastwood's Invictus. Freeman is also known for his performance as Lucius Fox in Christopher Nolan's The Dark Knight Trilogy (2005\u20132012).\n\nIn addition to acting, Freeman has directed the drama Bopha! (1993). He also founded film production company Revelations Entertainment with business partner Lori McCreary. He is the recipient of the Kennedy Center Honor, the AFI Life Achievement Award, the Cecil B. DeMille Award, and the Screen Actors Guild Life Achievement Award. For his performances in theatrical productions, he has won three Obie Awards, one of the most prestigious honors for recognizing excellence in theatre.\n\nDescription above from the Wikipedia article Morgan Freeman, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1937-06-01",
+            "deathday": null,
+            "imdb_id": "0000151",
+            "movie_credits": [
+                {
+                    "popularity": 18.117,
+                    "release_year": "2023",
+                    "title": "A Good Person",
+                    "vote_average": 7.106
+                },
+                {
+                    "popularity": 72.708,
+                    "release_year": "2023",
+                    "title": "The Ritual Killer",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 410.334,
+                    "release_year": "2023",
+                    "title": "57 Seconds",
+                    "vote_average": 5.904
+                },
+                {
+                    "popularity": 22.241,
+                    "release_year": "2022",
+                    "title": "Paradise Highway",
+                    "vote_average": 6.012
+                },
+                {
+                    "popularity": 26.271,
+                    "release_year": "2022",
+                    "title": "The Minute You Wake Up Dead",
+                    "vote_average": 5.429
+                },
+                {
+                    "popularity": 20.747,
+                    "release_year": "2021",
+                    "title": "Vanquish",
+                    "vote_average": 5.49
+                },
+                {
+                    "popularity": 29.676,
+                    "release_year": "2021",
+                    "title": "Coming 2 America",
+                    "vote_average": 6.453
+                },
+                {
+                    "popularity": 29.921,
+                    "release_year": "2021",
+                    "title": "Hitman's Wife's Bodyguard",
+                    "vote_average": 6.706
+                },
+                {
+                    "popularity": 19.03,
+                    "release_year": "2020",
+                    "title": "The Comeback Trail",
+                    "vote_average": 5.867
+                },
+                {
+                    "popularity": 18.308,
+                    "release_year": "2019",
+                    "title": "The Poison Rose",
+                    "vote_average": 4.648
+                },
+                {
+                    "popularity": 30.815,
+                    "release_year": "2019",
+                    "title": "Brian Banks",
+                    "vote_average": 7.253
+                },
+                {
+                    "popularity": 53.649,
+                    "release_year": "2019",
+                    "title": "Angel Has Fallen",
+                    "vote_average": 6.576
+                },
+                {
+                    "popularity": 38.759,
+                    "release_year": "2018",
+                    "title": "The Nutcracker and the Four Realms",
+                    "vote_average": 6.08
+                },
+                {
+                    "popularity": 6.528,
+                    "release_year": "2017",
+                    "title": "March of the Penguins 2: The Next Step",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 10.95,
+                    "release_year": "2017",
+                    "title": "Just Getting Started",
+                    "vote_average": 4.873
+                },
+                {
+                    "popularity": 43.586,
+                    "release_year": "2017",
+                    "title": "Going in Style",
+                    "vote_average": 6.696
+                },
+                {
+                    "popularity": 31.394,
+                    "release_year": "2016",
+                    "title": "Ben-Hur",
+                    "vote_average": 5.713
+                },
+                {
+                    "popularity": 40.909,
+                    "release_year": "2016",
+                    "title": "Now You See Me 2",
+                    "vote_average": 6.828
+                },
+                {
+                    "popularity": 44.675,
+                    "release_year": "2016",
+                    "title": "London Has Fallen",
+                    "vote_average": 6.186
+                },
+                {
+                    "popularity": 14.063,
+                    "release_year": "2015",
+                    "title": "Last Knights",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 23.273,
+                    "release_year": "2015",
+                    "title": "Momentum",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 99.806,
+                    "release_year": "2015",
+                    "title": "Ted 2",
+                    "vote_average": 6.293
+                },
+                {
+                    "popularity": 11.344,
+                    "release_year": "2014",
+                    "title": "Dolphin Tale 2",
+                    "vote_average": 6.964
+                },
+                {
+                    "popularity": 11.357,
+                    "release_year": "2014",
+                    "title": "5 Flights Up",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 25.618,
+                    "release_year": "2014",
+                    "title": "Transcendence",
+                    "vote_average": 6.031
+                },
+                {
+                    "popularity": 37.719,
+                    "release_year": "2014",
+                    "title": "The Lego Movie",
+                    "vote_average": 7.418
+                },
+                {
+                    "popularity": 40.175,
+                    "release_year": "2014",
+                    "title": "Lucy",
+                    "vote_average": 6.444
+                },
+                {
+                    "popularity": 24.249,
+                    "release_year": "2013",
+                    "title": "Last Vegas",
+                    "vote_average": 6.403
+                },
+                {
+                    "popularity": 39.48,
+                    "release_year": "2013",
+                    "title": "Oblivion",
+                    "vote_average": 6.624
+                },
+                {
+                    "popularity": 41.076,
+                    "release_year": "2013",
+                    "title": "Olympus Has Fallen",
+                    "vote_average": 6.395
+                },
+                {
+                    "popularity": 59.088,
+                    "release_year": "2013",
+                    "title": "Now You See Me",
+                    "vote_average": 7.344
+                },
+                {
+                    "popularity": 14.114,
+                    "release_year": "2012",
+                    "title": "The Magic of Belle Isle",
+                    "vote_average": 6.981
+                },
+                {
+                    "popularity": 83.465,
+                    "release_year": "2012",
+                    "title": "The Dark Knight Rises",
+                    "vote_average": 7.778
+                },
+                {
+                    "popularity": 4.896,
+                    "release_year": "2011",
+                    "title": "Born to Be Wild",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 10.569,
+                    "release_year": "2011",
+                    "title": "Dolphin Tale",
+                    "vote_average": 6.95
+                },
+                {
+                    "popularity": 28.523,
+                    "release_year": "2011",
+                    "title": "Conan the Barbarian",
+                    "vote_average": 5.301
+                },
+                {
+                    "popularity": 10.36,
+                    "release_year": "2010",
+                    "title": "Never Sleep Again: The Elm Street Legacy",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 30.521,
+                    "release_year": "2010",
+                    "title": "RED",
+                    "vote_average": 6.689
+                },
+                {
+                    "popularity": 12.301,
+                    "release_year": "2009",
+                    "title": "The Maiden Heist",
+                    "vote_average": 5.628
+                },
+                {
+                    "popularity": 19.752,
+                    "release_year": "2009",
+                    "title": "Invictus",
+                    "vote_average": 7.193
+                },
+                {
+                    "popularity": 41.293,
+                    "release_year": "2009",
+                    "title": "Thick as Thieves",
+                    "vote_average": 5.961
+                },
+                {
+                    "popularity": 33.677,
+                    "release_year": "2008",
+                    "title": "Wanted",
+                    "vote_average": 6.515
+                },
+                {
+                    "popularity": 100.372,
+                    "release_year": "2008",
+                    "title": "The Dark Knight",
+                    "vote_average": 8.514
+                },
+                {
+                    "popularity": 11.757,
+                    "release_year": "2007",
+                    "title": "Feast of Love",
+                    "vote_average": 6.259
+                },
+                {
+                    "popularity": 25.772,
+                    "release_year": "2007",
+                    "title": "Gone Baby Gone",
+                    "vote_average": 7.304
+                },
+                {
+                    "popularity": 31.373,
+                    "release_year": "2007",
+                    "title": "Evan Almighty",
+                    "vote_average": 5.565
+                },
+                {
+                    "popularity": 46.362,
+                    "release_year": "2007",
+                    "title": "The Bucket List",
+                    "vote_average": 7.184
+                },
+                {
+                    "popularity": 8.774,
+                    "release_year": "2006",
+                    "title": "10 Items or Less",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 10.182,
+                    "release_year": "2006",
+                    "title": "The Contract",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 26.283,
+                    "release_year": "2006",
+                    "title": "Lucky Number Slevin",
+                    "vote_average": 7.472
+                },
+                {
+                    "popularity": 10.728,
+                    "release_year": "2005",
+                    "title": "Edison",
+                    "vote_average": 5.315
+                },
+                {
+                    "popularity": 14.044,
+                    "release_year": "2005",
+                    "title": "March of the Penguins",
+                    "vote_average": 7.034
+                },
+                {
+                    "popularity": 14.951,
+                    "release_year": "2005",
+                    "title": "An Unfinished Life",
+                    "vote_average": 6.779
+                },
+                {
+                    "popularity": 22.509,
+                    "release_year": "2005",
+                    "title": "Unleashed",
+                    "vote_average": 6.903
+                },
+                {
+                    "popularity": 39.774,
+                    "release_year": "2005",
+                    "title": "War of the Worlds",
+                    "vote_average": 6.501
+                },
+                {
+                    "popularity": 64.904,
+                    "release_year": "2005",
+                    "title": "Batman Begins",
+                    "vote_average": 7.703
+                },
+                {
+                    "popularity": 9.759,
+                    "release_year": "2004",
+                    "title": "The Big Bounce",
+                    "vote_average": 4.911
+                },
+                {
+                    "popularity": 26.995,
+                    "release_year": "2004",
+                    "title": "Million Dollar Baby",
+                    "vote_average": 7.951
+                },
+                {
+                    "popularity": 6.967,
+                    "release_year": "2003",
+                    "title": "Levity",
+                    "vote_average": 6.17
+                },
+                {
+                    "popularity": 21.055,
+                    "release_year": "2003",
+                    "title": "Dreamcatcher",
+                    "vote_average": 5.58
+                },
+                {
+                    "popularity": 66.783,
+                    "release_year": "2003",
+                    "title": "Bruce Almighty",
+                    "vote_average": 6.711
+                },
+                {
+                    "popularity": 19.066,
+                    "release_year": "2002",
+                    "title": "High Crimes",
+                    "vote_average": 6.35
+                },
+                {
+                    "popularity": 20.652,
+                    "release_year": "2002",
+                    "title": "The Sum of All Fears",
+                    "vote_average": 6.349
+                },
+                {
+                    "popularity": 25.271,
+                    "release_year": "2001",
+                    "title": "Along Came a Spider",
+                    "vote_average": 6.339
+                },
+                {
+                    "popularity": 10.17,
+                    "release_year": "2000",
+                    "title": "Under Suspicion",
+                    "vote_average": 6.076
+                },
+                {
+                    "popularity": 11.868,
+                    "release_year": "2000",
+                    "title": "Nurse Betty",
+                    "vote_average": 5.942
+                },
+                {
+                    "popularity": 14.167,
+                    "release_year": "1998",
+                    "title": "Hard Rain",
+                    "vote_average": 5.787
+                },
+                {
+                    "popularity": 34.115,
+                    "release_year": "1998",
+                    "title": "Deep Impact",
+                    "vote_average": 6.215
+                },
+                {
+                    "popularity": 3.217,
+                    "release_year": "1997",
+                    "title": "Amistad",
+                    "vote_average": 7.012
+                },
+                {
+                    "popularity": 23.705,
+                    "release_year": "1997",
+                    "title": "Kiss the Girls",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 9.218,
+                    "release_year": "1996",
+                    "title": "Moll Flanders",
+                    "vote_average": 6.1
+                },
+                {
+                    "popularity": 20.182,
+                    "release_year": "1996",
+                    "title": "Chain Reaction",
+                    "vote_average": 5.697
+                },
+                {
+                    "popularity": 18.651,
+                    "release_year": "1995",
+                    "title": "Outbreak",
+                    "vote_average": 6.536
+                },
+                {
+                    "popularity": 68.85,
+                    "release_year": "1995",
+                    "title": "Se7en",
+                    "vote_average": 8.372
+                },
+                {
+                    "popularity": 143.848,
+                    "release_year": "1994",
+                    "title": "The Shawshank Redemption",
+                    "vote_average": 8.71
+                },
+                {
+                    "popularity": 10.859,
+                    "release_year": "1992",
+                    "title": "The Power of One",
+                    "vote_average": 7.4
+                },
+                {
+                    "popularity": 31.039,
+                    "release_year": "1992",
+                    "title": "Unforgiven",
+                    "vote_average": 7.912
+                },
+                {
+                    "popularity": 45.378,
+                    "release_year": "1991",
+                    "title": "Robin Hood: Prince of Thieves",
+                    "vote_average": 6.848
+                },
+                {
+                    "popularity": 10.048,
+                    "release_year": "1990",
+                    "title": "The Bonfire of the Vanities",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 10.683,
+                    "release_year": "1989",
+                    "title": "Lean On Me",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 14.652,
+                    "release_year": "1989",
+                    "title": "Driving Miss Daisy",
+                    "vote_average": 7.228
+                },
+                {
+                    "popularity": 16.551,
+                    "release_year": "1989",
+                    "title": "Johnny Handsome",
+                    "vote_average": 6.265
+                },
+                {
+                    "popularity": 22.731,
+                    "release_year": "1989",
+                    "title": "Glory",
+                    "vote_average": 7.5
+                },
+                {
+                    "popularity": 5.769,
+                    "release_year": "1988",
+                    "title": "Clean and Sober",
+                    "vote_average": 6.246
+                },
+                {
+                    "popularity": 5.564,
+                    "release_year": "1987",
+                    "title": "Street Smart",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 3.98,
+                    "release_year": "1984",
+                    "title": "Harry and Son",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 4.848,
+                    "release_year": "1984",
+                    "title": "Teachers",
+                    "vote_average": 5.563
+                },
+                {
+                    "popularity": 9.095,
+                    "release_year": "1981",
+                    "title": "Eyewitness",
+                    "vote_average": 5.606
+                },
+                {
+                    "popularity": 11.555,
+                    "release_year": "1980",
+                    "title": "Brubaker",
+                    "vote_average": 7.045
+                },
+                {
+                    "popularity": 5.955,
+                    "release_year": "1964",
+                    "title": "The Pawnbroker",
+                    "vote_average": 7.2
+                }
+            ],
+            "name": "Morgan Freeman",
+            "place_of_birth": "Memphis, Tennessee, USA",
+            "profile_path": "/jPsLqiYGSofU4s6BjrxnefMfabb.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Morgan_Freeman"
+        },
+        "person_Quentin Tarantino": {
+            "biography": "Quentin Jerome Tarantino (born March 27, 1963) is an American film director, screenwriter, producer, cinematographer and actor. In the early 1990s he was an independent filmmaker whose films used nonlinear storylines and aestheticization of violence. His films have earned him a variety of Academy Award, Golden Globe, BAFTA and Palme d'Or Awards and he has been nominated for Emmy and Grammy Awards. In 2007, Total Film named him the 12th-greatest director of all time.\n\nTarantino was born in Knoxville, Tennessee, the son of Connie McHugh Tarantino Zastoupil, a health care executive and nurse born in Knoxville, and Tony Tarantino, an actor and amateur musician born in Queens, New York. Tarantino's mother allowed him to quit school at age 17, to attend an acting class full time. Tarantino gave up acting while attending the acting school, saying that he admired directors more than actors. Tarantino also worked in a video rental store before becoming a filmmaker, paid close attention to the types of films people liked to rent, and has cited that experience as inspiration for his directorial career.\n\nDescription above from the Wikipedia article Quentin Tarantino, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1963-03-27",
+            "deathday": null,
+            "imdb_id": "0000233",
+            "movie_credits": [
+                {
+                    "popularity": 12.275,
+                    "release_year": "2022",
+                    "title": "Halftime",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 13.873,
+                    "release_year": "2022",
+                    "title": "Ennio",
+                    "vote_average": 8.339
+                },
+                {
+                    "popularity": 66.253,
+                    "release_year": "2019",
+                    "title": "Once Upon a Time\u2026 in Hollywood",
+                    "vote_average": 7.44
+                },
+                {
+                    "popularity": 44.871,
+                    "release_year": "2015",
+                    "title": "The Hateful Eight",
+                    "vote_average": 7.749
+                },
+                {
+                    "popularity": 14.485,
+                    "release_year": "2014",
+                    "title": "She's Funny That Way",
+                    "vote_average": 5.949
+                },
+                {
+                    "popularity": 69.344,
+                    "release_year": "2012",
+                    "title": "Django Unchained",
+                    "vote_average": 8.174
+                },
+                {
+                    "popularity": 6.713,
+                    "release_year": "2011",
+                    "title": "The Greatest Movie Ever Sold",
+                    "vote_average": 6.403
+                },
+                {
+                    "popularity": 20.801,
+                    "release_year": "2011",
+                    "title": "Kill Bill: The Whole Bloody Affair",
+                    "vote_average": 8.0
+                },
+                {
+                    "popularity": 71.298,
+                    "release_year": "2009",
+                    "title": "Inglourious Basterds",
+                    "vote_average": 8.216
+                },
+                {
+                    "popularity": 4.32,
+                    "release_year": "2008",
+                    "title": "Not Quite Hollywood",
+                    "vote_average": 6.9
+                },
+                {
+                    "popularity": 8.696,
+                    "release_year": "2007",
+                    "title": "Sukiyaki Western Django",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 14.615,
+                    "release_year": "2007",
+                    "title": "Diary of the Dead",
+                    "vote_average": 5.559
+                },
+                {
+                    "popularity": 18.758,
+                    "release_year": "2007",
+                    "title": "Grindhouse",
+                    "vote_average": 6.992
+                },
+                {
+                    "popularity": 23.298,
+                    "release_year": "2007",
+                    "title": "Planet Terror",
+                    "vote_average": 6.666
+                },
+                {
+                    "popularity": 31.091,
+                    "release_year": "2007",
+                    "title": "Death Proof",
+                    "vote_average": 6.831
+                },
+                {
+                    "popularity": 8.911,
+                    "release_year": "2005",
+                    "title": "The Muppets' Wizard of Oz",
+                    "vote_average": 5.2
+                },
+                {
+                    "popularity": 27.522,
+                    "release_year": "2005",
+                    "title": "Sin City",
+                    "vote_average": 7.45
+                },
+                {
+                    "popularity": 46.229,
+                    "release_year": "2004",
+                    "title": "Kill Bill: Vol. 2",
+                    "vote_average": 7.875
+                },
+                {
+                    "popularity": 54.938,
+                    "release_year": "2003",
+                    "title": "Kill Bill: Vol. 1",
+                    "vote_average": 7.968
+                },
+                {
+                    "popularity": 20.316,
+                    "release_year": "2000",
+                    "title": "Little Nicky",
+                    "vote_average": 5.866
+                },
+                {
+                    "popularity": 22.938,
+                    "release_year": "1997",
+                    "title": "Jackie Brown",
+                    "vote_average": 7.358
+                },
+                {
+                    "popularity": 6.285,
+                    "release_year": "1996",
+                    "title": "Curdled",
+                    "vote_average": 5.9
+                },
+                {
+                    "popularity": 8.465,
+                    "release_year": "1996",
+                    "title": "Girl 6",
+                    "vote_average": 5.0
+                },
+                {
+                    "popularity": 38.615,
+                    "release_year": "1996",
+                    "title": "From Dusk Till Dawn",
+                    "vote_average": 7.015
+                },
+                {
+                    "popularity": 20.071,
+                    "release_year": "1995",
+                    "title": "Four Rooms",
+                    "vote_average": 5.796
+                },
+                {
+                    "popularity": 31.011,
+                    "release_year": "1995",
+                    "title": "Desperado",
+                    "vote_average": 6.921
+                },
+                {
+                    "popularity": 7.932,
+                    "release_year": "1994",
+                    "title": "Sleep with Me",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 88.994,
+                    "release_year": "1994",
+                    "title": "Pulp Fiction",
+                    "vote_average": 8.489
+                },
+                {
+                    "popularity": 6.52,
+                    "release_year": "1991",
+                    "title": "Reservoir Dogs",
+                    "vote_average": 7.52
+                },
+                {
+                    "popularity": 3.886,
+                    "release_year": "1987",
+                    "title": "My Best Friend's Birthday",
+                    "vote_average": 5.6
+                }
+            ],
+            "name": "Quentin Tarantino",
+            "place_of_birth": "Knoxville, Tennessee, USA",
+            "profile_path": "/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Quentin_Tarantino"
+        },
+        "person_Tim Robbins": {
+            "biography": "Timothy Francis Robbins (born October 16, 1958) is an American actor, screenwriter, director, producer, and musician. He is best known for his portrayal of Andy Dufresne in the prison drama film The Shawshank Redemption (1994).",
+            "birthday": "1958-10-16",
+            "deathday": null,
+            "imdb_id": "0000209",
+            "movie_credits": [
+                {
+                    "popularity": 20.367,
+                    "release_year": "2019",
+                    "title": "Dark Waters",
+                    "vote_average": 7.52
+                },
+                {
+                    "popularity": 5.295,
+                    "release_year": "2017",
+                    "title": "Marjorie Prime",
+                    "vote_average": 6.081
+                },
+                {
+                    "popularity": 8.659,
+                    "release_year": "2015",
+                    "title": "A Perfect Day",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 7.625,
+                    "release_year": "2014",
+                    "title": "Welcome to Me",
+                    "vote_average": 5.848
+                },
+                {
+                    "popularity": 11.164,
+                    "release_year": "2013",
+                    "title": "Thanks for Sharing",
+                    "vote_average": 6.0
+                },
+                {
+                    "popularity": 12.8,
+                    "release_year": "2013",
+                    "title": "Life of Crime",
+                    "vote_average": 5.76
+                },
+                {
+                    "popularity": 8.563,
+                    "release_year": "2012",
+                    "title": "Back to 1942",
+                    "vote_average": 6.559
+                },
+                {
+                    "popularity": 6.005,
+                    "release_year": "2011",
+                    "title": "Cinema Verite",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 32.285,
+                    "release_year": "2011",
+                    "title": "Green Lantern",
+                    "vote_average": 5.169
+                },
+                {
+                    "popularity": 7.334,
+                    "release_year": "2008",
+                    "title": "The Lucky Ones",
+                    "vote_average": 6.399
+                },
+                {
+                    "popularity": 23.893,
+                    "release_year": "2008",
+                    "title": "City of Ember",
+                    "vote_average": 6.311
+                },
+                {
+                    "popularity": 3.637,
+                    "release_year": "2007",
+                    "title": "Noise",
+                    "vote_average": 5.73
+                },
+                {
+                    "popularity": 8.688,
+                    "release_year": "2007",
+                    "title": "Then She Found Me",
+                    "vote_average": 5.6
+                },
+                {
+                    "popularity": 8.148,
+                    "release_year": "2006",
+                    "title": "Catch a Fire",
+                    "vote_average": 6.2
+                },
+                {
+                    "popularity": 18.951,
+                    "release_year": "2006",
+                    "title": "Tenacious D in The Pick of Destiny",
+                    "vote_average": 6.737
+                },
+                {
+                    "popularity": 7.226,
+                    "release_year": "2005",
+                    "title": "The Secret Life of Words",
+                    "vote_average": 6.937
+                },
+                {
+                    "popularity": 33.529,
+                    "release_year": "2005",
+                    "title": "Zathura: A Space Adventure",
+                    "vote_average": 6.415
+                },
+                {
+                    "popularity": 39.774,
+                    "release_year": "2005",
+                    "title": "War of the Worlds",
+                    "vote_average": 6.501
+                },
+                {
+                    "popularity": 21.573,
+                    "release_year": "2004",
+                    "title": "Anchorman: The Legend of Ron Burgundy",
+                    "vote_average": 6.716
+                },
+                {
+                    "popularity": 9.758,
+                    "release_year": "2003",
+                    "title": "Code 46",
+                    "vote_average": 6.223
+                },
+                {
+                    "popularity": 28.101,
+                    "release_year": "2003",
+                    "title": "Mystic River",
+                    "vote_average": 7.745
+                },
+                {
+                    "popularity": 13.188,
+                    "release_year": "2002",
+                    "title": "The Truth About Charlie",
+                    "vote_average": 4.9
+                },
+                {
+                    "popularity": 9.372,
+                    "release_year": "2001",
+                    "title": "Human Nature",
+                    "vote_average": 5.991
+                },
+                {
+                    "popularity": 17.919,
+                    "release_year": "2001",
+                    "title": "Antitrust",
+                    "vote_average": 5.999
+                },
+                {
+                    "popularity": 14.59,
+                    "release_year": "2000",
+                    "title": "High Fidelity",
+                    "vote_average": 7.142
+                },
+                {
+                    "popularity": 19.87,
+                    "release_year": "2000",
+                    "title": "Mission to Mars",
+                    "vote_average": 5.97
+                },
+                {
+                    "popularity": 8.534,
+                    "release_year": "1999",
+                    "title": "Cradle Will Rock",
+                    "vote_average": 6.474
+                },
+                {
+                    "popularity": 11.79,
+                    "release_year": "1999",
+                    "title": "Arlington Road",
+                    "vote_average": 6.997
+                },
+                {
+                    "popularity": 31.086,
+                    "release_year": "1999",
+                    "title": "Austin Powers: The Spy Who Shagged Me",
+                    "vote_average": 6.282
+                },
+                {
+                    "popularity": 15.132,
+                    "release_year": "1997",
+                    "title": "Nothing to Lose",
+                    "vote_average": 6.497
+                },
+                {
+                    "popularity": 21.168,
+                    "release_year": "1995",
+                    "title": "Dead Man Walking",
+                    "vote_average": 7.336
+                },
+                {
+                    "popularity": 9.919,
+                    "release_year": "1994",
+                    "title": "Ready to Wear",
+                    "vote_average": 5.257
+                },
+                {
+                    "popularity": 9.922,
+                    "release_year": "1994",
+                    "title": "The Hudsucker Proxy",
+                    "vote_average": 7.075
+                },
+                {
+                    "popularity": 11.163,
+                    "release_year": "1994",
+                    "title": "I.Q.",
+                    "vote_average": 5.993
+                },
+                {
+                    "popularity": 143.848,
+                    "release_year": "1994",
+                    "title": "The Shawshank Redemption",
+                    "vote_average": 8.71
+                },
+                {
+                    "popularity": 11.354,
+                    "release_year": "1993",
+                    "title": "Short Cuts",
+                    "vote_average": 7.22
+                },
+                {
+                    "popularity": 4.686,
+                    "release_year": "1992",
+                    "title": "Bob Roberts",
+                    "vote_average": 6.524
+                },
+                {
+                    "popularity": 16.073,
+                    "release_year": "1992",
+                    "title": "The Player",
+                    "vote_average": 7.191
+                },
+                {
+                    "popularity": 10.373,
+                    "release_year": "1991",
+                    "title": "Jungle Fever",
+                    "vote_average": 6.389
+                },
+                {
+                    "popularity": 10.72,
+                    "release_year": "1990",
+                    "title": "Cadillac Man",
+                    "vote_average": 5.664
+                },
+                {
+                    "popularity": 23.498,
+                    "release_year": "1990",
+                    "title": "Jacob's Ladder",
+                    "vote_average": 7.359
+                },
+                {
+                    "popularity": 14.755,
+                    "release_year": "1989",
+                    "title": "Erik the Viking",
+                    "vote_average": 5.794
+                },
+                {
+                    "popularity": 6.458,
+                    "release_year": "1988",
+                    "title": "Tapeheads",
+                    "vote_average": 5.2
+                },
+                {
+                    "popularity": 16.136,
+                    "release_year": "1988",
+                    "title": "Bull Durham",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 17.496,
+                    "release_year": "1986",
+                    "title": "Howard the Duck",
+                    "vote_average": 5.403
+                },
+                {
+                    "popularity": 68.057,
+                    "release_year": "1986",
+                    "title": "Top Gun",
+                    "vote_average": 7.048
+                },
+                {
+                    "popularity": 4.142,
+                    "release_year": "1985",
+                    "title": "Fraternity Vacation",
+                    "vote_average": 5.3
+                },
+                {
+                    "popularity": 8.747,
+                    "release_year": "1985",
+                    "title": "The Sure Thing",
+                    "vote_average": 6.5
+                },
+                {
+                    "popularity": 4.52,
+                    "release_year": "1984",
+                    "title": "No Small Affair",
+                    "vote_average": 5.5
+                }
+            ],
+            "name": "Tim Robbins",
+            "place_of_birth": "West Covina, California, USA",
+            "profile_path": "/A4fHNLX73EQs78f2G6ObfKZnvp4.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Tim_Robbins"
+        },
+        "person_Tom Hanks": {
+            "biography": "Thomas Jeffrey Hanks (born July 9, 1956) is an American actor and filmmaker. Known for both his comedic and dramatic roles, Hanks is one of the most popular and recognizable film stars worldwide, and is widely regarded as an American cultural icon.\n\nHanks made his breakthrough with leading roles in the comedies Splash (1984) and Big (1988). He won two consecutive Academy Awards for Best Actor for starring as a gay lawyer suffering from AIDS in Philadelphia (1993) and a young man with below-average IQ in Forrest Gump (1994). Hanks collaborated with film director Steven Spielberg on five films: Saving Private Ryan (1998), Catch Me If You Can (2002), The Terminal (2004), Bridge of Spies (2015), and The Post (2017), as well as the 2001 miniseries Band of Brothers, which launched him as a director, producer, and screenwriter.\n\nHanks' other notable films include the romantic comedies Sleepless in Seattle (1993) and You've Got Mail (1998); the dramas Apollo 13 (1995), The Green Mile (1999), Cast Away (2000), Road to Perdition (2002), and Cloud Atlas (2012); and the biographical dramas Saving Mr. Banks (2013), Captain Phillips (2013), Sully (2016), and A Beautiful Day in the Neighborhood (2019). He has also appeared as the title character in the Robert Langdon film series, and has voiced Sheriff Woody in the Toy Story film series.\n\nDescription above from the Wikipedia article Tom Hanks, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+            "birthday": "1956-07-09",
+            "deathday": null,
+            "imdb_id": "0000158",
+            "movie_credits": [
+                {
+                    "popularity": 55.7,
+                    "release_year": "2023",
+                    "title": "Asteroid City",
+                    "vote_average": 6.538
+                },
+                {
+                    "popularity": 12.275,
+                    "release_year": "2022",
+                    "title": "Halftime",
+                    "vote_average": 6.8
+                },
+                {
+                    "popularity": 47.839,
+                    "release_year": "2022",
+                    "title": "Pinocchio",
+                    "vote_average": 6.408
+                },
+                {
+                    "popularity": 50.087,
+                    "release_year": "2022",
+                    "title": "A Man Called Otto",
+                    "vote_average": 7.787
+                },
+                {
+                    "popularity": 58.622,
+                    "release_year": "2022",
+                    "title": "Elvis",
+                    "vote_average": 7.573
+                },
+                {
+                    "popularity": 44.73,
+                    "release_year": "2021",
+                    "title": "Finch",
+                    "vote_average": 7.916
+                },
+                {
+                    "popularity": 16.241,
+                    "release_year": "2020",
+                    "title": "News of the World",
+                    "vote_average": 6.975
+                },
+                {
+                    "popularity": 24.653,
+                    "release_year": "2020",
+                    "title": "Borat Subsequent Moviefilm",
+                    "vote_average": 6.472
+                },
+                {
+                    "popularity": 36.515,
+                    "release_year": "2020",
+                    "title": "Greyhound",
+                    "vote_average": 7.415
+                },
+                {
+                    "popularity": 14.826,
+                    "release_year": "2019",
+                    "title": "A Beautiful Day in the Neighborhood",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 74.019,
+                    "release_year": "2019",
+                    "title": "Toy Story 4",
+                    "vote_average": 7.51
+                },
+                {
+                    "popularity": 5.451,
+                    "release_year": "2018",
+                    "title": "Quincy",
+                    "vote_average": 7.3
+                },
+                {
+                    "popularity": 20.722,
+                    "release_year": "2017",
+                    "title": "The Circle",
+                    "vote_average": 5.514
+                },
+                {
+                    "popularity": 23.679,
+                    "release_year": "2017",
+                    "title": "The Post",
+                    "vote_average": 6.999
+                },
+                {
+                    "popularity": 15.068,
+                    "release_year": "2016",
+                    "title": "A Hologram for the King",
+                    "vote_average": 5.84
+                },
+                {
+                    "popularity": 27.089,
+                    "release_year": "2016",
+                    "title": "Inferno",
+                    "vote_average": 6.063
+                },
+                {
+                    "popularity": 33.24,
+                    "release_year": "2016",
+                    "title": "Sully",
+                    "vote_average": 7.179
+                },
+                {
+                    "popularity": 6.467,
+                    "release_year": "2015",
+                    "title": "Ithaca",
+                    "vote_average": 5.3
+                },
+                {
+                    "popularity": 18.701,
+                    "release_year": "2015",
+                    "title": "The Walk",
+                    "vote_average": 6.98
+                },
+                {
+                    "popularity": 20.641,
+                    "release_year": "2015",
+                    "title": "Bridge of Spies",
+                    "vote_average": 7.228
+                },
+                {
+                    "popularity": 25.831,
+                    "release_year": "2014",
+                    "title": "Toy Story That Time Forgot",
+                    "vote_average": 7.011
+                },
+                {
+                    "popularity": 0.916,
+                    "release_year": "2013",
+                    "title": "Toy Story of Terror!",
+                    "vote_average": 7.197
+                },
+                {
+                    "popularity": 6.953,
+                    "release_year": "2013",
+                    "title": "Killing Lincoln",
+                    "vote_average": 5.8
+                },
+                {
+                    "popularity": 14.774,
+                    "release_year": "2013",
+                    "title": "Saving Mr. Banks",
+                    "vote_average": 7.356
+                },
+                {
+                    "popularity": 26.42,
+                    "release_year": "2013",
+                    "title": "Captain Phillips",
+                    "vote_average": 7.55
+                },
+                {
+                    "popularity": 4.411,
+                    "release_year": "2012",
+                    "title": "Final Cut: Ladies and Gentlemen",
+                    "vote_average": 7.6
+                },
+                {
+                    "popularity": 15.131,
+                    "release_year": "2012",
+                    "title": "Partysaurus Rex",
+                    "vote_average": 7.163
+                },
+                {
+                    "popularity": 43.492,
+                    "release_year": "2012",
+                    "title": "Cloud Atlas",
+                    "vote_average": 6.882
+                },
+                {
+                    "popularity": 14.0,
+                    "release_year": "2011",
+                    "title": "Small Fry",
+                    "vote_average": 6.885
+                },
+                {
+                    "popularity": 15.942,
+                    "release_year": "2011",
+                    "title": "Hawaiian Vacation",
+                    "vote_average": 7.002
+                },
+                {
+                    "popularity": 16.2,
+                    "release_year": "2011",
+                    "title": "Larry Crowne",
+                    "vote_average": 5.956
+                },
+                {
+                    "popularity": 19.526,
+                    "release_year": "2011",
+                    "title": "Extremely Loud & Incredibly Close",
+                    "vote_average": 6.976
+                },
+                {
+                    "popularity": 10.36,
+                    "release_year": "2010",
+                    "title": "Never Sleep Again: The Elm Street Legacy",
+                    "vote_average": 7.8
+                },
+                {
+                    "popularity": 66.151,
+                    "release_year": "2010",
+                    "title": "Toy Story 3",
+                    "vote_average": 7.793
+                },
+                {
+                    "popularity": 42.625,
+                    "release_year": "2009",
+                    "title": "Angels & Demons",
+                    "vote_average": 6.706
+                },
+                {
+                    "popularity": 6.73,
+                    "release_year": "2008",
+                    "title": "The Great Buck Howard",
+                    "vote_average": 5.978
+                },
+                {
+                    "popularity": 13.074,
+                    "release_year": "2007",
+                    "title": "Charlie Wilson's War",
+                    "vote_average": 6.535
+                },
+                {
+                    "popularity": 60.352,
+                    "release_year": "2007",
+                    "title": "The Simpsons Movie",
+                    "vote_average": 7.001
+                },
+                {
+                    "popularity": 31.621,
+                    "release_year": "2006",
+                    "title": "The Da Vinci Code",
+                    "vote_average": 6.725
+                },
+                {
+                    "popularity": 50.091,
+                    "release_year": "2006",
+                    "title": "Cars",
+                    "vote_average": 6.948
+                },
+                {
+                    "popularity": 12.178,
+                    "release_year": "2004",
+                    "title": "The Ladykillers",
+                    "vote_average": 6.129
+                },
+                {
+                    "popularity": 31.526,
+                    "release_year": "2004",
+                    "title": "The Terminal",
+                    "vote_average": 7.334
+                },
+                {
+                    "popularity": 78.368,
+                    "release_year": "2004",
+                    "title": "The Polar Express",
+                    "vote_average": 6.724
+                },
+                {
+                    "popularity": 3.594,
+                    "release_year": "2003",
+                    "title": "Concert for George",
+                    "vote_average": 8.1
+                },
+                {
+                    "popularity": 37.535,
+                    "release_year": "2002",
+                    "title": "Road to Perdition",
+                    "vote_average": 7.355
+                },
+                {
+                    "popularity": 63.133,
+                    "release_year": "2002",
+                    "title": "Catch Me If You Can",
+                    "vote_average": 7.975
+                },
+                {
+                    "popularity": 50.912,
+                    "release_year": "2000",
+                    "title": "Cast Away",
+                    "vote_average": 7.662
+                },
+                {
+                    "popularity": 78.636,
+                    "release_year": "1999",
+                    "title": "The Green Mile",
+                    "vote_average": 8.51
+                },
+                {
+                    "popularity": 79.635,
+                    "release_year": "1999",
+                    "title": "Toy Story 2",
+                    "vote_average": 7.59
+                },
+                {
+                    "popularity": 20.613,
+                    "release_year": "1998",
+                    "title": "You've Got Mail",
+                    "vote_average": 6.676
+                },
+                {
+                    "popularity": 69.612,
+                    "release_year": "1998",
+                    "title": "Saving Private Ryan",
+                    "vote_average": 8.211
+                },
+                {
+                    "popularity": 3.803,
+                    "release_year": "1996",
+                    "title": "The Celluloid Closet",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 21.72,
+                    "release_year": "1996",
+                    "title": "That Thing You Do!",
+                    "vote_average": 6.867
+                },
+                {
+                    "popularity": 27.096,
+                    "release_year": "1995",
+                    "title": "Apollo 13",
+                    "vote_average": 7.448
+                },
+                {
+                    "popularity": 105.917,
+                    "release_year": "1995",
+                    "title": "Toy Story",
+                    "vote_average": 7.971
+                },
+                {
+                    "popularity": 103.567,
+                    "release_year": "1994",
+                    "title": "Forrest Gump",
+                    "vote_average": 8.477
+                },
+                {
+                    "popularity": 19.816,
+                    "release_year": "1993",
+                    "title": "Sleepless in Seattle",
+                    "vote_average": 6.7
+                },
+                {
+                    "popularity": 20.945,
+                    "release_year": "1993",
+                    "title": "Philadelphia",
+                    "vote_average": 7.725
+                },
+                {
+                    "popularity": 9.934,
+                    "release_year": "1992",
+                    "title": "Radio Flyer",
+                    "vote_average": 7.0
+                },
+                {
+                    "popularity": 13.742,
+                    "release_year": "1992",
+                    "title": "A League of Their Own",
+                    "vote_average": 7.174
+                },
+                {
+                    "popularity": 10.048,
+                    "release_year": "1990",
+                    "title": "The Bonfire of the Vanities",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 14.918,
+                    "release_year": "1990",
+                    "title": "Joe Versus the Volcano",
+                    "vote_average": 5.698
+                },
+                {
+                    "popularity": 10.618,
+                    "release_year": "1989",
+                    "title": "Turner & Hooch",
+                    "vote_average": 6.355
+                },
+                {
+                    "popularity": 13.493,
+                    "release_year": "1989",
+                    "title": "The 'Burbs",
+                    "vote_average": 6.75
+                },
+                {
+                    "popularity": 7.127,
+                    "release_year": "1988",
+                    "title": "Punchline",
+                    "vote_average": 5.359
+                },
+                {
+                    "popularity": 21.594,
+                    "release_year": "1988",
+                    "title": "Big",
+                    "vote_average": 7.162
+                },
+                {
+                    "popularity": 12.655,
+                    "release_year": "1987",
+                    "title": "Dragnet",
+                    "vote_average": 5.924
+                },
+                {
+                    "popularity": 9.541,
+                    "release_year": "1986",
+                    "title": "Nothing in Common",
+                    "vote_average": 5.7
+                },
+                {
+                    "popularity": 15.12,
+                    "release_year": "1986",
+                    "title": "The Money Pit",
+                    "vote_average": 6.501
+                },
+                {
+                    "popularity": 6.197,
+                    "release_year": "1985",
+                    "title": "Volunteers",
+                    "vote_average": 5.5
+                },
+                {
+                    "popularity": 9.69,
+                    "release_year": "1985",
+                    "title": "The Man with One Red Shoe",
+                    "vote_average": 5.724
+                },
+                {
+                    "popularity": 15.635,
+                    "release_year": "1984",
+                    "title": "Bachelor Party",
+                    "vote_average": 6.287
+                },
+                {
+                    "popularity": 18.648,
+                    "release_year": "1984",
+                    "title": "Splash",
+                    "vote_average": 6.3
+                },
+                {
+                    "popularity": 5.434,
+                    "release_year": "1982",
+                    "title": "Mazes and Monsters",
+                    "vote_average": 4.3
+                },
+                {
+                    "popularity": 5.076,
+                    "release_year": "1980",
+                    "title": "He Knows You're Alone",
+                    "vote_average": 5.1
+                }
+            ],
+            "name": "Tom Hanks",
+            "place_of_birth": "Concord, California, USA",
+            "profile_path": "/xndWFsBlClOJFRdhSt4NBwiPq2o.jpg",
+            "wiki_url": "https://en.wikipedia.org/wiki/Tom_Hanks"
         },
         "person_Viola Davis": {
             "biography": "Viola Davis (born August 11, 1965) is an American actress and producer. The recipient of numerous accolades, Davis is one of the few performers to have been awarded an Emmy, a Grammy, an Oscar, and a Tony (EGOT); additionally, she is the sole African-American to achieve the Triple Crown of Acting as well as the third person to achieve both statuses. Time named her one of the 100 most influential people in the world in 2012 and 2017, and in 2020, The New York Times ranked her ninth on its list of the greatest actors of the 21st century.\n\nDavis began her career in Central Falls, Rhode Island, appearing in small stage productions. After graduating from the Juilliard School in 1993, she won an Obie Award in 1999 for her performance as Ruby McCollum in Everybody's Ruby. She played minor roles in film and television in the late 1990s and early 2000s, before earning the Tony Award for Best Featured Actress in a Play for her role as Tonya in the 2001 Broadway production of August Wilson's King Hedley II. Her film breakthrough came with her role as a troubled mother in the drama Doubt (2008), for which she received her first Academy Award nomination for Best Supporting Actress. Davis won the 2010 Tony Award for Best Actress in a Play for her role as Rose Maxson in the Broadway revival of August Wilson's play Fences.\n\nFor starring as a 1960s housemaid in the comedy-drama The Help (2011), Davis received a nomination for the Academy Award for Best Actress. From 2014 to 2020, she played lawyer Annalise Keating in the ABC drama series How to Get Away with Murder, for which she became the first black actress to win the Primetime Emmy Award for Outstanding Lead Actress in a Drama Series in 2015. In 2016, Davis reprised the role of Maxson in the film adaptation of Fences, winning the Academy Award for Best Supporting Actress. She played Amanda Waller in the DC Extended Universe, beginning with Suicide Squad (2016). In 2020, she portrayed Ma Rainey in the biopic Ma Rainey's Black Bottom, for which she received a fourth Academy Award nomination, becoming the most-Oscar-nominated black actress. Her performances in Widows (2018) and The Woman King (2022) earned her further nominations for the BAFTA Best Actress Award, making her the most-BAFTA-nominated black actress.\n\nDavis and her husband, Julius Tennon, are founders of a production company, JuVee Productions. Davis is also widely recognized for her advocacy and support of human rights and equal rights for women and women of color. She received a star on the Hollywood Walk of Fame in 2017 and became a L'Or\u00e9al Paris ambassador in 2019. The audiobook narration of her 2022 memoir Finding Me earned Davis a Grammy Award in 2023.",

@@ -59,7 +59,6 @@
               name="radarr_api_key"
               id="radarr_api_key"
               value="{{ config['radarr_api_key'] }}"
-              onblur="fetchRadarrRootFolders()"
             />
           </div>
 
@@ -71,7 +70,6 @@
               name="radarr_url"
               id="radarr_url"
               value="{{ config['radarr_url'] }}"
-              onblur="fetchRadarrRootFolders()"
             />
           </div>
 
@@ -113,7 +111,7 @@
               <option disabled selected>Refresh to get paths...</option>
             </select>
             <button
-              onclick="handleRefresh(event)"
+              id="refresh-button"
               type="button"
               class="btn btn-primary mt-2"
             >
@@ -149,7 +147,6 @@
               name="discord_token"
               id="discord_token"
               value="{{ config['discord_token'] }}"
-              onchange="loadChannels()"
             />
           </div>
 
@@ -166,7 +163,7 @@
 
             <div class="form-group"></div>
             <button
-              onclick="refreshDiscordChannels()"
+              id="refresh-channels-button"
               type="button"
               class="btn btn-primary mt-2"
             >
@@ -215,14 +212,14 @@
             id="message-input"
             class="form-control"
             placeholder="Type a message..."
-            onkeypress="handleKeyPress(event)"
           />
-          <button onclick="sendMessage()" class="btn btn-primary ml-2">
+
+          <button id="send-message-btn" class="btn btn-primary ml-2">
             <i class="fa fa-paper-plane"></i>
           </button>
         </div>
       </div>
     </div>
-    <script src="../static/js/script.js"></script>
+    <script type="module" src="static/js/main.js"></script>
   </body>
 </html>
